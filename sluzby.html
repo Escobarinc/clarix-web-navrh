@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="cs" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f7f9fc" />
+<title>Služby · CLARIX</title>
+<link rel="stylesheet" href="css/pisma.css" />
+<link rel="stylesheet" href="css/tailwind.css" />
+<style>
+:root,
+[data-theme='dark'] {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background: #000;
+  --bg: #000000;
+  --text: #ffffff;
+  --text-soft: rgba(255,255,255,0.70);
+  --text-muted: rgba(255,255,255,0.42);
+  --surface: rgba(255,255,255,0.055);
+  --surface-strong: rgba(255,255,255,0.095);
+  --border: rgba(255,255,255,0.10);
+  --nav-bg: rgba(3,7,18,0.46);
+  --nav-shadow: 0 20px 60px rgba(0,0,0,0.16);
+  --page-overlay: rgba(0,0,0,0.74);
+  --card-shadow: 0 24px 90px rgba(0,0,0,0.18);
+  --contact-bg: radial-gradient(circle at 15% 10%, rgba(37,99,235,.22), transparent 34%), linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='light'] {
+  color: #080b12;
+  background: #f7f9fc;
+  --bg: #f7f9fc;
+  --text: #080b12;
+  --text-soft: rgba(8,11,18,0.68);
+  --text-muted: rgba(8,11,18,0.43);
+  --surface: rgba(255,255,255,0.62);
+  --surface-strong: rgba(255,255,255,0.90);
+  --border: rgba(8,11,18,0.10);
+  --nav-bg: rgba(255,255,255,0.70);
+  --nav-shadow: 0 18px 60px rgba(16,24,40,0.08);
+  --page-overlay: rgba(247,249,252,0.52);
+  --card-shadow: 0 24px 80px rgba(15,23,42,0.075);
+  --contact-bg: radial-gradient(circle at 12% 14%, rgba(37,99,235,.16), transparent 36%), linear-gradient(135deg, rgba(255,255,255,.98), rgba(239,245,255,.90));
+}
+
+* { box-sizing: border-box; }
+html { background: var(--bg); scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; background: var(--bg); }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 2px solid #3b82f6; outline-offset: 4px; }
+
+.theme-shell { isolation: isolate; }
+.hero-vignette {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.16) 37%, rgba(0,0,0,0.76) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.09) 45%, rgba(0,0,0,0.60));
+  transition: opacity .5s ease, background .5s ease;
+}
+[data-theme='light'] .hero-vignette {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(255,255,255,0.10) 0%, rgba(247,249,252,0.14) 40%, rgba(247,249,252,0.76) 100%),
+    linear-gradient(to bottom, rgba(247,249,252,0.02), rgba(247,249,252,0.15) 45%, rgba(247,249,252,0.72));
+}
+
+.fallback-3d {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(0,102,255,0.30), transparent 28%),
+    radial-gradient(circle at 28% 24%, rgba(34,211,238,0.08), transparent 22%),
+    linear-gradient(#0a0a0a,#000);
+}
+[data-theme='light'] .fallback-3d {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(37,99,235,0.18), transparent 28%),
+    radial-gradient(circle at 28% 24%, rgba(34,211,238,0.10), transparent 22%),
+    linear-gradient(#ffffff,#eef3f9);
+}
+
+.section-wrap { width: 100%; max-width: 1440px; margin: 0 auto; padding: 6rem 1.5rem; }
+@media (min-width: 768px) { .section-wrap { padding-left: 2rem; padding-right: 2rem; } }
+@media (min-width: 1280px) { .section-wrap { padding-top: 6rem; padding-bottom: 6rem; } }
+
+.glass-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 1.5rem;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: transform .35s ease, border-color .35s ease, background-color .35s ease, box-shadow .35s ease;
+}
+.glass-card:hover { transform: translateY(-4px); border-color: rgba(59,130,246,.30); background: var(--surface-strong); }
+.service-card { position: relative; overflow: hidden; }
+.service-card::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -110px;
+  bottom: -125px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(37,99,235,.18), transparent 68%);
+  pointer-events: none;
+}
+
+.contact-panel { background: var(--contact-bg); box-shadow: var(--card-shadow); backdrop-filter: blur(20px); }
+.dot { width: 3px; height: 3px; border-radius: 999px; background: var(--text-muted); }
+.text-balance { text-wrap: balance; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* Portfolio showroom — rebuilt from the supplied 3D carousel reference */
+.portfolio-stage {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 54%, rgba(37,99,235,.075), transparent 31%),
+    linear-gradient(to bottom, transparent, rgba(255,255,255,.025), transparent);
+}
+[data-theme='light'] .portfolio-stage {
+  background:
+    radial-gradient(circle at 50% 52%, rgba(37,99,235,.075), transparent 31%),
+    linear-gradient(to bottom, rgba(255,255,255,.12), rgba(255,255,255,.82), rgba(247,249,252,.55));
+}
+
+.portfolio-showroom {
+  position: relative;
+  height: clamp(360px, 43vw, 610px);
+  max-height: 610px;
+  min-height: 360px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  perspective: 1900px;
+  overflow: hidden;
+}
+.portfolio-showroom:active { cursor: grabbing; }
+.portfolio-card-slot, .portfolio-card-slot * { -webkit-user-drag: none; user-drag: none; }
+.portfolio-card-slot { cursor: grab; }
+.portfolio-showroom.is-dragging .portfolio-card-slot { cursor: grabbing; }
+.portfolio-showroom::before {
+  content: '';
+  position: absolute;
+  inset: 5% 7% 4%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255,255,255,.055), transparent 63%);
+  filter: blur(1px);
+  pointer-events: none;
+}
+[data-theme='light'] .portfolio-showroom::before {
+  background: radial-gradient(circle at center, rgba(255,255,255,.94), rgba(255,255,255,.3) 42%, transparent 69%);
+}
+.portfolio-orbit {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: min(78vw, 1120px); height: min(78vw, 1120px);
+  translate: -50% -50%;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  opacity: .34;
+  pointer-events: none;
+}
+.portfolio-orbit::before,
+.portfolio-orbit::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+.portfolio-orbit::after { inset: 27%; opacity: .7; }
+
+.portfolio-cards {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+}
+.portfolio-card-slot {
+  position: absolute;
+  width: clamp(360px, 47vw, 700px);
+  height: clamp(230px, 28vw, 410px);
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  text-decoration: none;
+  will-change: transform, opacity;
+}
+.portfolio-card-panel {
+  width: 100%; height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: clamp(20px, 2vw, 32px);
+  border: 1px solid color-mix(in srgb, var(--border) 78%, transparent);
+  background: rgba(255,255,255,.032);
+  box-shadow: 0 24px 70px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.055);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+[data-theme='light'] .portfolio-card-panel {
+  background: rgba(255,255,255,.58);
+  box-shadow: 0 22px 62px rgba(25,43,77,.085), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.portfolio-card-slot:hover .portfolio-card-panel { border-color: color-mix(in srgb, #3b82f6 28%, var(--border)); }
+
+.project-box {
+  --accent: #1479ff;
+  --accent2: #00d4ff;
+  position: relative;
+  width: 29%;
+  height: 78%;
+  min-width: 112px;
+  transform-style: preserve-3d;
+  transform: rotateY(-5deg) rotateX(1.5deg);
+  filter: drop-shadow(0 28px 28px rgba(0,0,0,.28));
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .45s ease;
+}
+.portfolio-card-slot:hover .project-box,
+.portfolio-project-card:hover .project-box { transform: rotateY(-1deg) rotateX(0deg) translateY(-8px); filter: drop-shadow(0 36px 36px rgba(0,0,0,.32)); }
+.project-box__front {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.19);
+  border-radius: 4px 8px 8px 4px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.10), transparent 25%),
+    radial-gradient(circle at 72% 25%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 34%),
+    linear-gradient(150deg, #0b0e15 0%, #111728 48%, #05070c 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), inset -18px 0 28px rgba(0,0,0,.25);
+  color: #fff;
+  padding: 8% 8.5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.project-box__side {
+  position: absolute;
+  top: 1.4%; bottom: 1.4%; left: -14%;
+  width: 15%;
+  transform-origin: right center;
+  transform: rotateY(-50deg);
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(180deg, #121726, #05070c);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10% 2%;
+  font-size: 8px;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  letter-spacing: .08em;
+  z-index: 1;
+}
+.project-box__side span:first-child { color: var(--accent2); font-size: 16px; writing-mode: initial; }
+.project-box__scan {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0 7px, rgba(255,255,255,.012) 7px 8px);
+  opacity: .6;
+}
+.project-box__topline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: clamp(5px, .48vw, 8px);
+  font-weight: 700;
+  letter-spacing: .13em;
+  color: rgba(255,255,255,.52);
+}
+.project-box__mark {
+  position: relative;
+  margin: auto auto 0;
+  display: grid;
+  place-items: center;
+  width: clamp(54px, 8vw, 100px);
+  height: clamp(54px, 8vw, 100px);
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 800;
+  line-height: 1;
+  color: white;
+  text-shadow: 0 0 24px var(--accent), 0 0 65px color-mix(in srgb, var(--accent2) 75%, transparent);
+}
+.project-box__mark::before {
+  content: '';
+  position: absolute; inset: 8%;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 25%, transparent), inset 0 0 25px color-mix(in srgb, var(--accent2) 15%, transparent);
+}
+.project-box__name {
+  position: relative;
+  margin-top: auto;
+  text-align: center;
+  font-size: clamp(12px, 1.5vw, 23px);
+  font-weight: 800;
+  letter-spacing: .07em;
+}
+.project-box__short {
+  position: relative;
+  margin-top: 4px;
+  text-align: center;
+  font-size: clamp(6px, .57vw, 9px);
+  color: rgba(255,255,255,.55);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+.project-box__features {
+  position: relative;
+  margin-top: 10%;
+  display: grid;
+  gap: 4px;
+  font-size: clamp(5px, .45vw, 7px);
+  color: rgba(255,255,255,.49);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.project-box__features span::before { content: '◇'; margin-right: 5px; color: var(--accent2); }
+.project-box__beam {
+  position: absolute;
+  right: -18%; bottom: -16%;
+  width: 95%; height: 45%;
+  rotate: -24deg;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 78%, transparent), var(--accent2), transparent 70%);
+  filter: blur(1px);
+  opacity: .92;
+  box-shadow: 0 0 25px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.project-box--compact { width: 31%; }
+
+.portfolio-controls {
+  position: absolute;
+  left: 50%; bottom: 3.8%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 200;
+}
+.portfolio-controls > button,
+.portfolio-dots {
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--card-shadow);
+}
+.portfolio-controls > button {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--text-soft);
+  transition: transform .25s ease, background .25s ease, color .25s ease;
+}
+.portfolio-controls > button:hover { transform: scale(1.06); color: var(--text); background: var(--surface-strong); }
+.portfolio-dots {
+  height: 38px;
+  padding: 0 13px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.portfolio-dots button {
+  width: 6px; height: 6px;
+  border-radius: 99px;
+  background: var(--text-muted);
+  transition: width .3s ease, background .3s ease;
+}
+.portfolio-dots button.is-active { width: 24px; background: #3b82f6; }
+
+.portfolio-marquee {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+}
+.portfolio-marquee__track {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  animation: portfolio-marquee 32s linear infinite;
+}
+.portfolio-marquee:hover .portfolio-marquee__track { animation-play-state: paused; }
+.portfolio-marquee__track button {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  height: 52px;
+  padding: 0 27px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--text-muted);
+  transition: color .25s ease;
+}
+.portfolio-marquee__track button:hover { color: #3b82f6; }
+.portfolio-marquee__diamond { width: 5px; height: 5px; rotate: 45deg; background: #3b82f6; opacity: .45; }
+@keyframes portfolio-marquee { to { transform: translateX(-50%); } }
+
+.portfolio-view-all,
+.portfolio-back,
+.portfolio-project-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(16px);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.portfolio-view-all { padding: 13px 18px; }
+.portfolio-back { margin-top: 30px; padding: 12px 17px; }
+.portfolio-view-all:hover,
+.portfolio-back:hover,
+.portfolio-project-cta:hover { transform: translateY(-2px); border-color: rgba(59,130,246,.35); background: var(--surface-strong); }
+
+/* Full portfolio page */
+.portfolio-grid { display: grid; gap: 18px; }
+.portfolio-project-card {
+  min-height: 540px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  scroll-margin-top: 110px;
+}
+.portfolio-project-visual {
+  min-height: 540px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 50% 46%, rgba(59,130,246,.12), transparent 35%),
+    linear-gradient(145deg, rgba(255,255,255,.025), transparent 55%);
+}
+.portfolio-project-visual::before {
+  content: '';
+  position: absolute;
+  width: 77%; aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  box-shadow: inset 0 0 80px rgba(59,130,246,.04);
+}
+[data-theme='light'] .portfolio-project-visual { background: radial-gradient(circle at 50% 45%, rgba(59,130,246,.095), transparent 38%), #f8fafc; }
+.portfolio-project-visual .project-box { width: min(34%, 215px); height: min(68%, 380px); z-index: 1; }
+.portfolio-project-copy { padding: clamp(32px, 5vw, 72px); display: flex; flex-direction: column; justify-content: center; }
+.portfolio-project-copy h2 { margin: 24px 0 0; font-size: clamp(34px, 4vw, 58px); line-height: .95; letter-spacing: -.055em; color: var(--text); }
+.portfolio-project-copy p { margin: 20px 0 0; max-width: 620px; font-size: 16px; line-height: 1.8; color: var(--text-soft); }
+.portfolio-project-tags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.portfolio-project-tags span { border: 1px solid var(--border); border-radius: 999px; padding: 7px 10px; background: var(--surface); color: var(--text-soft); font-size: 11px; }
+.portfolio-project-cta { align-self: flex-start; margin-top: 34px; padding: 12px 16px; color: #3b82f6; }
+
+@media (max-width: 1100px) {
+  .portfolio-card-slot { width: clamp(350px, 58vw, 620px); height: clamp(225px, 34vw, 360px); }
+  .project-box { width: 30%; height: 78%; }
+}
+
+@media (max-width: 800px) {
+  .portfolio-showroom { height: 390px; min-height: 390px; }
+  .portfolio-card-slot { width: min(86vw, 430px); height: min(55vw, 275px); }
+  .portfolio-card-slot--2,
+  .portfolio-card-slot---2 { display: none; }
+  .project-box { width: 31%; height: 78%; }
+  .portfolio-orbit { width: 120vw; height: 120vw; }
+  .portfolio-controls { bottom: 3%; }
+  .portfolio-marquee__track button { height: 46px; padding: 0 18px; font-size: 10px; }
+  .portfolio-project-card { grid-template-columns: 1fr; min-height: 0; }
+  .portfolio-project-visual { min-height: 430px; border-right: 0; border-bottom: 1px solid var(--border); }
+  .portfolio-project-copy { padding: 32px 26px 38px; }
+}
+
+@media (max-width: 520px) {
+  .portfolio-showroom { height: 455px; min-height: 455px; }
+  .portfolio-card-slot { width: 74vw; height: 92vw; max-height: 390px; }
+  .portfolio-card-slot--1,
+  .portfolio-card-slot---1 { opacity: .72 !important; }
+  .project-box { width: 50%; min-width: 122px; }
+  .portfolio-controls > button { width: 38px; height: 38px; }
+  .portfolio-dots { height: 36px; }
+  .portfolio-project-visual { min-height: 360px; }
+  .portfolio-project-visual .project-box { width: 37%; min-width: 125px; height: 72%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-marquee__track { animation: none !important; }
+}
+
+/* Standalone runtime bridge — preserves the existing visual system without Vite/React. */
+body { font-family: 'Inter', sans-serif; }
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .7s ease-out, transform .7s ease-out; }
+.reveal.is-visible { opacity:1; transform:translateY(0); }
+.hero-enter { opacity:0; transform:translateY(20px); animation:heroEnter .8s ease-out forwards; }
+.hero-enter:nth-child(1){animation-delay:.12s}.hero-enter:nth-child(2){animation-delay:.30s}.hero-enter:nth-child(3){animation-delay:.48s}.hero-enter:nth-child(4){animation-delay:.66s}.hero-enter:nth-child(5){animation-delay:.84s}
+@keyframes heroEnter { to { opacity:1; transform:translateY(0); } }
+.nav-enter { opacity:0; transform:translateY(-20px); animation:navEnter .8s ease-out forwards; }
+@keyframes navEnter { to { opacity:1; transform:translateY(0); } }
+.theme-thumb { transition:transform .36s cubic-bezier(.2,.9,.2,1), background .25s ease; }
+[data-theme='light'] .theme-thumb { transform:translateX(23px); background:#fff; }
+[data-theme='dark'] .theme-thumb { transform:translateX(0); background:rgba(255,255,255,.10); }
+.magnetic { transform:translate3d(var(--mx,0px),var(--my,0px),0); }
+.portfolio-card-slot { transition: transform .34s cubic-bezier(.2,.8,.2,1), opacity .28s ease, filter .12s linear; }
+.portfolio-showroom.is-dragging .portfolio-card-slot { transition: none !important; }
+.portfolio-card-slot.is-hidden { pointer-events:none; }
+.portfolio-card-panel { position:relative; }
+.portfolio-image { position:absolute; z-index:3; inset:5% 6%; width:88%; height:90%; object-fit:contain; object-position:center; display:block; opacity:1; filter:drop-shadow(0 24px 28px rgba(0,0,0,.25)); transition:transform .36s cubic-bezier(.2,.8,.2,1), filter .36s ease; pointer-events:none; }
+.portfolio-card-slot:hover .portfolio-image { transform:translateY(-4px) scale(1.018); filter:drop-shadow(0 30px 34px rgba(0,0,0,.30)); }
+.portfolio-image-overlay { position:absolute; inset:0; z-index:2; background:radial-gradient(circle at 50% 50%,rgba(59,130,246,.055),transparent 52%); pointer-events:none; }
+[data-theme='light'] .portfolio-image-overlay { background:radial-gradient(circle at 50% 50%,rgba(59,130,246,.035),transparent 54%); }
+.portfolio-image-caption { display:none; }
+.drag-hint { position:absolute; left:50%; bottom:10.5%; translate:-50% 0; z-index:180; font:600 9px/1 'Inter',sans-serif; letter-spacing:.22em; color:var(--text-muted); text-transform:uppercase; pointer-events:none; transition:opacity .3s ease; }
+.portfolio-showroom.is-dragging .drag-hint { opacity:0; }
+.portfolio-showroom.is-dragging .portfolio-card-slot { transition:none; }
+.portfolio-controls .portfolio-dots { min-width:86px; justify-content:center; }
+.full-portfolio { display:none; }
+body.portfolio-mode .home-view { display:none; }
+body.portfolio-mode .full-portfolio { display:block; }
+body.portfolio-mode #hero3d { opacity:.58; }
+#hero3d { transition:opacity .5s ease; }
+@media (max-width:800px){.drag-hint{bottom:11.5%}}
+
+.page-hero{min-height:62vh;display:flex;align-items:flex-start;padding-top:15rem;padding-bottom:5rem}
+.page-kicker{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.75rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#3b82f6}
+.long-copy{font-size:1rem;line-height:1.82;color:var(--text-soft)}
+.section-lead{max-width:58rem;font-size:1.05rem;line-height:1.85;color:var(--text-soft)}
+.focus-card,.dna-card{min-height:280px}
+.process-step{position:relative;overflow:hidden}
+.process-step::after{content:'';position:absolute;right:-85px;bottom:-120px;width:230px;height:230px;border-radius:999px;background:radial-gradient(circle,rgba(37,99,235,.14),transparent 70%);pointer-events:none}
+.case-study-row{display:grid;gap:2.5rem;align-items:center;padding:4.5rem 0}
+.case-study-media{min-height:430px;display:grid;place-items:center;overflow:hidden}
+.case-study-media img{width:min(77%,560px);max-height:620px;object-fit:contain;filter:drop-shadow(0 30px 38px rgba(0,0,0,.22));transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease}
+.case-study-row:hover .case-study-media img{transform:translateY(-7px) scale(1.015);filter:drop-shadow(0 38px 44px rgba(0,0,0,.27))}
+.case-label{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)}
+.case-study-copy h2{font-size:clamp(2.2rem,4vw,3.35rem);line-height:1;letter-spacing:-.045em;font-weight:700}
+.case-study-copy p{font-size:.98rem;line-height:1.8;color:var(--text-soft)}
+.case-study-placeholder{min-height:430px;display:grid;place-items:center;text-align:center;border:1px dashed var(--border);background:linear-gradient(145deg,var(--surface),transparent)}
+.footer-basic{border-top:1px solid var(--border);background:var(--page-overlay);backdrop-filter:blur(2px)}
+.mobile-nav{display:none}
+@media(min-width:900px){.case-study-row{grid-template-columns:1fr 1fr;gap:5rem}.case-study-row.reverse .case-study-media{order:2}.case-study-row.reverse .case-study-copy{order:1}}
+@media(max-width:899px){.page-hero{min-height:56vh}.case-study-media,.case-study-placeholder{min-height:330px}.case-study-media img{width:min(78%,430px)}}
+@media(max-width:767px){.desktop-nav{display:none}.mobile-nav{display:flex;overflow:auto;gap:.9rem;padding:.55rem 1rem;border-top:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(20px);white-space:nowrap}.mobile-nav a{font-size:.75rem;color:var(--text-soft);text-decoration:none}.mobile-nav a:hover{color:var(--text)}}
+
+/* Round 2: compact 13-inch service sections — each section targets one viewport, not all four at once */
+.services-page .services-intro{
+  min-height:62vh;
+  align-items:flex-start;
+  padding-top:15rem;
+  padding-bottom:5rem;
+}
+.services-intro h1{font-size:clamp(2.4rem,4.55vw,4.15rem)!important;line-height:1.06!important}
+.services-intro-copy,.services-section-lead{font-size:clamp(.95rem,1.15vw,1.08rem);line-height:1.68;color:var(--text-soft)}
+.services-page .services-viewport-section{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:6rem;
+  padding-bottom:6rem;
+}
+.services-page .services-viewport-section h2{font-size:clamp(2rem,3.55vw,3.25rem)!important;line-height:1.06!important}
+.services-page .services-card-grid,.services-page .services-focus-grid{margin-top:clamp(1.15rem,2.5svh,1.9rem)!important}
+.services-page .services-viewport-section > div + div{margin-top:clamp(1.5rem,3.2svh,2.4rem)!important}
+.services-page .glass-card{padding:clamp(1.2rem,1.8vw,1.65rem)!important}
+.services-page .glass-card h3{margin-top:clamp(1.1rem,2.4svh,1.8rem)!important;font-size:clamp(1.15rem,1.7vw,1.5rem)!important;line-height:1.12}
+.services-page .glass-card .long-copy{margin-top:.8rem!important;font-size:clamp(.86rem,.98vw,.96rem);line-height:1.58}
+.services-page .section-lead{margin-top:clamp(1rem,2.4svh,1.5rem)!important;font-size:clamp(.9rem,1.05vw,1rem);line-height:1.62}
+.services-page .process-step h3{margin-top:1.15rem!important}
+.services-page .process-step .long-copy{line-height:1.52}
+.services-page .services-focus-grid .focus-card{min-height:0}
+.services-page .services-focus-grid .focus-card .long-copy{font-size:clamp(.84rem,.92vw,.94rem);line-height:1.5}
+@media (min-width:900px) and (max-height:850px){
+  .services-page .services-intro{padding-top:11rem;padding-bottom:2rem}
+  .services-intro h1{font-size:clamp(2.45rem,4.35vw,3.75rem)!important}
+  .services-intro-copy{margin-top:1rem!important;font-size:.94rem;line-height:1.55}
+  .services-page .services-viewport-section{padding-top:4.5rem;padding-bottom:2.25rem}
+  .services-page .services-viewport-section h2{font-size:clamp(2.1rem,3.5vw,3rem)!important}
+  .services-page .services-section-lead,.services-page .section-lead{font-size:.9rem;line-height:1.5;margin-top:.8rem!important}
+  .services-page .services-viewport-section > div + div{margin-top:1.25rem!important}
+  .services-page .glass-card{padding:1.15rem!important}
+  .services-page .glass-card h3{margin-top:.8rem!important;font-size:1.06rem!important;line-height:1.1!important}
+  .services-page .glass-card .long-copy{font-size:.79rem;line-height:1.42;margin-top:.55rem!important}
+  .services-page .glass-card > div:first-child{width:2.35rem!important;height:2.35rem!important}
+  .services-page .glass-card > i{width:1.15rem!important;height:1.15rem!important}
+}
+@media (max-width:899px){
+  .services-page .services-intro,.services-page .services-viewport-section{min-height:auto;height:auto;max-height:none;overflow:visible}
+}
+
+
+/* Conversion CTA — Services */
+.start-project-wrap{padding-top:clamp(3rem,6vw,6rem);padding-bottom:clamp(3.5rem,7vw,7rem)}
+.start-project-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:clamp(2rem,5vw,5rem);align-items:stretch;padding:clamp(1.5rem,3.6vw,3.5rem);border:1px solid var(--border);border-radius:clamp(24px,2.6vw,36px);background:linear-gradient(145deg,color-mix(in srgb,var(--surface-strong) 94%,transparent),color-mix(in srgb,var(--surface) 86%,transparent));box-shadow:var(--card-shadow);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);overflow:hidden;position:relative}
+.start-project-card::before{content:'';position:absolute;inset:auto auto -36% -10%;width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.12),transparent 68%);pointer-events:none}
+.start-project-copy{position:relative;z-index:1;display:flex;flex-direction:column;min-height:100%}
+.start-project-title{margin-top:1rem;max-width:760px;font-size:clamp(2.35rem,4.2vw,4.4rem);line-height:.98;letter-spacing:-.052em;font-weight:700;color:var(--text)}
+.start-project-lead{margin-top:1.35rem;max-width:680px;font-size:clamp(.98rem,1.2vw,1.08rem);line-height:1.78;color:var(--text-soft)}
+.start-project-contact{margin-top:auto;padding-top:clamp(2.2rem,5vw,5rem);font-size:.82rem;line-height:1.75;color:var(--text-muted)}
+.start-project-contact a{color:var(--text);font-weight:650;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--text) 26%,transparent);transition:color .2s ease,border-color .2s ease}
+.start-project-contact a:hover{color:#3b82f6;border-color:#3b82f6}
+.start-project-form{position:relative;z-index:1;display:flex;flex-direction:column;gap:.9rem;padding:clamp(1.15rem,2vw,1.6rem);border:1px solid var(--border);border-radius:24px;background:color-mix(in srgb,var(--surface-strong) 88%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+[data-theme='light'] .start-project-form{background:rgba(255,255,255,.72);box-shadow:0 20px 55px rgba(35,55,90,.06),inset 0 1px 0 rgba(255,255,255,.96)}
+.start-project-field{display:flex;flex-direction:column;gap:.48rem}
+.start-project-field label{font-size:.72rem;font-weight:650;letter-spacing:.035em;color:var(--text-soft)}
+.start-project-field input,.start-project-field textarea{width:100%;border:1px solid var(--border);border-radius:14px;background:color-mix(in srgb,var(--surface) 76%,transparent);padding:.9rem 1rem;font:500 .94rem/1.45 'Inter',sans-serif;color:var(--text);outline:none;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.start-project-field textarea{min-height:132px;resize:vertical}
+.start-project-field input::placeholder,.start-project-field textarea::placeholder{color:var(--text-muted)}
+.start-project-field input:focus,.start-project-field textarea:focus{border-color:rgba(59,130,246,.65);box-shadow:0 0 0 4px rgba(59,130,246,.09);background:var(--surface-strong)}
+.start-project-submit{margin-top:.3rem;width:100%;min-height:50px;border:0;border-radius:999px;background:linear-gradient(90deg,#1d4ed8,#2563eb,#3b82f6);padding:.85rem 1.15rem;color:#fff;font-size:.92rem;font-weight:650;box-shadow:0 12px 34px rgba(37,99,235,.24);cursor:pointer;transition:transform .22s ease,filter .22s ease,box-shadow .22s ease}
+.start-project-submit:hover{transform:translateY(-1px);filter:brightness(1.06);box-shadow:0 16px 40px rgba(37,99,235,.30)}
+.start-project-submit:focus-visible{outline:2px solid #60a5fa;outline-offset:3px}
+.start-project-note{margin:0;font-size:.72rem;line-height:1.55;color:var(--text-muted)}
+@media(max-width:900px){.start-project-card{grid-template-columns:1fr;gap:1.5rem}.start-project-contact{padding-top:2rem}.start-project-form{padding:1rem}.start-project-title{font-size:clamp(2.25rem,9vw,3.4rem)}}
+.brand-logo{display:block;height:28px;width:auto}.brand-logo-dark{display:none}[data-theme='light'] .brand-logo-light{display:none}[data-theme='light'] .brand-logo-dark{display:block}
+
+@media(max-width:767px){
+  nav[aria-label="Hlavní navigace"]>div{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .mobile-nav{background:transparent!important;padding:0 .5rem!important;gap:.25rem!important}
+  .mobile-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .6rem;font-size:.9rem!important}
+  .section-wrap{padding-top:4rem;padding-bottom:4rem}
+  .page-hero{min-height:auto;padding-top:10rem;padding-bottom:3rem}
+}
+
+.ft-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:700px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.ft-grid{grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:3rem}}
+.ft-h{font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text);margin-bottom:.9rem}
+.footer-basic p{font-size:.88rem;line-height:1.7;color:var(--text-muted)}
+.footer-basic a{color:var(--text-soft);transition:color .2s}
+.footer-basic a:hover{color:#3b82f6}
+.ft-note{margin-top:1rem;max-width:22rem}
+.ft-small{margin-top:.6rem;font-size:.78rem;line-height:1.6}
+.ft-bottom{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;justify-content:space-between;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--text-muted)}
+.footer-basic .brand-logo{height:24px}
+
+.form-status{margin-top:.2rem;font-size:.86rem;line-height:1.5;color:var(--text-soft)}
+.form-status[data-state='ok']{color:#16a34a;font-weight:600}
+.form-status[data-state='err']{color:#dc2626;font-weight:600}
+.start-project-note a{color:#3b82f6;text-decoration:underline}
+.start-project-submit[disabled]{opacity:.65;cursor:progress}
+
+
+#hero3d .fallback-3d{display:none!important}
+
+#hero3d{background-image:url('images/pozadi/tmave.webp')!important;background-size:cover;background-position:center;background-repeat:no-repeat}
+[data-theme='light'] #hero3d{background-image:url('images/pozadi/svetle.webp')!important}
+@media(max-width:899px){#hero3d{background-image:url('images/pozadi/tmave-mobil.webp')!important}[data-theme='light'] #hero3d{background-image:url('images/pozadi/svetle-mobil.webp')!important}}
+.pozadi-clona{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(3,6,13,.82) 0%,rgba(3,6,13,.62) 45%,rgba(3,6,13,.78) 100%)}
+[data-theme='light'] .pozadi-clona{background:linear-gradient(180deg,rgba(247,249,252,.46) 0%,rgba(247,249,252,.26) 45%,rgba(247,249,252,.42) 100%)}
+
+/* ---------- spolecne pro nove stranky ---------- */
+.pg{position:relative;z-index:2}
+.pg-wrap{width:100%;max-width:1400px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+.pg-sec{padding:6rem 0}
+.pg-sec+.pg-sec{border-top:1px solid var(--border)}
+@media(max-width:767px){.pg-sec{padding:4rem 0}}
+
+.pg-kicker{font:600 clamp(.66rem,.9vw,.78rem) ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.28em;text-transform:uppercase;color:#2f86ff}
+.pg-h2{margin-top:.9rem;font-size:clamp(1.9rem,3.4vw,3rem);font-weight:800;letter-spacing:-.045em;line-height:1.05;color:var(--text);text-wrap:balance}
+.pg-lead{margin-top:1.1rem;max-width:58rem;font-size:clamp(.98rem,1.2vw,1.1rem);line-height:1.8;color:var(--text-soft)}
+.pg-lead b{color:var(--text);font-weight:600}
+
+/* hero */
+.pg-hero{position:relative;min-height:62vh;display:flex;align-items:flex-start;padding-top:15rem;padding-bottom:5rem}
+.pg-hero h1{margin-top:1rem;font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--text);text-wrap:balance}
+.pg-hero h1 span{color:#2f86ff}
+.pg-hero .pg-lead{margin-top:1.6rem;font-size:clamp(1rem,1.35vw,1.18rem)}
+.pg-badge{display:inline-flex;align-items:center;gap:.55rem;margin-top:2rem;padding:.55rem 1.1rem;border-radius:999px;border:1px solid rgba(47,134,255,.4);background:rgba(47,134,255,.1);font:600 .76rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#2f86ff}
+.pg-badge i{width:7px;height:7px;border-radius:50%;background:#2f86ff;box-shadow:0 0 10px #2f86ff}
+@media(max-width:767px){.pg-hero{padding-top:10rem;min-height:auto}}
+
+/* mrizky */
+.pg-grid{display:grid;gap:1rem;margin-top:2.6rem}
+.pg-g2{grid-template-columns:1fr}
+.pg-g3{grid-template-columns:1fr}
+.pg-g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:700px){.pg-g2{grid-template-columns:repeat(2,minmax(0,1fr))}.pg-g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.pg-g3{grid-template-columns:repeat(3,minmax(0,1fr))}.pg-g4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* karta */
+.pg-card{position:relative;padding:clamp(1.5rem,2.2vw,2rem);border-radius:1.25rem;border:1px solid var(--border);background:linear-gradient(150deg,var(--surface),transparent);backdrop-filter:blur(14px);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s ease}
+.pg-card:hover{transform:translateY(-4px);border-color:rgba(47,134,255,.35)}
+.pg-card h3{margin-top:1.3rem;font-size:clamp(1.05rem,1.4vw,1.28rem);font-weight:700;letter-spacing:-.025em;line-height:1.25;color:var(--text)}
+.pg-card p{margin-top:.8rem;font-size:.95rem;line-height:1.72;color:var(--text-soft)}
+.pg-ic{display:grid;place-items:center;width:3rem;height:3rem;border-radius:.9rem;border:1px solid rgba(47,134,255,.3);background:linear-gradient(150deg,rgba(47,134,255,.16),rgba(47,134,255,.04));color:#2f86ff;box-shadow:0 0 22px rgba(47,134,255,.14)}
+.pg-ic svg{width:1.4rem;height:1.4rem}
+.pg-num{font:700 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;color:#2f86ff}
+
+/* velka cisla */
+.pg-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:2.6rem;border:1px solid var(--border);border-radius:1.25rem;overflow:hidden;background:var(--border)}
+@media(min-width:900px){.pg-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.pg-stat{padding:clamp(1.4rem,2.2vw,2.1rem);background:var(--bg)}
+.pg-stat b{display:block;font-size:clamp(1.8rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:#2f86ff}
+.pg-stat span{display:block;margin-top:.7rem;font-size:.88rem;line-height:1.5;color:var(--text)}
+.pg-stat em{display:block;margin-top:.3rem;font-size:.8rem;font-style:normal;line-height:1.5;color:var(--text-muted)}
+
+/* kroky pod sebou */
+.pg-steps{margin-top:2.6rem;display:grid;gap:0}
+.pg-step{position:relative;display:grid;grid-template-columns:auto 1fr;gap:1.3rem;padding:1.6rem 0;border-top:1px solid var(--border)}
+.pg-step:last-child{border-bottom:1px solid var(--border)}
+.pg-step-n{display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;border:1px solid rgba(47,134,255,.4);background:rgba(47,134,255,.08);font:700 .95rem/1 'Inter',sans-serif;color:#2f86ff}
+.pg-step h3{font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:var(--text)}
+.pg-step p{margin-top:.55rem;font-size:.95rem;line-height:1.72;color:var(--text-soft);max-width:52rem}
+
+/* zvyrazneny vysledek */
+.pg-out{margin-top:2rem;padding:1.3rem 1.5rem;border-radius:1rem;border-left:3px solid #2f86ff;background:linear-gradient(90deg,rgba(47,134,255,.1),transparent)}
+.pg-out p{font-size:.98rem;line-height:1.72;color:var(--text-soft)}
+.pg-out b{color:var(--text);font-weight:600}
+
+/* citace */
+.pg-quote{position:relative;padding:clamp(1.6rem,2.4vw,2.2rem);border-radius:1.25rem;border:1px solid var(--border);background:var(--surface)}
+.pg-quote::before{content:"\201C";position:absolute;top:.3rem;left:1.2rem;font:700 3.6rem/1 Georgia,serif;color:rgba(47,134,255,.3)}
+.pg-quote .pg-num{display:block;margin-bottom:1rem}
+.pg-quote p{font-size:.98rem;line-height:1.8;color:var(--text-soft)}
+.pg-quote footer{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-muted)}
+.pg-quote footer b{display:block;color:var(--text);font-weight:600;font-size:.92rem}
+
+/* dve kolonky ano/ne */
+.pg-vs{display:grid;gap:1rem;margin-top:2.6rem}
+@media(min-width:800px){.pg-vs{grid-template-columns:1fr 1fr}}
+.pg-vs-box{padding:clamp(1.5rem,2.2vw,2rem);border-radius:1.25rem;border:1px solid var(--border);background:var(--surface)}
+.pg-vs-box h3{font:600 .76rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;text-transform:uppercase}
+.pg-vs-ano h3{color:#2f86ff}
+.pg-vs-ne h3{color:var(--text-muted)}
+.pg-vs-box ul{margin-top:1.3rem;display:grid;gap:.9rem}
+.pg-vs-box li{display:flex;gap:.8rem;font-size:.96rem;line-height:1.6;color:var(--text-soft)}
+.pg-vs-box li svg{flex:none;width:1.1rem;height:1.1rem;margin-top:.2rem}
+.pg-vs-ano li svg{color:#2f86ff}
+.pg-vs-ne li svg{color:var(--text-muted)}
+
+/* FAQ */
+.pg-faq{margin-top:2.6rem;display:grid;gap:0}
+.pg-faq details{border-top:1px solid var(--border)}
+.pg-faq details:last-child{border-bottom:1px solid var(--border)}
+.pg-faq summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.4rem 0;cursor:pointer;list-style:none;font-size:clamp(1rem,1.25vw,1.12rem);font-weight:600;letter-spacing:-.02em;color:var(--text)}
+.pg-faq summary::-webkit-details-marker{display:none}
+.pg-faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:50%;border:1px solid var(--border);font:400 1.2rem/1 'Inter',sans-serif;color:#2f86ff;transition:transform .3s ease}
+.pg-faq details[open] summary::after{content:"\2212";transform:rotate(180deg)}
+.pg-faq details p{padding:0 0 1.5rem;max-width:56rem;font-size:.96rem;line-height:1.8;color:var(--text-soft)}
+
+/* zaverecna vyzva */
+.pg-cta{margin-top:0;padding:clamp(2.4rem,4vw,3.6rem) clamp(1.5rem,3vw,3rem);border-radius:1.5rem;border:1px solid rgba(47,134,255,.4);background:linear-gradient(140deg,rgba(47,134,255,.18),rgba(47,134,255,.04));box-shadow:0 0 50px rgba(47,134,255,.16);text-align:center}
+.pg-cta h2{font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.12;color:var(--text)}
+.pg-cta p{margin-top:1rem;font-size:1.02rem;line-height:1.7;color:var(--text-soft)}
+.pg-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;margin-top:2rem;height:3.4rem;padding:0 2rem;border-radius:999px;font-size:.96rem;font-weight:500;color:#fff;background:linear-gradient(90deg,#1d4ed8,#2563eb 55%,#3b82f6);box-shadow:0 0 48px rgba(37,99,235,.3);transition:filter .25s ease}
+.pg-btn:hover{filter:brightness(1.1)}
+@media(max-width:639px){.pg-btn{width:100%}}
+
+/* trychtyr */
+.pg-funnel{margin-top:2rem;display:grid;gap:.6rem}
+.pg-funnel-row{display:grid;grid-template-columns:minmax(7rem,auto) 1fr auto;gap:1rem;align-items:center}
+.pg-funnel-row span{font:600 .78rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.pg-funnel-bar{height:2.4rem;border-radius:.5rem;background:linear-gradient(90deg,rgba(47,134,255,.75),rgba(47,134,255,.25));box-shadow:0 0 18px rgba(47,134,255,.2)}
+.pg-funnel-row b{font-size:1rem;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+@media(max-width:639px){.pg-funnel-row{grid-template-columns:1fr auto;gap:.5rem}.pg-funnel-row .pg-funnel-bar{grid-column:1/-1;height:1.6rem}}
+
+/* panel softwaru */
+.pg-panel{margin-top:2.6rem;padding:clamp(1.3rem,2.2vw,2rem);border-radius:1.5rem;border:1px solid var(--border);background:var(--surface);backdrop-filter:blur(16px)}
+.pg-panel-head{display:flex;align-items:center;gap:.7rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);font:600 .76rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.pg-panel-head i{width:8px;height:8px;border-radius:50%;background:#2f86ff;box-shadow:0 0 10px #2f86ff}
+.pg-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.4rem}
+@media(max-width:639px){.pg-kpis{grid-template-columns:1fr}}
+.pg-kpi{padding:1.1rem 1.2rem;border-radius:.9rem;border:1px solid var(--border);background:color-mix(in srgb,var(--bg) 55%,transparent)}
+.pg-kpi span{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.pg-kpi b{display:block;margin-top:.45rem;font-size:1.7rem;font-weight:800;letter-spacing:-.04em;color:var(--text);font-variant-numeric:tabular-nums}
+.pg-kpi em{font-style:normal;font-size:.8rem;color:#2f86ff}
+
+/* graf rustu */
+.pg-chart{padding:clamp(1.2rem,2vw,1.6rem);border-radius:1.25rem;border:1px solid var(--border);background:var(--surface)}
+.pg-chart header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.pg-chart .pg-num{display:block}
+.pg-chart h3{margin-top:.4rem;font-size:1.05rem;font-weight:700;letter-spacing:-.02em;color:var(--text)}
+.pg-chart strong{flex:none;font-size:1.6rem;font-weight:800;letter-spacing:-.04em;color:#2f86ff;line-height:1}
+.pg-chart svg{display:block;width:100%;height:auto}
+.pg-chart footer{margin-top:.8rem;font-size:.78rem;color:var(--text-muted)}
+
+/* znacky / stitky */
+.pg-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.3rem}
+.pg-tags span{padding:.4rem .8rem;border-radius:999px;border:1px solid var(--border);background:var(--surface);font-size:.8rem;color:var(--text-soft)}
+
+/* pruh na konci */
+.pg-strip{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:3rem;font:500 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted)}
+.pg-strip i{flex:1;max-width:11rem;height:1px;background:var(--border);font-style:normal}
+.pg-strip b{color:#2f86ff;font-weight:500}
+</style>
+<meta name="description" content="Firemní systémy a integrace, e-commerce a B2B platformy, mobilní a webové aplikace. Podívejte se, jak u nás probíhá spolupráce od analýzy po nasazení." />
+<link rel="canonical" href="https://www.clarix.cz/sluzby.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="CLARIX" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:title" content="Služby · CLARIX" />
+<meta property="og:description" content="Firemní systémy a integrace, e-commerce a B2B platformy, mobilní a webové aplikace. Podívejte se, jak u nás probíhá spolupráce od analýzy po nasazení." />
+<meta property="og:url" content="https://www.clarix.cz/sluzby.html" />
+<meta property="og:image" content="https://www.clarix.cz/images/nahled-sdileni.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Služby · CLARIX" />
+<meta name="twitter:description" content="Firemní systémy a integrace, e-commerce a B2B platformy, mobilní a webové aplikace. Podívejte se, jak u nás probíhá spolupráce od analýzy po nasazení." />
+<meta name="twitter:image" content="https://www.clarix.cz/images/nahled-sdileni.png" />
+</head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
+<div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
+<nav aria-label="Hlavní navigace" class="nav-enter fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
+  <div class="mx-auto w-full max-w-[1440px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--nav-bg)] shadow-[var(--nav-shadow)] backdrop-blur-2xl">
+    <div class="flex items-center justify-between px-3 py-2 sm:px-4">
+      <a href="index.html" class="group flex items-center" aria-label="CLARIX domů">
+        <img src="images/logo/clarix-logo-svetle.png" alt="CLARIX" width="113" height="28" class="brand-logo brand-logo-light">
+        <img src="images/logo/clarix-logo-tmave.png" alt="CLARIX" width="113" height="28" class="brand-logo brand-logo-dark">
+      </a>
+      <div class="desktop-nav hidden items-center gap-7 md:flex">
+        <a href="sluzby.html" class="text-sm font-medium text-[var(--text-soft)] transition-colors hover:text-[var(--text)]">Služby</a>
+        <a href="weby-nove-generace.html" class="text-sm font-medium text-[var(--text-soft)] transition-colors hover:text-[var(--text)]">Weby nové generace</a><a href="pripadove-studie.html" class="text-sm font-medium text-[var(--text-soft)] transition-colors hover:text-[var(--text)]">Projekty a reference</a>
+        <a href="clientelo.html" class="text-sm font-medium text-[var(--text-soft)] transition-colors hover:text-[var(--text)]">CLIENTELO</a><a href="strat3x.html" class="text-sm font-medium text-[var(--text-soft)] transition-colors hover:text-[var(--text)]">strat3x</a><a href="o-nas.html" class="text-sm font-medium text-[var(--text-soft)] transition-colors hover:text-[var(--text)]">O nás</a>
+      </div>
+      <div class="flex items-center gap-2.5">
+        <button id="theme-toggle" type="button" aria-label="Přepnout motiv" class="group relative flex h-9 w-[58px] items-center rounded-full border border-[var(--border)] bg-[var(--surface)] p-1 text-[var(--text)] backdrop-blur-xl transition-colors hover:bg-[var(--surface-strong)]">
+          <span class="theme-thumb absolute left-1 h-7 w-7 rounded-full shadow-sm"></span>
+          <span class="relative z-10 flex w-full items-center justify-between px-[3px]"><i data-lucide="moon" class="h-3.5 w-3.5"></i><i data-lucide="sun" class="h-3.5 w-3.5"></i></span>
+        </button>
+        <a href="o-nas.html#kontakt" class="magnetic relative inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-4 text-sm font-medium text-white shadow-[0_0_48px_rgba(37,99,235,0.30)] transition-[filter,background-color,border-color,box-shadow,color] duration-300 hover:brightness-110 sm:px-5"><span class="flex items-center gap-1.5"><span class="hidden sm:inline">Nezávazná konzultace</span><span class="sm:hidden">Konzultace</span><i data-lucide="arrow-up-right" class="h-4 w-4"></i></span></a>
+      </div>
+    </div>
+    <div class="mobile-nav"><a href="sluzby.html">Služby</a><a href="weby-nove-generace.html">Weby</a><a href="pripadove-studie.html">Projekty</a><a href="clientelo.html">Clientelo</a><a href="strat3x.html">strat3x</a><a href="o-nas.html">O nás</a></div>
+  </div>
+</nav>
+<main class="services-page relative z-10 w-full">
+  <section class="page-hero services-intro"><div class="mx-auto w-full max-w-[1440px] px-6 md:px-8"><div class="reveal is-visible max-w-5xl"><div class="page-kicker">// SLUŽBY</div><h1 class="mt-5 text-balance text-5xl font-extrabold leading-[.96] tracking-[-0.055em] sm:text-6xl lg:text-7xl">Technologie, která má jasný obchodní smysl.</h1><p class="services-intro-copy mt-7 max-w-4xl">Navrhujeme a stavíme digitální řešení, která nejsou jen technicky dokonalá, ale především generují zisk a šetří čas. Ať už potřebujete zefektivnit interní procesy komplexním systémem, nebo otevřít nové prodejní kanály, dodáme vám nástroje, které váš byznys posunou reálně vpřed. Inovace pro nás neznamená použití nejmódnějšího frameworku, ale nalezení nejkratší a nejefektivnější cesty k vašemu cíli.</p></div></div></section>
+  <div class="relative z-10 border-t border-[var(--border)] bg-[var(--page-overlay)] backdrop-blur-[2px]">
+    <section class="section-wrap services-viewport-section"><div class="reveal max-w-4xl"><div class="page-kicker">// PROČ CLARIX</div><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Proč CLARIX</h2><p class="services-section-lead mt-5">Neděláme technologické kompromisy. Vyvíjíme aplikace a webové platformy s ohledem na absolutní výkon, maximální bezpečnost a dokonalý uživatelský zážitek. Pokud máte vizi, která má ambici změnit váš trh, my máme kapacity a know-how ji do detailu zrealizovat.</p></div><div class="services-card-grid mt-8 grid gap-4 lg:grid-cols-3">
+      <article class="reveal glass-card p-7"><div class="grid h-11 w-11 place-items-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-500"><i data-lucide="gauge" class="h-5 w-5"></i></div><h3 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Řešení, která pohání váš byznys.</h3><p class="mt-4 long-copy">Od komplexních CRM po mobilní aplikace. Vyvíjíme software se zaměřením na výkon a měřitelné výsledky. Tvoříme systémy, které šetří náklady, zrychlují odbavení a otevírají nové prodejní kanály. Ať už jde o B2B platformy, SaaS nebo interní ekosystémy, dodáváme taková řešení, která akcelerují váš byznys a zanechají konkurenci o krok pozadu.</p></article>
+      <article class="reveal glass-card p-7"><div class="grid h-11 w-11 place-items-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-500"><i data-lucide="workflow" class="h-5 w-5"></i></div><h3 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Technologie, které vám usnadní práci.</h3><p class="mt-4 long-copy">Digitalizujeme a zjednodušujeme firemní agendu. Navnímáme do hloubky vaše procesy, identifikujeme problémová místa a automatizujeme denní agendu. Vytvoříme nástroje přesně na míru vašemu týmu - výsledkem je maximální efektivita, úspora času a vyšší výkon. Přebereme technologickou zátěž, abyste měli volné ruce k řízení svého byznysu.</p></article>
+      <article class="reveal glass-card p-7"><div class="grid h-11 w-11 place-items-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-500"><i data-lucide="rocket" class="h-5 w-5"></i></div><h3 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Digitální produkty bez limitů.</h3><p class="mt-4 long-copy">Architektura, špičkový design a vývoj na nejvyšší úrovni pro firmy, které chtějí definovat trh a mít na něm náskok. Posouváme technologické hranice. Ať už plánujete cokoli, dodáme vám technologickou převahu. Od neprůstřelného backendu po precizně vyladěný front-end – tvoříme produkty, které uživatelé milují a konkurence se je snaží dohnat.</p></article>
+    </div></section>
+    <section class="section-wrap services-viewport-section border-t border-[var(--border)]"><div class="reveal max-w-3xl"><div class="page-kicker">// NAŠE ZAMĚŘENÍ</div><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Naše zaměření</h2></div><div class="services-focus-grid mt-12 grid gap-4 lg:grid-cols-3">
+      <article class="reveal glass-card service-card focus-card p-7"><i data-lucide="network" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Firemní systémy a integrace</h3><p class="mt-4 long-copy">Vašemu byznysu dodáme infrastrukturu, která šetří čas, eliminuje lidské chyby a poskytuje managementu absolutní přehled nad každým procesem. Vytvoříme řešení, který se přizpůsobí vám, ne vy jemu. Spojíme vaše izolované programy do jednoho funkčního celku, automatizujeme administrativu a zajistíme bezpečný tok dat.</p></article>
+      <article class="reveal glass-card service-card focus-card p-7"><i data-lucide="shopping-cart" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">E-commerce a B2B platformy</h3><p class="mt-4 long-copy">Tvoříme prodejní platformy zaměřené na maximální výkon. Od komplexních B2B portálů po pokročilé B2C e-shopy napojené na účetnictví a skladové hospodářství. Klademe důraz na extrémní rychlost a stabilitu. Dodáme vám prodejní kanál, který je technicky bezchybný, generuje zisk a je připraven na váš další růst.</p></article>
+      <article class="reveal glass-card service-card focus-card p-7"><i data-lucide="smartphone" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Mobilní a webové aplikace</h3><p class="mt-4 long-copy">Inovativní digitální nástroje s perfektním designem. Vyvíjíme webové a mobilní aplikace, které přesně plní svůj obchodní účel. Zastřešíme kompletně celý proces od zadání až po publikaci. Získáte špičkový a moderní produkt, který dá vašemu byznysu reálný technologický náskok na trhu.</p></article>
+    </div></section>
+    <section class="section-wrap services-viewport-section border-t border-[var(--border)]"><div class="reveal max-w-4xl"><div class="page-kicker">// PROCES</div><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Proces: Jak to u nás funguje</h2><p class="section-lead mt-6">Od první schůzky po funkční systém. Spolupráce s námi je transparentní a přesně definovaná od A do Z. Každá fáze má jasně stanovený cíl, časový rámec a hmatatelný výstup. Pracujeme v rychlých iteracích – žádné týdny ticha bez výsledku. Nad vznikajícím produktem máte neustálou kontrolu a velmi brzy dostáváte do rukou první verze.</p></div><div class="mt-12 grid gap-4 lg:grid-cols-2">
+      <article class="reveal glass-card process-step p-7"><div class="font-mono text-xs font-semibold text-blue-500">01</div><h3 class="mt-8 text-2xl font-semibold">Discovery &amp; Analýza</h3><p class="mt-4 long-copy">Zmapujeme vaše byznysové procesy, datovou strukturu a definujeme problémová místa, která má nový systém vyřešit. V rámci mobilních aplikací pochopíme vaše uživatele a definujeme cíle projektu.</p></article>
+      <article class="reveal glass-card process-step p-7"><div class="font-mono text-xs font-semibold text-blue-500">02</div><h3 class="mt-8 text-2xl font-semibold">Technologická architektura</h3><p class="mt-4 long-copy">Navrhneme ideální strukturu, vybereme správné technologie a vyřadíme vše, co nepřináší reálnou hodnotu. Zpracujeme vizuální prototyp a ukážeme, jak bude produkt fungovat ještě před finálním vývojem.</p></article>
+      <article class="reveal glass-card process-step p-7"><div class="font-mono text-xs font-semibold text-blue-500">03</div><h3 class="mt-8 text-2xl font-semibold">Harmonogram a rozpočet</h3><p class="mt-4 long-copy">Připravíme detailní mapu projektu s jasnými milníky, prioritami a fixním finančním rámcem. Získáte absolutní přehled o termínech a rozpočtu. Žádná překvapení, pouze definované kroky.</p></article>
+      <article class="reveal glass-card process-step p-7"><div class="font-mono text-xs font-semibold text-blue-500">04</div><h3 class="mt-8 text-2xl font-semibold">Realizace a nasazení</h3><p class="mt-4 long-copy">Průběžně s vámi testujeme dílčí verze. Finální produkt bezpečně nasadíme do ostrého provozu a zaškolíme váš tým. Ohlídáme stabilitu a postaráme se o další rozvoj.</p></article>
+    </div></section>
+    <section class="section-wrap services-viewport-section border-t border-[var(--border)]"><div class="reveal max-w-4xl"><div class="page-kicker">// TECHNOLOGIE</div><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Technologie jako nástroj. Ne cíl.</h2><p class="section-lead mt-6">Technologii vybíráme podle cílů vašeho byznysu. Spoléháme na osvědčené a bezpečné frameworky. Pracujeme s moderním technologickým stackem, který zaručuje stabilitu, bezpečnost a bezproblémové škálování do budoucna.</p></div><div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="reveal glass-card p-6"><i data-lucide="gauge" class="h-5 w-5 text-blue-500"></i><h3 class="mt-8 text-lg font-semibold">Výkon &amp; Rychlost</h3><p class="mt-3 text-sm leading-6 text-[var(--text-soft)]">Rychlost odezvy a stabilita pod zátěží jsou prioritou. Výkon produktu měříme a optimalizujeme již od prvního nasazení.</p></article>
+      <article class="reveal glass-card p-6"><i data-lucide="layers-3" class="h-5 w-5 text-blue-500"></i><h3 class="mt-8 text-lg font-semibold">Škálovatelná architektura</h3><p class="mt-3 text-sm leading-6 text-[var(--text-soft)]">Stavíme systémy s robustním základem. Vaše aplikace bude připravena růst ruku v ruce s tím, jak se bude zvětšovat váš byznys.</p></article>
+      <article class="reveal glass-card p-6"><i data-lucide="braces" class="h-5 w-5 text-blue-500"></i><h3 class="mt-8 text-lg font-semibold">Udržitelnost řešení</h3><p class="mt-3 text-sm leading-6 text-[var(--text-soft)]">Nepíšeme jednorázové skripty. Klademe důraz na čistou architekturu a udržitelný základ, který lze snadno rozšiřovat a spravovat roky.</p></article>
+      <article class="reveal glass-card p-6"><i data-lucide="shield-check" class="h-5 w-5 text-blue-500"></i><h3 class="mt-8 text-lg font-semibold">Bezpečné nasazení</h3><p class="mt-3 text-sm leading-6 text-[var(--text-soft)]">Od prvotního prototypu až po spuštění do produkce. Zajišťujeme plynulý přechod a nasazení bez zbytečného provozního chaosu a výpadků.</p></article>
+    </div></section>
+  </div>
+<section class="section-wrap start-project-wrap border-t border-[var(--border)]" id="start-project">
+  <div class="reveal start-project-card">
+    <div class="start-project-copy">
+      <div>
+        <div class="page-kicker">// START PROJECT</div>
+        <h2 class="start-project-title">Pojďme se bavit o vašem projektu.</h2>
+        <p class="start-project-lead">Nezávazná konzultace. Odejdete s jasnou představou o technologickém řešení, časovém rámci a dalším postupu.</p>
+      </div>
+      <p class="start-project-contact">Spěcháte, nebo raději voláte? Zavolejte rovnou na <a href="tel:+420606589032">+420 606 589 032</a> nebo napište na <a href="mailto:info@clarix.cz">info@clarix.cz</a>.</p>
+    </div>
+    <form class="start-project-form" id="project-form" action="https://formsubmit.co/info@clarix.cz" method="POST">
+      <div class="start-project-field">
+        <label for="project-name">Jméno a příjmení</label>
+        <input id="project-name" name="name" type="text" autocomplete="name" placeholder="Jan Novák" required>
+      </div>
+      <div class="start-project-field">
+        <label for="project-phone">Telefonní číslo</label>
+        <input id="project-phone" name="phone" type="tel" autocomplete="tel" placeholder="+420 606 589 032" required>
+      </div>
+      <div class="start-project-field">
+        <label for="project-email">E-mail (volitelné)</label>
+        <input id="project-email" name="email" type="email" autocomplete="email" placeholder="jan.novak@firma.cz">
+      </div>
+      <div class="start-project-field">
+        <label for="project-description">Stručný popis projektu (volitelné)</label>
+        <textarea id="project-description" name="description" placeholder="Co chcete vytvořit nebo vyřešit?"></textarea>
+      </div>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
+      <button class="start-project-submit magnetic" type="submit">Odeslat nezávaznou poptávku</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p><p class="start-project-note">Odesláním souhlasíte se zpracováním uvedených údajů za účelem vyřízení poptávky. Podrobnosti najdete v <a href="zasady-ochrany-osobnich-udaju.html">Zásadách ochrany osobních údajů</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main><footer class="footer-basic relative z-10"><div class="mx-auto w-full max-w-[1440px] px-6 py-10 md:px-8">
+  <div class="ft-grid">
+    <div>
+      <img src="images/logo/clarix-logo-svetle.png" alt="CLARIX" width="113" height="28" class="brand-logo brand-logo-light">
+      <img src="images/logo/clarix-logo-tmave.png" alt="CLARIX" width="113" height="28" class="brand-logo brand-logo-dark">
+      <p class="ft-note">Prémiové digitální produkty · Firemní systémy · SaaS · Aplikace</p>
+    </div>
+    <div>
+      <h2 class="ft-h">Kontakt</h2>
+      <p><a href="tel:+420606589032">+420 606 589 032</a></p>
+      <p><a href="mailto:info@clarix.cz">info@clarix.cz</a></p>
+      <p><a href="o-nas.html#kontakt">Nezávazná konzultace</a></p>
+    </div>
+    <div>
+      <h2 class="ft-h">Web</h2>
+      <p><a href="sluzby.html">Služby</a></p>
+      <p><a href="weby-nove-generace.html">Weby nové generace</a></p>
+      <p><a href="pripadove-studie.html">Projekty</a></p>
+      <p><a href="clientelo.html">Clientelo</a></p>
+      <p><a href="strat3x.html">strat3x</a></p>
+      <p><a href="o-nas.html">O nás</a></p>
+    </div>
+    <div>
+      <h2 class="ft-h">Provozovatel</h2>
+      <p>Q9-Dimensions s.r.o.</p>
+      <p>Nerudova 209/10, Malá Strana<br>118 00 Praha 1</p>
+      <p>IČO 29648441 · DIČ CZ29648441</p>
+      <p class="ft-small">Zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, spisová značka C 450097.</p>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 CLARIX · Developer Studio</span>
+    <a href="zasady-ochrany-osobnich-udaju.html">Zásady ochrany osobních údajů</a>
+  </div>
+</div></footer></div>
+<script src="js/lucide.min.js"></script>
+<script type="module">
+const $=(q,root=document)=>root.querySelector(q); const $$=(q,root=document)=>[...root.querySelectorAll(q)];
+const safeStore={get(key){try{return window.localStorage?localStorage.getItem(key):null}catch{return null}},set(key,value){try{if(window.localStorage)localStorage.setItem(key,value)}catch{}}};
+const HEXAGONY=false; /* šestiúhelníkové pozadí: true = zapnuto */
+let theme=safeStore.get('clarix-theme')||'light'; document.documentElement.dataset.theme=theme;
+const themeToggle=$('#theme-toggle'); if(themeToggle) themeToggle.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';safeStore.set('clarix-theme',theme);document.documentElement.dataset.theme=theme;try{if(HEXAGONY) init3D()}catch(e){console.warn(e)}});
+try{if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.14});$$('.reveal').forEach(el=>io.observe(el));}else $$('.reveal').forEach(el=>el.classList.add('is-visible'));}catch{$$('.reveal').forEach(el=>el.classList.add('is-visible'));}
+try{$$('.magnetic').forEach(btn=>{let tx=0,ty=0,x=0,y=0,vx=0,vy=0,raf=0;const tick=()=>{const k=.24,d=.68;vx=(vx+(tx-x)*k)*d;vy=(vy+(ty-y)*k)*d;x+=vx;y+=vy;btn.style.setProperty('--mx',x+'px');btn.style.setProperty('--my',y+'px');if(Math.abs(tx-x)+Math.abs(ty-y)+Math.abs(vx)+Math.abs(vy)>.03)raf=requestAnimationFrame(tick);else raf=0};const wake=()=>{if(!raf)raf=requestAnimationFrame(tick)};btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();tx=((e.clientX-r.left-r.width/2)/(r.width/2))*10;ty=((e.clientY-r.top-r.height/2)/(r.height/2))*8;wake()});btn.addEventListener('mouseleave',()=>{tx=ty=0;wake()});});}catch(e){console.warn(e)}
+let gridInstance=null,gridCanvas=null,gridToken=0;
+async function init3D(){const token=++gridToken;const host=$('#hero3d');if(!host)return;if(gridInstance){try{gridInstance.dispose?.();gridInstance.three?.renderer?.dispose?.();gridInstance.three?.renderer?.forceContextLoss?.()}catch{}gridInstance=null}if(gridCanvas)gridCanvas.remove();const fallback=$('.fallback-3d',host);gridCanvas=document.createElement('canvas');gridCanvas.setAttribute('aria-hidden','true');Object.assign(gridCanvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',display:'block',pointerEvents:'none'});host.appendChild(gridCanvas);const light=theme==='light';try{const [gm,THREE]=await Promise.all([import('https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js'),import('https://cdn.jsdelivr.net/npm/three@0.170.0/+esm')]);if(token!==gridToken)return;const colors=light?[0xe6ebf2,0xf7f9fc]:[0x222222,0x222222];gridInstance=gm.default(gridCanvas,{type:'circle',colors,light1Color:0xffffff,light1Intensity:light?1312.5:1875,light1PositionZ:50,light2Color:0x0066ff,light2Intensity:light?1875:2812.5,light2PositionZ:-20,depthScale:3,materialParams:{metalness:light?.22:.5,roughness:light?.68:.5,clearcoat:1,clearcoatRoughness:light?.32:.2}});gridInstance.grid?.setColors?.(colors);if(gridInstance.three?.scene)gridInstance.three.scene.background=new THREE.Color(light?'#f7f9fc':'#0a0a0a');fallback.style.display='none';}catch(err){console.warn('3D fallback active',err);fallback.style.display='block';}}
+
+try{
+  const projectForm=document.querySelector('#project-form');
+  const formStatus=document.querySelector('#form-status');
+  const submitBtn=projectForm?projectForm.querySelector('button[type=submit]'):null;
+  const setStatus=(text,type)=>{ if(!formStatus) return; formStatus.textContent=text; formStatus.dataset.state=type||''; };
+  if(projectForm) projectForm.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!projectForm.reportValidity()) return;
+    const data=new FormData(projectForm);
+    const name=(data.get('name')||'').toString().trim();
+    const payload={
+      'Jméno a příjmení':name,
+      'Telefon':(data.get('phone')||'').toString().trim(),
+      'E-mail':(data.get('email')||'').toString().trim()||'(neuvedeno)',
+      'Popis projektu':(data.get('description')||'').toString().trim()||'(neuvedeno)',
+      _subject:'Nová poptávka z webu – '+(name||'CLARIX'),
+      _template:'table',
+      _captcha:'false',
+      _honey:(data.get('_honey')||'').toString()
+    };
+    if(payload._honey) return;
+    const original=submitBtn?submitBtn.textContent:'';
+    if(submitBtn){ submitBtn.disabled=true; submitBtn.textContent='Odesílám…'; }
+    setStatus('','');
+    try{
+      const res=await fetch('https://formsubmit.co/ajax/info@clarix.cz',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      projectForm.reset();
+      setStatus('Děkujeme, poptávku jsme přijali. Ozveme se vám co nejdřív.','ok');
+    }catch(err){
+      console.warn(err);
+      setStatus('Odeslání se nepodařilo. Napište nám prosím na info@clarix.cz nebo zavolejte na +420 606 589 032.','err');
+    }finally{
+      if(submitBtn){ submitBtn.disabled=false; submitBtn.textContent=original; }
+    }
+  });
+}catch(e){console.warn(e)}
+
+if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.lucide?.createIcons()); window.lucide?.createIcons();
+</script></body></html>

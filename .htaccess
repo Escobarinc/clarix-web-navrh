@@ -1,0 +1,31 @@
+# CLARIX - nastaveni pro Apache (Active24)
+
+# vsechny adresy svest na jednu: https://www.clarix.cz/
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) vynutit https
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://www.clarix.cz/$1 [R=301,L]
+
+  # 2) vynutit www
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^(.*)$ https://www.clarix.cz/$1 [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+# komprese
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+# jak dlouho si prohlizec smi pamatovat soubory
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
