@@ -8,11 +8,16 @@
   var KLIC_POZN  = 'clarix-upravy-poznamky';
   var STRANKA = (location.pathname.split('/').pop() || 'index.html');
 
-  /* zapnuto? */
-  var zapnuto = /[?&]uprava=1/.test(location.search) || sessionStorage.getItem('clarix-uprava') === '1';
-  if (/[?&]uprava=1/.test(location.search)) sessionStorage.setItem('clarix-uprava', '1');
-  if (/[?&]uprava=0/.test(location.search)) { sessionStorage.removeItem('clarix-uprava'); zapnuto = false; }
-  if (!zapnuto) return;
+  /* jaky rezim? uprava = psani, nahled = jen koukani na odeslane upravy */
+  if (/[?&]uprava=0/.test(location.search) || /[?&]nahled=0/.test(location.search)) {
+    sessionStorage.removeItem('clarix-uprava'); sessionStorage.removeItem('clarix-nahled');
+    return;
+  }
+  if (/[?&]uprava=1/.test(location.search)) { sessionStorage.setItem('clarix-uprava', '1'); sessionStorage.removeItem('clarix-nahled'); }
+  if (/[?&]nahled=1/.test(location.search)) { sessionStorage.setItem('clarix-nahled', '1'); sessionStorage.removeItem('clarix-uprava'); }
+  var REZIM = sessionStorage.getItem('clarix-uprava') === '1' ? 'uprava'
+            : sessionStorage.getItem('clarix-nahled') === '1' ? 'nahled' : null;
+  if (!REZIM) return;
 
   /* ---------- pomocné ---------- */
   function nacti(klic) { try { return JSON.parse(localStorage.getItem(klic) || '{}'); } catch (e) { return {}; } }
@@ -130,7 +135,7 @@
     spocitej();
   }, true);
 
-  function vykresliPoznamku(id, p, hnedPsat) {
+  function vykresliPoznamku(id, p, hnedPsat, jenCist) {
     var kotva = podleCesty(p.kotva) || document.body;
     if (getComputedStyle(kotva).position === 'static') kotva.style.position = 'relative';
     var box = document.createElement('div');
@@ -142,6 +147,12 @@
                     '<textarea placeholder="Co tady chcete změnit?"></textarea>';
     var ta = box.querySelector('textarea');
     ta.value = p.text || '';
+    if (jenCist) {
+      ta.readOnly = true;
+      box.querySelector('.up-pozn-smaz').remove();
+      kotva.appendChild(box);
+      return;
+    }
     ta.addEventListener('input', function () {
       var vse = nacti(KLIC_POZN);
       if (vse[STRANKA] && vse[STRANKA][id]) { vse[STRANKA][id].text = ta.value; uloz(KLIC_POZN, vse); }
@@ -259,11 +270,92 @@
     for (var i = 0; i < o.length; i++) {
       var h = o[i].getAttribute('href');
       if (!h || /^(#|mailto:|tel:|http)/.test(h)) continue;
-      if (h.indexOf('uprava=1') === -1) o[i].setAttribute('href', h + (h.indexOf('?') > -1 ? '&' : '?') + 'uprava=1');
+      var par = REZIM === 'nahled' ? 'nahled=1' : 'uprava=1';
+      if (h.indexOf(par) === -1) o[i].setAttribute('href', h + (h.indexOf('?') > -1 ? '&' : '?') + par);
     }
   }
 
+  /* ================= NÁHLED odeslaných úprav ================= */
+  var DAVKY = [];
+
+  function postavListuNahledu() {
+    var l = document.createElement('div');
+    l.className = 'up-lista';
+    l.innerHTML =
+      '<span class="up-znak up-znak-nahled">Náhled úprav</span>' +
+      '<select class="up-vyber"></select>' +
+      '<button type="button" class="up-btn up-zvyrazni up-aktivni">Zvýraznit změny</button>' +
+      '<span class="up-pocet"></span>' +
+      '<button type="button" class="up-btn up-konec">Zpět na původní web</button>';
+    document.body.appendChild(l);
+    l.querySelector('.up-zvyrazni').addEventListener('click', function () {
+      var zap = document.body.classList.toggle('up-bez-zvyrazneni');
+      this.classList.toggle('up-aktivni', !zap);
+    });
+    l.querySelector('.up-konec').addEventListener('click', function () {
+      sessionStorage.removeItem('clarix-nahled');
+      location.href = location.pathname;
+    });
+    l.querySelector('.up-vyber').addEventListener('change', function () {
+      sessionStorage.setItem('clarix-davka', this.value);
+      location.reload();
+    });
+    return l;
+  }
+
+  function naplnVyber(l) {
+    var sel = l.querySelector('.up-vyber');
+    var vybrano = sessionStorage.getItem('clarix-davka') || 'vse';
+    var html = '<option value="vse">Všechna odeslání dohromady</option>';
+    DAVKY.forEach(function (d, i) {
+      var c = d.cas ? new Date(d.cas).toLocaleString('cs-CZ', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }) : '?';
+      html += '<option value="' + i + '"' + (String(i) === vybrano ? ' selected' : '') + '>' + (d.kdo || 'bez podpisu') + ' · ' + c + '</option>';
+    });
+    sel.innerHTML = html;
+    if (vybrano === 'vse') sel.value = 'vse';
+  }
+
+  function nasadNahled(l) {
+    var vybrano = sessionStorage.getItem('clarix-davka') || 'vse';
+    var pouzit = vybrano === 'vse' ? DAVKY : [DAVKY[+vybrano]].filter(Boolean);
+    var pt = 0, pp = 0;
+    pouzit.forEach(function (d) {
+      var t = (d.texty || {})[STRANKA] || {};
+      Object.keys(t).forEach(function (c) {
+        var el = podleCesty(c);
+        if (!el) return;
+        el.textContent = t[c].novy;
+        el.classList.add('up-nahled-zmena');
+        el.setAttribute('title', 'Původně: ' + t[c].puvodni);
+        pt++;
+      });
+      var pz = (d.poznamky || {})[STRANKA] || {};
+      Object.keys(pz).forEach(function (id) { vykresliPoznamku('n' + id, pz[id], false, true); pp++; });
+    });
+    var pocet = l.querySelector('.up-pocet');
+    pocet.textContent = pt || pp ? (pt + ' změn · ' + pp + ' poznámek na téhle stránce')
+                                 : 'Na téhle stránce nic nezměnil';
+  }
+
+  function startNahled() {
+    var l = postavListuNahledu();
+    podrzOdkazy();
+    l.querySelector('.up-pocet').textContent = 'načítám…';
+    if (!window.CLARIX_DB) { l.querySelector('.up-pocet').textContent = 'úložiště není nastavené'; return; }
+    fetch(window.CLARIX_DB + '?pageSize=300').then(function (r) { return r.json(); }).then(function (j) {
+      DAVKY = (j.documents || []).map(function (d) {
+        var f = d.fields || {}, o = {};
+        try { o = JSON.parse((f.obsah && f.obsah.stringValue) || '{}'); } catch (e) {}
+        return { cas: (f.cas && f.cas.stringValue) || '', kdo: (f.kdo && f.kdo.stringValue) || '',
+                 texty: o.texty || {}, poznamky: o.poznamky || {} };
+      }).sort(function (a, b) { return (a.cas || '').localeCompare(b.cas || ''); });
+      naplnVyber(l);
+      nasadNahled(l);
+    }).catch(function () { l.querySelector('.up-pocet').textContent = 'nepovedlo se načíst'; });
+  }
+
   function start() {
+    if (REZIM === 'nahled') { startNahled(); return; }
     obnovTexty();
     obnovPoznamky();
     postavListu();

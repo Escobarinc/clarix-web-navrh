@@ -46,3 +46,12 @@ body.up-pridavam .up-editovatelne{pointer-events:none}
   .up-btn{padding:.45rem .6rem;font-size:.8rem}
   .up-pocet{width:100%;text-align:center;order:9}
 }
+
+/* ---------- náhled odeslaných úprav ---------- */
+.up-znak-nahled{background:#7a5af5}
+.up-vyber{max-width:17rem;padding:.45rem .6rem;border-radius:.4rem;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);color:#eaf0fb;font-size:.84rem;font-family:inherit;cursor:pointer}
+.up-vyber option{background:#0c1322;color:#eaf0fb}
+.up-nahled-zmena{background:rgba(30,155,99,.16);box-shadow:0 0 0 3px rgba(30,155,99,.16);border-radius:3px;
+  transition:background .2s ease,box-shadow .2s ease}
+body.up-bez-zvyrazneni .up-nahled-zmena{background:none;box-shadow:none}
