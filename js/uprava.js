@@ -8,15 +8,21 @@
   var KLIC_POZN  = 'clarix-upravy-poznamky';
   var STRANKA = (location.pathname.split('/').pop() || 'index.html');
 
+  /* Safari v soukromém okně umí na úložiště vyhodit výjimku — proto všechno přes try */
+  var nouze = {};
+  function sGet(k) { try { return sessionStorage.getItem(k); } catch (e) { return nouze[k] || null; } }
+  function sSet(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { nouze[k] = v; } }
+  function sDel(k) { try { sessionStorage.removeItem(k); } catch (e) {} delete nouze[k]; }
+
   /* jaky rezim? uprava = psani, nahled = jen koukani na odeslane upravy */
   if (/[?&]uprava=0/.test(location.search) || /[?&]nahled=0/.test(location.search)) {
-    sessionStorage.removeItem('clarix-uprava'); sessionStorage.removeItem('clarix-nahled');
+    sDel('clarix-uprava'); sDel('clarix-nahled');
     return;
   }
-  if (/[?&]uprava=1/.test(location.search)) { sessionStorage.setItem('clarix-uprava', '1'); sessionStorage.removeItem('clarix-nahled'); }
-  if (/[?&]nahled=1/.test(location.search)) { sessionStorage.setItem('clarix-nahled', '1'); sessionStorage.removeItem('clarix-uprava'); }
-  var REZIM = sessionStorage.getItem('clarix-uprava') === '1' ? 'uprava'
-            : sessionStorage.getItem('clarix-nahled') === '1' ? 'nahled' : null;
+  if (/[?&]uprava=1/.test(location.search)) { sSet('clarix-uprava', '1'); sDel('clarix-nahled'); }
+  if (/[?&]nahled=1/.test(location.search)) { sSet('clarix-nahled', '1'); sDel('clarix-uprava'); }
+  var REZIM = sGet('clarix-uprava') === '1' ? 'uprava'
+            : sGet('clarix-nahled') === '1' ? 'nahled' : null;
   if (!REZIM) return;
 
   /* ---------- pomocné ---------- */
@@ -258,7 +264,7 @@
     l.querySelector('.up-odeslat').addEventListener('click', odesli);
     l.querySelector('.up-stahnout').addEventListener('click', stahni);
     l.querySelector('.up-konec').addEventListener('click', function () {
-      sessionStorage.removeItem('clarix-uprava');
+      sDel('clarix-uprava');
       location.href = location.pathname;
     });
     spocitej();
@@ -293,11 +299,11 @@
       this.classList.toggle('up-aktivni', !zap);
     });
     l.querySelector('.up-konec').addEventListener('click', function () {
-      sessionStorage.removeItem('clarix-nahled');
+      sDel('clarix-nahled');
       location.href = location.pathname;
     });
     l.querySelector('.up-vyber').addEventListener('change', function () {
-      sessionStorage.setItem('clarix-davka', this.value);
+      sSet('clarix-davka', this.value);
       location.reload();
     });
     return l;
@@ -305,7 +311,7 @@
 
   function naplnVyber(l) {
     var sel = l.querySelector('.up-vyber');
-    var vybrano = sessionStorage.getItem('clarix-davka') || 'vse';
+    var vybrano = sGet('clarix-davka') || 'vse';
     var html = '<option value="vse">Všechna odeslání dohromady</option>';
     DAVKY.forEach(function (d, i) {
       var c = d.cas ? new Date(d.cas).toLocaleString('cs-CZ', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }) : '?';
@@ -316,7 +322,7 @@
   }
 
   function nasadNahled(l) {
-    var vybrano = sessionStorage.getItem('clarix-davka') || 'vse';
+    var vybrano = sGet('clarix-davka') || 'vse';
     var pouzit = vybrano === 'vse' ? DAVKY : [DAVKY[+vybrano]].filter(Boolean);
     var pt = 0, pp = 0;
     pouzit.forEach(function (d) {

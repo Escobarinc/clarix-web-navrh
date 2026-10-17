@@ -835,7 +835,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
 <meta name="twitter:title" content="strat3x · CLARIX" />
 <meta name="twitter:description" content="Strategic growth partner s odměnou navázanou na zisk klienta. Budujeme a škálujeme online businessy s minimálním růstem 3× za první rok." />
 <meta name="twitter:image" content="https://www.clarix.cz/images/nahled-sdileni.png" />
-  <link rel="stylesheet" href="css/uprava.css">
+  <link rel="stylesheet" href="css/uprava.css?v=3">
 </head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
 <div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
 <nav aria-label="Hlavní navigace" class="nav-enter fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
@@ -1160,6 +1160,6 @@ try{$$('.magnetic').forEach(btn=>{let tx=0,ty=0,x=0,y=0,vx=0,vy=0,raf=0;const ti
 let gridInstance=null,gridCanvas=null,gridToken=0;
 async function init3D(){const token=++gridToken;const host=$('#hero3d');if(!host)return;if(gridInstance){try{gridInstance.dispose?.();gridInstance.three?.renderer?.dispose?.();gridInstance.three?.renderer?.forceContextLoss?.()}catch{}gridInstance=null}if(gridCanvas)gridCanvas.remove();const fallback=$('.fallback-3d',host);gridCanvas=document.createElement('canvas');gridCanvas.setAttribute('aria-hidden','true');Object.assign(gridCanvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',display:'block',pointerEvents:'none'});host.appendChild(gridCanvas);const light=theme==='light';try{const [gm,THREE]=await Promise.all([import('https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js'),import('https://cdn.jsdelivr.net/npm/three@0.170.0/+esm')]);if(token!==gridToken)return;const colors=light?[0xe6ebf2,0xf7f9fc]:[0x222222,0x222222];gridInstance=gm.default(gridCanvas,{type:'circle',colors,light1Color:0xffffff,light1Intensity:light?1312.5:1875,light1PositionZ:50,light2Color:0x0066ff,light2Intensity:light?1875:2812.5,light2PositionZ:-20,depthScale:3,materialParams:{metalness:light?.22:.5,roughness:light?.68:.5,clearcoat:1,clearcoatRoughness:light?.32:.2}});gridInstance.grid?.setColors?.(colors);if(gridInstance.three?.scene)gridInstance.three.scene.background=new THREE.Color(light?'#f7f9fc':'#0a0a0a');fallback.style.display='none';}catch(err){console.warn('3D fallback active',err);fallback.style.display='block';}}
 if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.lucide?.createIcons()); window.lucide?.createIcons();
-</script>  <script src="js/uprava-config.js"></script>
-  <script src="js/uprava.js"></script>
+</script>  <script src="js/uprava-config.js?v=3"></script>
+  <script src="js/uprava.js?v=3"></script>
 </body></html>
