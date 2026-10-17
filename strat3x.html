@@ -800,6 +800,25 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .vy-radek{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.8rem;font-size:.94rem;color:var(--text-soft)}
 .vy-tecka{width:.7rem;height:.7rem;border-radius:50%}
 .vy-radek b{font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+
+/* ======== strat3x — případová studie ======== */
+.ps-box{display:grid;grid-template-columns:1fr;gap:clamp(.9rem,1.4vw,1.2rem);margin-top:clamp(2rem,3.2vw,3rem)}
+@media(min-width:900px){.ps-box{grid-template-columns:minmax(0,.62fr) minmax(0,1fr);align-items:stretch}}
+.ps-cisla{display:grid;gap:clamp(.9rem,1.4vw,1.2rem);align-content:space-between}
+.ps-cislo{padding:clamp(1.4rem,2.2vw,2rem);border-radius:1.1rem;
+  background:color-mix(in srgb,var(--bg) 78%,transparent);border:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.ps-cislo b{display:block;font-size:clamp(1.7rem,2.9vw,2.3rem);font-weight:800;letter-spacing:-.045em;line-height:1;color:#2f86ff}
+.ps-cislo span{display:block;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)}
+.ps-foto{border-radius:1.1rem;overflow:hidden;border:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.ps-foto img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:899px){.ps-foto img{height:auto}}
+.ps-citat{display:grid;grid-template-columns:auto 1fr;gap:clamp(1rem,1.8vw,1.6rem);margin-top:clamp(.9rem,1.4vw,1.2rem);
+  padding:clamp(1.5rem,2.4vw,2.2rem);border-radius:1.1rem;
+  background:color-mix(in srgb,#2f86ff 7%,transparent);border:1px solid color-mix(in srgb,#2f86ff 18%,transparent)}
+.ps-uvoz{font:800 2.6rem Georgia,serif;line-height:.8;color:#2f86ff}
+.ps-citat p{font-size:clamp(.98rem,1.15vw,1.08rem);line-height:1.75;color:var(--text-soft)}
+.ps-citat footer{margin-top:1rem;font-size:.88rem;color:var(--text-muted)}
+.ps-citat footer b{display:block;color:var(--text)}
 </style>
 <meta name="description" content="Strategic growth partner s odměnou navázanou na zisk klienta. Budujeme a škálujeme online businessy s minimálním růstem 3× za první rok." />
 <link rel="canonical" href="https://www.clarix.cz/strat3x.html" />
@@ -816,6 +835,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
 <meta name="twitter:title" content="strat3x · CLARIX" />
 <meta name="twitter:description" content="Strategic growth partner s odměnou navázanou na zisk klienta. Budujeme a škálujeme online businessy s minimálním růstem 3× za první rok." />
 <meta name="twitter:image" content="https://www.clarix.cz/images/nahled-sdileni.png" />
+  <link rel="stylesheet" href="css/uprava.css">
 </head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
 <div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
 <nav aria-label="Hlavní navigace" class="nav-enter fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
@@ -947,6 +967,34 @@ body.portfolio-mode #hero3d { opacity:.58; }
       </div>
     </div>
   </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Případová studie</div>
+      <h2 class="pg-h2 reveal">Jak jsme pomohli e-shopu ztrojnásobit obrat za 12 měsíců</h2>
+      <p class="pg-lead reveal">Z lokálního e-shopu jsme vybudovali značku s mezinárodním dosahem. Kombinace strategie, výkonnostního marketingu a automatizace přinesla měřitelné výsledky.</p>
+
+      <div class="ps-box">
+        <div class="ps-cisla reveal">
+          <div class="ps-cislo"><b>+210 %</b><span>růst obratu</span></div>
+          <div class="ps-cislo"><b>+68 %</b><span>noví zákazníci</span></div>
+          <div class="ps-cislo"><b>−42 %</b><span>náklady na akvizici</span></div>
+        </div>
+        <div class="ps-foto reveal">
+          <img src="images/sekce/notebook-stul.webp" alt="Pracovní stůl s notebookem" width="1448" height="1086" loading="lazy">
+        </div>
+      </div>
+
+      <blockquote class="ps-citat reveal">
+        <div class="ps-uvoz">&bdquo;</div>
+        <div>
+          <p>Spolupráce s CLARIX nám přinesla nejen konkrétní výsledky, ale i nový pohled na strategii celé firmy. Oceňujeme profesionální přístup a důraz na data.</p>
+          <footer><b>Majitel e-shopu</b>móda a doplňky, prodej do pěti zemí</footer>
+        </div>
+      </blockquote>
+    </div>
+  </section>
+
 
   <section class="pg-sec">
     <div class="pg-wrap">
@@ -1112,4 +1160,6 @@ try{$$('.magnetic').forEach(btn=>{let tx=0,ty=0,x=0,y=0,vx=0,vy=0,raf=0;const ti
 let gridInstance=null,gridCanvas=null,gridToken=0;
 async function init3D(){const token=++gridToken;const host=$('#hero3d');if(!host)return;if(gridInstance){try{gridInstance.dispose?.();gridInstance.three?.renderer?.dispose?.();gridInstance.three?.renderer?.forceContextLoss?.()}catch{}gridInstance=null}if(gridCanvas)gridCanvas.remove();const fallback=$('.fallback-3d',host);gridCanvas=document.createElement('canvas');gridCanvas.setAttribute('aria-hidden','true');Object.assign(gridCanvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',display:'block',pointerEvents:'none'});host.appendChild(gridCanvas);const light=theme==='light';try{const [gm,THREE]=await Promise.all([import('https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js'),import('https://cdn.jsdelivr.net/npm/three@0.170.0/+esm')]);if(token!==gridToken)return;const colors=light?[0xe6ebf2,0xf7f9fc]:[0x222222,0x222222];gridInstance=gm.default(gridCanvas,{type:'circle',colors,light1Color:0xffffff,light1Intensity:light?1312.5:1875,light1PositionZ:50,light2Color:0x0066ff,light2Intensity:light?1875:2812.5,light2PositionZ:-20,depthScale:3,materialParams:{metalness:light?.22:.5,roughness:light?.68:.5,clearcoat:1,clearcoatRoughness:light?.32:.2}});gridInstance.grid?.setColors?.(colors);if(gridInstance.three?.scene)gridInstance.three.scene.background=new THREE.Color(light?'#f7f9fc':'#0a0a0a');fallback.style.display='none';}catch(err){console.warn('3D fallback active',err);fallback.style.display='block';}}
 if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.lucide?.createIcons()); window.lucide?.createIcons();
-</script></body></html>
+</script>  <script src="js/uprava-config.js"></script>
+  <script src="js/uprava.js"></script>
+</body></html>

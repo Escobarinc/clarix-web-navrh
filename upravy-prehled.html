@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Přehled úprav · CLARIX</title>
+<link rel="stylesheet" href="css/pisma.css">
+<style>
+:root{--bg:#fff;--text:#0b1220;--soft:#4a5b76;--muted:#7488a6;--ram:#e3e9f3;--modra:#1668ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f6f8fb;color:var(--text);font:400 15px/1.6 'Inter',system-ui,sans-serif;padding:2rem 1rem 5rem}
+.obal{max-width:1000px;margin:0 auto}
+h1{font-size:1.9rem;font-weight:800;letter-spacing:-.04em}
+.popis{margin-top:.6rem;color:var(--soft);max-width:48rem}
+.radek{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:1.6rem}
+.btn{padding:.6rem 1rem;border-radius:6px;border:1px solid var(--ram);background:#fff;color:var(--text);
+  font-size:.9rem;font-weight:600;cursor:pointer}
+.btn.hlavni{background:var(--modra);border-color:var(--modra);color:#fff}
+.btn:hover{border-color:var(--modra)}
+.stav{font-size:.86rem;color:var(--muted)}
+.davka{margin-top:1.6rem;border:1px solid var(--ram);border-radius:6px;background:#fff;overflow:hidden}
+.davka>header{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;align-items:baseline;
+  padding:.9rem 1.1rem;border-bottom:1px solid var(--ram);background:#fbfcfe}
+.davka>header b{font-size:.95rem}
+.davka>header span{font-size:.82rem;color:var(--muted)}
+.skupina{padding:1.1rem}
+.skupina+.skupina{border-top:1px solid var(--ram)}
+.skupina h3{font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--modra)}
+.zmena{margin-top:.9rem;padding:.8rem;border:1px solid var(--ram);border-radius:4px;background:#fbfcfe}
+.zmena .kde{font:600 .72rem ui-monospace,Menlo,monospace;color:var(--muted);word-break:break-all}
+.puv{margin-top:.45rem;padding:.4rem .55rem;border-radius:3px;background:#fdeaea;color:#8c2d2d;text-decoration:line-through}
+.nov{margin-top:.3rem;padding:.4rem .55rem;border-radius:3px;background:#e8f6ee;color:#1d6b43;font-weight:600}
+.pozn{margin-top:.9rem;padding:.8rem;border:1px solid #e3c84b;border-radius:4px;background:#fff6c2;color:#2c2503}
+.pozn .kde{color:#7a6412}
+.prazdno{margin-top:2rem;padding:2rem;border:1px dashed var(--ram);border-radius:6px;background:#fff;
+  text-align:center;color:var(--muted)}
+</style></head><body>
+<div class="obal">
+  <h1>Přehled úprav webu</h1>
+  <p class="popis">Co kolega na webu přepsal a jaké poznámky k tomu napsal. Načte se buď z online úložiště, nebo
+    ze souboru, který si stáhl tlačítkem „Stáhnout“.</p>
+
+  <div class="radek">
+    <button class="btn hlavni" id="nacti">Načíst z úložiště</button>
+    <button class="btn" id="vyber">Otevřít stažený soubor</button>
+    <input type="file" id="soubor" accept="application/json" hidden multiple>
+    <span class="stav" id="stav"></span>
+  </div>
+
+  <div id="vysledek"></div>
+</div>
+
+<script src="js/uprava-config.js"></script>
+<script>
+var vysledek = document.getElementById('vysledek'), stav = document.getElementById('stav');
+
+function utec(t){var d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML;}
+
+function vykresli(davky){
+  if(!davky.length){ vysledek.innerHTML='<div class="prazdno">Zatím tu nic není.</div>'; return; }
+  davky.sort(function(a,b){return (b.cas||'').localeCompare(a.cas||'');});
+  vysledek.innerHTML = davky.map(function(d){
+    var casText = d.cas ? new Date(d.cas).toLocaleString('cs-CZ') : 'neznámý čas';
+    var telo = '';
+    var strankyTexty = d.texty || {}, strankyPozn = d.poznamky || {};
+    var vsechny = {};
+    Object.keys(strankyTexty).forEach(function(s){vsechny[s]=1;});
+    Object.keys(strankyPozn).forEach(function(s){vsechny[s]=1;});
+    Object.keys(vsechny).sort().forEach(function(s){
+      var t = strankyTexty[s]||{}, p = strankyPozn[s]||{};
+      var kusy = Object.keys(t).map(function(c){
+        return '<div class="zmena"><div class="kde">'+utec(c)+'</div>'+
+               '<div class="puv">'+utec(t[c].puvodni)+'</div>'+
+               '<div class="nov">'+utec(t[c].novy)+'</div></div>';
+      }).concat(Object.keys(p).map(function(id){
+        return '<div class="pozn"><div class="kde">poznámka · '+utec(p[id].kotva||'')+'</div>'+
+               '<div style="margin-top:.4rem">'+utec(p[id].text||'(prázdná)')+'</div></div>';
+      }));
+      if(kusy.length) telo += '<div class="skupina"><h3>'+utec(s)+'</h3>'+kusy.join('')+'</div>';
+    });
+    if(!telo) telo = '<div class="skupina"><p class="stav">Žádné změny.</p></div>';
+    return '<div class="davka"><header><b>'+utec(d.kdo||'Úpravy')+'</b><span>'+utec(casText)+'</span></header>'+telo+'</div>';
+  }).join('');
+}
+
+document.getElementById('nacti').addEventListener('click', function(){
+  if(!window.CLARIX_DB){ stav.textContent='Online úložiště zatím není nastavené — použijte stažený soubor.'; return; }
+  stav.textContent='Načítám…';
+  fetch(window.CLARIX_DB).then(function(r){return r.json();}).then(function(j){
+    var davky = (j.documents||[]).map(function(d){
+      var f = d.fields||{};
+      var o = {}; try { o = JSON.parse((f.obsah&&f.obsah.stringValue)||'{}'); } catch(e){}
+      return { cas:(f.cas&&f.cas.stringValue)||'', kdo:(f.kdo&&f.kdo.stringValue)||'',
+               texty:o.texty||{}, poznamky:o.poznamky||{} };
+    });
+    stav.textContent = davky.length ? davky.length+' odeslání' : 'Úložiště je prázdné.';
+    vykresli(davky);
+  }).catch(function(){ stav.textContent='Nepovedlo se načíst úložiště.'; });
+});
+
+document.getElementById('vyber').addEventListener('click', function(){ document.getElementById('soubor').click(); });
+document.getElementById('soubor').addEventListener('change', function(e){
+  var davky=[], zbyva=e.target.files.length;
+  if(!zbyva) return;
+  Array.prototype.forEach.call(e.target.files, function(f){
+    var c=new FileReader();
+    c.onload=function(){ try{ davky.push(JSON.parse(c.result)); }catch(err){}
+      if(--zbyva===0){ stav.textContent=davky.length+' souborů načteno'; vykresli(davky); } };
+    c.readAsText(f);
+  });
+});
+</script>
+</body></html>
