@@ -776,7 +776,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .lk-tile:hover .lk-tip,.lk-tile:focus-visible .lk-tip{opacity:1;visibility:visible;transform:translateY(0)}
 @media(hover:none){.lk-tip{position:static;translate:none;width:auto;opacity:1;visibility:visible;transform:none;margin-top:.2rem;background:none;border:0;box-shadow:none;backdrop-filter:none;padding:0;font-size:.78rem}}
 
-.lk-cta{margin-top:3rem;display:inline-flex;align-items:center;justify-content:space-between;gap:clamp(1rem,3vw,3rem);width:min(46rem,100%);padding:1.15rem clamp(1.2rem,2.6vw,2.2rem);border-radius:1rem;border:1px solid rgba(47,134,255,.55);background:linear-gradient(140deg,rgba(47,134,255,.2),rgba(47,134,255,.05));box-shadow:0 0 44px rgba(47,134,255,.3),inset 0 0 26px rgba(47,134,255,.12);text-decoration:none;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease}
+.lk-cta{margin-top:9.5rem;display:inline-flex;align-items:center;justify-content:space-between;gap:clamp(1rem,3vw,3rem);width:min(46rem,100%);padding:1.15rem clamp(1.2rem,2.6vw,2.2rem);border-radius:1rem;border:1px solid rgba(47,134,255,.55);background:linear-gradient(140deg,rgba(47,134,255,.2),rgba(47,134,255,.05));box-shadow:0 0 44px rgba(47,134,255,.3),inset 0 0 26px rgba(47,134,255,.12);text-decoration:none;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease}
 .lk-cta:hover{transform:translateY(-3px);box-shadow:0 0 62px rgba(47,134,255,.45),inset 0 0 30px rgba(47,134,255,.18)}
 .lk-cta span{text-align:left;font-size:clamp(.95rem,1.75vw,1.45rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;text-transform:uppercase;color:var(--text)}
 .lk-cta span b{display:block;color:#2f86ff;font-weight:800}
@@ -921,6 +921,16 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .pg-strip{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:3rem;font:500 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted)}
 .pg-strip i{flex:1;max-width:11rem;height:1px;background:var(--border);font-style:normal}
 .pg-strip b{color:#2f86ff;font-weight:500}
+
+/* oprava: bublina s popisem dlazdice byla pruhledna a prekryvala tlacitko */
+.lk-tip{z-index:60;background:var(--bg);border-color:color-mix(in srgb,var(--text) 14%,transparent);
+  box-shadow:0 18px 44px rgba(0,0,0,.22),0 2px 8px rgba(0,0,0,.1);backdrop-filter:none;-webkit-backdrop-filter:none}
+[data-theme='light'] .lk-tip{background:#fff;box-shadow:0 18px 44px rgba(15,23,42,.16),0 2px 8px rgba(15,23,42,.08)}
+/* u krajnich dlazdic bublinu zarovnat dovnitr, aby nepretekala z obrazovky */
+@media(hover:hover){
+  .lk-tiles>*:first-child .lk-tip{left:0;translate:0 0}
+  .lk-tiles>*:last-child .lk-tip{left:auto;right:0;translate:0 0}
+}
 </style>
 <meta name="description" content="Weby připravené na AI vyhledávání a nová SEO pravidla: AI-ready architektura, technické SEO, obsah pro AI odpovědi, rychlost a konverze." />
 <link rel="canonical" href="https://www.clarix.cz/weby-nove-generace.html" />
