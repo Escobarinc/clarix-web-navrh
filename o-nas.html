@@ -727,6 +727,34 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .pg-strip{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:3rem;font:500 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted)}
 .pg-strip i{flex:1;max-width:11rem;height:1px;background:var(--border);font-style:normal}
 .pg-strip b{color:#2f86ff;font-weight:500}
+
+/* ======== O nás — horní část na fotce kanceláře ======== */
+.on{position:relative;z-index:2;width:100%;max-width:1860px;margin:6.2rem auto 0;padding:0 clamp(.75rem,1.6vw,1.6rem)}
+.on-box{position:relative;border-radius:1.5rem;overflow:hidden;border:1px solid color-mix(in srgb,var(--text) 9%,transparent);
+  box-shadow:0 30px 80px color-mix(in srgb,var(--text) 8%,transparent)}
+.on-foto{position:absolute;inset:0;z-index:0}
+.on-foto img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.on-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,
+  color-mix(in srgb,var(--bg) 88%,transparent) 0%,
+  color-mix(in srgb,var(--bg) 72%,transparent) 38%,
+  color-mix(in srgb,var(--bg) 42%,transparent) 62%,
+  color-mix(in srgb,var(--bg) 25%,transparent) 100%)}
+.on-obsah{position:relative;z-index:1;padding:clamp(2rem,3.6vw,3.6rem)}
+.on-kicker{font:600 .76rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:#1668ff}
+.on-obsah h1{margin-top:1.1rem;font-size:clamp(2rem,4.2vw,3.6rem);font-weight:800;letter-spacing:-.05em;line-height:1.04;color:var(--text)}
+.on-lead{margin-top:1.2rem;max-width:40rem;font-size:clamp(.98rem,1.15vw,1.08rem);line-height:1.75;color:var(--text-soft)}
+.on-karty{display:grid;grid-template-columns:1fr;gap:clamp(.8rem,1.3vw,1.1rem);margin-top:clamp(2rem,3.4vw,3rem)}
+@media(min-width:900px){.on-karty{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.on-karta{padding:clamp(1.5rem,2.2vw,2rem);border-radius:1.1rem;
+  background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid color-mix(in srgb,var(--text) 8%,transparent);transition:transform .3s ease,border-color .3s ease}
+.on-karta:hover{transform:translateY(-3px);border-color:rgba(22,104,255,.35)}
+.on-ikona{display:grid;place-items:center;width:2.8rem;height:2.8rem;border-radius:.75rem;background:rgba(22,104,255,.12);color:#1668ff}
+.on-ikona svg{width:1.3rem;height:1.3rem}
+.on-karta h2{margin-top:1.4rem;font-size:clamp(1.05rem,1.35vw,1.25rem);font-weight:800;letter-spacing:-.025em;line-height:1.25;color:var(--text)}
+.on-karta p{margin-top:.9rem;font-size:.94rem;line-height:1.72;color:var(--text-soft)}
+@media(max-width:899px){.on{margin-top:5.5rem}
+  .on-foto::after{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 92%,transparent))}}
 </style>
 <meta name="description" content="Kdo jsme a jak přemýšlíme. Technologie bereme jako nástroj k růstu vašeho byznysu. Napište nám nebo zavolejte na +420 606 589 032." />
 <link rel="canonical" href="https://www.clarix.cz/o-nas.html" />
@@ -769,13 +797,28 @@ body.portfolio-mode #hero3d { opacity:.58; }
   </div>
 </nav>
 <main class="relative z-10 w-full">
-  <section class="page-hero"><div class="mx-auto w-full max-w-[1440px] px-6 md:px-8"><div class="reveal is-visible max-w-5xl"><div class="page-kicker">O NÁS</div><h1 class="mt-5 text-balance text-5xl font-extrabold leading-[.96] tracking-[-0.055em] sm:text-6xl lg:text-7xl">Kdo jsme a jak přemýšlíme</h1><p class="section-lead mt-6">V CLARIX propojujeme tři světové standardy vývoje. Stavíme na pevných základech, rozumíme byznysu a díváme se do budoucnosti.</p></div></div></section>
-  <div class="relative z-10 border-t border-[var(--border)] bg-[var(--page-overlay)] backdrop-blur-[2px]">
-    <section class="section-wrap"><div class="grid gap-4 lg:grid-cols-3">
-      <article class="reveal glass-card p-7"><div class="grid h-11 w-11 place-items-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-500"><i data-lucide="shield-check" class="h-5 w-5"></i></div><h2 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Stabilní partner pro váš rozvoj</h2><p class="mt-4 long-copy">Spolehlivost, bezpečnost a dlouhodobá vize. To jsou pilíře, na kterých stavíme. V CLARIX propojujeme léta praxe z vývoje složitých firemních systémů s pečlivou analýzou. Neteoretizujeme. Nasloucháme vašim potřebám a dodáváme robustní řešení, na která se váš byznys může spolehnout i za deset let.</p></article>
-      <article class="reveal glass-card p-7"><div class="grid h-11 w-11 place-items-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-500"><i data-lucide="briefcase-business" class="h-5 w-5"></i></div><h2 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Technologie, které rozumí byznysu</h2><p class="mt-4 long-copy">Nejsme jen vývojáři, jsme vaši technologičtí partneři. Technologie pro nás nejsou cílem, ale nástrojem k reálnému růstu. Než napíšeme první řádek, chceme do hloubky poznat vaše procesy a cíle. Věříme, že ty nejúspěšnější produkty vznikají tam, kde se špičkové inženýrství potkává se selským rozumem.</p></article>
-      <article class="reveal glass-card p-7"><div class="grid h-11 w-11 place-items-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-500"><i data-lucide="sparkles" class="h-5 w-5"></i></div><h2 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Měníme odvážné vize v realitu</h2><p class="mt-4 long-copy">Svět technologií nečeká. Jsme inovační studio pro firmy, které chtějí definovat pravidla svého trhu. Spojujeme kreativní designéry a strategické myslitele, kteří se nebojí výzev. Využíváme nejmodernější technologické stacky k vytvoření produktů, které předběhnou dobu a nechají konkurenci za sebou.</p></article>
-    </div></section>
+  <section class="on reveal is-visible"><div class="on-box">
+    <div class="on-foto"><img src="images/pozadi/kancelar-clarix.webp" alt="Kancelář CLARIX" width="2164" height="727"></div>
+    <div class="on-obsah">
+      <div class="on-kicker">O nás</div>
+      <h1>Kdo jsme a jak přemýšlíme</h1>
+      <p class="on-lead">V CLARIX propojujeme tři světové standardy vývoje. Stavíme na pevných základech, rozumíme byznysu a díváme se do budoucnosti.</p>
+      <div class="on-karty">
+        <article class="on-karta reveal">
+          <span class="on-ikona"><i data-lucide="shield-check"></i></span>
+          <h2>Stabilní partner pro váš rozvoj</h2><p>Spolehlivost, bezpečnost a dlouhodobá vize. To jsou pilíře, na kterých stavíme. V CLARIX propojujeme léta praxe z vývoje složitých firemních systémů s pečlivou analýzou. Nasloucháme vašim potřebám a dodáváme robustní řešení, na která se váš byznys může spolehnout i za deset let.</p>
+        </article>
+        <article class="on-karta reveal">
+          <span class="on-ikona"><i data-lucide="briefcase-business"></i></span>
+          <h2>Technologie, které rozumí byznysu</h2><p>Nejsme jen vývojáři, jsme vaši technologičtí partneři. Technologie pro nás nejsou cílem, ale nástrojem k reálnému růstu. Než napíšeme první řádek, chceme do hloubky poznat vaše procesy a cíle. Věříme, že ty nejúspěšnější produkty vznikají tam, kde se špičkové inženýrství potkává se selským rozumem.</p>
+        </article>
+        <article class="on-karta reveal">
+          <span class="on-ikona"><i data-lucide="sparkles"></i></span>
+          <h2>Měníme odvážné vize v realitu</h2><p>Svět technologií nečeká. Jsme inovační studio pro firmy, které chtějí definovat pravidla svého trhu. Spojujeme kreativní designéry a strategické myslitele, kteří se nebojí výzev. Využíváme nejmodernější technologické stacky k vytvoření produktů, které předběhnou dobu a nechají konkurenci za sebou.</p>
+        </article>
+      </div>
+    </div>
+  </div></section>
     <section class="section-wrap border-t border-[var(--border)]"><div class="reveal max-w-3xl"><div class="page-kicker">NAŠE DNA</div><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Naše DNA: <span class="text-blue-500">Clarix - we know how.</span></h2></div><div class="mt-12 grid gap-4 lg:grid-cols-3">
       <article class="reveal glass-card dna-card p-7"><i data-lucide="chart-no-axes-combined" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold">Myslíme byznysově</h3><p class="mt-4 long-copy">Nedodáváme jen kód, dodáváme řešení. Než napíšeme první řádek, chceme znát vaše cíle, procesy a úzká hrdla. Tvoříme software, který se zaplatí.</p></article>
       <article class="reveal glass-card dna-card p-7"><i data-lucide="cpu" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold">Technologická excelence</h3><p class="mt-4 long-copy">Neděláme kompromisy v kvalitě. Architekturu stavíme tak, aby byla bezpečná, škálovatelná a udržitelná i za několik let.</p></article>

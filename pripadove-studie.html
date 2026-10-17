@@ -575,7 +575,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .cs-group-head{padding:4.5rem 0 1rem;border-bottom:1px solid var(--border)}
 .cs-group-head h2{margin-top:.75rem;font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-.045em;line-height:1.05}
 .cs-row{display:grid;grid-template-columns:1fr;gap:1.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
-@media(min-width:900px){.cs-row{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem;align-items:center;padding:3.5rem 0}.cs-row.is-reverse{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.cs-row.is-reverse .cs-media{order:2}.cs-row.is-reverse .cs-copy{order:1}}
+@media(min-width:900px){.cs-row{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem;align-items:center;padding:3.5rem 0}.cs-row.is-reverse{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.cs-row.is-reverse .cs-media{min-height:clamp(240px,22vw,320px);margin:0;border-radius:0;padding:clamp(1.5rem,2.5vw,2.5rem);background:none;border:0}.cs-row.is-reverse .cs-copy{order:1}}
 .cs-media{display:flex;justify-content:center;align-items:center;min-height:320px;padding:1.5rem;border-radius:1.25rem}
 .cs-img{height:280px;width:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28))}
 .cs-img-light{display:none}
@@ -756,6 +756,84 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .pg-strip{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:3rem;font:500 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted)}
 .pg-strip i{flex:1;max-width:11rem;height:1px;background:var(--border);font-style:normal}
 .pg-strip b{color:#2f86ff;font-weight:500}
+
+/* ======== Projekty a reference — nový vzhled ======== */
+.cs-wrap{max-width:1560px!important;padding-left:clamp(.75rem,1.6vw,1.6rem)!important;padding-right:clamp(.75rem,1.6vw,1.6rem)!important;padding-top:1.5rem!important}
+
+/* filtr drží nahoře u okraje a plave nad obsahem */
+.cs-filters{position:sticky;top:6.2rem;z-index:30;margin:0 0 .5rem auto;background:var(--bg);
+  border:1px solid color-mix(in srgb,var(--text) 10%,transparent);backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:0 10px 30px color-mix(in srgb,var(--text) 8%,transparent)}
+.cs-filter.is-active{background:#1668ff;box-shadow:0 4px 14px rgba(22,104,255,.3)}
+
+/* nadpis skupiny vlevo, bez linky pres celou sirku */
+.cs-group-head{padding:2.5rem 0 1.2rem;border-bottom:0;margin-top:-3.6rem;max-width:34rem}
+.cs-group-head h2{font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:800;letter-spacing:-.04em}
+.cs-group:first-of-type .cs-group-head{margin-top:0}
+
+/* projekt = bílá karta */
+.cs-row{padding:0;border-bottom:0;margin-bottom:clamp(.8rem,1.4vw,1.1rem);gap:0;
+  border-radius:1.25rem;background:none;
+  border:1px solid color-mix(in srgb,var(--text) 9%,transparent);
+  box-shadow:0 18px 50px color-mix(in srgb,var(--text) 5%,transparent);overflow:hidden;
+  transition:border-color .3s ease,transform .3s ease}
+.cs-row:hover{border-color:rgba(22,104,255,.35);transform:translateY(-3px)}
+@media(min-width:900px){
+  .cs-row{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;align-items:center}
+  .cs-row.is-reverse .cs-media{order:0}
+  .cs-row.is-reverse .cs-copy{order:1}
+}
+.cs-media{min-height:clamp(240px,22vw,320px);margin:0;border-radius:0;padding:clamp(1.5rem,2.5vw,2.5rem);
+  background:color-mix(in srgb,var(--bg) 35%,transparent);border:0}
+.cs-img{height:clamp(170px,16vw,250px)}
+.cs-copy{padding:clamp(1.6rem,2.6vw,2.6rem)}
+.cs-copy .case-label{font:600 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)}
+.cs-title{margin-top:.6rem;font-size:clamp(1.5rem,2.3vw,2rem);font-weight:800}
+.cs-copy p{margin-top:.9rem;font-size:.96rem;line-height:1.75;color:var(--text-soft);max-width:44rem}
+
+/* tlačítko u projektu */
+.cs-btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.6rem;height:2.9rem;padding:0 1.35rem;
+  border-radius:.7rem;border:1px solid color-mix(in srgb,var(--text) 14%,transparent);background:var(--bg);
+  font-size:.92rem;font-weight:600;color:var(--text);transition:border-color .25s ease}
+.cs-btn:hover{border-color:#1668ff;color:#1668ff}
+
+/* pozadi stranky Projekty: rozostrena kancelar */
+/* sirka 100 %, aby byla videt rostlina vlevo i pohovka vpravo; dole dobarveno */
+#hero3d,[data-theme='light'] #hero3d,[data-theme='dark'] #hero3d{
+  background-image:url('images/pozadi/kancelar-clarix.webp')!important;
+  background-size:cover!important;background-position:center center!important;transform:scale(1.04);background-repeat:no-repeat!important;
+  background-color:#eaf0f6!important;background-attachment:fixed!important}
+[data-theme='dark'] #hero3d{background-color:#070b12!important;filter:brightness(.3) saturate(.75)}
+@media(max-width:899px){#hero3d{background-attachment:scroll!important;background-size:cover!important}}
+/* clona jen lehká, ať je kancelář vidět */
+.pozadi-clona{background:linear-gradient(180deg,rgba(247,249,252,.18) 0%,rgba(247,249,252,.34) 55%,rgba(247,249,252,.5) 100%)!important}
+[data-theme='dark'] .pozadi-clona{background:linear-gradient(180deg,rgba(3,6,13,.55) 0%,rgba(3,6,13,.72) 100%)!important}
+
+/* závěrečný pruh a filtr taky poloprůhledné, ať je kancelář vidět */
+.cs-cta{background:linear-gradient(140deg,color-mix(in srgb,var(--bg) 46%,transparent),color-mix(in srgb,var(--bg) 60%,transparent))!important;
+  border-color:color-mix(in srgb,var(--text) 10%,transparent)!important}
+.cs-filters{background:color-mix(in srgb,var(--bg) 78%,transparent)!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important}
+.cs-btn{background:color-mix(in srgb,var(--bg) 55%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+/* fotka je vidět pod krabicí; bílý podklad má jen textová část */
+.cs-row{background:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.cs-media{background:none!important}
+.cs-copy{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@media(max-width:899px){.cs-copy{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}}
+
+/* pozadí je ve zdroji skoro přepálené — přidáme kontrast, ať je kancelář vidět */
+#hero3d{filter:blur(7px) contrast(1.06) saturate(1.1)}
+[data-theme='dark'] #hero3d{filter:blur(7px) brightness(.32) saturate(.8)!important}
+.pozadi-clona{background:none!important}
+
+/* krabice stojí na mramorové desce */
+.cs-media{background-image:url('images/pozadi/mramor.webp')!important;background-size:cover!important;
+  background-position:center 72%!important;background-repeat:no-repeat!important;
+  align-items:flex-end!important;padding-bottom:clamp(2.2rem,4vw,3.6rem)!important;position:relative;overflow:hidden}
+.cs-media::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,transparent 60%,color-mix(in srgb,var(--bg) 60%,transparent) 100%)}
+.cs-img{position:relative;z-index:1;filter:drop-shadow(0 22px 26px rgba(20,30,50,.3))}
+[data-theme='dark'] .cs-media{filter:brightness(.55) saturate(.85)}
 </style>
 <meta name="description" content="21 projektů v 8 kategoriích: CRM na míru, marketingové nástroje, AI aplikace, bezpečnostní audity i logistika. Reálné projekty a jejich řešení." />
 <link rel="canonical" href="https://www.clarix.cz/pripadove-studie.html" />
@@ -804,111 +882,111 @@ body.portfolio-mode #hero3d { opacity:.58; }
       <button type="button" class="cs-filter is-active" data-filter="vse" aria-pressed="true">Vše <span>21</span></button><button type="button" class="cs-filter" data-filter="crm" aria-pressed="false">CRM systémy <span>5</span></button><button type="button" class="cs-filter" data-filter="marketing" aria-pressed="false">Marketing <span>4</span></button><button type="button" class="cs-filter" data-filter="kancelar" aria-pressed="false">Produktivita <span>2</span></button><button type="button" class="cs-filter" data-filter="media" aria-pressed="false">Média <span>2</span></button><button type="button" class="cs-filter" data-filter="specializovana" aria-pressed="false">Specializovaná řešení <span>5</span></button><button type="button" class="cs-filter" data-filter="ai" aria-pressed="false">AI <span>1</span></button><button type="button" class="cs-filter" data-filter="bezpecnost" aria-pressed="false">Bezpečnost <span>1</span></button><button type="button" class="cs-filter" data-filter="logistika" aria-pressed="false">Logistika <span>1</span></button>
     </div>
     <div class="cs-group" data-cat="crm">
-      <header class="cs-group-head"><div class="page-kicker">01 · 5 projektů</div><h2>CRM a firemní systémy</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">5 projektů</div><h2>CRM a firemní systémy</h2></header>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/europe-holding-svetla.webp" alt="EUROPE HOLDING" width="720" height="1000"><img class="cs-img cs-img-dark" src="images/krabice/europe-holding-tmava.webp" alt="EUROPE HOLDING" width="720" height="1000"></div>
-        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">EUROPE HOLDING</h3><p>Rozsáhlý CRM systém vytvořený na míru pro společnost EUROPE HOLDING. Systém sjednocuje správu klientů, smluv, dokumentace, interních procesů a uživatelských oprávnění. Projekt počítá s migrací přibližně 400 000 záznamů, 300 000 smluv a stovkami interních uživatelů. Cílem je nahradit roztříštěné systémy jedním centrálním podnikovým řešením.</p></div>
+        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">EUROPE HOLDING</h3><p>Rozsáhlý CRM systém vytvořený na míru pro společnost EUROPE HOLDING. Systém sjednocuje správu klientů, smluv, dokumentace, interních procesů a uživatelských oprávnění. Projekt počítá s migrací přibližně 400 000 záznamů, 300 000 smluv a stovkami interních uživatelů. Cílem je nahradit roztříštěné systémy jedním centrálním podnikovým řešením.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/extrapece-crm-svetla.webp" alt="Extrapéče – CRM pro sociální služby" width="720" height="1000"><img class="cs-img cs-img-dark" src="images/krabice/extrapece-crm-tmava.webp" alt="Extrapéče – CRM pro sociální služby" width="720" height="1000"></div>
-        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Extrapéče – CRM pro sociální služby</h3><p>CRM systém pro správu domovů seniorů a organizací poskytujících sociální služby. Umožňuje evidovat klienty, zaměstnance, poskytovanou péči, dokumentaci, události a důležité provozní informace na jednom místě. Systém má omezit ruční administrativu a zpřehlednit každodenní práci personálu. Management zároveň získává rychlý přehled o klientské i provozní agendě.</p></div>
+        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Extrapéče – CRM pro sociální služby</h3><p>CRM systém pro správu domovů seniorů a organizací poskytujících sociální služby. Umožňuje evidovat klienty, zaměstnance, poskytovanou péči, dokumentaci, události a důležité provozní informace na jednom místě. Systém má omezit ruční administrativu a zpřehlednit každodenní práci personálu. Management zároveň získává rychlý přehled o klientské i provozní agendě.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/extrapece-master-crm-svetla.webp" alt="Extrapéče – MASTER CRM" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/extrapece-master-crm-tmava.webp" alt="Extrapéče – MASTER CRM" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Extrapéče – MASTER CRM</h3><p>Rozsáhlý provozní a CRM systém určený pro velké domovy seniorů a sociální služby. Zaměřuje se na správu budov, pokojů, lůžek, klientů a jejich aktuálního umístění, včetně kapacit a obsazenosti. Umožňuje sledovat provoz zařízení z jednoho centrálního prostředí a rychle pracovat s dostupnými kapacitami. Je navržen jako hlavní řídicí systém pro větší pobytová zařízení.</p></div>
+        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Extrapéče – MASTER CRM</h3><p>Rozsáhlý provozní a CRM systém určený pro velké domovy seniorů a sociální služby. Zaměřuje se na správu budov, pokojů, lůžek, klientů a jejich aktuálního umístění, včetně kapacit a obsazenosti. Umožňuje sledovat provoz zařízení z jednoho centrálního prostředí a rychle pracovat s dostupnými kapacitami. Je navržen jako hlavní řídicí systém pro větší pobytová zařízení.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/mastic-vital-crm-svetla.webp" alt="Mastic-Vital CRM" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/mastic-vital-crm-tmava.webp" alt="Mastic-Vital CRM" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Mastic-Vital CRM</h3><p>CRM systém na míru pro společnost zabývající se doplňky stravy z mastichy pro koně. Sjednocuje správu zákazníků, koní, produktů, objednávek, dotazníků a výsledků používání produktů. U každého zákazníka a koně lze dlouhodobě sledovat historii, komunikaci a zkušenosti s produktem. Data mohou následně sloužit pro obchod, zákaznickou péči i vyhodnocování výsledků.</p></div>
+        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Mastic-Vital CRM</h3><p>CRM systém na míru pro společnost zabývající se doplňky stravy z mastichy pro koně. Sjednocuje správu zákazníků, koní, produktů, objednávek, dotazníků a výsledků používání produktů. U každého zákazníka a koně lze dlouhodobě sledovat historii, komunikaci a zkušenosti s produktem. Data mohou následně sloužit pro obchod, zákaznickou péči i vyhodnocování výsledků.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/zubarska-klinika-svetla.webp" alt="Zubařská klinika CRM" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/zubarska-klinika-tmava.webp" alt="Zubařská klinika CRM" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Zubařská klinika CRM</h3><p>Interní CRM aplikace vytvořená na míru pro zubařskou kliniku. Slouží ke správě pacientů, objednávek, interní dokumentace, komunikace a provozních úkolů kliniky. Důležité informace jsou soustředěné v jednom systému místo několika oddělených nástrojů. Cílem je zrychlit práci personálu a mít kompletní přehled o provozu kliniky.</p></div>
+        <div class="cs-copy"><div class="case-label">CRM a firemní systémy</div><h3 class="cs-title">Zubařská klinika CRM</h3><p>Interní CRM aplikace vytvořená na míru pro zubařskou kliniku. Slouží ke správě pacientů, objednávek, interní dokumentace, komunikace a provozních úkolů kliniky. Důležité informace jsou soustředěné v jednom systému místo několika oddělených nástrojů. Cílem je zrychlit práci personálu a mít kompletní přehled o provozu kliniky.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-group" data-cat="marketing">
-      <header class="cs-group-head"><div class="page-kicker">02 · 4 projekty</div><h2>Marketing a obchod</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">4 projekty</div><h2>Marketing a obchod</h2></header>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/adwaste-ai-svetla.webp" alt="AdWaste AI" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/adwaste-ai-tmava.webp" alt="AdWaste AI" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">AdWaste AI</h3><p>AI nástroj zaměřený na hledání zbytečně utracených peněz v Google Ads. Analyzuje reklamní data a hledá kampaně, klíčová slova, vyhledávací dotazy a další oblasti, které spotřebovávají rozpočet bez odpovídajícího výsledku. Problémy převádí do srozumitelného auditu včetně jejich finančního dopadu. Firma tak dostává konkrétní informace o tom, kde může reklamní rozpočet optimalizovat.</p></div>
+        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">AdWaste AI</h3><p>AI nástroj zaměřený na hledání zbytečně utracených peněz v Google Ads. Analyzuje reklamní data a hledá kampaně, klíčová slova, vyhledávací dotazy a další oblasti, které spotřebovávají rozpočet bez odpovídajícího výsledku. Problémy převádí do srozumitelného auditu včetně jejich finančního dopadu. Firma tak dostává konkrétní informace o tom, kde může reklamní rozpočet optimalizovat.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/ppc-ai-svetla.webp" alt="PPC AI SaaS" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/ppc-ai-tmava.webp" alt="PPC AI SaaS" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">PPC AI SaaS</h3><p>Online platforma pro automatickou kontrolu a optimalizaci PPC kampaní. Uživatel nahraje nebo připojí reklamní data a AI vyhledá chyby, neefektivní výdaje, slabá místa a nové příležitosti. Výsledky jsou prezentovány srozumitelně i lidem bez hlubokých znalostí PPC reklamy. Cílem je nabídnout firmám průběžnou kontrolu kampaní bez nutnosti ručně analyzovat stovky metrik.</p></div>
+        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">PPC AI SaaS</h3><p>Online platforma pro automatickou kontrolu a optimalizaci PPC kampaní. Uživatel nahraje nebo připojí reklamní data a AI vyhledá chyby, neefektivní výdaje, slabá místa a nové příležitosti. Výsledky jsou prezentovány srozumitelně i lidem bez hlubokých znalostí PPC reklamy. Cílem je nabídnout firmám průběžnou kontrolu kampaní bez nutnosti ručně analyzovat stovky metrik.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/clarix-web-auditor-svetla.webp" alt="CLARIX Web Auditor" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/clarix-web-auditor-tmava.webp" alt="CLARIX Web Auditor" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">CLARIX Web Auditor</h3><p>Automatický systém pro komplexní analýzu firemních webových stránek. Kontroluje technické provedení, UX, obsah, SEO, strukturu webu a další oblasti ovlivňující jeho výkon. Výsledkem je profesionální audit s prioritizovanými problémy a konkrétními doporučeními ke zlepšení. Nástroj lze využívat zároveň jako analytický i obchodní nástroj při získávání nových klientů.</p></div>
+        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">CLARIX Web Auditor</h3><p>Automatický systém pro komplexní analýzu firemních webových stránek. Kontroluje technické provedení, UX, obsah, SEO, strukturu webu a další oblasti ovlivňující jeho výkon. Výsledkem je profesionální audit s prioritizovanými problémy a konkrétními doporučeními ke zlepšení. Nástroj lze využívat zároveň jako analytický i obchodní nástroj při získávání nových klientů.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/lead-hunters-svetla.webp" alt="LEAD HUNTERS" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/lead-hunters-tmava.webp" alt="LEAD HUNTERS" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">LEAD HUNTERS</h3><p>B2B platforma pro automatizované získávání kvalitních obchodních leadů. Vyhledává firmy a kontakty, shromažďuje dostupná obchodní data a pomocí AI scoringu vyhodnocuje potenciál jednotlivých společností. Obchodník tak místo dlouhého ručního hledání dostává připravený seznam firem seřazený podle zajímavosti. Systém může pokrýt workflow od nalezení firmy až po přípravu prvního obchodního kontaktu.</p></div>
+        <div class="cs-copy"><div class="case-label">Marketing a obchod</div><h3 class="cs-title">LEAD HUNTERS</h3><p>B2B platforma pro automatizované získávání kvalitních obchodních leadů. Vyhledává firmy a kontakty, shromažďuje dostupná obchodní data a pomocí AI scoringu vyhodnocuje potenciál jednotlivých společností. Obchodník tak místo dlouhého ručního hledání dostává připravený seznam firem seřazený podle zajímavosti. Systém může pokrýt workflow od nalezení firmy až po přípravu prvního obchodního kontaktu.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-group" data-cat="kancelar">
-      <header class="cs-group-head"><div class="page-kicker">03 · 2 projekty</div><h2>Kancelář a produktivita</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">2 projekty</div><h2>Kancelář a produktivita</h2></header>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/clarix-commander-svetla.webp" alt="CLARIX COMMANDER" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/clarix-commander-tmava.webp" alt="CLARIX COMMANDER" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Kancelář a produktivita</div><h3 class="cs-title">CLARIX COMMANDER</h3><p>Moderní dvoupanelový správce souborů navržený pro efektivní práci na macOS. Umožňuje rychlé kopírování, přesouvání, organizaci, náhledy a práci mezi dvěma nezávislými panely. Zaměřuje se na uživatele, kterým klasický Finder nestačí při práci s větším množstvím souborů. Principem navazuje na profesionální správce souborů typu Total Commander, ale v modernějším prostředí.</p></div>
+        <div class="cs-copy"><div class="case-label">Kancelář a produktivita</div><h3 class="cs-title">CLARIX COMMANDER</h3><p>Moderní dvoupanelový správce souborů navržený pro efektivní práci na macOS. Umožňuje rychlé kopírování, přesouvání, organizaci, náhledy a práci mezi dvěma nezávislými panely. Zaměřuje se na uživatele, kterým klasický Finder nestačí při práci s větším množstvím souborů. Principem navazuje na profesionální správce souborů typu Total Commander, ale v modernějším prostředí.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/runn-svetla.webp" alt="RUNN" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/runn-tmava.webp" alt="RUNN" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Kancelář a produktivita</div><h3 class="cs-title">RUNN</h3><p>Desktopová aplikace pro jednoduché spouštění lokálních softwarových projektů bez práce v Terminálu. Uživatel vloží složku nebo ZIP projektu a RUNN automaticky rozpozná použitou technologii, potřebné příkazy a způsob spuštění. Počítá s projekty vytvořenými například v Pythonu, Reactu, Vite, Next.js, Node.js, Electronu, PHP nebo Dockeru. Cílem je umožnit spouštět aplikace i uživateli, který nezná příkazovou řádku.</p></div>
+        <div class="cs-copy"><div class="case-label">Kancelář a produktivita</div><h3 class="cs-title">RUNN</h3><p>Desktopová aplikace pro jednoduché spouštění lokálních softwarových projektů bez práce v Terminálu. Uživatel vloží složku nebo ZIP projektu a RUNN automaticky rozpozná použitou technologii, potřebné příkazy a způsob spuštění. Počítá s projekty vytvořenými například v Pythonu, Reactu, Vite, Next.js, Node.js, Electronu, PHP nebo Dockeru. Cílem je umožnit spouštět aplikace i uživateli, který nezná příkazovou řádku.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-group" data-cat="media">
-      <header class="cs-group-head"><div class="page-kicker">04 · 2 projekty</div><h2>Média a tvorba obsahu</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">2 projekty</div><h2>Média a tvorba obsahu</h2></header>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/creator-ai-studio-svetla.webp" alt="CREATOR AI STUDIO" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/creator-ai-studio-tmava.webp" alt="CREATOR AI STUDIO" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Média a tvorba obsahu</div><h3 class="cs-title">CREATOR AI STUDIO</h3><p>AI studio pro automatickou tvorbu marketingového a sociálního obsahu. Z fotografií, videí, produktových materiálů nebo jednoduchého zadání dokáže připravit reklamní video, Reel, produktovou prezentaci nebo jiný krátký obsah. AI pomáhá se scénářem, výběrem materiálu, střihem, titulky, hudbou a výslednou kompozicí. Cílem je umožnit firmám vyrábět větší množství profesionálního obsahu bez klasického produkčního týmu.</p></div>
+        <div class="cs-copy"><div class="case-label">Média a tvorba obsahu</div><h3 class="cs-title">CREATOR AI STUDIO</h3><p>AI studio pro automatickou tvorbu marketingového a sociálního obsahu. Z fotografií, videí, produktových materiálů nebo jednoduchého zadání dokáže připravit reklamní video, Reel, produktovou prezentaci nebo jiný krátký obsah. AI pomáhá se scénářem, výběrem materiálu, střihem, titulky, hudbou a výslednou kompozicí. Cílem je umožnit firmám vyrábět větší množství profesionálního obsahu bez klasického produkčního týmu.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/rapfix-studio-svetla.webp" alt="RAPFIX STUDIO" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/rapfix-studio-tmava.webp" alt="RAPFIX STUDIO" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Média a tvorba obsahu</div><h3 class="cs-title">RAPFIX STUDIO</h3><p>Specializované audio studio zaměřené na rapové vokály, beaty a výsledný mix. Obsahuje nástroje pro EQ, kompresi, de-esser, saturaci, pitch, reverb, delay a další úpravy hlasu. Uživatel může zpracovat syrovou nahrávku a pomocí jednoduššího workflow ji přiblížit studiovému výsledku. Aplikace je navržena tak, aby byla použitelná i pro interprety bez hlubokých znalostí zvukového inženýrství.</p></div>
+        <div class="cs-copy"><div class="case-label">Média a tvorba obsahu</div><h3 class="cs-title">RAPFIX STUDIO</h3><p>Specializované audio studio zaměřené na rapové vokály, beaty a výsledný mix. Obsahuje nástroje pro EQ, kompresi, de-esser, saturaci, pitch, reverb, delay a další úpravy hlasu. Uživatel může zpracovat syrovou nahrávku a pomocí jednoduššího workflow ji přiblížit studiovému výsledku. Aplikace je navržena tak, aby byla použitelná i pro interprety bez hlubokých znalostí zvukového inženýrství.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-group" data-cat="specializovana">
-      <header class="cs-group-head"><div class="page-kicker">05 · 5 projektů</div><h2>Specializovaná řešení</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">5 projektů</div><h2>Specializovaná řešení</h2></header>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/advokato-svetla.webp" alt="ADVOKÁTO" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/advokato-tmava.webp" alt="ADVOKÁTO" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">ADVOKÁTO</h3><p>Specializovaná AI platforma pro advokáty a právní práci s rozsáhlými spisy. Dokáže analyzovat dokumenty, vytvářet časové osy, identifikovat osoby a jejich vztahy, hledat rozpory a připravovat strukturovaná shrnutí. Součástí je také práce s právním výzkumem, judikaturou a citacemi zdrojů. Cílem je výrazně zkrátit čas potřebný pro práci s rozsáhlými právními materiály.</p></div>
+        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">ADVOKÁTO</h3><p>Specializovaná AI platforma pro advokáty a právní práci s rozsáhlými spisy. Dokáže analyzovat dokumenty, vytvářet časové osy, identifikovat osoby a jejich vztahy, hledat rozpory a připravovat strukturovaná shrnutí. Součástí je také práce s právním výzkumem, judikaturou a citacemi zdrojů. Cílem je výrazně zkrátit čas potřebný pro práci s rozsáhlými právními materiály.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/advokato-scanner-svetla.webp" alt="ADVOKÁTO Mobile Scanner" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/advokato-scanner-tmava.webp" alt="ADVOKÁTO Mobile Scanner" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">ADVOKÁTO Mobile Scanner</h3><p>Mobilní aplikace určená jako doplněk platformy ADVOKÁTO. Umožňuje přímo telefonem digitalizovat vícestránkové dokumenty, měnit pořadí stran, ořezávat obraz, opravovat perspektivu, otáčet snímky a zvyšovat jejich čitelnost. Hotové dokumenty lze bezpečně odeslat přímo do konkrétního právního případu. Advokát tak může dostat papírové podklady do AI analýzy prakticky odkudkoliv.</p></div>
+        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">ADVOKÁTO Mobile Scanner</h3><p>Mobilní aplikace určená jako doplněk platformy ADVOKÁTO. Umožňuje přímo telefonem digitalizovat vícestránkové dokumenty, měnit pořadí stran, ořezávat obraz, opravovat perspektivu, otáčet snímky a zvyšovat jejich čitelnost. Hotové dokumenty lze bezpečně odeslat přímo do konkrétního právního případu. Advokát tak může dostat papírové podklady do AI analýzy prakticky odkudkoliv.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/flipora-svetla.webp" alt="FLIPORA" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/flipora-tmava.webp" alt="FLIPORA" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">FLIPORA</h3><p>Moderní marketplace platforma pro nákup a prodej zboží mezi jednotlivými uživateli. Uživatelé mohou vytvářet nabídky, přidávat fotografie, vyhledávat produkty, komunikovat a spravovat své nákupy a prodeje. Systém je navržen s ohledem na vysoký počet uživatelů a možnost dalšího růstu. Cílem je vytvořit jednoduché a moderní prostředí pro C2C marketplace.</p></div>
+        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">FLIPORA</h3><p>Moderní marketplace platforma pro nákup a prodej zboží mezi jednotlivými uživateli. Uživatelé mohou vytvářet nabídky, přidávat fotografie, vyhledávat produkty, komunikovat a spravovat své nákupy a prodeje. Systém je navržen s ohledem na vysoký počet uživatelů a možnost dalšího růstu. Cílem je vytvořit jednoduché a moderní prostředí pro C2C marketplace.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/signcall-svetla.webp" alt="SIGNCALL" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/signcall-tmava.webp" alt="SIGNCALL" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">SIGNCALL<span class="cs-badge">Ve vývoji</span></h3><p>Komunikační aplikace určená především pro komunikaci mezi slyšícími a neslyšícími uživateli. Kombinuje videohovor, automatický přepis mluvené řeči do titulků, překlad mezi jazyky a plánovaný převod do českého znakového jazyka pomocí digitálního avatara. Cílem je umožnit oběma stranám komunikovat přirozeněji bez nutnosti lidského tlumočníka při každém běžném hovoru. Projekt je aktuálně ve fázi vývoje.</p></div>
+        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">SIGNCALL<span class="cs-badge">Ve vývoji</span></h3><p>Komunikační aplikace určená především pro komunikaci mezi slyšícími a neslyšícími uživateli. Kombinuje videohovor, automatický přepis mluvené řeči do titulků, překlad mezi jazyky a plánovaný převod do českého znakového jazyka pomocí digitálního avatara. Cílem je umožnit oběma stranám komunikovat přirozeněji bez nutnosti lidského tlumočníka při každém běžném hovoru. Projekt je aktuálně ve fázi vývoje.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/tender-svetla.webp" alt="TENDER" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/tender-tmava.webp" alt="TENDER" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">TENDER</h3><p>AI platforma pro automatické sledování a vyhodnocování veřejných zakázek. Systém průběžně hlídá nové tendry, filtruje je podle profilu konkrétní firmy a pomocí AI scoringu určuje, kterým zakázkám má smysl věnovat pozornost. Dokáže analyzovat zadávací dokumentaci, požadavky, termíny, rizika a další důležité podmínky. Následně pomáhá také s přípravou podkladů a nabídky.</p></div>
+        <div class="cs-copy"><div class="case-label">Specializovaná řešení</div><h3 class="cs-title">TENDER</h3><p>AI platforma pro automatické sledování a vyhodnocování veřejných zakázek. Systém průběžně hlídá nové tendry, filtruje je podle profilu konkrétní firmy a pomocí AI scoringu určuje, kterým zakázkám má smysl věnovat pozornost. Dokáže analyzovat zadávací dokumentaci, požadavky, termíny, rizika a další důležité podmínky. Následně pomáhá také s přípravou podkladů a nabídky.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-group" data-cat="ai">
-      <header class="cs-group-head"><div class="page-kicker">06 · 1 projekt</div><h2>AI a automatizace</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">1 projekt</div><h2>AI a automatizace</h2></header>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/whatsapp-ai-svetla.webp" alt="WHATSAPP AI" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/whatsapp-ai-tmava.webp" alt="WHATSAPP AI" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">AI a automatizace</div><h3 class="cs-title">WHATSAPP AI</h3><p>AI nástroj přímo napojený na WhatsApp, který pomáhá s každodenní komunikací. Dokáže navrhovat odpovědi, překládat zprávy, měnit jejich tón, délku nebo styl a pomáhat se zákaznickou komunikací. Uživatel může AI zadat pouze stručnou instrukci a během několika sekund dostane připravenou odpověď. Konečnou zprávu před odesláním stále kontroluje uživatel.</p></div>
+        <div class="cs-copy"><div class="case-label">AI a automatizace</div><h3 class="cs-title">WHATSAPP AI</h3><p>AI nástroj přímo napojený na WhatsApp, který pomáhá s každodenní komunikací. Dokáže navrhovat odpovědi, překládat zprávy, měnit jejich tón, délku nebo styl a pomáhat se zákaznickou komunikací. Uživatel může AI zadat pouze stručnou instrukci a během několika sekund dostane připravenou odpověď. Konečnou zprávu před odesláním stále kontroluje uživatel.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-group" data-cat="bezpecnost">
-      <header class="cs-group-head"><div class="page-kicker">07 · 1 projekt</div><h2>Bezpečnost</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">1 projekt</div><h2>Bezpečnost</h2></header>
       <article class="cs-row is-reverse">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/security-audit-svetla.webp" alt="Security Audit SaaS" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/security-audit-tmava.webp" alt="Security Audit SaaS" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Bezpečnost</div><h3 class="cs-title">Security Audit SaaS</h3><p>Webová aplikace pro automatizované a autorizované bezpečnostní audity webových stránek a online systémů. Provádí dostupné bezpečnostní kontroly a identifikuje potenciální slabiny, chybné konfigurace a další rizika. Nalezené problémy třídí podle závažnosti a vysvětluje jejich možný dopad. Výsledkem je profesionální report s prioritami a doporučeními, jak jednotlivé nedostatky odstranit.</p></div>
+        <div class="cs-copy"><div class="case-label">Bezpečnost</div><h3 class="cs-title">Security Audit SaaS</h3><p>Webová aplikace pro automatizované a autorizované bezpečnostní audity webových stránek a online systémů. Provádí dostupné bezpečnostní kontroly a identifikuje potenciální slabiny, chybné konfigurace a další rizika. Nalezené problémy třídí podle závažnosti a vysvětluje jejich možný dopad. Výsledkem je profesionální report s prioritami a doporučeními, jak jednotlivé nedostatky odstranit.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-group" data-cat="logistika">
-      <header class="cs-group-head"><div class="page-kicker">08 · 1 projekt</div><h2>Logistika</h2></header>
+      <header class="cs-group-head"><div class="page-kicker">1 projekt</div><h2>Logistika</h2></header>
       <article class="cs-row">
         <div class="cs-media glass-card"><img class="cs-img cs-img-light" src="images/krabice/one-route-optimizer-svetla.webp" alt="ONE ROUTE OPTIMIZER" width="720" height="1000" loading="lazy" decoding="async"><img class="cs-img cs-img-dark" src="images/krabice/one-route-optimizer-tmava.webp" alt="ONE ROUTE OPTIMIZER" width="720" height="1000" loading="lazy" decoding="async"></div>
-        <div class="cs-copy"><div class="case-label">Logistika</div><h3 class="cs-title">ONE ROUTE OPTIMIZER</h3><p>Inteligentní aplikace pro plánování a optimalizaci rozvozových nebo servisních tras. Dokáže načíst adresy například z PDF, fotografie nebo naskenovaného dokumentu a automaticky je převést do seznamu zastávek. Následně vypočítá efektivní pořadí návštěv podle skutečné silniční sítě. Systém může trasu přepočítávat také při změnách nebo během samotné jízdy.</p></div>
+        <div class="cs-copy"><div class="case-label">Logistika</div><h3 class="cs-title">ONE ROUTE OPTIMIZER</h3><p>Inteligentní aplikace pro plánování a optimalizaci rozvozových nebo servisních tras. Dokáže načíst adresy například z PDF, fotografie nebo naskenovaného dokumentu a automaticky je převést do seznamu zastávek. Následně vypočítá efektivní pořadí návštěv podle skutečné silniční sítě. Systém může trasu přepočítávat také při změnách nebo během samotné jízdy.</p><a href="o-nas.html#kontakt" class="cs-btn">Zobrazit celý projekt <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></div>
       </article>
     </div>
     <div class="cs-cta">

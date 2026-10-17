@@ -732,6 +732,24 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .pg-sec{background:rgba(3,6,13,.88);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
 [data-theme='light'] .pg-sec{background:rgba(250,251,253,.89)}
 .pg-hero{background:none!important;backdrop-filter:none!important}
+
+/* ======== CLIENTELO — investorská platforma ======== */
+.cl-plat{overflow:hidden}
+.cl-media{position:relative;margin-top:clamp(2.2rem,3.6vw,3.4rem);aspect-ratio:1.9;
+  border-radius:1.4rem;overflow:hidden;background:#fff;
+  border:1px solid color-mix(in srgb,var(--text) 10%,transparent);
+  box-shadow:0 28px 70px color-mix(in srgb,var(--text) 12%,transparent)}
+.cl-media img{width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block}
+@media(max-width:767px){.cl-media{aspect-ratio:1.6}}
+.cl-body{display:grid;grid-template-columns:1fr;gap:clamp(.9rem,1.4vw,1.2rem);margin-top:clamp(2rem,3.2vw,2.8rem)}
+@media(min-width:900px){.cl-body{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.cl-bod{padding:clamp(1.3rem,1.9vw,1.7rem);border-radius:1rem;background:color-mix(in srgb,var(--bg) 72%,transparent);
+  border:1px solid color-mix(in srgb,var(--text) 8%,transparent);transition:transform .3s ease,border-color .3s ease}
+.cl-bod:hover{transform:translateY(-3px);border-color:rgba(47,134,255,.38)}
+.cl-ic{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:.7rem;background:rgba(47,134,255,.13);color:#2f86ff}
+.cl-ic svg{width:1.2rem;height:1.2rem}
+.cl-bod h3{margin-top:1.1rem;font-size:clamp(1rem,1.2vw,1.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;color:var(--text)}
+.cl-bod p{margin-top:.6rem;font-size:.9rem;line-height:1.7;color:var(--text-soft)}
 </style>
 <meta name="description" content="Leadgenerace pro investiční sektor: nové kvalifikované leady, oživení databáze a péče o investory. Vše zastřešuje vlastní software." />
 <link rel="canonical" href="https://www.clarix.cz/clientelo.html" />
@@ -781,6 +799,35 @@ body.portfolio-mode #hero3d { opacity:.58; }
       <h1 class="reveal is-visible">Přivádíme klienty,<br><span>kteří chtějí investovat.</span></h1>
       <p class="pg-lead reveal is-visible">Specializace na leadgeneraci pro investiční sektor. Přivedeme nové kvalifikované leady, probudíme databázi, která už existuje, a systematicky pečujeme o investory. Všechny tři služby zastřešuje <b>vlastní software</b>.</p>
       <div class="pg-tags reveal is-visible"><span>Fondy kvalifikovaných investorů</span><span>Emitenti dluhopisů</span><span>Projekty podle § 15</span><span>Od začínajících subjektů po zavedená jména</span></div>
+    </div>
+  </section>
+
+  <section class="pg-sec cl-plat">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Platforma</div>
+      <h2 class="pg-h2 reveal">Váš přímý přístup k relevantním investorům</h2>
+      <p class="pg-lead reveal">Vlastní platforma CLIENTELO sdružuje, analyzuje a kvalifikuje investory z celé Evropy. Vše na jednom místě — od prvního kliknutí na reklamu po podepsanou investici.</p>
+      <div class="cl-media reveal">
+        <img src="images/sekce/platforma.webp" alt="Platforma CLIENTELO se seznamem investorů" width="1536" height="1024" loading="lazy">
+      </div>
+      <div class="cl-body">
+        <article class="cl-bod reveal">
+          <span class="cl-ic"><i data-lucide="users"></i></span>
+          <h3>Jedna databáze investorů</h3><p>Všechny kontakty, fondy i rodinné kanceláře na jednom místě. Žádné tabulky po discích.</p>
+        </article>
+        <article class="cl-bod reveal">
+          <span class="cl-ic"><i data-lucide="filter"></i></span>
+          <h3>Kvalifikace a skóring</h3><p>Software u každého kontaktu hlídá, jaká témata ho zajímají a jak daleko v rozhodování je.</p>
+        </article>
+        <article class="cl-bod reveal">
+          <span class="cl-ic"><i data-lucide="megaphone"></i></span>
+          <h3>Kampaně a aktivity</h3><p>Reklamu, maily i hovory call centra je vidět pohromadě u konkrétního investora.</p>
+        </article>
+        <article class="cl-bod reveal">
+          <span class="cl-ic"><i data-lucide="line-chart"></i></span>
+          <h3>Analytika v reálném čase</h3><p>Od nákupu trafficu po podepsanou investici. Každá koruna má svoje číslo.</p>
+        </article>
+      </div>
     </div>
   </section>
 

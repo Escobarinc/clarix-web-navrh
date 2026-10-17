@@ -803,6 +803,59 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .pg-strip{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:3rem;font:500 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted)}
 .pg-strip i{flex:1;max-width:11rem;height:1px;background:var(--border);font-style:normal}
 .pg-strip b{color:#2f86ff;font-weight:500}
+
+/* ======== novy hero + karty sluzeb ======== */
+.hs{position:relative;z-index:2;width:100%;max-width:1860px;margin:7.5rem auto 0;padding:0 clamp(.75rem,1.6vw,1.6rem)}
+.hs-box{position:relative;border-radius:1.5rem;overflow:hidden;background:var(--bg);
+  border:1px solid color-mix(in srgb,var(--text) 9%,transparent);box-shadow:0 30px 80px color-mix(in srgb,var(--text) 7%,transparent);
+  min-height:clamp(330px,38vw,540px);display:flex;align-items:center}
+/* fotka pres celou sirku, text lezi na ni */
+.hs-foto{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hs-foto img{width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
+.hs-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,
+  color-mix(in srgb,var(--bg) 92%,transparent) 0%,
+  color-mix(in srgb,var(--bg) 80%,transparent) 32%,
+  color-mix(in srgb,var(--bg) 40%,transparent) 52%,
+  transparent 68%)}
+.hs-txt{position:relative;z-index:1;width:100%;max-width:62rem;padding:clamp(2.2rem,4.2vw,4.2rem);display:flex;flex-direction:column;justify-content:center}
+.hs-kicker{font:600 .76rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted)}
+.hs-txt h1{margin-top:1.2rem;font-size:clamp(2rem,3.9vw,3.4rem);font-weight:800;letter-spacing:-.045em;line-height:1.06;color:var(--text);text-wrap:balance}
+.hs-txt h1 span{color:#1668ff}
+.hs-txt p{margin-top:1.4rem;max-width:33rem;font-size:clamp(.98rem,1.15vw,1.08rem);line-height:1.75;color:var(--text-soft)}
+.hs-akce{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.3rem}
+.hs-btn{display:inline-flex;align-items:center;gap:.6rem;height:3.2rem;padding:0 1.6rem;border-radius:.7rem;font-size:.95rem;font-weight:600;white-space:nowrap;transition:background .25s ease,border-color .25s ease}
+.hs-p{color:#fff;background:#1668ff}.hs-p:hover{background:#0f57db}
+.hs-s{color:var(--text);background:var(--bg);border:1px solid color-mix(in srgb,var(--text) 14%,transparent)}
+.hs-s:hover{border-color:#1668ff}
+@media(max-width:999px){.hs{margin-top:6.5rem}.hs-box{min-height:auto}
+  .hs-foto::after{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 92%,transparent))}
+  .hs-txt{padding-top:3rem;padding-bottom:3rem}}
+
+.ks{position:relative;z-index:2;width:100%;max-width:1860px;margin:clamp(.8rem,1.4vw,1.1rem) auto 0;padding:0 clamp(.75rem,1.6vw,1.6rem)}
+.ks-mrizka{display:grid;grid-template-columns:1fr;gap:clamp(.8rem,1.4vw,1.1rem)}
+@media(min-width:1000px){.ks-mrizka{grid-template-columns:1fr 1fr}}
+.ks-karta{display:grid;grid-template-columns:1fr;gap:1.4rem;padding:clamp(1.5rem,2.4vw,2.1rem);border-radius:1.25rem;background:var(--bg);
+  border:1px solid color-mix(in srgb,var(--text) 9%,transparent);box-shadow:0 18px 50px color-mix(in srgb,var(--text) 5%,transparent);
+  transition:border-color .3s ease,transform .3s ease}
+@media(min-width:620px){.ks-karta{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);align-items:center}}
+.ks-karta:hover{border-color:rgba(22,104,255,.4);transform:translateY(-3px)}
+.ks-cislo{font:600 .74rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;color:var(--text-muted)}
+.ks-hlava{display:flex;align-items:center;gap:.9rem;margin-top:0}
+.ks-ikona{display:grid;place-items:center;width:2.9rem;height:2.9rem;border-radius:.75rem;background:rgba(22,104,255,.1);color:#1668ff;flex:none}
+.ks-ikona svg{width:1.35rem;height:1.35rem}
+.ks-karta h3{font-size:clamp(1.15rem,1.5vw,1.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:var(--text)}
+.ks-popis{margin-top:1rem;font-size:.96rem;line-height:1.7;color:var(--text-soft)}
+.ks-body{margin-top:1.2rem;display:grid;gap:.65rem;list-style:none;padding:0}
+.ks-body li{display:flex;gap:.7rem;align-items:flex-start;font-size:.93rem;line-height:1.5;color:var(--text)}
+.ks-body svg{flex:none;width:1.05rem;height:1.05rem;margin-top:.15rem;color:#1668ff}
+.ks-vic{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;font-size:.92rem;font-weight:600;color:#1668ff;transition:gap .25s ease}
+.ks-vic:hover{gap:.8rem}
+.ks-obr{border-radius:.9rem;overflow:hidden;min-height:210px}
+.ks-obr img{width:100%;height:100%;object-fit:cover;display:block}
+.ks-misto{display:grid;place-items:center;text-align:center;min-height:210px;border-radius:.9rem;
+  background:repeating-linear-gradient(45deg,transparent,transparent 10px,color-mix(in srgb,var(--text) 5%,transparent) 10px,color-mix(in srgb,var(--text) 5%,transparent) 11px),color-mix(in srgb,var(--text) 3%,transparent);
+  border:1px dashed color-mix(in srgb,var(--text) 18%,transparent)}
+.ks-misto span{font:600 .7rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding:.8rem 1rem;line-height:1.9}
 </style>
 <meta name="description" content="Firemní systémy a integrace, e-commerce a B2B platformy, mobilní a webové aplikace. Podívejte se, jak u nás probíhá spolupráce od analýzy po nasazení." />
 <link rel="canonical" href="https://www.clarix.cz/sluzby.html" />
@@ -845,7 +898,57 @@ body.portfolio-mode #hero3d { opacity:.58; }
   </div>
 </nav>
 <main class="services-page relative z-10 w-full">
-  <section class="page-hero services-intro"><div class="mx-auto w-full max-w-[1440px] px-6 md:px-8"><div class="reveal is-visible max-w-5xl"><div class="page-kicker">SLUŽBY</div><h1 class="mt-5 text-balance text-5xl font-extrabold leading-[.96] tracking-[-0.055em] sm:text-6xl lg:text-7xl">Technologie, která má jasný obchodní smysl.</h1><p class="services-intro-copy mt-7 max-w-4xl">Navrhujeme a stavíme digitální řešení, která nejsou jen technicky dokonalá, ale především generují zisk a šetří čas. Ať už potřebujete zefektivnit interní procesy komplexním systémem, nebo otevřít nové prodejní kanály, dodáme vám nástroje, které váš byznys posunou reálně vpřed. Inovace pro nás neznamená použití nejmódnějšího frameworku, ale nalezení nejkratší a nejefektivnější cesty k vašemu cíli.</p></div></div></section>
+  <section class="hs reveal is-visible"><div class="hs-box">
+    <div class="hs-foto"><img src="images/sluzby/hero-ruka.webp" alt="CLARIX – ruka s krychlí" width="1536" height="1024"></div>
+    <div class="hs-txt">
+      <div class="hs-kicker">Naše služby</div>
+      <h1>Technologie a řešení,<br><span>které posouvají váš byznys.</span></h1>
+      <p>Spojujeme strategii, technologie a design, abychom vytvářeli digitální produkty, které dávají reálný smysl a přinášejí měřitelné výsledky.</p>
+      <div class="hs-akce">
+        <a href="o-nas.html#kontakt" class="hs-btn hs-p magnetic">Nezávazná konzultace <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+        <a href="pripadove-studie.html" class="hs-btn hs-s magnetic">Projekty a reference <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ks"><div class="ks-mrizka">
+    <article class="ks-karta reveal">
+      <div>
+        <div class="ks-hlava"><span class="ks-ikona"><i data-lucide="database"></i></span><h3>CRM systémy</h3></div>
+        <p class="ks-popis">Efektivní řízení vztahů se zákazníky a procesů na míru vašemu byznysu.</p>
+        <ul class="ks-body"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Analýza a návrh řešení</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Implementace a integrace</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Školení a dlouhodobá podpora</span></li></ul>
+        <a href="o-nas.html#kontakt" class="ks-vic">Více o CRM <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+      </div>
+      <div class="ks-obr"><img src="images/sluzby/crm.webp" alt="CLARIX CRM – přehled obchodních příležitostí" loading="lazy" width="1200" height="800"></div>
+    </article>
+    <article class="ks-karta reveal">
+      <div>
+        <div class="ks-hlava"><span class="ks-ikona"><i data-lucide="globe"></i></span><h3>Weby nové generace</h3></div>
+        <p class="ks-popis">Rychlé, srozumitelné a výkonné weby optimalizované pro vyhledávání i AI.</p>
+        <ul class="ks-body"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Moderní design a UX</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Technické SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Příprava na AI vyhledávání</span></li></ul>
+        <a href="weby-nove-generace.html" class="ks-vic">Více o webech <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+      </div>
+      <div class="ks-obr"><img src="images/sluzby/weby.webp" alt="Web nové generace na tabletu" loading="lazy" width="1200" height="800"></div>
+    </article>
+    <article class="ks-karta reveal">
+      <div>
+        <div class="ks-hlava"><span class="ks-ikona"><i data-lucide="layout-grid"></i></span><h3>Aplikace na míru</h3></div>
+        <p class="ks-popis">Webové a mobilní aplikace, které zjednodušují procesy a otevírají nové možnosti růstu.</p>
+        <ul class="ks-body"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Návrh a vývoj aplikací</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Integrace s existujícími systémy</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Škálovatelná architektura</span></li></ul>
+        <a href="o-nas.html#kontakt" class="ks-vic">Více o aplikacích <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+      </div>
+      <div class="ks-obr"><img src="images/sluzby/aplikace.webp" alt="Mobilní aplikace – přehled" loading="lazy" width="1200" height="800"></div>
+    </article>
+    <article class="ks-karta reveal">
+      <div>
+        <div class="ks-hlava"><span class="ks-ikona"><i data-lucide="lightbulb"></i></span><h3>Strategie a design</h3></div>
+        <p class="ks-popis">Pomáháme vám najít správný směr a vytvořit digitální produkty, které mají skutečný dopad.</p>
+        <ul class="ks-body"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Digitální strategie</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>UX/UI design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Konzultace a workshopy</span></li></ul>
+        <a href="o-nas.html#kontakt" class="ks-vic">Více o strategii a designu <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+      </div>
+      <div class="ks-obr"><img src="images/sluzby/strategie.webp" alt="Skica strategie na papíře" loading="lazy" width="1200" height="800"></div>
+    </article>
+  </div></section>
   <div class="relative z-10 border-t border-[var(--border)] bg-[var(--page-overlay)] backdrop-blur-[2px]">
     <section class="section-wrap services-viewport-section"><div class="reveal max-w-4xl"><div class="page-kicker">PROČ CLARIX</div><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Proč CLARIX</h2><p class="services-section-lead mt-5">Neděláme technologické kompromisy. Vyvíjíme aplikace a webové platformy s ohledem na absolutní výkon, maximální bezpečnost a dokonalý uživatelský zážitek. Pokud máte vizi, která má ambici změnit váš trh, my máme kapacity a know-how ji do detailu zrealizovat.</p></div><div class="services-card-grid mt-8 grid gap-4 lg:grid-cols-3">
       <article class="reveal glass-card p-7"><div class="grid h-11 w-11 place-items-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-500"><i data-lucide="gauge" class="h-5 w-5"></i></div><h3 class="mt-10 text-2xl font-semibold tracking-[-0.035em]">Řešení, která pohání váš byznys.</h3><p class="mt-4 long-copy">Od komplexních CRM po mobilní aplikace. Vyvíjíme software se zaměřením na výkon a měřitelné výsledky. Tvoříme systémy, které šetří náklady, zrychlují odbavení a otevírají nové prodejní kanály. Ať už jde o B2B platformy, SaaS nebo interní ekosystémy, dodáváme taková řešení, která akcelerují váš byznys a zanechají konkurenci o krok pozadu.</p></article>

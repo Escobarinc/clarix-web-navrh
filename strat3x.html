@@ -732,6 +732,45 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .pg-sec{background:rgba(3,6,13,.88);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
 [data-theme='light'] .pg-sec{background:rgba(250,251,253,.89)}
 .pg-hero{background:none!important;backdrop-filter:none!important}
+
+/* ======== strat3x — nový hero ======== */
+.sx{position:relative;z-index:2;width:100%;max-width:1560px;margin:6.4rem auto 0;padding:0 clamp(.9rem,2vw,1.8rem)}
+.sx-box{display:grid;grid-template-columns:1fr;border-radius:1.5rem;overflow:hidden;background:var(--bg);
+  border:1px solid color-mix(in srgb,var(--text) 9%,transparent);box-shadow:0 30px 80px color-mix(in srgb,var(--text) 8%,transparent);
+  min-height:clamp(430px,44vw,660px)}
+@media(min-width:1000px){.sx-box{grid-template-columns:1.06fr .94fr}}
+.sx-txt{padding:clamp(2.2rem,4vw,4rem);display:flex;flex-direction:column;justify-content:center}
+.sx-kicker{font:700 .8rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.26em;text-transform:uppercase;color:#1668ff}
+.sx-txt h1{margin-top:1.2rem;font-size:clamp(1.85rem,3.3vw,2.95rem);font-weight:800;letter-spacing:-.05em;line-height:1.04;color:var(--text)}
+.sx-txt h1 span{color:#1668ff}
+.sx-txt p{margin-top:1.5rem;max-width:33rem;font-size:clamp(.98rem,1.15vw,1.08rem);line-height:1.75;color:var(--text-soft)}
+.sx-akce{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;margin-top:2.3rem}
+.sx-btn{display:inline-flex;align-items:center;gap:.6rem;height:3.2rem;padding:0 1.7rem;border-radius:.7rem;font-size:.95rem;font-weight:600;color:#fff;background:#1668ff;transition:background .25s ease}
+.sx-btn:hover{background:#0f57db}
+.sx-odkaz{display:inline-flex;align-items:center;gap:.5rem;font-size:.95rem;font-weight:600;color:#1668ff;transition:gap .25s ease}
+.sx-odkaz:hover{gap:.8rem}
+
+.sx-foto{position:relative;min-height:clamp(300px,34vw,520px);overflow:hidden}
+.sx-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
+.sx-heslo{position:absolute;left:clamp(1rem,2.5vw,2.2rem);bottom:clamp(1.6rem,3vw,2.6rem);z-index:1;
+  font:800 clamp(.95rem,1.35vw,1.2rem) 'Inter',sans-serif;letter-spacing:.06em;line-height:1.5;text-transform:uppercase;color:var(--text)}
+.sx-heslo::before{content:"";display:block;width:2.2rem;height:2px;background:#1668ff;margin-bottom:.9rem}
+.sx-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,
+  var(--bg) 0%,color-mix(in srgb,var(--bg) 88%,transparent) 16%,color-mix(in srgb,var(--bg) 46%,transparent) 44%,
+  color-mix(in srgb,var(--bg) 14%,transparent) 68%,transparent 84%)}
+
+/* tři čísla pod hero */
+.sx-cisla{display:grid;grid-template-columns:1fr;gap:0;margin-top:clamp(.8rem,1.4vw,1.1rem);
+  border-radius:1.25rem;overflow:hidden;background:var(--bg);border:1px solid color-mix(in srgb,var(--text) 9%,transparent);
+  box-shadow:0 18px 50px color-mix(in srgb,var(--text) 5%,transparent)}
+@media(min-width:760px){.sx-cisla{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.sx-cislo{padding:clamp(1.5rem,2.4vw,2.2rem);border-left:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.sx-cislo:first-child{border-left:0}
+@media(max-width:759px){.sx-cislo{border-left:0;border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent)}.sx-cislo:first-child{border-top:0}}
+.sx-cislo b{display:block;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:#1668ff}
+.sx-cislo span{display:block;margin-top:.6rem;font-size:.9rem;line-height:1.5;color:var(--text-muted)}
+@media(max-width:999px){.sx{margin-top:5.6rem}.sx-foto{min-height:260px;order:-1}
+  .sx-foto::after{background:linear-gradient(180deg,transparent 40%,color-mix(in srgb,var(--bg) 85%,transparent) 100%)}}
 </style>
 <meta name="description" content="Strategic growth partner s odměnou navázanou na zisk klienta. Budujeme a škálujeme online businessy s minimálním růstem 3× za první rok." />
 <link rel="canonical" href="https://www.clarix.cz/strat3x.html" />
@@ -775,12 +814,27 @@ body.portfolio-mode #hero3d { opacity:.58; }
 </nav>
 <main class="relative z-10 w-full pg">
 
-  <section class="pg-hero">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal is-visible">Strategic growth partner</div>
-      <h1 class="reveal is-visible">Váš růst,<br><span>náš společný zisk.</span></h1>
-      <p class="pg-lead reveal is-visible">Ne agentura, která fakturuje hodiny. Partner, jehož zisk roste s tím vaším. Budujeme a škálujeme online businessy s <b>minimálním růstem 3× za první rok</b>.</p>
-      <div class="pg-badge reveal is-visible"><i></i><span>Aktuálně max. 3 noví partneři měsíčně</span></div>
+  <section class="sx reveal is-visible">
+    <div class="sx-box">
+      <div class="sx-txt">
+        <div class="sx-kicker">strat3x</div>
+        <h1>Strategie, technologie<br>a výsledky,<br><span>které dávají smysl.</span></h1>
+        <p>Ne agentura, která fakturuje hodiny. Partner, jehož zisk roste s tím vaším. Budujeme a škálujeme online businessy s minimálním růstem 3× za první rok.</p>
+        <div class="sx-akce">
+          <a href="o-nas.html#kontakt" class="sx-btn magnetic">Domluvit konzultaci <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+          <a href="pripadove-studie.html" class="sx-odkaz">Zobrazit projekty <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+        </div>
+      </div>
+      <div class="sx-foto">
+        <img src="images/sekce/budova.webp" alt="Moderní skleněná budova" width="1024" height="1536">
+        <div class="sx-heslo">Růst<br>postavený<br>na faktech</div>
+      </div>
+    </div>
+
+    <div class="sx-cisla reveal">
+      <div class="sx-cislo"><b>1,2 mld. Kč</b><span>obrat klientů ročně</span></div>
+      <div class="sx-cislo"><b>3×</b><span>minimální růst v prvním roce</span></div>
+      <div class="sx-cislo"><b>100 %</b><span>rozhodnutí podložených daty</span></div>
     </div>
   </section>
 
