@@ -193,6 +193,11 @@
     var tlacitko = document.querySelector('.up-odeslat');
     var data = sbaleno();
     if (!window.CLARIX_DB) { stahni(); return; }
+    var kdo = localStorage.getItem('clarix-kdo');
+    if (!kdo) {
+      kdo = (window.prompt('Jak se podepíšete? (stačí jméno)') || '').trim();
+      if (kdo) localStorage.setItem('clarix-kdo', kdo);
+    }
     tlacitko.disabled = true; tlacitko.textContent = 'Odesílám…';
     fetch(window.CLARIX_DB, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
