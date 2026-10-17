@@ -735,12 +735,11 @@ body.portfolio-mode #hero3d { opacity:.58; }
 
 /* ======== CLIENTELO — investorská platforma ======== */
 .cl-plat{overflow:hidden}
-.cl-media{position:relative;margin-top:clamp(2.2rem,3.6vw,3.4rem);aspect-ratio:1.9;
+.cl-media{position:relative;margin-top:clamp(2.2rem,3.6vw,3.4rem);
   border-radius:1.4rem;overflow:hidden;background:#fff;
   border:1px solid color-mix(in srgb,var(--text) 10%,transparent);
   box-shadow:0 28px 70px color-mix(in srgb,var(--text) 12%,transparent)}
-.cl-media img{width:100%;height:100%;object-fit:cover;object-position:center 46%;display:block}
-@media(max-width:767px){.cl-media{aspect-ratio:1.6}}
+.cl-media img{width:100%;height:auto;display:block}
 .cl-body{display:grid;grid-template-columns:1fr;gap:clamp(.9rem,1.4vw,1.2rem);margin-top:clamp(2rem,3.2vw,2.8rem)}
 @media(min-width:900px){.cl-body{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .cl-bod{padding:clamp(1.3rem,1.9vw,1.7rem);border-radius:1rem;background:color-mix(in srgb,var(--bg) 72%,transparent);
@@ -750,6 +749,32 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .cl-ic svg{width:1.2rem;height:1.2rem}
 .cl-bod h3{margin-top:1.1rem;font-size:clamp(1rem,1.2vw,1.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;color:var(--text)}
 .cl-bod p{margin-top:.6rem;font-size:.9rem;line-height:1.7;color:var(--text-soft)}
+
+/* ======== CLIENTELO — jak to funguje (schody) ======== */
+.jf-box{display:grid;grid-template-columns:1fr;gap:clamp(2rem,3.5vw,3.5rem);align-items:start}
+@media(min-width:1000px){.jf-box{grid-template-columns:1.05fr .95fr}}
+.jf-kroky{margin-top:clamp(2rem,3.2vw,3rem);border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);padding-top:clamp(1.8rem,2.6vw,2.4rem)}
+.jf-krok{position:relative;display:grid;grid-template-columns:auto 1fr;gap:clamp(1.1rem,1.8vw,1.6rem);padding-bottom:clamp(2rem,3vw,2.8rem)}
+.jf-krok:last-child{padding-bottom:0}
+.jf-krok::before{content:"";position:absolute;left:1.45rem;top:3rem;bottom:.4rem;width:1px;background:color-mix(in srgb,#2f86ff 38%,transparent)}
+.jf-krok:last-child::before{display:none}
+.jf-cislo{display:grid;place-items:center;width:2.9rem;height:2.9rem;border-radius:50%;
+  border:1.5px solid #2f86ff;background:var(--bg);color:#2f86ff;
+  font:700 .92rem 'Inter',sans-serif;letter-spacing:.02em}
+.jf-txt h3{font-size:clamp(1.02rem,1.3vw,1.18rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;color:var(--text);padding-top:.45rem}
+.jf-txt p{margin-top:.55rem;max-width:26rem;font-size:.96rem;line-height:1.75;color:var(--text-soft)}
+.jf-foto{position:relative;border-radius:1.4rem;overflow:hidden;aspect-ratio:.78;
+  border:1px solid color-mix(in srgb,var(--text) 9%,transparent);
+  box-shadow:0 28px 70px color-mix(in srgb,var(--text) 12%,transparent)}
+.jf-foto img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+@media(min-width:1000px){.jf-foto{position:sticky;top:7rem;margin-top:clamp(2rem,3.2vw,3rem)}}
+@media(max-width:999px){.jf-foto{aspect-ratio:1.25}}
+
+.cl-pas{margin-top:clamp(2rem,3.2vw,3rem);border-radius:1.4rem;overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--text) 9%,transparent);
+  box-shadow:0 28px 70px color-mix(in srgb,var(--text) 12%,transparent)}
+.cl-pas img{width:100%;height:auto;display:block}
+.cl-pas-popis{margin-top:.9rem;font-size:.88rem;line-height:1.6;color:var(--text-muted)}
 </style>
 <meta name="description" content="Leadgenerace pro investiční sektor: nové kvalifikované leady, oživení databáze a péče o investory. Vše zastřešuje vlastní software." />
 <link rel="canonical" href="https://www.clarix.cz/clientelo.html" />
@@ -830,6 +855,39 @@ body.portfolio-mode #hero3d { opacity:.58; }
       </div>
     </div>
   </section>
+
+  <section class="pg-sec jf">
+    <div class="pg-wrap">
+      <div class="jf-box">
+        <div>
+          <div class="pg-kicker reveal">Jak to funguje</div>
+          <h2 class="pg-h2 reveal">Od první kampaně po dlouhodobou spolupráci</h2>
+          <div class="jf-kroky">
+          <div class="jf-krok reveal">
+            <div class="jf-cislo">01</div>
+            <div class="jf-txt"><h3>Analýza a cílení</h3><p>Identifikujeme relevantní investory ve vaší oblasti.</p></div>
+          </div>
+          <div class="jf-krok reveal">
+            <div class="jf-cislo">02</div>
+            <div class="jf-txt"><h3>Kvalifikace kontaktů</h3><p>Ověříme zájem, investiční fokus a rozhodovací pravomoci.</p></div>
+          </div>
+          <div class="jf-krok reveal">
+            <div class="jf-cislo">03</div>
+            <div class="jf-txt"><h3>Komunikace</h3><p>Vedeme první kontakt a pomáháme s prezentací.</p></div>
+          </div>
+          <div class="jf-krok reveal">
+            <div class="jf-cislo">04</div>
+            <div class="jf-txt"><h3>Dlouhodobý rozvoj</h3><p>Budujeme vztahy a vytváříme nové příležitosti.</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="jf-foto reveal">
+          <img src="images/sekce/schodiste.webp" alt="Schodiště v moderní budově" width="1024" height="1536" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section class="pg-sec">
     <div class="pg-wrap">
@@ -940,6 +998,10 @@ body.portfolio-mode #hero3d { opacity:.58; }
       <div class="pg-kicker reveal">Reference</div>
       <h2 class="pg-h2 reveal">Co říkají ti, kdo vzali fundraising do vlastních rukou</h2>
       <p class="pg-lead reveal">Ne kampaňová agentura na jednu sezónu. Hlasy klientů ke každé ze služeb i ke spolupráci jako celku.</p>
+      <div class="cl-pas reveal">
+        <img src="images/sekce/tym.webp" alt="Jednání nad výsledky kampaní s výhledem na Prahu" width="1672" height="941" loading="lazy">
+      </div>
+      <p class="cl-pas-popis reveal">Pravidelně sedíme nad čísly společně s klientem — co funguje, co se mění a kam jdeme dál.</p>
       <div class="pg-grid pg-g2"><article class="pg-quote reveal"><div class="pg-num">Leadgenerace</div><p>Rozjezd byl pomalejší, než jsem si představoval. Všechno má holt svůj čas. Ale někdy kolem druhého měsíce se předané leady začaly monetizovat a od té doby to prostě funguje.</p><footer><b>Zakladatel developerského fondu kvalifikovaných investorů</b>reality</footer></article>
 <article class="pg-quote reveal"><div class="pg-num">Práce s databází</div><p>Upřímně, pustit někoho k databázi našich kontaktů pro mě bylo dlouho nepředstavitelné. Nakonec jsme nastavili režim, kdy mám všechno pod kontrolou, a dnes to vůbec neřeším. Databáze žije a nosí výsledky.</p><footer><b>Zakladatel fondu kvalifikovaných investorů</b>dřív podnikatel ve službách, dnes vlastní fond</footer></article>
 <article class="pg-quote reveal"><div class="pg-num">Péče o investory</div><p>Aktivní práce s naší investorskou bází nám přinesla investice, ke kterým bychom se jinak nejspíš vůbec nedostali. Dřív bych řekl, že jsme měli štěstí. Dnes vím, že to není o štěstí, ale o systematické práci, automatizaci a metodice.</p><footer><b>Emitent korporátních dluhopisů</b>vlastní dluhopisový program</footer></article>

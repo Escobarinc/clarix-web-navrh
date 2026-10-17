@@ -771,6 +771,35 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .sx-cislo span{display:block;margin-top:.6rem;font-size:.9rem;line-height:1.5;color:var(--text-muted)}
 @media(max-width:999px){.sx{margin-top:5.6rem}.sx-foto{min-height:260px;order:-1}
   .sx-foto::after{background:linear-gradient(180deg,transparent 40%,color-mix(in srgb,var(--bg) 85%,transparent) 100%)}}
+
+/* ======== strat3x — měřitelné výsledky ======== */
+.vy-panel{margin-top:clamp(2rem,3.2vw,3rem);padding:clamp(1.5rem,2.4vw,2.2rem);border-radius:1.25rem;
+  background:color-mix(in srgb,var(--bg) 78%,transparent);border:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.vy-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:1rem}
+.vy-popis{font-size:.9rem;color:var(--text-muted)}
+.vy-cislo{display:flex;align-items:center;gap:.8rem;margin-top:.5rem}
+.vy-cislo b{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:#2f86ff}
+.vy-odznak{padding:.3rem .65rem;border-radius:.5rem;background:rgba(34,170,110,.14);color:#1e9b63;font-size:.82rem;font-weight:700}
+.vy-obdobi{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .9rem;border-radius:.6rem;
+  border:1px solid color-mix(in srgb,var(--text) 12%,transparent);font-size:.84rem;color:var(--text-soft);white-space:nowrap}
+.vy-graf{margin-top:1.4rem}
+.vy-graf svg{display:block;width:100%;height:auto}
+.vy-dlazdice{display:grid;grid-template-columns:1fr;gap:clamp(.8rem,1.2vw,1rem);margin-top:clamp(.9rem,1.4vw,1.1rem)}
+@media(min-width:760px){.vy-dlazdice{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vy-dlazdice>div{padding:clamp(1.3rem,1.9vw,1.7rem);border-radius:1rem;
+  background:color-mix(in srgb,var(--bg) 78%,transparent);border:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.vy-dlazdice b{display:block;font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.045em;line-height:1;color:#2f86ff}
+.vy-dlazdice span{display:block;margin-top:.55rem;font-size:.9rem;line-height:1.5;color:var(--text-muted)}
+.vy-rozlozeni{margin-top:clamp(.9rem,1.4vw,1.1rem);padding:clamp(1.5rem,2.4vw,2.2rem);border-radius:1.25rem;
+  background:color-mix(in srgb,var(--bg) 78%,transparent);border:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.vy-rozlozeni h3{font-size:clamp(1rem,1.25vw,1.12rem);font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.vy-rozlozeni-telo{display:grid;grid-template-columns:1fr;gap:clamp(1.4rem,2.4vw,2.6rem);align-items:center;margin-top:1.4rem}
+@media(min-width:700px){.vy-rozlozeni-telo{grid-template-columns:auto 1fr}}
+.vy-kolac{width:clamp(150px,18vw,200px);height:auto}
+.vy-legenda{display:grid;gap:.85rem;max-width:26rem}
+.vy-radek{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.8rem;font-size:.94rem;color:var(--text-soft)}
+.vy-tecka{width:.7rem;height:.7rem;border-radius:50%}
+.vy-radek b{font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
 </style>
 <meta name="description" content="Strategic growth partner s odměnou navázanou na zisk klienta. Budujeme a škálujeme online businessy s minimálním růstem 3× za první rok." />
 <link rel="canonical" href="https://www.clarix.cz/strat3x.html" />
@@ -876,65 +905,46 @@ body.portfolio-mode #hero3d { opacity:.58; }
 
   <section class="pg-sec">
     <div class="pg-wrap">
-      <div class="pg-kicker reveal">Reálné výsledky</div>
-      <h2 class="pg-h2 reveal">Data, která mluví za nás</h2>
-      <p class="pg-lead reveal">Každý graf zobrazuje vývoj klienta před vstupem do projektu a po něm.</p>
-      <div class="pg-grid pg-g2"><article class="pg-chart reveal">
-      <header><div><div class="pg-num">Fundovaný startup</div><h3>HealthTech</h3></div><strong>3.1×</strong></header>
-      <svg viewBox="0 0 320 150" role="img" aria-label="Růst 3.1× za 12 měsíců">
-        <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#2f86ff" stop-opacity=".35"/>
-          <stop offset="100%" stop-color="#2f86ff" stop-opacity="0"/>
-        </linearGradient></defs>
-        <polygon points="10.0,140.0 10.0,131.9 37.3,133.9 64.5,136.1 91.8,129.2 119.1,122.9 146.4,108.9 173.6,100.2 200.9,80.5 228.2,68.0 255.5,47.3 282.7,27.0 310.0,10.0 310.0,140.0" fill="url(#g1)"/>
-        <polyline points="10.0,131.9 37.3,133.9 64.5,136.1 91.8,129.2 119.1,122.9 146.4,108.9 173.6,100.2 200.9,80.5 228.2,68.0 255.5,47.3 282.7,27.0 310.0,10.0" fill="none" stroke="#2f86ff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-        <line x1="64.5" y1="10.0" x2="64.5" y2="140.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
-        <circle cx="310.0" cy="10.0" r="4" fill="#2f86ff"/>
-      </svg>
-      <footer>Svislá čára = vstup do projektu · 12 měsíců spolupráce</footer>
-    </article>
-<article class="pg-chart reveal">
-      <header><div><div class="pg-num">Offline → online</div><h3>E-commerce</h3></div><strong>4.2×</strong></header>
-      <svg viewBox="0 0 320 150" role="img" aria-label="Růst 4.2× za 12 měsíců">
-        <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#2f86ff" stop-opacity=".35"/>
-          <stop offset="100%" stop-color="#2f86ff" stop-opacity="0"/>
-        </linearGradient></defs>
-        <polygon points="10.0,140.0 10.0,134.7 37.3,137.4 64.5,136.2 91.8,132.6 119.1,123.7 146.4,113.0 173.6,101.7 200.9,83.9 228.2,72.1 255.5,48.6 282.7,34.4 310.0,10.0 310.0,140.0" fill="url(#g2)"/>
-        <polyline points="10.0,134.7 37.3,137.4 64.5,136.2 91.8,132.6 119.1,123.7 146.4,113.0 173.6,101.7 200.9,83.9 228.2,72.1 255.5,48.6 282.7,34.4 310.0,10.0" fill="none" stroke="#2f86ff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-        <line x1="64.5" y1="10.0" x2="64.5" y2="140.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
-        <circle cx="310.0" cy="10.0" r="4" fill="#2f86ff"/>
-      </svg>
-      <footer>Svislá čára = vstup do projektu · 12 měsíců spolupráce</footer>
-    </article>
-<article class="pg-chart reveal">
-      <header><div><div class="pg-num">Regulované odvětví</div><h3>Vaping &amp; CBD</h3></div><strong>5.8×</strong></header>
-      <svg viewBox="0 0 320 150" role="img" aria-label="Růst 5.8× za 12 měsíců">
-        <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#2f86ff" stop-opacity=".35"/>
-          <stop offset="100%" stop-color="#2f86ff" stop-opacity="0"/>
-        </linearGradient></defs>
-        <polygon points="10.0,140.0 10.0,137.3 37.3,138.4 64.5,136.6 91.8,134.1 119.1,124.5 146.4,115.7 173.6,101.7 200.9,87.5 228.2,72.5 255.5,51.3 282.7,37.4 310.0,10.0 310.0,140.0" fill="url(#g3)"/>
-        <polyline points="10.0,137.3 37.3,138.4 64.5,136.6 91.8,134.1 119.1,124.5 146.4,115.7 173.6,101.7 200.9,87.5 228.2,72.5 255.5,51.3 282.7,37.4 310.0,10.0" fill="none" stroke="#2f86ff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-        <line x1="64.5" y1="10.0" x2="64.5" y2="140.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
-        <circle cx="310.0" cy="10.0" r="4" fill="#2f86ff"/>
-      </svg>
-      <footer>Svislá čára = vstup do projektu · 12 měsíců spolupráce</footer>
-    </article>
-<article class="pg-chart reveal">
-      <header><div><div class="pg-num">Fundovaný startup</div><h3>SaaS startup</h3></div><strong>5.8×</strong></header>
-      <svg viewBox="0 0 320 150" role="img" aria-label="Růst 5.8× za 12 měsíců">
-        <defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#2f86ff" stop-opacity=".35"/>
-          <stop offset="100%" stop-color="#2f86ff" stop-opacity="0"/>
-        </linearGradient></defs>
-        <polygon points="10.0,140.0 10.0,138.2 37.3,137.6 64.5,136.4 91.8,133.6 119.1,124.6 146.4,115.9 173.6,100.5 200.9,88.8 228.2,69.9 255.5,53.1 282.7,34.9 310.0,10.0 310.0,140.0" fill="url(#g4)"/>
-        <polyline points="10.0,138.2 37.3,137.6 64.5,136.4 91.8,133.6 119.1,124.6 146.4,115.9 173.6,100.5 200.9,88.8 228.2,69.9 255.5,53.1 282.7,34.9 310.0,10.0" fill="none" stroke="#2f86ff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-        <line x1="64.5" y1="10.0" x2="64.5" y2="140.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
-        <circle cx="310.0" cy="10.0" r="4" fill="#2f86ff"/>
-      </svg>
-      <footer>Svislá čára = vstup do projektu · 12 měsíců spolupráce</footer>
-    </article></div>
+      <div class="pg-kicker reveal">Výsledky</div>
+      <h2 class="pg-h2 reveal">Měřitelné výsledky, ne jen sliby</h2>
+      <p class="pg-lead reveal">Naše práce stojí na datech, strategii a dlouhodobém dopadu. Tady jsou reálná čísla.</p>
+
+      <div class="vy-panel reveal">
+        <div class="vy-head">
+          <div>
+            <div class="vy-popis">Obrat klientů</div>
+            <div class="vy-cislo"><b>1,2 mld. Kč</b><span class="vy-odznak">+210 %</span></div>
+          </div>
+          <span class="vy-obdobi">Posledních 12 měsíců <i data-lucide="arrow-right" class="h-4 w-4"></i></span>
+        </div>
+        <div class="vy-graf"><svg viewBox="0 0 1000 230" role="img" aria-label="Vývoj obratu klientů za posledních 12 měsíců" preserveAspectRatio="none" style="height:clamp(160px,18vw,230px)">
+          <defs>
+            <linearGradient id="vySloupec" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2f86ff" stop-opacity=".55"/><stop offset="100%" stop-color="#2f86ff" stop-opacity=".12"/>
+            </linearGradient>
+            <linearGradient id="vyPlocha" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2f86ff" stop-opacity=".28"/><stop offset="100%" stop-color="#2f86ff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <rect x="0.0" y="191.8" width="74.2" height="38.2" rx="4" fill="url(#vySloupec)"/><rect x="84.2" y="187.0" width="74.2" height="43.0" rx="4" fill="url(#vySloupec)"/><rect x="168.3" y="177.5" width="74.2" height="52.5" rx="4" fill="url(#vySloupec)"/><rect x="252.5" y="182.3" width="74.2" height="47.7" rx="4" fill="url(#vySloupec)"/><rect x="336.7" y="163.2" width="74.2" height="66.8" rx="4" fill="url(#vySloupec)"/><rect x="420.8" y="144.1" width="74.2" height="85.9" rx="4" fill="url(#vySloupec)"/><rect x="505.0" y="148.9" width="74.2" height="81.1" rx="4" fill="url(#vySloupec)"/><rect x="589.2" y="120.2" width="74.2" height="109.8" rx="4" fill="url(#vySloupec)"/><rect x="673.3" y="91.6" width="74.2" height="138.4" rx="4" fill="url(#vySloupec)"/><rect x="757.5" y="101.1" width="74.2" height="128.9" rx="4" fill="url(#vySloupec)"/><rect x="841.7" y="58.2" width="74.2" height="171.8" rx="4" fill="url(#vySloupec)"/><rect x="925.8" y="20.0" width="74.2" height="210.0" rx="4" fill="url(#vySloupec)"/>
+          <path d="M 37.1 183.8 C 79.2 183.8, 79.2 179.0, 121.2 179.0 C 163.3 179.0, 163.3 169.5, 205.4 169.5 C 247.5 169.5, 247.5 174.3, 289.6 174.3 C 331.7 174.3, 331.7 155.2, 373.8 155.2 C 415.8 155.2, 415.8 136.1, 457.9 136.1 C 500.0 136.1, 500.0 140.9, 542.1 140.9 C 584.2 140.9, 584.2 112.2, 626.3 112.2 C 668.3 112.2, 668.3 83.6, 710.4 83.6 C 752.5 83.6, 752.5 93.1, 794.6 93.1 C 836.7 93.1, 836.7 50.2, 878.8 50.2 C 920.8 50.2, 920.8 12.0, 962.9 12.0 L 962.9 230 L 37.1 230 Z" fill="url(#vyPlocha)"/>
+          <path d="M 37.1 183.8 C 79.2 183.8, 79.2 179.0, 121.2 179.0 C 163.3 179.0, 163.3 169.5, 205.4 169.5 C 247.5 169.5, 247.5 174.3, 289.6 174.3 C 331.7 174.3, 331.7 155.2, 373.8 155.2 C 415.8 155.2, 415.8 136.1, 457.9 136.1 C 500.0 136.1, 500.0 140.9, 542.1 140.9 C 584.2 140.9, 584.2 112.2, 626.3 112.2 C 668.3 112.2, 668.3 83.6, 710.4 83.6 C 752.5 83.6, 752.5 93.1, 794.6 93.1 C 836.7 93.1, 836.7 50.2, 878.8 50.2 C 920.8 50.2, 920.8 12.0, 962.9 12.0" fill="none" stroke="#2f86ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></div>
+      </div>
+
+      <div class="vy-dlazdice reveal">
+        <div><b>320+</b><span>škálovaných projektů</span></div>
+        <div><b>78 %</b><span>projektů překonalo cíl</span></div>
+        <div><b>3,1×</b><span>průměrný růst za rok</span></div>
+      </div>
+
+      <div class="vy-rozlozeni reveal">
+        <h3>Rozložení projektů podle odvětví</h3>
+        <div class="vy-rozlozeni-telo">
+          <svg class="vy-kolac" viewBox="0 0 140 140" role="img" aria-label="Rozložení projektů podle odvětví"><circle cx="70" cy="70" r="54" fill="none" stroke="#1668ff" stroke-width="26" stroke-dasharray="113.36 225.93" stroke-dashoffset="0.00" transform="rotate(-90 70 70)"/><circle cx="70" cy="70" r="54" fill="none" stroke="#4d97ff" stroke-width="26" stroke-dasharray="89.61 249.68" stroke-dashoffset="-115.36" transform="rotate(-90 70 70)"/><circle cx="70" cy="70" r="54" fill="none" stroke="#86b9ff" stroke-width="26" stroke-dasharray="72.64 266.65" stroke-dashoffset="-206.97" transform="rotate(-90 70 70)"/><circle cx="70" cy="70" r="54" fill="none" stroke="#c3dbff" stroke-width="26" stroke-dasharray="55.68 283.61" stroke-dashoffset="-281.61" transform="rotate(-90 70 70)"/></svg>
+          <div class="vy-legenda"><div class="vy-radek"><span class="vy-tecka" style="background:#1668ff"></span><span>E-commerce</span><b>34 %</b></div><div class="vy-radek"><span class="vy-tecka" style="background:#4d97ff"></span><span>SaaS a software</span><b>27 %</b></div><div class="vy-radek"><span class="vy-tecka" style="background:#86b9ff"></span><span>HealthTech</span><b>22 %</b></div><div class="vy-radek"><span class="vy-tecka" style="background:#c3dbff"></span><span>Ostatní odvětví</span><b>17 %</b></div></div>
+        </div>
+      </div>
     </div>
   </section>
 
