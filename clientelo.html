@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#f7f9fc" />
-<title>CLIENTELO · CLARIX</title>
+<title>Lead generation · CLARIX</title>
 <link rel="stylesheet" href="css/pisma.css" />
 <link rel="stylesheet" href="css/tailwind.css" />
 <style>
@@ -775,8 +775,112 @@ body.portfolio-mode #hero3d { opacity:.58; }
   box-shadow:0 28px 70px color-mix(in srgb,var(--text) 12%,transparent)}
 .cl-pas img{width:100%;height:auto;display:block}
 .cl-pas-popis{margin-top:.9rem;font-size:.88rem;line-height:1.6;color:var(--text-muted)}
+
+/* ======== Lead generation ======== */
+.lg-hero-kroky{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:clamp(2rem,3.2vw,2.8rem);
+  border:1px solid var(--border);border-radius:1rem;overflow:hidden;background:var(--border)}
+@media(min-width:860px){.lg-hero-kroky{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.lg-hero-krok{padding:clamp(1.1rem,1.7vw,1.4rem);background:var(--bg)}
+.lg-hero-krok b{display:block;font:700 .78rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;color:#2f86ff}
+.lg-hero-krok span{display:block;margin-top:.5rem;font-size:.92rem;line-height:1.45;color:var(--text)}
+.lg-dolu{margin-top:1.8rem;font-size:.9rem;color:var(--text-muted)}
+
+.lg-hlavni{padding:clamp(1.6rem,2.6vw,2.4rem);border-radius:1.25rem;background:color-mix(in srgb,var(--bg) 80%,transparent);
+  border:1px solid color-mix(in srgb,#2f86ff 24%,transparent);margin-top:clamp(1.6rem,2.6vw,2.2rem)}
+.lg-hlavni h3{margin-top:.9rem;font-size:clamp(1.2rem,1.7vw,1.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:var(--text)}
+.lg-hlavni p{margin-top:1rem;font-size:.98rem;line-height:1.8;color:var(--text-soft)}
+
+.lg-foto{margin-top:clamp(1.8rem,2.8vw,2.6rem);border-radius:1.25rem;overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--text) 9%,transparent);
+  box-shadow:0 26px 64px color-mix(in srgb,var(--text) 11%,transparent)}
+.lg-foto img{width:100%;height:auto;display:block}
+.lg-foto-popis{margin-top:.85rem;font-size:.86rem;line-height:1.6;color:var(--text-muted)}
+.lg-vedle{display:grid;grid-template-columns:1fr;gap:clamp(1.4rem,2.4vw,2.4rem);align-items:center}
+@media(min-width:960px){.lg-vedle{grid-template-columns:1fr .86fr}.lg-vedle .lg-foto{margin-top:0}}
+
+.lg-leadkarta{padding:clamp(1.5rem,2.3vw,2rem);border-radius:1.25rem;background:color-mix(in srgb,var(--bg) 80%,transparent);
+  border:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
+.lg-leadkarta>.pg-kicker{margin-bottom:.5rem}
+.lg-leadkarta h3{font-size:clamp(1.05rem,1.4vw,1.25rem);font-weight:800;letter-spacing:-.025em;color:var(--text)}
+.lg-radek{padding:.95rem 0;border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.lg-radek:first-of-type{border-top:0}
+.lg-radek dt{font-size:.78rem;letter-spacing:.04em;color:var(--text-muted)}
+.lg-radek dd{margin:.35rem 0 0;font-size:.98rem;line-height:1.6;color:var(--text)}
+.lg-hotovo{margin-top:1.1rem;padding:.6rem .9rem;border-radius:.6rem;display:inline-block;
+  background:rgba(30,155,99,.14);color:#1e9b63;font-size:.88rem;font-weight:700}
+
+.lg-model{margin-top:clamp(2rem,3vw,2.8rem);border-radius:1.25rem;overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--text) 10%,transparent);background:color-mix(in srgb,var(--bg) 82%,transparent)}
+.lg-model-hlava{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;align-items:baseline;
+  padding:clamp(1.1rem,1.8vw,1.5rem);border-bottom:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.lg-model-hlava b{font-size:1.02rem;font-weight:800;color:var(--text)}
+.lg-model-hlava span{font-size:.9rem;color:var(--text-muted)}
+.lg-vystraha{padding:.6rem clamp(1.1rem,1.8vw,1.5rem);background:rgba(47,134,255,.1);
+  font:700 .74rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#2f86ff}
+.lg-cisla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,1.8vw,1.6rem);padding:clamp(1.2rem,2vw,1.8rem)}
+@media(min-width:860px){.lg-cisla{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.lg-cisla span{display:block;font-size:.84rem;color:var(--text-muted)}
+.lg-cisla b{display:block;margin-top:.4rem;font-size:clamp(1.5rem,2.4vw,2rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--text)}
+.lg-grafy{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,2.6vw,2.6rem);padding:0 clamp(1.2rem,2vw,1.8rem) clamp(1.2rem,2vw,1.8rem)}
+@media(min-width:860px){.lg-grafy{grid-template-columns:1fr 1fr}}
+.lg-grafy h4{font-size:.98rem;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.lg-pruh{margin-top:1.1rem}
+.lg-pruh-popis{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;color:var(--text-soft)}
+.lg-pruh-popis b{color:var(--text);font-variant-numeric:tabular-nums}
+.lg-pruh-draha{margin-top:.45rem;height:.85rem;border-radius:.45rem;background:color-mix(in srgb,#2f86ff 12%,transparent);overflow:hidden}
+.lg-pruh-vypln{height:100%;border-radius:.45rem;background:#1668ff}
+.lg-sloupce{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.8rem,1.6vw,1.4rem);
+  align-items:end;margin-top:1.1rem;height:clamp(150px,16vw,190px)}
+.lg-sloupec{display:flex;flex-direction:column;justify-content:flex-end;height:100%;text-align:center}
+.lg-sloupec i{display:block;font-style:normal;font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
+.lg-sloupec u{display:block;text-decoration:none;border-radius:.4rem .4rem 0 0;background:color-mix(in srgb,#2f86ff 38%,transparent)}
+.lg-sloupec.je u{background:#1668ff}
+.lg-sloupec em{display:block;margin-top:.5rem;font-style:normal;font-size:.84rem;color:var(--text-muted)}
+.lg-pozn{padding:0 clamp(1.2rem,2vw,1.8rem) clamp(1.2rem,2vw,1.8rem);font-size:.82rem;line-height:1.7;color:var(--text-muted)}
+.lg-pozn p+p{margin-top:.4rem}
+
+.lg-faq{margin-top:clamp(1.8rem,2.8vw,2.4rem);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);
+  border-radius:1.25rem;overflow:hidden;background:color-mix(in srgb,var(--bg) 78%,transparent)}
+.lg-faq details{border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.lg-faq details:first-child{border-top:0}
+.lg-faq summary{display:flex;justify-content:space-between;gap:1rem;align-items:center;cursor:pointer;list-style:none;
+  padding:clamp(1.1rem,1.7vw,1.4rem);font-size:1rem;font-weight:700;letter-spacing:-.02em;color:var(--text)}
+.lg-faq summary::-webkit-details-marker{display:none}
+.lg-faq summary::after{content:"+";font-size:1.3rem;font-weight:400;color:#2f86ff;flex:none}
+.lg-faq details[open] summary::after{content:"–"}
+.lg-faq summary:hover{color:#2f86ff}
+.lg-faq p{padding:0 clamp(1.1rem,1.7vw,1.4rem) clamp(1.1rem,1.7vw,1.4rem);margin:0;
+  font-size:.95rem;line-height:1.8;color:var(--text-soft);max-width:60rem}
+
+.lg-kontakt{display:grid;grid-template-columns:1fr;gap:clamp(1.6rem,2.6vw,2.6rem);margin-top:clamp(2rem,3vw,2.8rem)}
+@media(min-width:960px){.lg-kontakt{grid-template-columns:.85fr 1fr;align-items:start}}
+.lg-spojeni{display:grid;gap:.6rem;margin-top:1.4rem}
+.lg-spojeni a{display:inline-flex;align-items:center;gap:.6rem;font-size:1.02rem;font-weight:700;color:var(--text)}
+.lg-spojeni a:hover{color:#2f86ff}
+.lg-formular{padding:clamp(1.5rem,2.3vw,2rem);border-radius:1.25rem;background:color-mix(in srgb,var(--bg) 82%,transparent);
+  border:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
+.lg-formular h3{font-size:clamp(1.05rem,1.4vw,1.25rem);font-weight:800;letter-spacing:-.025em;color:var(--text)}
+.lg-pole{margin-top:1.1rem}
+.lg-pole label{display:block;font-size:.84rem;font-weight:600;color:var(--text-soft)}
+.lg-pole input,.lg-pole select,.lg-pole textarea{width:100%;margin-top:.4rem;padding:.72rem .9rem;border-radius:.55rem;
+  border:1px solid color-mix(in srgb,var(--text) 14%,transparent);background:var(--bg);color:var(--text);
+  font-family:inherit;font-size:.95rem}
+.lg-pole textarea{min-height:7rem;resize:vertical}
+.lg-pole input:focus,.lg-pole select:focus,.lg-pole textarea:focus{outline:2px solid #2f86ff;outline-offset:1px;border-color:transparent}
+.lg-dvojice{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:620px){.lg-dvojice{grid-template-columns:1fr 1fr;gap:1rem}}
+.lg-odeslat{margin-top:1.4rem;display:inline-flex;align-items:center;gap:.6rem;height:3.1rem;padding:0 1.6rem;border:0;
+  border-radius:.6rem;background:#1668ff;color:#fff;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer}
+.lg-odeslat:hover{background:#0f57db}
+.lg-odeslat:disabled{opacity:.6;cursor:default}
+.lg-mala{margin-top:.9rem;font-size:.82rem;line-height:1.6;color:var(--text-muted)}
+.lg-stav{margin-top:.9rem;font-size:.9rem;font-weight:600}
+
+.lg-cta{display:inline-flex;align-items:center;gap:.6rem;height:3.2rem;padding:0 1.7rem;border-radius:.65rem;
+  background:#1668ff;color:#fff;font-size:.96rem;font-weight:700;transition:background .25s ease}
+.lg-cta:hover{background:#0f57db;color:#fff}
 </style>
-<meta name="description" content="Leadgenerace pro investiční sektor: nové kvalifikované leady, oživení databáze a péče o investory. Vše zastřešuje vlastní software." />
+<meta name="description" content="Najdeme vaše potenciální zákazníky a ověříme, se kterými má smysl jednat. Strategie, kampaně, kvalifikace leadů a následná péče." />
 <link rel="canonical" href="https://www.clarix.cz/clientelo.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="CLARIX" />
@@ -821,241 +925,310 @@ body.portfolio-mode #hero3d { opacity:.58; }
 
   <section class="pg-hero">
     <div class="pg-wrap">
-      <div class="pg-kicker reveal is-visible">Leadgenerace · MarTech · vlastní call centrum</div>
-      <h1 class="reveal is-visible">Přivádíme klienty,<br><span>kteří chtějí investovat.</span></h1>
-      <p class="pg-lead reveal is-visible">Specializace na leadgeneraci pro investiční sektor. Přivedeme nové kvalifikované leady, probudíme databázi, která už existuje, a systematicky pečujeme o investory. Všechny tři služby zastřešuje <b>vlastní software</b>.</p>
-      <div class="pg-tags reveal is-visible"><span>Fondy kvalifikovaných investorů</span><span>Emitenti dluhopisů</span><span>Projekty podle § 15</span><span>Od začínajících subjektů po zavedená jména</span></div>
-    </div>
-  </section>
-
-  <section class="pg-sec cl-plat">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Platforma</div>
-      <h2 class="pg-h2 reveal">Váš přímý přístup k relevantním investorům</h2>
-      <p class="pg-lead reveal">Vlastní platforma CLIENTELO sdružuje, analyzuje a kvalifikuje investory z celé Evropy. Vše na jednom místě — od prvního kliknutí na reklamu po podepsanou investici.</p>
-      <div class="cl-media reveal">
-        <img src="images/sekce/platforma.webp" alt="Platforma CLIENTELO se seznamem investorů" width="1536" height="1024" loading="lazy">
+      <div class="pg-kicker reveal is-visible">Lead generation · strategie, realizace, kvalifikace</div>
+      <h1 class="reveal is-visible">Najdeme vaše potenciální zákazníky.<br><span>Ověříme, se kterými má smysl jednat.</span></h1>
+      <p class="pg-lead reveal is-visible">Vyhodnotíme váš byznys, vybereme vhodné zákaznické segmenty a navrhneme způsob jejich oslovení. Připravíme a řídíme celý akviziční proces: od reklam a cílových stránek přes získání kontaktu až po jeho ověření a předání vašemu obchodu.</p>
+      <p class="pg-lead reveal is-visible">Výkon vyhodnocujeme podle kvality leadů a jejich dalšího obchodního vývoje. Získáváme nové zájemce i příležitosti z vaší stávající databáze. Podle potřeby zajistíme také navazující komunikaci a dlouhodobou péči.</p>
+      <div class="reveal is-visible" style="margin-top:2rem">
+        <a href="#zadani" class="lg-cta">Probrat získávání kvalifikovaných leadů ↗</a>
       </div>
-      <div class="cl-body">
-        <article class="cl-bod reveal">
-          <span class="cl-ic"><i data-lucide="users"></i></span>
-          <h3>Jedna databáze investorů</h3><p>Všechny kontakty, fondy i rodinné kanceláře na jednom místě. Žádné tabulky po discích.</p>
-        </article>
-        <article class="cl-bod reveal">
-          <span class="cl-ic"><i data-lucide="filter"></i></span>
-          <h3>Kvalifikace a skóring</h3><p>Software u každého kontaktu hlídá, jaká témata ho zajímají a jak daleko v rozhodování je.</p>
-        </article>
-        <article class="cl-bod reveal">
-          <span class="cl-ic"><i data-lucide="megaphone"></i></span>
-          <h3>Kampaně a aktivity</h3><p>Reklamu, maily i hovory call centra je vidět pohromadě u konkrétního investora.</p>
-        </article>
-        <article class="cl-bod reveal">
-          <span class="cl-ic"><i data-lucide="line-chart"></i></span>
-          <h3>Analytika v reálném čase</h3><p>Od nákupu trafficu po podepsanou investici. Každá koruna má svoje číslo.</p>
-        </article>
+      <p class="lg-dolu reveal is-visible">Co přesně pro vás zajistíme ↓</p>
+      <div class="lg-hero-kroky reveal is-visible">
+        <div class="lg-hero-krok"><b>01</b><span>Vyhodnocení byznysu</span></div><div class="lg-hero-krok"><b>02</b><span>Strategie a realizace</span></div><div class="lg-hero-krok"><b>03</b><span>Ověření kontaktu</span></div><div class="lg-hero-krok"><b>04</b><span>Kvalifikovaný lead</span></div><div class="lg-hero-krok"><b>05</b><span>Následná péče</span></div>
       </div>
     </div>
   </section>
 
-  <section class="pg-sec jf">
+  <section class="pg-sec">
     <div class="pg-wrap">
-      <div class="jf-box">
+      <div class="pg-kicker reveal">Naše zaměření</div>
+      <h2 class="pg-h2 reveal">Investoři pro váš projekt. Zákazníci pro váš business.</h2>
+      <p class="pg-lead reveal">Naší hlavní specializací je marketingová podpora fundraisingu. Stejnou důslednost v akvizici, ověřování kontaktů a následné péči přinášíme také do dalších obchodních modelů.</p>
+
+      <div class="lg-hlavni reveal">
+        <div class="pg-kicker">Hlavní specializace / fundraising</div>
+        <h3>Propojujeme investiční projekty s relevantními zájemci.</h3>
+        <p>Pro emitenty dluhopisů, fondy kvalifikovaných investorů a developerské společnosti vytváříme systém získávání a zpracování kontaktů. Připravíme strategii, sdělení, kampaně i vstupní stránky. Ověříme kontakt a zájem v dohodnutém rozsahu a předáme vašemu týmu podklady pro další jednání.</p>
+        <p>Pracujeme s novým publikem i stávající databází. Navazující komunikaci a péči nastavíme podle fáze rozhodování, aby relevantní příležitosti nezůstávaly bez odezvy.</p>
+        <div class="pg-out" style="margin-top:1.4rem"><p>Od prvního kontaktu k dlouhodobému vztahu. Zajišťujeme marketing a práci s kontakty; regulované činnosti náleží oprávněnému subjektu.</p></div>
+      </div>
+
+      <div class="pg-grid pg-g3" style="margin-top:clamp(1rem,1.6vw,1.3rem)">
+        <article class="pg-card reveal"><div class="pg-kicker">E-commerce</div><h3>Noví zákazníci. Další nákupy.</h3><p>Propojujeme akviziční kampaně s nákupní cestou a péčí o zákazníky. Rozvíjíme databázi, automatizujeme navazující komunikaci a vracíme zákazníky k dalším objednávkám. Výkon hodnotíme podle nákladů na získání zákazníka a obchodního přínosu.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">Reality a development</div><h3>Zájemci pro konkrétní nemovitosti.</h3><p>Připravíme akvizici pro prodej nebo pronájem projektu. Zachytíme poptávku, ověříme požadavky zájemce a předáme kontakt prodejnímu týmu s jasným dalším krokem. Získávání investorů pro financování řešíme v rámci fundraisingu.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">B2B služby a technologie</div><h3>Kontakty, se kterými má smysl jednat.</h3><p>Vymezíme vhodné segmenty a firmy, připravíme akvizici a ověříme potřebu i roli kontaktní osoby. Obchodnímu týmu předáváme souvislosti pro další jednání. Kontakty s delším rozhodováním rozvíjíme následnou komunikací.</p></article>
+      </div>
+      <div class="pg-out reveal"><p>Ve všech oblastech můžeme začít novou akvizicí, využít potenciál vaší databáze nebo obojí propojit.</p></div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Dvě cesty k novému obchodu</div>
+      <h2 class="pg-h2 reveal">Noví zájemci. Nové příležitosti ve vaší databázi.</h2>
+      <div class="pg-grid pg-g2" style="margin-top:clamp(2rem,3vw,2.6rem)">
+        <article class="pg-card reveal"><div class="pg-kicker">Akvizice nových kontaktů</div><h3>Získáme nové zájemce</h3>
+          <p>Navrhneme a realizujeme akviziční kampaně pro vaši nabídku. Připravíme reklamní sdělení, kreativu, cílové stránky a formuláře. Nastavíme měření a následné zpracování kontaktů. U získaných zájemců ověříme relevanci a zájem o další jednání.</p>
+          <div class="pg-out" style="margin-top:1.2rem"><p>Výstup: kvalifikované leady s ověřenými informacemi, historií komunikace a domluveným dalším krokem.</p></div></article>
+        <article class="pg-card reveal"><div class="pg-kicker">Databáze a stávající zákazníci</div><h3>Rozvineme potenciál vašich kontaktů</h3>
+          <p>Vyhodnotíme dosavadní kontakty a zákazníky. Databázi rozdělíme podle historie, potřeb a obchodního potenciálu. Připravíme cílené oslovení a ověříme příležitosti pro obnovení jednání, opakovaný nákup nebo rozšíření spolupráce.</p>
+          <div class="pg-out" style="margin-top:1.2rem"><p>Výstup: prověřené obchodní příležitosti z kontaktů a zákazníků, které už máte.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">01 / Analýza a akviziční strategie</div>
+      <h2 class="pg-h2 reveal">Nejdřív určíme, kde má vaše nabídka obchodní potenciál.</h2>
+      <p class="pg-lead reveal">Stejný produkt může u různých zákazníků vyvolat úplně jinou reakci. Liší se jejich potřeby, důvody k nákupu, rozhodovací proces i hodnota, kterou pro vás představují. Proto nejprve vymezíme segmenty, u kterých se potkává relevance nabídky, dosažitelnost zákazníka a ekonomika akvizice.</p>
+      <p class="pg-lead reveal">Projdeme vaše úspěšné zakázky, ztracené příležitosti, dosavadní kampaně a způsob práce obchodu. Zjišťujeme, kdo skutečně nakupuje, co nákup spouští, kdo o něm rozhoduje a proč se některá jednání neuzavřou.</p>
+      <div class="pg-grid pg-g3" style="margin-top:clamp(2rem,3vw,2.6rem)">
+        <article class="pg-card reveal"><h3>Které zákazníky upřednostnit</h3><p>Segmenty posuzujeme podle potřeby, vhodnosti vaší nabídky, hodnoty zakázky, délky prodeje a náročnosti obsluhy. U B2B rozlišujeme vhodnou firmu a konkrétního člověka, který nákup ovlivňuje nebo schvaluje.</p></article>
+        <article class="pg-card reveal"><h3>Kde a jak je oslovit</h3><p>Rozlišujeme zákazníky, kteří řešení aktivně hledají, od těch, u kterých je potřeba otevřít relevantní téma. Podle toho volíme vyhledávání, sociální a profesní sítě, obsah, cílené oslovení firem nebo vlastní databázi.</p></article>
+        <article class="pg-card reveal"><h3>Jaká ekonomika dává smysl</h3><p>Propojíme hodnotu a marži zakázky s náklady na získání zákazníka. Zohledníme přechod kontaktů do jednání, úspěšnost prodeje a jeho délku. Chybějící data nahradíme pracovními předpoklady a plánem jejich ověření.</p></article>
+      </div>
+      <div class="pg-out reveal"><p>Výstupem je akviziční plán: prioritní segmenty, nabídka, kanály, rozpočet, kvalifikační kritéria a způsob vyhodnocení.</p></div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">02 / Příprava a realizace</div>
+      <h2 class="pg-h2 reveal">Od reklamního sdělení po předání obchodu. Vše musí navazovat.</h2>
+      <p class="pg-lead reveal">Reklama vytváří očekávání. Cílová stránka jej musí naplnit, vysvětlit nabídku a dát správnému zájemci důvod reagovat. Formulář má získat informace potřebné pro další krok. Následná komunikace musí přijít včas a navázat na skutečný zájem.</p>
+      <p class="pg-lead reveal">Tuto cestu navrhujeme a realizujeme jako jeden celek. Připravíme sdělení pro jednotlivé segmenty, reklamy, landing pages, formuláře i navazující komunikaci. Nastavíme měření, evidenci a pravidla předávání kontaktů.</p>
+      <div class="pg-grid pg-g2" style="margin-top:clamp(2rem,3vw,2.6rem)">
+        <article class="pg-card reveal"><div class="pg-kicker">A / Argumentace</div><h3>Nabídka, která odpovídá potřebě zákazníka</h3><p>Pojmenujeme konkrétní problém, přínos řešení a důvody, proč vám má zákazník věřit. Zvolíme odpovídající první krok: poptávku, konzultaci, ukázku řešení nebo jinou formu projevení zájmu.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">B / Kampaně</div><h3>Cílení a kreativa pro jednotlivé segmenty</h3><p>Připravíme strukturu kampaní podle zákazníků a fáze rozhodování. Testujeme sdělení, kreativu a publika tak, abychom zjistili, které kombinace přivádějí relevantní zájemce.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">C / Landing pages</div><h3>Stránky a formuláře pro získání kontaktu</h3><p>Vytvoříme stránky navazující na konkrétní reklamu a nabídku. Pracujeme s argumentací, důkazy, námitkami i rozsahem formuláře. Sledujeme počet reakcí a jejich kvalitu pro obchod.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">D / Měření a evidence</div><h3>Přehled od zdroje leadu po jeho výsledek</h3><p>Nastavíme evidenci zdroje, stavu a výsledku zpracování. Určíme odpovědnost za reakci, předání a zpětnou vazbu. Kampaně tak můžeme hodnotit i podle následných jednání a zakázek.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">03 / Verifikace a kvalifikace</div>
+      <h2 class="pg-h2 reveal">Ověříme kontakt, potřebu i připravenost k dalšímu jednání.</h2>
+      <div class="lg-vedle" style="margin-top:clamp(2rem,3vw,2.6rem)">
         <div>
-          <div class="pg-kicker reveal">Jak to funguje</div>
-          <h2 class="pg-h2 reveal">Od první kampaně po dlouhodobou spolupráci</h2>
-          <div class="jf-kroky">
-          <div class="jf-krok reveal">
-            <div class="jf-cislo">01</div>
-            <div class="jf-txt"><h3>Analýza a cílení</h3><p>Identifikujeme relevantní investory ve vaší oblasti.</p></div>
-          </div>
-          <div class="jf-krok reveal">
-            <div class="jf-cislo">02</div>
-            <div class="jf-txt"><h3>Kvalifikace kontaktů</h3><p>Ověříme zájem, investiční fokus a rozhodovací pravomoci.</p></div>
-          </div>
-          <div class="jf-krok reveal">
-            <div class="jf-cislo">03</div>
-            <div class="jf-txt"><h3>Komunikace</h3><p>Vedeme první kontakt a pomáháme s prezentací.</p></div>
-          </div>
-          <div class="jf-krok reveal">
-            <div class="jf-cislo">04</div>
-            <div class="jf-txt"><h3>Dlouhodobý rozvoj</h3><p>Budujeme vztahy a vytváříme nové příležitosti.</p></div>
-          </div>
-          </div>
+          <p class="pg-lead reveal" style="margin-top:0">Vyplněný formulář dokládá reakci na nabídku. Ještě ale neříká, zda kontakt odpovídá vašemu zákazníkovi, co skutečně potřebuje a zda je připraven pokračovat. Právě to zjišťujeme při kvalifikaci.</p>
+          <p class="pg-lead reveal">Oddělujeme ověření kontaktních údajů od posouzení obchodní relevance. Kontrolujeme dosažitelnost a duplicity. Při navazující komunikaci ověřujeme potřebu, souvislost s vaší nabídkou a zájem o další krok. Podle typu obchodu doplňujeme roli v rozhodování, časový horizont, rozsah požadavku nebo rozpočtové možnosti.</p>
+          <p class="pg-lead reveal">Kritéria stanovujeme s vaším obchodem. Rozlišujeme informace nezbytné pro předání od těch, které lze zjistit až při hlubším obchodním jednání. U regulovaných produktů rozsah ověřování přizpůsobujeme předem posouzenému právnímu modelu spolupráce.</p>
         </div>
-        <div class="jf-foto reveal">
+        <div class="lg-foto reveal">
           <img src="images/sekce/schodiste.webp" alt="Schodiště v moderní budově" width="1024" height="1536" loading="lazy">
         </div>
       </div>
-    </div>
-  </section>
-
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-stats reveal">
-        <div class="pg-stat"><b>10+</b><span>vlastních portálů a platforem</span><em>pozornost si z velké části vyrábíme sami</em></div>
-        <div class="pg-stat"><b>200+</b><span>vlastních landing pages a nástrojů</span><em>postavené a testované na konverzi</em></div>
-        <div class="pg-stat"><b>1</b><span>software na celou cestu investora</span><em>od nákupu trafficu po dlouhodobý vztah</em></div>
-        <div class="pg-stat"><b>24/7</b><span>AI optimalizace kampaní</span><em>rozpočet se průběžně přesouvá tam, kde to funguje</em></div>
+      <div class="pg-grid pg-g3" style="margin-top:clamp(1.6rem,2.4vw,2.2rem)">
+        <article class="pg-card reveal"><div class="pg-kicker">Předat obchodu</div><h3>Připravený k předání</h3><p>Kontakt splňuje dohodnutá kritéria a má zájem o konkrétní další krok. Obchodník dostává podklady a navazuje na dosavadní komunikaci.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">Dále rozvíjet</div><h3>Relevantní, ale zatím nepřipravený</h3><p>Zájemce odpovídá cílové skupině, ale rozhodnutí odkládá nebo potřebuje další informace. Nastavíme následnou péči a podmínku dalšího oslovení.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">Vyřadit a vyhodnotit</div><h3>Nevhodný pro aktuální nabídku</h3><p>Kontakt nesplňuje dohodnutá kritéria. Zaznamenáme důvod, aby obchod neztrácel čas a získané informace pomohly zlepšit cílení dalších kampaní.</p></article>
       </div>
     </div>
   </section>
 
   <section class="pg-sec">
     <div class="pg-wrap">
-      <div class="pg-kicker reveal">Co děláme</div>
-      <h2 class="pg-h2 reveal">Tři služby, jeden software</h2>
-      <p class="pg-lead reveal">Děláme jen investiční sektor a nic jiného. Neprodáváme holý software ani prázdné kampaně — pomáháme ve třech oblastech, které do sebe zapadají, a všechny řídí jeden systém. Využít jde všechno najednou, nebo jen to, co je právě potřeba.</p>
-      <div class="pg-grid pg-g3"><article class="pg-card reveal"><span class="pg-ic"><i data-lucide="target"></i></span><h3>Leadgenerace</h3><p>Přivedeme nové kvalifikované leady. Reklama, vlastní investiční weby a call centrum, které každý kontakt probere podle zadání klienta.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="database"></i></span><h3>Práce s databází</h3><p>Probudíme kontakty, které klient už má. Bývají to nejrychlejší a nejlevnější leady, protože už jednou byly zaplacené.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="heart-handshake"></i></span><h3>Péče o investory</h3><p>Postaráme se o komunikaci se stávajícími investory. Reporting, novinky, milníky i reaktivace, aby vztah první investicí nekončil.</p></article></div>
-      <div class="pg-out reveal"><p>Každou z těch tří služeb je vidět, měřit a řídit na jednom místě. <b>Software je vlajková loď celé služby.</b></p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Služba 01 · Leadgenerace</div>
-      <h2 class="pg-h2 reveal">Jak vzniká lead k předání</h2>
-      <p class="pg-lead reveal">Nové leady stavíme od nuly, od první pozornosti až po předání. Celá cesta v pěti krocích.</p>
-      <div class="pg-steps"><div class="pg-step reveal"><div class="pg-step-n">1</div><div><h3>Pozornost</h3><p>Reklama na všech velkých platformách a k tomu přes deset vlastních investičních webů. Za kontakt dáváme skutečně užitečný nástroj, ne laciný trik.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">2</div><div><h3>Data</h3><p>Každou návštěvu zachytí a rozpozná náš software. Víme, jaká témata koho zajímají, a podle toho cílíme. Nikdo nepropadne sítem.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">3</div><div><h3>Lead</h3><p>Z návštěvníka se stává lead ve chvíli, kdy projeví zájem — vyplní formulář nebo si vyžádá kalkulačku. Dál ho rozvíjíme užitečným obsahem.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">4</div><div><h3>Kvalifikace</h3><p>Leady kvalifikujeme po telefonu. Dělají to seniorní specialisté se zkušeností z businessu i financí, přesně podle nastaveného zadání. Ne skript, ale partnerský rozhovor.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">5</div><div><h3>Předání</h3><p>Předáváme jen leady odpovídající zadání: desítky, ne tisíce. Vždy s kontextem, odkud kdo přišel a jaká témata ho zajímají. Další kroky řídí klient.</p></div></div></div>
-      <div class="pg-out reveal"><p><b>Co z toho klient má:</b> stálý přísun kvalifikovaných leadů podle vlastního zadání, v objemu, který jeho tým stíhá zpracovat. Žádné nakoupené seznamy, žádné tisíce syrových kontaktů.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Služba 02 · Práce s databází</div>
-      <h2 class="pg-h2 reveal">Probudíme kontakty, které už máte</h2>
-      <p class="pg-lead reveal">Většina fondů i emitentů už nějakou databázi má, ale aktivně pracuje jen se zlomkem z ní. Uděláme z ní živý zdroj leadů.</p>
-      <div class="pg-steps"><div class="pg-step reveal"><div class="pg-step-n">1</div><div><h3>Zmapování a segmentace</h3><p>Databázi projdeme, vyčistíme a rozdělíme podle zájmů, historie a aktivity. Zjistíme, kdo v ní vlastně je.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">2</div><div><h3>Oživení obsahem</h3><p>Každému segmentu posíláme personalizovaný obsah, který dává smysl právě jemu. Kontakty, které roky mlčely, se začnou ozývat.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">3</div><div><h3>Kvalifikace a předání</h3><p>Kdo projeví zájem, projde stejnou telefonickou kvalifikací jako nový lead. Dál jdou jen kontakty, které sedí zadání.</p></div></div></div>
-      <div class="pg-out reveal"><p><b>Co z toho klient má:</b> z praxe běžně o třetinu víc kvalifikovaných leadů z téže databáze, než z ní do té doby vypadlo. Nejlevnější leady, jaké kdy bude mít. Konkrétní čísla ukazujeme na schůzce.</p></div>
-      <div class="pg-kicker reveal" style="margin-top:3.5rem">Nemusíte se bát o data</div>
-      <h2 class="pg-h2 reveal" style="font-size:clamp(1.5rem,2.4vw,2.1rem)">Tři režimy podle toho, kolik kontroly si chcete nechat</h2>
-      <p class="pg-lead reveal">Databázi není nutné rovnou předávat. Pracujeme v několika režimech podle toho, jak citlivá data jsou.</p>
-      <div class="pg-grid pg-g3"><article class="pg-card reveal"><span class="pg-ic"><i data-lucide="file-lock"></i></span><h3>Řízené zpracování</h3><p>Data zpracujeme na základě zpracovatelské smlouvy, zabezpečeně a výhradně pro dohodnutý účel.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="eye-off"></i></span><h3>Anonymizovaná data</h3><p>Pracujeme jen s anonymizovanými daty, plně v souladu s GDPR a bez přístupu ke konkrétním osobám.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="home"></i></span><h3>Data zůstanou u klienta</h3><p>Nepředává se nic. Dodáme metodiku a nastavení, které aplikuje interní tým. Know-how u nás, data doma.</p></article></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Služba 03 · Péče o investory</div>
-      <h2 class="pg-h2 reveal">První investicí vztah teprve začíná</h2>
-      <p class="pg-lead reveal">Získat investora je jen půlka práce. Postaráme se o pravidelnou komunikaci tak, aby zůstal spokojený a loajální.</p>
-      <div class="pg-grid pg-g3"><article class="pg-card reveal"><span class="pg-ic"><i data-lucide="file-bar-chart"></i></span><h3>Reporting</h3><p>Pravidelné a srozumitelné zprávy o tom, jak se daří. Investor, který ví, co se děje, je klidný investor.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="calendar-heart"></i></span><h3>Milníky a retence</h3><p>Výročí, narozeniny, důležité momenty fondu i investora. Automatické sekvence pohlídají, že se na nikoho nezapomene.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="refresh-cw"></i></span><h3>Reaktivace</h3><p>Kontakty, které ztichly, umíme vrátit do hry. Personalizované oslovení podle toho, co koho dřív zajímalo.</p></article></div>
-      <div class="pg-out reveal"><p><b>Co z toho klient má:</b> loajálnější investory, víc doporučení a vztah, který roste.</p></div>
-      <div class="pg-out reveal"><p><b>Z praxe:</b> emitent dluhopisů s tisícovkou investorů, kterým léta chodily jen úroky a jeden e-mail ročně. Když se o jeho investory začalo systematicky pečovat, začali se sami ozývat a klient od nich získal další investice <b>v řádu desítek milionů korun</b> — bez koruny za nové kontakty. Uvádíme anonymizovaně se souhlasem klienta.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Technologie · MarTech</div>
-      <h2 class="pg-h2 reveal">Software, který pokryje celou cestu investora</h2>
-      <p class="pg-lead reveal">Software si vyvíjíme sami. Od nákupu trafficu po dlouhodobé investorské partnerství je všechno vidět, měřit a vyhodnocovat. Automatizujete, zefektivňujete a víte, co každá koruna vložená do marketingu skutečně přinesla. Všechny tři služby se potkávají na jedné obrazovce.</p>
-
-      <div class="pg-panel reveal">
-        <div class="pg-panel-head"><i></i><span>Dashboard klienta</span></div>
-        <div class="pg-kpis">
-          <div class="pg-kpi"><span>Předané leady</span><b>62</b><em>▲ 12 % / měsíc</em></div>
-          <div class="pg-kpi"><span>Náklad na lead</span><b>320 Kč</b><em>▼ z 480 Kč</em></div>
-          <div class="pg-kpi"><span>Vážný zájem</span><b>740</b><em>▲ 18 % / měsíc</em></div>
+      <div class="pg-kicker reveal">04 / Předání kvalifikovaného leadu</div>
+      <h2 class="pg-h2 reveal">Váš obchodník ví, s kým jedná a na co navázat.</h2>
+      <div class="lg-vedle" style="margin-top:clamp(2rem,3vw,2.6rem)">
+        <div>
+          <p class="pg-lead reveal" style="margin-top:0">Leady splňující dohodnutá kritéria předáme vašemu týmu do sjednaného systému. U každého zaznamenáme zdroj, zjištěnou potřebu, ověřené informace, průběh komunikace a další krok.</p>
+          <p class="pg-lead reveal">Zpětně sledujeme, zda obchod lead přijal a jak se jednání vyvíjí. Důvody odmítnutí nebo ztráty příležitosti využíváme při úpravě kampaní a kvalifikace.</p>
+          <div class="pg-out reveal"><p>Předáváme kontakt s kontextem. Obchodník může pokračovat v konkrétním rozhovoru.</p></div>
         </div>
-        <div style="margin-top:1.8rem">
-          <div class="pg-kicker">Trychtýř investora</div>
-          <div class="pg-funnel"><div class="pg-funnel-row"><span>Návštěvy</span><div class="pg-funnel-bar" style="width:100%"></div><b>24 800</b></div>
-<div class="pg-funnel-row"><span>Leady</span><div class="pg-funnel-bar" style="width:48%"></div><b>5 460</b></div>
-<div class="pg-funnel-row"><span>Vážný zájem</span><div class="pg-funnel-bar" style="width:16%"></div><b>740</b></div>
-<div class="pg-funnel-row"><span>Předáno klientovi</span><div class="pg-funnel-bar" style="width:6%"></div><b>62</b></div></div>
+        <div class="lg-leadkarta reveal">
+          <div class="pg-kicker">Ilustrační ukázka předání</div>
+          <h3>Podklady pro obchodní jednání</h3>
+          <dl style="margin-top:1.2rem">
+            <div class="lg-radek"><dt>Zdroj a téma zájmu</dt><dd>Vyhledávací kampaň · řešení pro obchodní tým</dd></div>
+            <div class="lg-radek"><dt>Ověřená potřeba</dt><dd>Zájemce porovnává možnosti centralizace zákaznických dat.</dd></div>
+            <div class="lg-radek"><dt>Role v rozhodování</dt><dd>Vedoucí obchodu, připravuje doporučení vedení.</dd></div>
+            <div class="lg-radek"><dt>Časový horizont</dt><dd>Výběr řešení plánuje v příštím čtvrtletí.</dd></div>
+            <div class="lg-radek"><dt>Domluvený další krok</dt><dd>Úvodní konzultace k požadavkům a rozsahu řešení.</dd></div>
+          </dl>
+          <div class="lg-hotovo">Připraveno k navazujícímu jednání</div>
         </div>
-        <div class="pg-out" style="margin-top:1.8rem"><p>Rozpočet se průběžně přesouvá mezi kanály — reklamní platformy i vlastní weby. <b>Přesun do vlastních kanálů snížil náklad na lead o 18 %.</b></p></div>
       </div>
-
-      <div class="pg-grid pg-g4" style="margin-top:2.6rem"><article class="pg-card reveal"><span class="pg-ic"><i data-lucide="shopping-cart"></i></span><h3>Nákup trafficu</h3><p>Přehled o každé kreativě a koruně napříč kanály. Absolutní tracking a průběžná optimalizace výkonu.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="activity"></i></span><h3>Analytika a tracking</h3><p>Měření a rozpoznávání napříč vlastními weby. Víme, jaká témata návštěvníky zajímají, a podle toho ladíme sdělení.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="mouse-pointer-click"></i></span><h3>Behaviorální analýza</h3><p>Heat mapy a chování na vlastních webech: co lidé čtou, kam klikají a kde váhají. Podle toho vylepšujeme weby i kreativu.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="search-check"></i></span><h3>Rozpoznání a databáze</h3><p>Okamžité rozpoznání kontaktu a segmentace pro maximální personalizaci sdělení a vyšší konverzi.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="mail"></i></span><h3>E-mailová automatizace</h3><p>Segmentované mailingy a obsahové sekvence, které kontakt postupně provedou tématem a prohlubují zájem.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="phone-call"></i></span><h3>CRM a dialing</h3><p>Zázemí pro call centrum: nahrávky, úkoly a milníky, aby žádný kontakt nepropadl.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="repeat"></i></span><h3>Retence</h3><p>Automatizované sekvence, reaktivace a reinvestiční komunikace pro dlouhodobou hodnotu.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="smartphone"></i></span><h3>Investorská aplikace</h3><p>Portfolio a příležitosti investora na jednom místě. Připravujeme.</p></article></div>
-      <div class="pg-out reveal"><p>Žádné „tady máte software, starejte se“. Software vyvíjíme sami a jako jeho autoři pomáháme z něj vytěžit maximum — od prvního nastavení po každodenní provoz.</p></div>
-      <div class="pg-out reveal"><p>Nakupuje traffic někdo jiný a klient je spokojený? V pořádku, může si ho nechat. Jen ať pracuje v našem systému. Všechno je tak pod kontrolou a efektivní od prvního dne — přes předané leady až po vztah s investory trvající léta.</p></div>
     </div>
   </section>
 
   <section class="pg-sec">
     <div class="pg-wrap">
-      <div class="pg-kicker reveal">Reference</div>
-      <h2 class="pg-h2 reveal">Co říkají ti, kdo vzali fundraising do vlastních rukou</h2>
-      <p class="pg-lead reveal">Ne kampaňová agentura na jednu sezónu. Hlasy klientů ke každé ze služeb i ke spolupráci jako celku.</p>
-      <div class="cl-pas reveal">
-        <img src="images/sekce/tym.webp" alt="Jednání nad výsledky kampaní s výhledem na Prahu" width="1672" height="941" loading="lazy">
+      <div class="pg-kicker reveal">Školení a rozvoj obchodního týmu</div>
+      <h2 class="pg-h2 reveal">Leady jsou začátek. Připravíme váš tým na další krok.</h2>
+      <p class="pg-lead reveal">Aby získané kontakty přinášely obchod, potřebují včasnou reakci, dobře vedený rozhovor a důslednou návaznost. Vaše obchodníky na tuto práci připravíme — od prvního telefonátu po další fáze obchodního jednání.</p>
+      <div class="lg-foto reveal">
+        <img src="images/sekce/tym.webp" alt="Jednání obchodního týmu s výhledem na Prahu" width="1672" height="941" loading="lazy">
       </div>
-      <p class="cl-pas-popis reveal">Pravidelně sedíme nad čísly společně s klientem — co funguje, co se mění a kam jdeme dál.</p>
-      <div class="pg-grid pg-g2"><article class="pg-quote reveal"><div class="pg-num">Leadgenerace</div><p>Rozjezd byl pomalejší, než jsem si představoval. Všechno má holt svůj čas. Ale někdy kolem druhého měsíce se předané leady začaly monetizovat a od té doby to prostě funguje.</p><footer><b>Zakladatel developerského fondu kvalifikovaných investorů</b>reality</footer></article>
-<article class="pg-quote reveal"><div class="pg-num">Práce s databází</div><p>Upřímně, pustit někoho k databázi našich kontaktů pro mě bylo dlouho nepředstavitelné. Nakonec jsme nastavili režim, kdy mám všechno pod kontrolou, a dnes to vůbec neřeším. Databáze žije a nosí výsledky.</p><footer><b>Zakladatel fondu kvalifikovaných investorů</b>dřív podnikatel ve službách, dnes vlastní fond</footer></article>
-<article class="pg-quote reveal"><div class="pg-num">Péče o investory</div><p>Aktivní práce s naší investorskou bází nám přinesla investice, ke kterým bychom se jinak nejspíš vůbec nedostali. Dřív bych řekl, že jsme měli štěstí. Dnes vím, že to není o štěstí, ale o systematické práci, automatizaci a metodice.</p><footer><b>Emitent korporátních dluhopisů</b>vlastní dluhopisový program</footer></article>
-<article class="pg-quote reveal"><div class="pg-num">Spolupráce jako celek</div><p>Máme distribuční partnery, vlastní fundraisingový tým a k tomu tuhle službu. Každý zdroj se počítá a byznys je díky tomu stabilnější. Nechtěl bych stát na jedné noze.</p><footer><b>Vedoucí fundraisingu</b>fond kvalifikovaných investorů</footer></article></div>
-      <div class="pg-out reveal"><p>Reference zveřejňujeme v anonymizované podobě se souhlasem klientů, s ohledem na diskrétnost fondů a emitentů. Konkrétní kontakty rádi poskytneme na vyžádání při osobním jednání.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Právní postavení a spolehlivé partnerství</div>
-      <h2 class="pg-h2 reveal">Nastaveno tak, abyste měli vše v pořádku</h2>
-      <p class="pg-lead reveal">Sami regulovaný subjekt nejsme, ale regulované subjekty jsou náš denní chléb. Pracujeme pro fondy kvalifikovaných investorů a emitenty dluhopisů a přesně podle toho je postavená naše role. Děláme marketing a leadgeneraci, regulovaná část zůstává u klienta. Žádné šedé zóny, žádné překračování kompetencí.</p>
-      <div class="pg-grid pg-g2"><article class="pg-card reveal"><span class="pg-ic"><i data-lucide="scale"></i></span><h3>Nejsme investiční zprostředkovatel</h3><p>Neposkytujeme investiční poradenství ani nezprostředkováváme investice ve smyslu zákona. Generujeme poptávku a předáváme zájemce. Samotný úpis, posouzení vhodnosti i smluvní vztah s investorem řeší klient jako regulovaný subjekt. Call centrum informuje a třídí zájem podle zadání, s výběrem investice neradí.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="shield-check"></i></span><h3>Regulovaná část zůstává u klienta</h3><p>Nabídku, statut, emisní podmínky i finální rozhodnutí o přijetí investora drží klient. Do regulovaného procesu nevstupujeme, jen k němu přivádíme informované zájemce.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="message-square-warning"></i></span><h3>Komunikace v souladu s pravidly</h3><p>Sdělení připravujeme podle povahy produktu a cílíme na správné publikum. Nešíříme zavádějící ani nepřípustná tvrzení a respektujeme mantinely nabízení investičních příležitostí.</p></article>
-<article class="pg-card reveal"><span class="pg-ic"><i data-lucide="lock"></i></span><h3>Ochrana dat podle GDPR</h3><p>Data zpracováváme v souladu s GDPR: jasné právní tituly, zabezpečené uložení a řízené předání klientovi. Původ kontaktů i průběh kampaní umíme kdykoli doložit.</p></article></div>
-      <div class="pg-out reveal"><p>Chceme být partner, na kterého se dá dlouhodobě spolehnout. Konkrétní smluvní a compliance nastavení vždy odladíme podle produktu a regulatorního rámce hned na první schůzce.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Jak začíná spolupráce</div>
-      <h2 class="pg-h2 reveal">Rozjíždíme to po krocích</h2>
-      <p class="pg-lead reveal">Nejdřív si ověříte, že to dává smysl, pak to otestujeme v malém a naplno jdeme až do toho, co prokazatelně funguje. Stejně přistupujeme k jakémukoli rozsahu spolupráce — ať jde o dílčí úkol jako oživení databáze, nebo o kompletní fundraising.</p>
-      <div class="pg-steps"><div class="pg-step reveal"><div class="pg-step-n">1</div><div><h3>Nezávazná konzultace</h3><p>Projdeme produkt, cíle a to, co už klient má. Navrhneme, kde dává smysl začít a co bychom udělali jako první. Bez závazku.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">2</div><div><h3>Pilot</h3><p>Domluvenou část rozjedeme v menším měřítku — ať je to oživení kusu databáze, nebo první kampaně. Na reálných datech si klient ověří, že to funguje.</p></div></div>
-<div class="pg-step reveal"><div class="pg-step-n">3</div><div><h3>Škálování</h3><p>Co funguje, rozjedeme naplno a kdykoli lze přibrat další ze služeb. Výsledky rostou a klient si buduje vlastní investorskou bázi.</p></div></div></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Časté dotazy</div>
-      <h2 class="pg-h2 reveal">Na co se fondy a emitenti ptají nejčastěji</h2>
-      <div class="pg-faq"><details class="reveal"><summary>Kdo vlastní kontakty a data investorů?</summary><p>Klient. Leady předáváme napřímo a vztah, data i jejich celoživotní hodnota zůstávají na jeho straně.</p></details>
-<details class="reveal"><summary>Jak rychle uvidíme první výsledky?</summary><p>Spolupráci umíme rozběhnout do dvou až tří týdnů od domluvy. Samotný rozjezd kampaní zabere další tři až čtyři týdny a už během něj jsou vidět první výsledky. Pak výkon postupně budujeme, náklad na předaný lead klesá a plné tempo přichází typicky kolem pátého až šestého měsíce spolupráce.</p></details>
-<details class="reveal"><summary>Co když už máme rozjeté jiné distribuční kanály?</summary><p>Nenahrazujeme je, doplňujeme je. Paralelně stavíme vlastní publikum investorů, které zůstává klientovi a dlouhodobě roste na hodnotě.</p></details>
-<details class="reveal"><summary>Pracujete i se začínajícími nebo menšími subjekty?</summary><p>Ano. Právě začínajícím subjektům pomáháme vybudovat první vlastní publikum investorů. Velikost není podmínka, systém funguje pro malé i velké.</p></details>
-<details class="reveal"><summary>Co přesně klient dostane?</summary><p>Přístup do platformy s přehledem kampaní a nákladů, pravidelný reporting, systematickou péči o databázi a průběžné předávání probraných leadů s kontextem. Vše stavíme pro klienta a data zůstávají na jeho straně.</p></details>
-<details class="reveal"><summary>Kolik to stojí?</summary><p>Konkrétní nastavení vždy odvíjíme od produktu a cílů. Probereme ho na nezávazné konzultaci.</p></details></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-cta reveal">
-        <h2>Pojďme probrat váš fundraising.</h2>
-        <p>Nezávazná konzultace. Odejdete s konkrétní představou, čím u vás začít.</p>
-        <a href="o-nas.html#kontakt" class="pg-btn magnetic">Domluvit konzultaci <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+      <div class="pg-grid pg-g3" style="margin-top:clamp(1.6rem,2.4vw,2.2rem)">
+        <article class="pg-card reveal"><h3>První kontakt, který otevře jednání</h3><p>Naučíme tým navázat na konkrétní kampaň, představit důvod hovoru, zjistit skutečnou potřebu a domluvit další krok. Připravíme scénáře pro různé typy kontaktů i situace, kdy zájemce nereaguje.</p></article>
+        <article class="pg-card reveal"><h3>Vedení rozhovoru a práce s námitkami</h3><p>Na modelových situacích procvičíme správné otázky, srozumitelné vysvětlení nabídky a reakce na nejčastější námitky. Obchodníci se naučí rozpoznat připravenost k rozhodnutí i situaci, která vyžaduje další péči.</p></article>
+        <article class="pg-card reveal"><h3>Postup, který tým používá každý den</h3><p>Nastavíme odpovědnosti za kontakty, pravidla opakovaného oslovení, evidenci v CRM a předávání informací. Vedoucí týmu získá přehled o tom, kde se jednání posouvají a kde příležitosti zůstávají bez odezvy.</p></article>
       </div>
-      <div class="pg-strip reveal"><i></i><span>Leadgenerace</span><b>•</b><span>MarTech</span><b>•</b><span>Call centrum</span><i></i></div>
+      <div class="pg-out reveal"><p>Trénink na vaší nabídce a skutečných obchodních situacích. Školení přizpůsobíme vašemu produktu, zákazníkům i zkušenostem týmu. Výstupem budou použitelné scénáře rozhovorů, postupy následné komunikace a pravidla práce s kontakty. Podle rozsahu spolupráce navážeme rozborem hovorů a průběžným koučinkem.</p></div>
+      <p class="pg-lead reveal">Nemáte kapacitu kontakty zpracovávat? Domluvíme rozsah prvního oslovení, ověřování a následné péče, který převezme náš tým. Současně určíme, kdo naváže obchodním jednáním a kdo odpovídá za uzavření obchodu.</p>
+      <p class="pg-lead reveal">U fundraisingu přizpůsobíme obsah školení roli vašeho týmu a hranicím regulovaných činností. Školení nenahrazuje potřebné oprávnění ani zákonem vyžadovanou odbornou způsobilost.</p>
+      <div class="reveal" style="margin-top:2rem"><a href="#zadani" class="lg-cta">Probrat přípravu obchodního týmu ↗</a></div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Vlastní software / jedno prostředí pro celý proces</div>
+      <h2 class="pg-h2 reveal">Software, který propojí akvizici, obchod a dlouhodobou péči.</h2>
+      <p class="pg-lead reveal">Software si vyvíjíme sami. Propojujeme v něm kampaně a jejich náklady, získané kontakty, kvalifikaci, předání obchodu i navazující komunikaci. Nové leady, práce s databází a péče o zákazníky se potkávají v jednom prostředí.</p>
+      <p class="pg-lead reveal">U kontaktu sledujete jeho zdroj, historii komunikace, výsledek ověření a další plánovaný krok. V přehledu výkonu vidíte, které kampaně přivádějí relevantní zájemce, kde se proces zpomaluje a na co má obchod navázat. S dostupnými obchodními daty vyhodnocujeme také uzavřené zakázky a ekonomiku akvizice.</p>
+      <p class="pg-lead reveal">Automatizace zajišťuje opakované úkoly, návaznost komunikace a připomenutí dalších kroků. Náš tým se soustředí na cílení, kvalifikaci a rozhodnutí, která ovlivňují obchodní výsledek.</p>
+      <div class="lg-foto reveal">
+        <img src="images/sekce/platforma.webp" alt="Vlastní software CLARIX se seznamem kontaktů" width="1536" height="1024" loading="lazy">
+      </div>
+      <div class="pg-grid pg-g3" style="margin-top:clamp(1.6rem,2.4vw,2.2rem)">
+        <article class="pg-card reveal"><h3>Kampaně a náklady</h3><p>Přehled zdrojů, kampaní a vynaložených prostředků. Výkon posuzujeme podle relevantních kontaktů a navazujících výsledků.</p></article>
+        <article class="pg-card reveal"><h3>Kvalifikace a předání</h3><p>Ověřené informace, stav leadu, důvod vyřazení i odpovědná osoba. Obchod přebírá kontakt s historií a dalším krokem.</p></article>
+        <article class="pg-card reveal"><h3>Databáze a následná péče</h3><p>Segmentace kontaktů, navazující komunikace a opětovné oslovení. Přehled o tom, kdo potřebuje péči a kdo je připravený k jednání.</p></article>
+      </div>
+      <div class="pg-out reveal"><p>Technologie a realizační tým jako jedna služba. Nastavíme proces, obsluhu i vyhodnocování. Rozsah propojení s vaším CRM a dostupnost jednotlivých dat ověříme při přípravě spolupráce.</p></div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Tak může vypadat váš přehled</div>
+      <h2 class="pg-h2 reveal">Od marketingových nákladů k obchodně využitelným leadům.</h2>
+
+      <div class="lg-model reveal">
+        <div class="lg-model-hlava"><b>CLARIX / Model akvizice</b><span>Měsíční mediální rozpočet 150 000 Kč</span></div>
+        <div class="lg-vystraha">Ilustrační model. Nejde o dosažené výsledky ani garanci.</div>
+        <div class="lg-cisla">
+          <div><span>Nové kontakty za měsíc</span><b>≈ 429</b></div>
+          <div><span>Mediální náklad na nový kontakt</span><b>350 Kč</b></div>
+          <div><span>Podíl kvalifikovaných kontaktů</span><b>16 %</b></div>
+          <div><span>Kvalifikované kontakty za měsíc</span><b>≈ 69</b></div>
+          <div><span>Průměr nových kontaktů za den (30 dní)</span><b>14,3</b></div>
+          <div><span>Průměr kvalifikovaných kontaktů za den</span><b>2,3</b></div>
+        </div>
+        <div class="lg-grafy">
+          <div>
+            <h4>Od kontaktu ke kvalifikaci</h4>
+            <div class="lg-pruh">
+              <div class="lg-pruh-popis"><span>Nové kontakty</span><b>≈ 429</b></div>
+              <div class="lg-pruh-draha"><div class="lg-pruh-vypln" style="width:100%"></div></div>
+            </div>
+            <div class="lg-pruh">
+              <div class="lg-pruh-popis"><span>Kvalifikované kontakty</span><b>≈ 69</b></div>
+              <div class="lg-pruh-draha"><div class="lg-pruh-vypln" style="width:16.1%"></div></div>
+            </div>
+            <p class="lg-foto-popis">Za 30 dní: průměrně 14,3 kontaktu denně. Z toho přibližně 2,3 kvalifikovaného denně.</p>
+          </div>
+          <div>
+            <h4>Co přináší míra kvalifikace</h4>
+            <div class="lg-sloupce">
+              <div class="lg-sloupec"><i>≈ 43</i><u style="height:50%"></u><em>10 %</em></div>
+              <div class="lg-sloupec je"><i>≈ 69</i><u style="height:80%"></u><em>16 %<br><small>základní scénář</small></em></div>
+              <div class="lg-sloupec"><i>≈ 86</i><u style="height:100%"></u><em>20 %</em></div>
+            </div>
+            <p class="lg-foto-popis">Kvalifikované kontakty měsíčně při stejném rozpočtu.</p>
+          </div>
+        </div>
+        <div class="lg-pozn">
+          <p>Výpočet: 150 000 / 350 ≈ 429 kontaktů. Kvalifikované kontakty počítáme z nezaokrouhleného počtu: (150 000 / 350) × 16 % ≈ 69.</p>
+          <p>Mediální náklad na kvalifikovaný kontakt: přibližně 2 188 Kč. Počty jsou zaokrouhlené.</p>
+          <p>Rozpočet zahrnuje reklamní média, nikoli odměnu za službu a nástroje. Není investicí do finančního produktu.</p>
+          <p>Kvalifikace se vyhodnocuje u stejné skupiny kontaktů po zpracování. Nejde o status kvalifikovaného investora.</p>
+        </div>
+      </div>
+      <p class="lg-foto-popis reveal">Ukázka navrhovaného zobrazení. Konkrétní metriky a jejich dostupnost závisejí na nastavení systému a propojených datech.</p>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Optimalizace a škálování</div>
+      <h2 class="pg-h2 reveal">Poznáme, co přináší kvalitní leady. A za jakých podmínek lze získávat další.</h2>
+      <p class="pg-lead reveal">Kampaně vyhodnocujeme po jednotlivých segmentech, nabídkách a zdrojích. Sledujeme cestu od získání kontaktu přes kvalifikaci a přijetí obchodem až po další výsledek. Zpětnou vazbu obchodníků promítáme do cílení, reklamních sdělení i kvalifikačních pravidel.</p>
+      <p class="pg-lead reveal">Hledáme konkrétní příčinu slabého výsledku: nevhodné publikum, nesrozumitelnou nabídku, nízkou důvěryhodnost stránky, příliš snadný formulář, pomalou reakci nebo nesoulad mezi očekáváním a skutečnou službou. Každá situace vyžaduje jiný zásah.</p>
+      <div class="pg-grid pg-g3" style="margin-top:clamp(2rem,3vw,2.6rem)">
+        <article class="pg-card reveal"><h3>Vyhodnocujeme kvalitu zdrojů</h3><p>Porovnáváme náklady na kvalifikovaný lead, přijetí obchodním týmem a vývoj příležitostí. Při dostupnosti dat také náklady na zákazníka. Respektujeme délku prodeje, aby čerstvé kontakty nebyly hodnoceny jako dokončené případy.</p></article>
+        <article class="pg-card reveal"><h3>Ověřujeme příčiny a změny</h3><p>Testujeme konkrétní předpoklady: zda jiný segment přináší relevantnější zájemce, přesnější sdělení zlepší kvalitu poptávek nebo změna následné komunikace zvýší počet uskutečněných jednání.</p></article>
+        <article class="pg-card reveal"><h3>Rozšiřujeme podle výsledků</h3><p>Rozpočet navyšujeme postupně. Sledujeme cenu i kvalitu dalších leadů, rozvíjíme ověřené segmenty a testujeme nové. Zohledňujeme dostupnost publika, kapacitu kvalifikace i vašeho obchodu.</p></article>
+      </div>
+      <div class="pg-out reveal"><p>Cíl škálování: vyšší objem obchodně využitelných leadů při přijatelné ekonomice a zachované kvalitě zpracování.</p></div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">05 / Následná péče a práce s databází</div>
+      <h2 class="pg-h2 reveal">Ve vaší databázi rozpoznáme příležitosti pro nový obchod.</h2>
+      <p class="pg-lead reveal">Kontakty z minulých kampaní, neuzavřená jednání a stávající zákazníci vyžadují odlišný přístup. Vyhodnotíme původ a použitelnost dat, historii komunikace, dosavadní nákupy i důvody, proč se obchod neposunul dál. Podle toho databázi rozdělíme a připravíme nabídku pro jednotlivé skupiny.</p>
+      <p class="pg-lead reveal">Zajistíme celý navazující proces: komunikační plán, texty a podklady, případné cílové stránky, oslovení, zpracování reakcí, ověření zájmu a předání kvalifikované příležitosti obchodníkovi. Stejnou péči můžeme poskytovat nově získaným kontaktům.</p>
+      <div class="pg-grid pg-g3" style="margin-top:clamp(2rem,3vw,2.6rem)">
+        <article class="pg-card reveal"><h3>Nedokončená jednání</h3><p>Zjistíme, zda stále trvá původní potřeba a co bránilo rozhodnutí. Ověříme změnu situace, načasování a prostor pro obnovení jednání.</p></article>
+        <article class="pg-card reveal"><h3>Stávající zákazníci</h3><p>Podle dosavadní spolupráce připravíme relevantní nabídku dalšího produktu, služby nebo rozšíření řešení. Ověříme skutečný zájem a připravíme podklady pro obchod.</p></article>
+        <article class="pg-card reveal"><h3>Kontakty s delším rozhodováním</h3><p>Nastavíme komunikaci podle tématu a fáze zájmu. Kombinujeme užitečné informace s vhodně načasovaným oslovením a aktualizujeme stav kontaktu.</p></article>
+      </div>
+      <div class="reveal" style="margin-top:2rem"><a href="#zadani" class="lg-cta">Probrat potenciál naší databáze ↗</a></div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Právní rámec a spolehlivé partnerství</div>
+      <h2 class="pg-h2 reveal">Pravidla komunikace a práce s daty řešíme od začátku.</h2>
+      <p class="pg-lead reveal">Získávání kontaktů stavíme na jasném původu dat, podmínkách oslovení a vymezených odpovědnostech. Právní rámec zohledňujeme při návrhu kampaně, kvalifikaci i následné péči.</p>
+      <p class="pg-lead reveal">Naše role je marketingová a technologická. U projektů v regulovaných odvětvích před spuštěním vymezíme, co může zahrnovat naše komunikace a kdy zájemce přebírá oprávněný subjekt. Sledujeme relevantní změny pravidel pro marketing, práci s osobními údaji a používané reklamní platformy a promítáme je do nastavení spolupráce.</p>
+      <div class="pg-grid pg-g2" style="margin-top:clamp(2rem,3vw,2.6rem)">
+        <article class="pg-card reveal"><div class="pg-kicker">01 / Původ a použití kontaktů</div><h3>Víme, odkud data pocházejí a k čemu je lze použít.</h3><p>Před oslovením ověřujeme zdroj kontaktů, účel jejich získání a podmínky další komunikace. Rozlišujeme nové zájemce, zákazníky i kontakty z dřívějších kampaní. Samotná přítomnost v databázi není automatickým oprávněním k oslovení.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">02 / Komunikace a odhlášení</div><h3>Obsah i způsob oslovení mají jasná pravidla.</h3><p>Nastavujeme identifikaci odesílatele, potřebná sdělení a možnosti odmítnutí další komunikace. Evidujeme odhlášení a námitky a zohledňujeme je v dalších kampaních. Pravidla přizpůsobujeme konkrétnímu komunikačnímu kanálu.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">03 / Přístupy a odpovědnosti</div><h3>Určíme, kdo s daty pracuje a za jakým účelem.</h3><p>Vymezujeme role při zpracování údajů, přístupy, pravidla předání a dobu uchování. Podle konkrétního nastavení upravíme smluvní vztahy a postup pro vyřizování požadavků dotčených osob.</p></article>
+        <article class="pg-card reveal"><div class="pg-kicker">04 / Regulovaná odvětví</div><h3>Marketing oddělujeme od činností vyžadujících oprávnění.</h3><p>Neposkytujeme investiční poradenství ani jiné investiční služby vyžadující oprávnění. U investičních projektů předem řešíme přípustné publikum, obsah sdělení, rozsah ověření zájmu a okamžik předání. Regulované úkony zajišťuje subjekt s odpovídajícím oprávněním.</p></article>
+      </div>
+      <div class="pg-out reveal"><p>Konkrétní postup nastavíme podle produktu, publika a komunikačních kanálů. U regulovaných projektů jej před spuštěním sladíme s právním nebo compliance zástupcem klienta. Dohodnuté rozdělení rolí nenahrazuje vlastní zákonné povinnosti jednotlivých stran.</p></div>
+    </div>
+  </section>
+
+  <section class="pg-sec">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Časté otázky</div>
+      <h2 class="pg-h2 reveal">Co potřebujete vědět před začátkem.</h2>
+      <p class="pg-lead reveal">Rozsah práce, kvalita předání i vyhodnocení musí být jasné od první chvíle.</p>
+      <div class="lg-faq reveal"><details><summary>Co když nemáme vlastní tým na zpracování kontaktů?</summary><p>Spolupráci nastavíme podle vašich kapacit. Můžeme převzít dohodnutý rozsah prvního oslovení, ověřování kontaktů a následné péče. Pokud vlastní obchodníky máte, připravíme je na práci s leady praktickým školením a podle dohody navazujícím koučinkem. Před spuštěním jasně určíme, kdo přebírá další obchodní jednání a uzavření obchodu. U regulovaných služeb příslušné úkony zajišťuje oprávněný subjekt.</p></details><details><summary>Co si náš obchodní tým ze školení odnese?</summary><p>Scénáře prvního kontaktu a navazujících rozhovorů, postupy pro práci s námitkami, pravidla následného oslovení a evidenci v CRM. Dovednosti procvičíme na vaší nabídce a typických situacích vašich zákazníků. Rozsah tréninku, případného rozboru hovorů a koučinku domluvíme podle zkušeností a potřeb týmu.</p></details><details><summary>Co přesně od vás dostaneme?</summary><p>Podle sjednaného rozsahu analýzu a akviziční plán, připravené kampaně a cílové stránky, nastavené měření a zpracování kontaktů. Hlavním výstupem jsou kvalifikované leady s ověřenými informacemi a dalším krokem. Součástí může být také následná péče a práce s vaší databází.</p></details><details><summary>Jakou roli má váš vlastní software?</summary><p>Propojuje přehled kampaní a nákladů s evidencí kontaktů, kvalifikací, předáním a další péčí. Pomáhá řídit návaznost úkolů a vyhodnocovat výkon. Konkrétní rozsah přístupů, funkcí a propojení s vaším CRM stanovíme podle zadání.</p></details><details><summary>Jak řešíte data a komunikaci u regulovaných produktů?</summary><p>Před spuštěním vymezíme role, původ a podmínky použití kontaktů, obsah komunikace i rozsah ověřování zájmu. U regulovaných projektů postup sladíme s právním nebo compliance zástupcem klienta. Investiční poradenství a další činnosti vyžadující oprávnění zajišťuje odpovídající oprávněný subjekt.</p></details><details><summary>Jak poznáme, že je lead skutečně kvalifikovaný?</summary><p>Před spuštěním dohodneme profil zákazníka, povinné ověřované informace a podmínky předání. U každého leadu zaznamenáme, jak je splňuje. Váš obchod poskytuje zpětnou vazbu, podle které kvalifikaci i získávání kontaktů zpřesňujeme.</p></details><details><summary>Které kanály pro získávání leadů používáte?</summary><p>Výběr vychází z cílové skupiny a povahy nabídky. Může zahrnovat vyhledávací reklamu, sociální a profesní sítě, obsah, cílené oslovení firem nebo vlastní databázi. Konkrétní kombinaci doporučíme po posouzení vašeho byznysu a ověříme v praxi.</p></details><details><summary>Můžeme začít jen se stávající databází?</summary><p>Ano. Vyhodnotíme její strukturu, historii kontaktů a podmínky použití. Navrhneme segmenty a způsob oslovení. Zajistíme komunikaci, ověření aktuálního zájmu a předání nových příležitostí vašemu obchodu.</p></details><details><summary>Co když už máme agenturu, CRM nebo vlastní obchodní tým?</summary><p>Vyjasníme role a doplníme potřebnou část procesu. Před zahájením ověříme možnosti propojení nástrojů, formát předání a odpovědnost za reakci. Současný obchodní tým je důležitým partnerem pro kvalifikaci i vyhodnocování výsledků.</p></details><details><summary>Jak rychle můžeme očekávat výsledky?</summary><p>Termín závisí na připravenosti nabídky, rozsahu realizace a délce rozhodování zákazníků. Předem stanovíme harmonogram a první vyhodnocení. Odděleně sledujeme získání kontaktů, kvalifikaci, obchodní jednání a uzavřené zakázky.</p></details><details><summary>Garantujete počet leadů nebo uzavřených zakázek?</summary><p>Cílový objem a kritéria kvality stanovíme podle zadání, rozpočtu a ověřených výsledků. Případné závazky musí mít konkrétní podmínky. Kvalifikovaný lead je připravený vstup do obchodu; uzavření zakázky závisí také na nabídce, ceně a průběhu obchodního jednání.</p></details><details><summary>Jak se stanovuje cena spolupráce?</summary><p>Podle rozsahu strategie, přípravy, správy kampaní, kvalifikace a následné péče. V nabídce oddělíme cenu služby, reklamní rozpočet a náklady na případné nástroje. Předem bude zřejmé, které výstupy a činnosti cena zahrnuje.</p></details><details><summary>Co se stane s kontakty, které zatím nejsou připravené?</summary><p>Pokud odpovídají cílové skupině, můžeme je zařadit do navazující péče. Podle situace připravíme další obsah, termín opětovného oslovení nebo reakci na nový projev zájmu. Rozsah péče a pravidla předání dohodneme s vaším týmem.</p></details></div>
+    </div>
+  </section>
+
+  <section class="pg-sec" id="zadani">
+    <div class="pg-wrap">
+      <div class="pg-kicker reveal">Proberme vaše zadání</div>
+      <h2 class="pg-h2 reveal">Potřebujete nové leady, nebo více obchodu ze své databáze?</h2>
+      <div class="lg-kontakt">
+        <div>
+          <p class="pg-lead reveal" style="margin-top:0">Projdeme vaši nabídku, současnou akvizici a práci s kontakty. Navrhneme, kde začít a jaký rozsah spolupráce dává smysl.</p>
+          <p class="pg-lead reveal">Od konkrétní kampaně nebo reaktivace databáze až po kompletní lead generation s kvalifikací a následnou péčí.</p>
+          <div class="lg-spojeni reveal">
+            <a href="mailto:info@clarix.cz">info@clarix.cz</a>
+            <a href="tel:+420606589032">+420 606 589 032</a>
+          </div>
+        </div>
+        <form class="lg-formular reveal" id="lg-form" action="https://formsubmit.co/info@clarix.cz" method="POST">
+          <h3>Probrat možnosti spolupráce</h3>
+          <div class="lg-dvojice">
+            <div class="lg-pole"><label for="lg-jmeno">Jméno *</label><input id="lg-jmeno" name="jmeno" required placeholder="Vaše jméno"></div>
+            <div class="lg-pole"><label for="lg-mail">Pracovní e-mail *</label><input id="lg-mail" name="email" type="email" required placeholder="vas@firma.cz"></div>
+          </div>
+          <div class="lg-dvojice">
+            <div class="lg-pole"><label for="lg-firma">Firma nebo web *</label><input id="lg-firma" name="firma" required placeholder="Název firmy nebo web"></div>
+            <div class="lg-pole"><label for="lg-tel">Telefon · nepovinné</label><input id="lg-tel" name="telefon" placeholder="+420"></div>
+          </div>
+          <div class="lg-pole"><label for="lg-co">S čím chcete pomoci?</label><select id="lg-co" name="tema"><option>Kompletní lead generation</option><option>Získávání nových kontaktů</option><option>Databáze a stávající zákazníci</option><option>Kvalifikace a následná péče</option><option>Školení obchodního týmu</option><option>Zpracování kontaktů naším týmem</option><option>Potřebujeme doporučit postup</option></select></div>
+          <div class="lg-pole"><label for="lg-zprava">Koho chcete oslovit a co nabízíte?</label><textarea id="lg-zprava" name="zprava" placeholder="Stručně popište svou nabídku, cílové zákazníky a co chcete zlepšit."></textarea></div>
+          <button type="submit" class="lg-odeslat">Probrat možnosti spolupráce ↗</button>
+          <p class="lg-stav" id="lg-stav" hidden></p>
+          <p class="lg-mala">Odesláním poptávky neobjednáváte placenou službu.</p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -1108,4 +1281,27 @@ async function init3D(){const token=++gridToken;const host=$('#hero3d');if(!host
 if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.lucide?.createIcons()); window.lucide?.createIcons();
 </script>  <script src="js/uprava-config.js?v=3"></script>
   <script src="js/uprava.js?v=3"></script>
+
+<script>
+(function(){
+  var f=document.getElementById('lg-form'); if(!f) return;
+  var stav=document.getElementById('lg-stav');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('.lg-odeslat'); var puvodni=btn.textContent;
+    btn.disabled=true; btn.textContent='Odesílám…';
+    var data={}; new FormData(f).forEach(function(v,k){data[k]=v;});
+    data._subject='Poptávka z webu — lead generation';
+    fetch('https://formsubmit.co/ajax/info@clarix.cz',{method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+    .then(function(r){
+      btn.disabled=false; btn.textContent=puvodni; stav.hidden=false;
+      if(r.ok){ f.reset(); stav.style.color='#1e9b63'; stav.textContent='Odesláno. Ozveme se co nejdřív.'; }
+      else { stav.style.color='#c0392b'; stav.textContent='Odeslání se nepovedlo. Napište nám prosím na info@clarix.cz.'; }
+    })
+    .catch(function(){ btn.disabled=false; btn.textContent=puvodni; stav.hidden=false;
+      stav.style.color='#c0392b'; stav.textContent='Odeslání se nepovedlo. Napište nám prosím na info@clarix.cz.'; });
+  });
+})();
+</script>
 </body></html>
