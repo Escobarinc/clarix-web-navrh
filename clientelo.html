@@ -607,7 +607,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
 
 /* hero */
 .pg-hero{position:relative;min-height:62vh;display:flex;align-items:flex-start;padding-top:15rem;padding-bottom:5rem}
-.pg-hero h1{margin-top:1rem;font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--text);text-wrap:balance}
+.pg-hero h1{margin-top:1rem;font-size:clamp(2.05rem,4.55vw,3.85rem);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--text);text-wrap:balance}
 .pg-hero h1 span{color:#2f86ff}
 .pg-hero .pg-lead{margin-top:1.6rem;font-size:clamp(1rem,1.35vw,1.18rem)}
 .pg-badge{display:inline-flex;align-items:center;gap:.55rem;margin-top:2rem;padding:.55rem 1.1rem;border-radius:999px;border:1px solid rgba(47,134,255,.4);background:rgba(47,134,255,.1);font:600 .76rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#2f86ff}
@@ -782,7 +782,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
 @media(min-width:860px){.lg-hero-kroky{grid-template-columns:repeat(5,minmax(0,1fr))}}
 .lg-hero-krok{padding:clamp(1.1rem,1.7vw,1.4rem);background:var(--bg)}
 .lg-hero-krok b{display:block;font:700 .78rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;color:#2f86ff}
-.lg-hero-krok span{display:block;margin-top:.5rem;font-size:.92rem;line-height:1.45;color:var(--text)}
+.lg-hero-krok span{display:block;margin-top:.5rem;font-size:.92rem;font-weight:700;line-height:1.45;color:var(--text)}
 .lg-dolu{margin-top:1.8rem;font-size:.9rem;color:var(--text-muted)}
 
 .lg-hlavni{padding:clamp(1.6rem,2.6vw,2.4rem);border-radius:1.25rem;background:color-mix(in srgb,var(--bg) 80%,transparent);
@@ -882,6 +882,20 @@ body.portfolio-mode #hero3d { opacity:.58; }
 
 .lg-mensi{max-width:50%;margin-left:auto;margin-right:auto}
 @media(max-width:860px){.lg-mensi{max-width:100%}}
+
+.lg-sloupce{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.8rem,1.6vw,1.4rem);margin-top:1.1rem;height:auto}
+.lg-sloupec{display:flex;flex-direction:column;min-width:0;text-align:center}
+.lg-sloupec i{display:block;font-style:normal;font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
+.lg-bar{height:clamp(120px,13vw,165px);display:flex;align-items:flex-end;flex:none}
+.lg-sloupec u{display:block;width:100%;text-decoration:none;border-radius:.3rem .3rem 0 0;background:color-mix(in srgb,#2f86ff 38%,transparent)}
+.lg-sloupec.je u{background:#1668ff}
+.lg-sloupec em{display:block;min-height:3rem;margin-top:.55rem;font-style:normal;font-size:.86rem;color:var(--text-muted)}
+.lg-sloupec em span{display:block;font-size:.78rem}
+.lg-shrnuti{margin-top:clamp(1.6rem,2.6vw,2.4rem)}
+.lg-shrnuti h3{font-size:clamp(1.05rem,1.45vw,1.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.3;color:var(--text)}
+.lg-shrnuti p{margin-top:1rem;max-width:62rem;font-size:.96rem;line-height:1.8;color:var(--text-soft)}
+.lg-shrnuti p b{color:var(--text)}
+.lg-shrnuti .lg-drobne{font-size:.86rem;color:var(--text-muted)}
 </style>
 <meta name="description" content="Najdeme vaše potenciální zákazníky a ověříme, se kterými má smysl jednat. Strategie, kampaně, kvalifikace leadů a následná péče." />
 <link rel="canonical" href="https://www.clarix.cz/clientelo.html" />
@@ -945,7 +959,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
   <section class="pg-sec">
     <div class="pg-wrap">
       <div class="pg-kicker reveal">Naše zaměření</div>
-      <h2 class="pg-h2 reveal">Investoři pro váš projekt. Zákazníci pro váš business.</h2>
+      <h2 class="pg-h2 reveal">Investoři pro váš projekt nebo zákazníci pro váš business.</h2>
       <p class="pg-lead reveal">Naší hlavní specializací je marketingová podpora fundraisingu. Stejnou důslednost v akvizici, ověřování kontaktů a následné péči přinášíme také do dalších obchodních modelů.</p>
 
       <div class="lg-hlavni reveal">
@@ -1036,25 +1050,9 @@ body.portfolio-mode #hero3d { opacity:.58; }
     <div class="pg-wrap">
       <div class="pg-kicker reveal">04 / Předání kvalifikovaného leadu</div>
       <h2 class="pg-h2 reveal">Váš obchodník ví, s kým jedná a na co navázat.</h2>
-      <div class="lg-vedle" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <div>
-          <p class="pg-lead reveal" style="margin-top:0">Leady splňující dohodnutá kritéria předáme vašemu týmu do sjednaného systému. U každého zaznamenáme zdroj, zjištěnou potřebu, ověřené informace, průběh komunikace a další krok.</p>
-          <p class="pg-lead reveal">Zpětně sledujeme, zda obchod lead přijal a jak se jednání vyvíjí. Důvody odmítnutí nebo ztráty příležitosti využíváme při úpravě kampaní a kvalifikace.</p>
-          <div class="pg-out reveal"><p>Předáváme kontakt s kontextem. Obchodník může pokračovat v konkrétním rozhovoru.</p></div>
-        </div>
-        <div class="lg-leadkarta reveal">
-          <div class="pg-kicker">Ilustrační ukázka předání</div>
-          <h3>Podklady pro obchodní jednání</h3>
-          <dl style="margin-top:1.2rem">
-            <div class="lg-radek"><dt>Zdroj a téma zájmu</dt><dd>Vyhledávací kampaň · řešení pro obchodní tým</dd></div>
-            <div class="lg-radek"><dt>Ověřená potřeba</dt><dd>Zájemce porovnává možnosti centralizace zákaznických dat.</dd></div>
-            <div class="lg-radek"><dt>Role v rozhodování</dt><dd>Vedoucí obchodu, připravuje doporučení vedení.</dd></div>
-            <div class="lg-radek"><dt>Časový horizont</dt><dd>Výběr řešení plánuje v příštím čtvrtletí.</dd></div>
-            <div class="lg-radek"><dt>Domluvený další krok</dt><dd>Úvodní konzultace k požadavkům a rozsahu řešení.</dd></div>
-          </dl>
-          <div class="lg-hotovo">Připraveno k navazujícímu jednání</div>
-        </div>
-      </div>
+      <p class="pg-lead reveal">Leady splňující dohodnutá kritéria předáme vašemu týmu do sjednaného systému. U každého zaznamenáme zdroj, zjištěnou potřebu, ověřené informace, průběh komunikace a další krok.</p>
+      <p class="pg-lead reveal">Zpětně sledujeme, zda obchod lead přijal a jak se jednání vyvíjí. Důvody odmítnutí nebo ztráty příležitosti využíváme při úpravě kampaní a kvalifikace.</p>
+      <div class="pg-out reveal"><p>Předáváme kontakt s kontextem. Obchodník může pokračovat v konkrétním rozhovoru.</p></div>
     </div>
   </section>
 
@@ -1106,12 +1104,10 @@ body.portfolio-mode #hero3d { opacity:.58; }
         <div class="lg-model-hlava"><b>CLARIX / Model akvizice</b><span>Měsíční mediální rozpočet 150 000 Kč</span></div>
         <div class="lg-vystraha">Ilustrační model. Nejde o dosažené výsledky ani garanci.</div>
         <div class="lg-cisla">
-          <div><span>Nové kontakty za měsíc</span><b>≈ 429</b></div>
-          <div><span>Mediální náklad na nový kontakt</span><b>350 Kč</b></div>
-          <div><span>Podíl kvalifikovaných kontaktů</span><b>16 %</b></div>
-          <div><span>Kvalifikované kontakty za měsíc</span><b>≈ 69</b></div>
-          <div><span>Průměr nových kontaktů za den (30 dní)</span><b>14,3</b></div>
-          <div><span>Průměr kvalifikovaných kontaktů za den</span><b>2,3</b></div>
+          <div><span>Nové kontakty / měsíc</span><b>≈ 429</b></div>
+          <div><span>Média / nový kontakt</span><b>350 Kč</b></div>
+          <div><span>Podíl kvalifikovaných</span><b>16 %</b></div>
+          <div><span>Kvalifikované / měsíc</span><b>≈ 69</b></div>
         </div>
         <div class="lg-grafy">
           <div>
@@ -1129,21 +1125,23 @@ body.portfolio-mode #hero3d { opacity:.58; }
           <div>
             <h4>Co přináší míra kvalifikace</h4>
             <div class="lg-sloupce">
-              <div class="lg-sloupec"><i>≈ 43</i><u style="height:50%"></u><em>10 %</em></div>
-              <div class="lg-sloupec je"><i>≈ 69</i><u style="height:80%"></u><em>16 %<br><small>základní scénář</small></em></div>
-              <div class="lg-sloupec"><i>≈ 86</i><u style="height:100%"></u><em>20 %</em></div>
+              <div class="lg-sloupec"><i>≈ 43</i><div class="lg-bar"><u style="height:50%"></u></div><em>10 %</em></div>
+              <div class="lg-sloupec je"><i>≈ 69</i><div class="lg-bar"><u style="height:80%"></u></div><em>16 %<span>základní scénář</span></em></div>
+              <div class="lg-sloupec"><i>≈ 86</i><div class="lg-bar"><u style="height:100%"></u></div><em>20 %</em></div>
             </div>
             <p class="lg-foto-popis">Kvalifikované kontakty měsíčně při stejném rozpočtu.</p>
           </div>
         </div>
-        <div class="lg-pozn">
-          <p>Výpočet: 150 000 / 350 ≈ 429 kontaktů. Kvalifikované kontakty počítáme z nezaokrouhleného počtu: (150 000 / 350) × 16 % ≈ 69.</p>
-          <p>Mediální náklad na kvalifikovaný kontakt: přibližně 2 188 Kč. Počty jsou zaokrouhlené.</p>
-          <p>Rozpočet zahrnuje reklamní média, nikoli odměnu za službu a nástroje. Není investicí do finančního produktu.</p>
-          <p>Kvalifikace se vyhodnocuje u stejné skupiny kontaktů po zpracování. Nejde o status kvalifikovaného investora.</p>
-        </div>
       </div>
-      <p class="lg-foto-popis reveal">Ukázka navrhovaného zobrazení. Konkrétní metriky a jejich dostupnost závisejí na nastavení systému a propojených datech.</p>
+
+      <div class="lg-shrnuti reveal">
+        <h3>Rozpočet řídíme podle kvality příležitostí a kapacity vašeho týmu.</h3>
+        <p><b>Předvídatelný objem pro další jednání.</b> Při měsíčním reklamním rozpočtu 150 000 Kč a modelové ceně 350 Kč za získaný kontakt pracujeme přibližně se 429 novými zájemci. Pokud 16 % splní dohodnutá kvalifikační kritéria, výsledkem je přibližně 69 kontaktů připravených k předání — tedy zhruba 16 týdně v přepočtu na 30denní měsíc. Podle tohoto objemu plánujeme ověřování, předávání i kapacitu následné péče.</p>
+        <p><b>Vyšší využití stejného rozpočtu.</b> Posun míry kvalifikace z 10 na 16 % představuje přibližně 26 dalších relevantních kontaktů za měsíc: růst o 60 % bez navýšení reklamního rozpočtu, pokud zůstane cena za získání kontaktu stejná. Při 20% kvalifikaci model dosahuje přibližně 86 předaných kontaktů, tedy o 17 více než základní scénář. Vyšší kvality dosahujeme zpřesněním cílení, sdělení a zpracování kontaktů při zachování dohodnutých kritérií předání.</p>
+        <p><b>Rozhoduje návazný obchodní výsledek.</b> U předaných kontaktů sledujeme přijetí vaším týmem, uskutečněná jednání a důvody, proč se zájem posunul nebo zastavil. U fundraisingu s dostupnými daty navazujeme také na skutečně realizované investice. Objem získaného kapitálu neodvozujeme od samotného počtu leadů ani od nezávazně deklarovaných částek.</p>
+        <p class="lg-drobne">Ilustrační plánovací model, nikoli prognóza nebo garance. Scénáře vycházejí ze stejného objemu získaných kontaktů a jejich následného zpracování; hodnoty jsou zaokrouhlené. Rozpočet 150 000 Kč je určen na reklamní kampaně. Rozsah a cenu strategie, realizace, kvalifikace a nástrojů stanovíme samostatně. Kvalifikovaný lead označuje kontakt splňující dohodnutá obchodní kritéria, nikoli právní status kvalifikovaného investora.</p>
+        <p class="lg-drobne">Ukázka navrhovaného zobrazení. Konkrétní metriky a jejich dostupnost závisejí na nastavení systému a propojených datech.</p>
+      </div>
     </div>
   </section>
 
