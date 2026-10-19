@@ -7,6 +7,15 @@
   var KLIC_TEXTY = 'clarix-upravy-texty';
   var KLIC_POZN  = 'clarix-upravy-poznamky';
   var STRANKA = (location.pathname.split('/').pop() || 'index.html');
+  /* stranky se 19. 10. 2026 prejmenovaly - starsi ulozene upravy maji jeste stare nazvy */
+  var DRIVE = { 'lead-generation.html': 'clientelo.html', 'business-growth.html': 'strat3x.html' };
+  function naStrance(mapa) {
+    if (!mapa) return {};
+    var a = mapa[STRANKA] || {}, b = DRIVE[STRANKA] ? (mapa[DRIVE[STRANKA]] || {}) : {};
+    var spoj = {}; Object.keys(b).forEach(function (k) { spoj[k] = b[k]; });
+    Object.keys(a).forEach(function (k) { spoj[k] = a[k]; });
+    return spoj;
+  }
 
   /* Safari v soukromém okně umí na úložiště vyhodit výjimku — proto všechno přes try */
   var nouze = {};
@@ -70,7 +79,7 @@
 
   /* ---------- obnovení uložených úprav ---------- */
   function obnovTexty() {
-    var vse = nacti(KLIC_TEXTY)[STRANKA] || {};
+    var vse = naStrance(nacti(KLIC_TEXTY));
     Object.keys(vse).forEach(function (c) {
       var el = podleCesty(c);
       if (el) el.textContent = vse[c].novy;
@@ -188,7 +197,7 @@
   }
 
   function obnovPoznamky() {
-    var vse = nacti(KLIC_POZN)[STRANKA] || {};
+    var vse = naStrance(nacti(KLIC_POZN));
     Object.keys(vse).forEach(function (id) { vykresliPoznamku(id, vse[id], false); });
   }
 
@@ -326,7 +335,7 @@
     var pouzit = vybrano === 'vse' ? DAVKY : [DAVKY[+vybrano]].filter(Boolean);
     var pt = 0, pp = 0;
     pouzit.forEach(function (d) {
-      var t = (d.texty || {})[STRANKA] || {};
+      var t = naStrance(d.texty);
       Object.keys(t).forEach(function (c) {
         var el = podleCesty(c);
         if (!el) return;
@@ -335,7 +344,7 @@
         el.setAttribute('title', 'Původně: ' + t[c].puvodni);
         pt++;
       });
-      var pz = (d.poznamky || {})[STRANKA] || {};
+      var pz = naStrance(d.poznamky);
       Object.keys(pz).forEach(function (id) { vykresliPoznamku('n' + id, pz[id], false, true); pp++; });
     });
     var pocet = l.querySelector('.up-pocet');
