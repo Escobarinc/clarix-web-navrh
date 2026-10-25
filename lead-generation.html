@@ -897,7 +897,7 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .lg-shrnuti p b{color:var(--text)}
 .lg-shrnuti .lg-drobne{font-size:.86rem;color:var(--text-muted)}
 </style>
-<meta name="description" content="Najdeme vaše potenciální zákazníky a ověříme, se kterými má smysl jednat. Strategie, kampaně, kvalifikace leadů a následná péče." />
+<meta name="description" content="Najdeme vaše potenciální zákazníky a ověříme, se kterými má smysl jednat." />
 <link rel="canonical" href="https://www.clarix.cz/lead-generation.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="CLARIX" />
@@ -913,6 +913,945 @@ body.portfolio-mode #hero3d { opacity:.58; }
 <meta name="twitter:description" content="Leadgenerace pro investiční sektor: nové kvalifikované leady, oživení databáze a péče o investory. Vše zastřešuje vlastní software." />
 <meta name="twitter:image" content="https://www.clarix.cz/images/nahled-sdileni.png" />
   <link rel="stylesheet" href="css/uprava.css?v=3">
+<style>
+html,body{overflow-x:hidden;overflow-y:auto !important;} body{min-height:100%;}
+
+
+
+.growth-odkazy{display:flex;flex-wrap:wrap;gap:1.6rem}
+.growth-odkazy a{color:#2f86ff;font-weight:600}
+.growth-odkazy a:hover{text-decoration:underline}
+.growth-odeslat{border:0;cursor:pointer;font-family:inherit}
+.growth-stav{margin-top:.9rem;font-size:.9rem;font-weight:600}
+
+
+
+/* CLARIX Lead Generation V3 — actual original CLARIX shell and hero + V2 copy. */
+/* All site-level fonts, navigation, background, overlays, theme and footer are from the original CLARIX design system. */
+.lgv3 { --lg-blue:#2f86ff;--lg-ink:var(--text);--lg-soft:var(--text-soft);--lg-muted:var(--text-muted);--lg-panel:var(--surface);--lg-line:var(--border);}
+.lgv3 .pg-hero{position:relative;min-height:0;padding-top:clamp(170px,16vw,225px);padding-bottom:clamp(55px,7vw,90px);display:block}
+.lgv3 .pg-hero .pg-wrap{max-width:1440px}
+.lgv3 .pg-hero h1{max-width:1100px;font-size:clamp(40px,5.0vw,72px);line-height:1.04;font-weight:800;margin-top:22px}
+.lgv3 .pg-hero h1 span{color:#2f86ff}
+.lgv3 #lg-hero-copy{max-width:900px}
+.lgv3 .pg-hero .pg-lead{max-width:860px;margin-top:24px;color:var(--text-soft);font-size:clamp(16px,1.3vw,20px);line-height:1.76}
+.lgv3 .lg-cta{display:inline-flex;align-items:center;justify-content:center;min-height:51px;padding:0 25px;border-radius:10px;background:#1668ff;color:#fff;text-decoration:none;font-size:15px;font-weight:700;box-shadow:0 8px 30px rgba(22,104,255,.18)}
+.lgv3 .lg-cta:hover{background:#0c56d7;color:#fff}
+.lgv3 .lg-dolu{margin-top:34px;font-size:14px;color:var(--text-muted)}
+.lgv3 .lg-hero-kroky{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:16px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--border)}
+.lgv3 .lg-hero-krok{padding:clamp(18px,1.7vw,24px);background:var(--bg);min-height:95px}
+.lgv3 .lg-hero-krok b{display:block;font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;color:#2f86ff}
+.lgv3 .lg-hero-krok span{display:block;margin-top:9px;font-size:14px;font-weight:700;line-height:1.45;color:var(--text)}
+.lgv3 .lg-hero-note{font-size:13px;color:var(--text-muted);margin-top:14px;max-width:960px}
+@media(min-width:860px){.lgv3 .lg-hero-kroky{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:650px){.lgv3 .pg-hero{padding-top:150px;padding-bottom:56px}.lgv3 .pg-hero h1{font-size:clamp(34px,9vw,44px)}.lgv3 .lg-hero-krok{min-height:77px;padding:14px 14px}}
+/* Shared original pg section scale */
+.lgv3 .lead-sec{background:rgba(3,6,13,.88);backdrop-filter:blur(3px);border-top:1px solid var(--border)}
+[data-theme='light'] .lgv3 .lead-sec{background:rgba(250,251,253,.89)}
+.lgv3 .lead-sec .pg-wrap{padding-top:clamp(68px,6vw,95px);padding-bottom:clamp(68px,6vw,95px)}
+.lgv3 .lead-sec .pg-h2{font-size:clamp(30px,3.7vw,52px);line-height:1.10;font-weight:800;letter-spacing:-.045em;color:var(--text);max-width:1120px;margin-top:18px;margin-bottom:20px}
+.lgv3 .lead-sec .pg-lead{font-size:clamp(16px,1.3vw,19px);line-height:1.8;color:var(--text-soft);max-width:1000px;margin:0 0 26px}
+.lgv3 .cards,.lgv3 .workflow{display:grid;gap:17px}
+.lgv3 .cols2{grid-template-columns:repeat(2,minmax(0,1fr))}.lgv3 .cols3{grid-template-columns:repeat(3,minmax(0,1fr))}.lgv3 .cols4,.lgv3 .workflow{grid-template-columns:repeat(4,minmax(0,1fr))}
+.lgv3 .card,.lgv3 .workflow-step,.lgv3 .quality-panel,.lgv3 .status,.lgv3 .tech-side .card,.lgv3 .econ-panel,.lgv3 .compliance-item,.lgv3 .fundraising,.lgv3 .path-card,.lgv3 .orig-software-visual,.lgv3 .faq-grid details,.lgv3 .contact-form{
+ border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:22px;box-shadow:var(--card-shadow)}
+.lgv3 .card,.lgv3 .workflow-step{padding:clamp(19px,2vw,29px)}
+.lgv3 h3{color:var(--text);font-size:clamp(18px,1.45vw,23px);font-weight:800;line-height:1.26;letter-spacing:-.025em}
+.lgv3 .card h3{margin:4px 0 10px}.lgv3 .card p,.lgv3 .workflow-step p,.lgv3 .status p,.lgv3 .tech-side p{font-size:15px;line-height:1.7;color:var(--text-soft);margin:0}
+.lgv3 .smallcap,.lgv3 .path-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#2f86ff}
+.lgv3 .card-rule{width:43px;height:2px;background:#2f86ff;margin-bottom:15px}
+.lgv3 .card-top-blue{border-top:3px solid #2f86ff}.lgv3 .card-top-teal{border-top:3px solid #10a99c}.lgv3 .card-top-violet{border-top:3px solid #8a51db}
+.lgv3 .fundraising{display:grid;grid-template-columns:.95fr 1.05fr;gap:25px;padding:clamp(23px,2.5vw,36px);margin:18px 0;background:color-mix(in srgb,var(--surface) 88%,rgba(47,134,255,.16));align-items:start}
+.lgv3 .fundraising h3{margin:14px 0 12px;font-size:clamp(24px,2.4vw,36px)}.lgv3 .fundraising p{color:var(--text-soft);line-height:1.72;font-size:16px;margin:0}
+.lgv3 .fundraising-tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}.lgv3 .fundraising-tiles div{padding:18px;border-radius:16px;border:1px solid var(--border);background:var(--bg);display:grid;gap:7px}
+.lgv3 .fundraising-tiles b{font-size:17px;color:var(--text)}.lgv3 .fundraising-tiles span{font-size:13px;color:var(--text-soft);line-height:1.5}
+.lgv3 .path-card{position:relative;padding:30px}.lgv3 .path-card.blue{background:color-mix(in srgb,var(--bg) 78%,#dbe9ff)}.lgv3 .path-card.aqua{background:color-mix(in srgb,var(--bg) 82%,#ccf7ec)}
+.lgv3 .path-card h3{font-size:clamp(22px,2.2vw,31px);margin:12px 0}.lgv3 .path-card p{font-size:16px;line-height:1.7;color:var(--text-soft);margin:0 0 20px}.lgv3 .path-bottom{border-top:1px solid var(--border);padding-top:13px;font-size:14px;font-weight:700;color:var(--text)}
+.lgv3 .path-icon{position:absolute;right:22px;top:20px;font-size:28px;color:#86a8df}.lgv3 .plus-band{margin-top:18px;font-size:14px;color:var(--text-soft);text-align:center}
+.lgv3 .workflow-step b{color:#2f86ff;font-weight:800}.lgv3 .workflow-step h3{margin:10px 0}.lgv3 .insight{margin-top:18px;border-left:3px solid #10a99c;padding:17px 20px;background:color-mix(in srgb,var(--surface) 85%,#d8f4ee);color:var(--text-soft);line-height:1.7;border-radius:0 14px 14px 0}.lgv3 .insight b,.lgv3 .insight strong{color:var(--text)}
+/* Prior new diagram moved from header to this workflow panel */
+.lgv3 .process-analytical-visual{display:grid;grid-template-columns:.75fr 1.25fr;gap:20px;margin-top:25px;align-items:center}.lgv3 .process-analytical-text h3{font-size:clamp(23px,2vw,30px);margin:10px 0}.lgv3 .process-analytical-text p{font-size:15px;color:var(--text-soft);line-height:1.75;margin:0}
+.lgv3 .hero-viz{border:1px solid var(--border);background:var(--surface);padding:19px;border-radius:22px;box-shadow:var(--card-shadow)}
+.lgv3 .hero-viz-title{font-size:17px;font-weight:800;color:var(--text)}.lgv3 .hero-viz-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.lgv3 .hero-viz svg{display:block;width:100%;height:auto;max-height:270px}.lgv3 .hero-viz-bottom{display:grid;grid-template-columns:1fr 1fr;gap:10px}.lgv3 .mini-metric{padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:12px;display:grid;gap:4px;color:var(--text)}.lgv3 .mini-metric span{font-size:12px;color:var(--text-soft)}
+.lgv3 .eyebrow-outline{border:1px solid var(--border);background:var(--bg);border-radius:999px;font-size:11px;color:var(--text-soft);letter-spacing:.08em;padding:7px 10px;text-transform:uppercase}
+/* Original source images and placement */
+.lgv3 .origin-qualification-intro{display:grid;grid-template-columns:1.05fr .68fr;gap:30px;align-items:start;margin:25px 0}.lgv3 .origin-qualification-photo{margin:0;border:1px solid var(--border);border-radius:22px;aspect-ratio:.87;max-height:480px;overflow:hidden;box-shadow:var(--card-shadow)}
+.lgv3 .origin-qualification-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.lgv3 .quality-wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:20px}.lgv3 .quality-panel{padding:25px}.lgv3 .quality-panel h3{margin:0 0 17px}.lgv3 .quality-rows{display:grid;gap:9px}.lgv3 .quality-row{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}.lgv3 .quality-row:last-child{border:none}.lgv3 .checkmark{width:27px;height:27px;border-radius:100%;display:grid;place-items:center;background:#dcf3ed;color:#08776d;font-weight:800}.lgv3 .quality-row strong{display:block;font-size:15px}.lgv3 .quality-row span{color:var(--text-soft);font-size:13px;line-height:1.55;display:block}
+.lgv3 .statuses{display:grid;gap:12px}.lgv3 .status{padding:19px;display:grid;grid-template-columns:12px 1fr;gap:13px}.lgv3 .status .st-dot{width:11px;height:11px;border-radius:50%;background:#10a99c;margin-top:5px}.lgv3 .status.violet .st-dot{background:#8a51db}.lgv3 .status.grey .st-dot{background:#9daabd}.lgv3 .status b{font-size:16px}
+.lgv3 .tech-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.lgv3 .orig-software-visual{overflow:hidden}.lgv3 .origin-notebook-photo{margin:0;aspect-ratio:1.5;overflow:hidden}.lgv3 .origin-notebook-photo img{display:block;width:100%;height:100%;object-fit:cover}.lgv3 .origin-notebook-caption{padding:16px 20px;border-top:1px solid var(--border)}.lgv3 .origin-notebook-caption b{font-size:16px;color:var(--text)}.lgv3 .origin-notebook-caption p{font-size:14px;color:var(--text-soft);line-height:1.6;margin:5px 0 0}.lgv3 .tech-side{display:grid;gap:13px}.lgv3 .tech-side .card{padding:21px}.lgv3 .tech-footer{font-size:13px;color:var(--text-muted);line-height:1.6}
+/* Plan/funnel never pretends to show client outcomes */
+.lgv3 .econ{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.lgv3 .econ-panel{padding:25px}.lgv3 .panel-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.lgv3 .panel-top h3{margin:0;font-size:21px}.lgv3 .econ-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.lgv3 .econ-metric{border:1px solid var(--border);background:var(--bg);border-radius:14px;padding:16px}.lgv3 .econ-metric b{font-size:clamp(20px,2.2vw,30px);font-weight:800;display:block}.lgv3 .econ-metric span{font-size:12px;color:var(--text-soft)}
+.lgv3 .stage-head{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}.lgv3 .funnelbar{display:grid;gap:11px}.lgv3 .funnel-row{display:flex;gap:10px;align-items:center}.lgv3 .funnel-row label{flex:0 0 135px;font-size:13px;font-weight:700;color:var(--text)}.lgv3 .funnel-track{flex:1;background:color-mix(in srgb,var(--text) 12%,transparent);border-radius:8px;height:18px;overflow:hidden}.lgv3 .funnel-track i{height:100%;display:block;background:#2764ee;border-radius:8px}.lgv3 .funnel-row b{flex:0 0 53px;text-align:right}.lgv3 .econ-foot{font-size:12px;color:var(--text-muted);line-height:1.6;margin-top:14px}
+.lgv3 .scenario-row{display:grid;grid-template-columns:65px 1fr 60px;gap:10px;margin:15px 0;align-items:center}.lgv3 .scenario-row label{font-weight:700}.lgv3 .scenario-line{height:20px;border-radius:8px;overflow:hidden;background:var(--border)}.lgv3 .scenario-line i{height:100%;display:block;background:#9db9fb}.lgv3 .scenario-row.primary .scenario-line i{background:#2764ee}.lgv3 .economics-takeaway{padding:18px;background:color-mix(in srgb,var(--bg) 90%,#cce0ff);border-radius:15px;color:var(--text);margin-top:18px}.lgv3 .economics-takeaway strong{color:#2f86ff;font-size:21px;display:block}.lgv3 .pipeline{display:flex;gap:7px;margin-top:14px}.lgv3 .pipe-step{flex:1;border:1px solid var(--border);background:var(--surface);border-radius:13px;padding:12px 5px;text-align:center;font-weight:700;font-size:12px}.lgv3 .pipe-arrow{display:flex;align-items:center;color:#2f86ff}.lgv3 .pipeline-note{font-size:12px;color:var(--text-muted);line-height:1.6;margin-top:9px}
+.lgv3 .compliance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.lgv3 .compliance-item{padding:19px}.lgv3 .compliance-item b{display:block;margin-bottom:7px;font-size:16px}.lgv3 .compliance-item p{font-size:14px;line-height:1.6;color:var(--text-soft);margin:0}
+.lgv3 .faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px}.lgv3 .faq-grid details{padding:0 18px;border-radius:17px}.lgv3 .faq-grid summary{cursor:pointer;list-style:none;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:10px;line-height:1.5;padding:17px 0}.lgv3 .faq-grid summary::-webkit-details-marker{display:none}.lgv3 .faq-grid summary:after{content:'+';color:#2f86ff;font-size:22px;font-weight:400}.lgv3 .faq-grid details[open] summary:after{content:'−'}.lgv3 .faq-grid details p{margin:0;padding:0 0 18px;font-size:14px;line-height:1.7;color:var(--text-soft)}
+.lgv3 .contact-intro{display:flex;justify-content:space-between;align-items:start;gap:20px}.lgv3 .contact-form{margin-top:25px;padding:26px}.lgv3 .form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.lgv3 .fgroup{display:flex;flex-direction:column;gap:7px;min-width:0}.lgv3 .fgroup label{font-size:13px;font-weight:700;color:var(--text-soft)}.lgv3 .fgroup input,.lgv3 .fgroup select,.lgv3 .fgroup textarea{width:100%;min-height:50px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:11px 13px;color:var(--text);font:inherit;font-size:14px}.lgv3 .fgroup textarea{min-height:95px}.lgv3 .form-selection{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.lgv3 .form-bottom{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:14px;margin-top:14px;align-items:end}.lgv3 .form-action{display:grid;gap:10px}.lgv3 .form-action .btn{border:0;border-radius:11px;background:#1668ff;color:#fff;padding:14px 21px;font-size:15px;font-weight:700;cursor:pointer;min-height:52px}.lgv3 .form-action small{font-size:12px;line-height:1.5;color:var(--text-muted)}
+.lgv3 .form-hint,.lgv3 .form-status{font-size:12px;color:var(--text-muted)}
+@media(max-width:1000px){.lgv3 .fundraising,.lgv3 .process-analytical-visual,.lgv3 .origin-qualification-intro,.lgv3 .quality-wrap,.lgv3 .tech-grid,.lgv3 .econ{grid-template-columns:1fr}.lgv3 .workflow,.lgv3 .compliance,.lgv3 .cols3{grid-template-columns:repeat(2,minmax(0,1fr))}.lgv3 .origin-qualification-photo{aspect-ratio:1.6;max-height:360px}}
+@media(max-width:650px){.lgv3 .cols2,.lgv3 .cols3,.lgv3 .cols4,.lgv3 .workflow,.lgv3 .compliance,.lgv3 .faq-grid,.lgv3 .form-grid,.lgv3 .form-selection,.lgv3 .form-bottom,.lgv3 .fundraising-tiles{grid-template-columns:1fr}.lgv3 .lead-sec .pg-wrap{padding-top:60px;padding-bottom:60px}.lgv3 .contact-form{padding:18px}.lgv3 .pipeline{flex-wrap:wrap}.lgv3 .pipe-step{min-width:40%}.lgv3 .funnel-row label{flex-basis:108px}.lgv3 .hero-viz-bottom{grid-template-columns:1fr 1fr}}
+
+
+
+/* CLARIX Lead Generation V4 additions (preserved in V5): inherit original V3 visual shell, fonts, navigation and backgrounds. */
+.lgv3 .v4-benefit-card,.lgv3 .v4-analytic-panel,.lgv3 .v4-model-board,.lgv3 .v4-econ-panel{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:22px;box-shadow:var(--card-shadow)}
+.lgv3 .v4-benefit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:30px}
+.lgv3 .v4-benefit-card{padding:clamp(20px,2.3vw,30px);display:grid;grid-template-columns:43px 1fr;gap:12px;align-items:start}
+.lgv3 .v4-num{font:800 15px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:#2f86ff;padding-top:4px}
+.lgv3 .v4-benefit-card h3{margin:0 0 10px;font-size:clamp(21px,1.6vw,25px)}
+.lgv3 .v4-benefit-card p{font-size:15px;line-height:1.7;color:var(--text-soft);margin:0}
+.lgv3 .v4-bridge{margin-top:20px;padding:15px 20px;border-left:3px solid #10a99c;background:var(--surface);border-radius:0 12px 12px 0;color:var(--text-soft);font-size:15px;line-height:1.65}
+.lgv3 .v4-bridge b{color:var(--text)}
+.lgv3 .v4-analytic-panel{margin-top:25px;padding:clamp(20px,2.4vw,32px)}
+.lgv3 .v4-topline{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:20px}
+.lgv3 .v4-topline h3{font-size:clamp(23px,2vw,31px);margin:10px 0}
+.lgv3 .v4-topline p{color:var(--text-soft);font-size:15px;line-height:1.65;margin:0;max-width:850px}
+.lgv3 .v4-pill{font-size:11px;line-height:1.3;letter-spacing:.09em;text-transform:uppercase;border:1px solid var(--border);color:var(--text-soft);white-space:nowrap;background:var(--bg);padding:9px 12px;border-radius:999px}
+.lgv3 .v4-two{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(300px,.78fr);gap:22px;align-items:stretch}
+.lgv3 .v4-graphboard{background:#fbfdff;border:1px solid #e3eaf5;border-radius:18px;padding:15px;color:#172c4a;min-width:0}
+.lgv3 .v4-graphboard svg{width:100%;height:auto;display:block;max-height:430px}
+.lgv3 .v4-card-note{display:grid;gap:10px;align-content:center}
+.lgv3 .v4-card-note h4{font-size:19px;font-weight:800;line-height:1.25;margin:0;color:var(--text)}
+.lgv3 .v4-card-note p{color:var(--text-soft);font-size:14px;line-height:1.6;margin:0}
+.lgv3 .v4-point{padding:13px 14px;border-radius:13px;background:var(--bg);border:1px solid var(--border);display:grid;gap:5px}
+.lgv3 .v4-point strong{font-size:15px;color:var(--text)}
+.lgv3 .v4-point span{font-size:13px;line-height:1.55;color:var(--text-soft)}
+.lgv3 .v4-foot{font-size:12px;color:var(--text-muted);line-height:1.6;margin:13px 0 0}
+.lgv3 .v4-microlegend{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:12px;font-size:12px;color:#415873}
+.lgv3 .v4-microlegend span{display:inline-flex;align-items:center;gap:6px}
+.lgv3 .v4-microlegend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.lgv3 .v4-heat-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:16px}
+.lgv3 .v4-heat{width:100%;border-collapse:separate;border-spacing:5px;background:var(--surface);min-width:670px}
+.lgv3 .v4-heat th{font-size:12px;font-weight:750;color:var(--text-soft);padding:11px 9px;text-align:left;white-space:normal}
+.lgv3 .v4-heat th:not(:first-child){text-align:center}
+.lgv3 .v4-heat td{padding:12px 8px;text-align:center;border-radius:10px;font-weight:800;font-size:15px;color:#1a344d}
+.lgv3 .v4-heat td:first-child{font-size:13px;color:var(--text);font-weight:750;background:var(--bg);text-align:left}
+.lgv3 .v4-heat .h5{background:#9ed9d0}.lgv3 .v4-heat .h4{background:#b6e6dc}.lgv3 .v4-heat .h3{background:#dde8fa}.lgv3 .v4-heat .h2{background:#f8dfbf}.lgv3 .v4-heat .h1{background:#fae8d5}
+.lgv3 .v4-qual-grid{display:grid;grid-template-columns:1fr .6fr;gap:18px;align-items:start}
+.lgv3 .v4-qual-key{display:grid;gap:10px}
+.lgv3 .v4-qual-key div{background:var(--bg);border:1px solid var(--border);padding:14px;border-radius:14px}
+.lgv3 .v4-qual-key b{font-size:14px;color:var(--text);display:block;margin-bottom:5px}
+.lgv3 .v4-qual-key p{color:var(--text-soft);font-size:13px;line-height:1.5;margin:0}
+.lgv3 .v4-process-flow{margin-top:18px;padding:20px;border-radius:16px;border:1px solid var(--border);background:var(--bg)}
+.lgv3 .v4-flow-head{display:flex;justify-content:space-between;gap:10px;font-weight:750;font-size:14px;color:var(--text);margin-bottom:15px;flex-wrap:wrap}
+.lgv3 .v4-flow-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.lgv3 .v4-flow-step{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:13px 12px;display:grid;gap:5px;min-height:113px}
+.lgv3 .v4-flow-step b{font-size:24px;font-weight:800;color:#2f86ff}.lgv3 .v4-flow-step:nth-child(2) b{color:#10a99c}.lgv3 .v4-flow-step:nth-child(3) b{color:#8a51db}.lgv3 .v4-flow-step:nth-child(5) b{color:#129e92}
+.lgv3 .v4-flow-step strong{font-size:13px;color:var(--text)}.lgv3 .v4-flow-step span{font-size:12px;color:var(--text-soft);line-height:1.4}
+.lgv3 .v4-econ-highlights{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+.lgv3 .v4-econ-highlight{background:var(--surface);border:1px solid var(--border);padding:20px 16px;border-radius:17px;display:grid;gap:6px}
+.lgv3 .v4-econ-highlight strong{font-size:clamp(24px,2.2vw,34px);color:var(--text);font-weight:850;letter-spacing:-.04em;line-height:1.1}.lgv3 .v4-econ-highlight.important strong{color:#10a99c}
+.lgv3 .v4-econ-highlight span{color:var(--text-soft);font-size:13px;line-height:1.4}
+.lgv3 .v4-econ-split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.lgv3 .v4-econ-panel{padding:22px;min-width:0}
+.lgv3 .v4-econ-panel h3{font-size:22px;margin:0 0 8px}
+.lgv3 .v4-econ-panel .sub{color:var(--text-soft);font-size:14px;margin:0 0 19px;line-height:1.6}
+.lgv3 .v4-channel-header,.lgv3 .v4-channel-row{display:grid;grid-template-columns:1.12fr .6fr .6fr .75fr;gap:7px;align-items:center}
+.lgv3 .v4-channel-header{color:var(--text-muted);font-size:11px;font-weight:750;letter-spacing:.03em;padding:10px 0;border-bottom:1px solid var(--border)}
+.lgv3 .v4-channel-row{padding:13px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-soft)}
+.lgv3 .v4-channel-row:last-of-type{border-bottom:0}.lgv3 .v4-channel-row b{color:var(--text);font-size:14px}.lgv3 .v4-channel-row .source{font-weight:800;color:var(--text)}
+.lgv3 .v4-scenarios{display:grid;gap:11px}
+.lgv3 .v4-scenario{display:grid;grid-template-columns:62px 1fr 95px;align-items:center;gap:9px;color:var(--text-soft);font-size:13px}
+.lgv3 .v4-scenario b{color:var(--text);font-size:14px}
+.lgv3 .v4-track{height:12px;border-radius:999px;background:var(--border);overflow:hidden}.lgv3 .v4-track i{display:block;height:100%;background:#a6bfff;border-radius:999px}.lgv3 .v4-scenario.focus .v4-track i{background:#10a99c}
+.lgv3 .v4-model-board{margin-top:22px;padding:clamp(20px,2.5vw,30px)}
+.lgv3 .v4-model-heading{display:flex;align-items:start;justify-content:space-between;gap:15px;margin-bottom:16px}
+.lgv3 .v4-model-heading h3{font-size:clamp(22px,2.2vw,30px);margin:8px 0 6px}
+.lgv3 .v4-model-heading p{margin:0;color:var(--text-soft);font-size:14px;line-height:1.65}
+.lgv3 .v4-kpi-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.lgv3 .v4-kpi{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px;display:grid;gap:5px}
+.lgv3 .v4-kpi strong{font-size:25px;font-weight:850;color:var(--text)}.lgv3 .v4-kpi span{font-size:12px;color:var(--text-soft);line-height:1.45}
+.lgv3 .v4-econ-stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:17px 0}
+.lgv3 .v4-econ-stage{padding:16px 14px;border:1px solid var(--border);border-radius:16px;background:var(--bg);min-width:0;display:grid;gap:7px}
+.lgv3 .v4-econ-stage b{color:var(--text);font-size:clamp(22px,2vw,32px)}.lgv3 .v4-econ-stage strong{font-size:14px;color:var(--text);line-height:1.35}.lgv3 .v4-econ-stage span{font-size:12px;line-height:1.5;color:var(--text-soft)}
+.lgv3 .v4-econ-stage:first-child{border-top:3px solid #2764ee}.lgv3 .v4-econ-stage:nth-child(2){border-top:3px solid #10a99c}.lgv3 .v4-econ-stage:nth-child(3){border-top:3px solid #8a51db}.lgv3 .v4-econ-stage:nth-child(4){border-top:3px solid #ed9c35}.lgv3 .v4-econ-stage:nth-child(5){border-top:3px solid #10a99c}
+.lgv3 .v4-final-econ{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.lgv3 .v4-econ-closing{border:1px solid var(--border);background:var(--bg);border-radius:17px;padding:20px}
+.lgv3 .v4-econ-closing h4{margin:0 0 10px;font-size:18px;color:var(--text);font-weight:800}.lgv3 .v4-econ-closing p{font-size:14px;color:var(--text-soft);line-height:1.65;margin:0}
+.lgv3 .v4-longcycle{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:15px}.lgv3 .v4-longcycle div{padding:14px;background:var(--bg);border:1px solid var(--border);border-radius:12px}.lgv3 .v4-longcycle b{display:block;font-size:12px;color:#2f86ff;letter-spacing:.06em}.lgv3 .v4-longcycle span{display:block;color:var(--text-soft);font-size:13px;margin-top:5px;line-height:1.45}
+@media(max-width:1100px){.lgv3 .v4-two,.lgv3 .v4-qual-grid,.lgv3 .v4-econ-split{grid-template-columns:1fr}.lgv3 .v4-econ-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.lgv3 .v4-benefit-grid,.lgv3 .v4-final-econ{grid-template-columns:1fr}.lgv3 .v4-econ-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.lgv3 .v4-flow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.lgv3 .v4-longcycle{grid-template-columns:repeat(2,minmax(0,1fr))}.lgv3 .v4-econ-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}.lgv3 .v4-topline{display:block}.lgv3 .v4-topline .v4-pill{display:inline-flex;margin-top:12px}.lgv3 .v4-analytic-panel{padding:18px}.lgv3 .v4-benefit-card{grid-template-columns:30px 1fr}.lgv3 .v4-channel-header,.lgv3 .v4-channel-row{grid-template-columns:1.2fr .6fr .6fr .75fr;font-size:11px}.lgv3 .v4-channel-row b{font-size:12px}.lgv3 .v4-econ-stage{min-height:110px}.lgv3 .v4-econ-highlight{padding:15px 12px}.lgv3 .v4-econ-highlight strong{font-size:23px}.lgv3 .v4-kpi-row{grid-template-columns:repeat(2,minmax(0,1fr))}.lgv3 .v4-kpi-row .v4-kpi:last-child{grid-column:1 / -1}.lgv3 .v4-model-heading{display:block}.lgv3 .v4-model-heading .v4-pill{display:inline-flex;margin-top:12px}}
+
+/* CLARIX V5 only: extended verified business copy + analytically grounded diagrams */
+.lgv3 .v5-qual-clarification{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 14px}
+.lgv3 .v5-qual-clarification>div{padding:17px;border:1px solid var(--border);background:var(--bg);border-radius:15px}
+.lgv3 .v5-qual-clarification strong{display:block;font-size:16px;font-weight:800;color:var(--text);margin:8px 0}
+.lgv3 .v5-qual-clarification p{font-size:13px;line-height:1.65;color:var(--text-soft);margin:0}
+.lgv3 .v5-sankey{margin-top:20px;padding:20px;border:1px solid var(--border);background:var(--bg);border-radius:18px}
+.lgv3 .v5-heading{display:flex;justify-content:space-between;gap:15px;align-items:start}
+.lgv3 .v5-heading h4{margin:9px 0;font-size:clamp(20px,1.8vw,26px);font-weight:820;color:var(--text);line-height:1.25}
+.lgv3 .v5-heading p{color:var(--text-soft);font-size:14px;line-height:1.65;max-width:760px;margin:0 0 16px}
+.lgv3 .v5-sankey-svg{background:#fbfdff;border:1px solid #e1eaf5;border-radius:16px;padding:8px;overflow-x:auto}
+.lgv3 .v5-sankey-svg svg{width:100%;min-width:750px;display:block;height:auto}
+.lgv3 .v5-process-readout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.lgv3 .v5-process-readout div{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px}
+.lgv3 .v5-process-readout b{display:block;font-size:19px;font-weight:850;color:var(--text)}
+.lgv3 .v5-process-readout span{font-size:12px;line-height:1.5;color:var(--text-soft)}
+.lgv3 .v5-cohort-layout{display:grid;grid-template-columns:minmax(0,1.23fr) minmax(290px,.77fr);gap:18px}
+.lgv3 .v5-chart,.lgv3 .v5-cohort-notes{padding:20px;background:var(--bg);border:1px solid var(--border);border-radius:18px;min-width:0}
+.lgv3 .v5-chart h4,.lgv3 .v5-cohort-notes h4{font-size:19px;font-weight:850;color:var(--text);margin:0 0 9px}
+.lgv3 .v5-chart>p{font-size:13px;line-height:1.55;color:var(--text-soft);margin:0 0 12px}
+.lgv3 .v5-chart svg{width:100%;height:auto;display:block;background:#fbfdff;border-radius:12px}
+.lgv3 .v5-chart-legend{display:flex;flex-wrap:wrap;gap:8px 15px;margin-top:10px}
+.lgv3 .v5-chart-legend span{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text-soft)}
+.lgv3 .v5-chart-legend i{width:12px;height:12px;border-radius:4px;flex:0 0 auto}
+.lgv3 .v5-cohort-notes{display:grid;gap:10px;align-content:start}
+.lgv3 .v5-cohort-note{border-left:3px solid #2764ee;padding:12px 14px;background:var(--surface);border-radius:0 10px 10px 0}
+.lgv3 .v5-cohort-note:nth-child(3){border-left-color:#10a99c}.lgv3 .v5-cohort-note:nth-child(4){border-left-color:#8a51db}
+.lgv3 .v5-cohort-note span{font-size:11px;font-weight:750;letter-spacing:.06em;color:var(--text-muted)}
+.lgv3 .v5-cohort-note strong{display:block;font-size:15px;margin:5px 0;color:var(--text);font-weight:800}
+.lgv3 .v5-cohort-note p{margin:0;color:var(--text-soft);font-size:13px;line-height:1.55}
+.lgv3 .v5-decision-strip{margin:16px 0 0;padding:16px 18px;border-left:3px solid #10a99c;background:var(--bg);border-radius:0 12px 12px 0;color:var(--text-soft);font-size:14px;line-height:1.6}
+.lgv3 .v5-decision-strip b{color:var(--text)}
+@media(max-width:960px){.lgv3 .v5-cohort-layout{grid-template-columns:1fr}.lgv3 .v5-qual-clarification{grid-template-columns:1fr}.lgv3 .v5-process-readout{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.lgv3 .v5-process-readout{grid-template-columns:1fr 1fr}.lgv3 .v5-heading{display:block}.lgv3 .v5-heading .v4-pill{display:inline-flex;margin:8px 0 14px}.lgv3 .v5-chart,.lgv3 .v5-cohort-notes{padding:14px}.lgv3 .v5-sankey{padding:12px}}
+
+
+
+
+/* V06 — typografická shoda se schváleným CLARIX Business Growth V14.
+   Obsah, existující analytické SVG grafy, fotografie a navigace se nemění. */
+.lgv3 #uvod h1,
+.lgv3 .pg-hero h1 {
+  font-size: clamp(29.6px, 3.3vw, 47.2px);
+  line-height: 1.04;
+  letter-spacing: -.05em;
+  font-weight: 800;
+  max-width: 1100px;
+}
+.lgv3 .lead-sec .pg-h2 {
+  font-size: clamp(28.8px, 3.4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  font-weight: 800;
+  max-width: 1120px;
+}
+/* Hierarchy of headlines inside content cards/analytical panels aligns with BG's 21–26px titles. */
+.lgv3 #zamereni .fundraising h3 {
+  font-size: clamp(23px, 1.85vw, 26.4px);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+.lgv3 .lead-sec .v4-benefit-card h3 {
+  font-size: clamp(18px, 1.55vw, 22px);
+  line-height: 1.3;
+  letter-spacing: -.025em;
+}
+.lgv3 .lead-sec .v4-analytic-panel h3,
+.lgv3 .lead-sec .v4-model-heading h3,
+.lgv3 .lead-sec .v4-econ-funnel h3 {
+  font-size: clamp(20px, 1.83vw, 26.4px);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+.lgv3 .lead-sec .v5-heading h4 {
+  font-size: clamp(19px, 1.65vw, 24px);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+/* Match the final Business Growth inner headlines while keeping chart labels and data intact. */
+.lgv3 .lead-sec .v4-topline h3,
+.lgv3 .lead-sec .v4-scenario-heading h3,
+.lgv3 .lead-sec .v4-chart-heading h3 {
+  font-size: clamp(20px, 1.83vw, 26.4px);
+  line-height: 1.25;
+}
+
+
+/* V10: the original V3 grid allocated a phantom second column after its
+   textual left column was removed. Make the process card span the exact same
+   content width as the four workflow cards above and the panels below. */
+.lgv3 #proces .process-analytical-visual {
+    display: block;
+    grid-template-columns: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+.lgv3 #proces .process-analytical-visual > .hero-viz.hero-viz-v2 {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.lgv3 #proces .hero-viz-v2 .hero-viz-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr);
+    gap: 22px;
+    align-items: start;
+}
+.lgv3 #proces .hero-viz-v2 .hero-viz-canvas,
+.lgv3 #proces .hero-viz-v2 .hero-viz-notes {
+    min-width: 0;
+}
+/* Three takeaways fill the lower row without an orphaned third box. */
+.lgv3 #proces .hero-viz-v2 .hero-viz-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+@media (max-width: 1050px) {
+    .lgv3 #proces .hero-viz-v2 .hero-viz-layout {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 700px) {
+    .lgv3 #proces .hero-viz-v2 .hero-viz-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* V13 – Obchodní přínos a model služby. Nové prvky dědí původní design CLARIX. */
+.lg13-model{margin:24px 0 28px;padding:28px;background:rgba(255,255,255,.93);border:1px solid #dce5f1;border-radius:28px;box-shadow:0 14px 42px rgba(15,34,60,.04)}
+.lg13-model-head .smallcap,.lg13-model-index{font-weight:800;letter-spacing:.11em;color:#2764ee;font-size:12px}
+.lg13-model-head h3{font-size:clamp(22px,2vw,30px);font-weight:800;line-height:1.18;margin:8px 0 10px;letter-spacing:-.025em;color:#102036}
+.lg13-model-head p{font-size:16px;line-height:1.6;color:#64748b;max-width:920px;margin:0 0 18px}
+.lg13-model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.lg13-model-col{padding:21px 19px 19px;border-radius:20px;background:#f7faff;border:1px solid #dde6f2}
+.lg13-model-col h4{color:#13233b;margin:9px 0 10px;font-size:18px;line-height:1.24;font-weight:800;letter-spacing:-.012em}
+.lg13-model-col p{margin:0;color:#5d7189;font-size:14.5px;line-height:1.65}
+.lg13-model-col strong{color:#17283f;font-weight:750}
+.lg13-model-foot{background:linear-gradient(90deg,#f0f6fe,#f6fbfa);border-left:3px solid #10a99c;border-radius:0 14px 14px 0;margin-top:15px;padding:14px 17px;color:#52647e;font-size:14.5px;line-height:1.65}
+.lg13-model-foot strong{color:#16283e;font-weight:800}
+.tech-side .lg13-package{min-height:0}
+.tech-side .lg13-package h3{font-weight:800}
+/* Remove inherited height forcing unused blank space after redundant process cards */
+#proces .hero-viz-v2 .hero-viz-notes{align-content:center}
+#proces .hero-viz-v2 .hero-viz-layout{align-items:center}
+#proces .hero-viz-v2 .hero-viz-canvas{min-height:0}
+#proces .hero-viz-v2{min-height:0}
+@media(max-width:1000px){.lg13-model-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.lg13-model{padding:18px;border-radius:22px}.lg13-model-col{padding:17px}.lg13-model-head p{font-size:15px}}
+html[data-theme=dark] .lg13-model{background:rgba(19,28,46,.94);border-color:#34415a}
+html[data-theme=dark] .lg13-model-col{background:#1b2940;border-color:#364861}
+html[data-theme=dark] .lg13-model-col h4,html[data-theme=dark] .lg13-model-col strong,html[data-theme=dark] .lg13-model-foot strong,html[data-theme=dark] .lg13-model-head h3{color:#f4f7ff}
+html[data-theme=dark] .lg13-model-col p,html[data-theme=dark] .lg13-model-head p,html[data-theme=dark] .lg13-model-foot{color:#b9c8dc}
+html[data-theme=dark] .lg13-model-foot{background:#182b41}
+
+
+
+html .lgv3 #pomuzeme .lg01-root{
+      --lg01-bg:#f4f7fb;
+      --lg01-surface:#ffffff;
+      --lg01-surface-2:#f8fbff;
+      --lg01-text:#101828;
+      --lg01-muted:#61708a;
+      --lg01-line:#dce5f0;
+      --lg01-blue:#2f6df6;
+      --lg01-blue-soft:#eaf2ff;
+      --lg01-violet:#8f56e8;
+      --lg01-violet-soft:#f2ecfe;
+      --lg01-teal:#17a595;
+      --lg01-teal-soft:#e9f8f4;
+      --lg01-orange:#f0a33b;
+      --lg01-orange-soft:#fff2df;
+      --lg01-shadow:0 20px 50px rgba(17,24,39,.06);
+    }
+html .lgv3 #pomuzeme .lg01-root{
+      background:var(--lg01-surface);
+      border:1px solid var(--lg01-line);
+      border-radius:38px;
+      padding:34px 34px 36px;
+      box-shadow:var(--lg01-shadow);
+    }
+html .lgv3 #pomuzeme .lg01-root .lg01-kicker{color:var(--lg01-blue);font-size:14px;letter-spacing:.17em;text-transform:uppercase;font-weight:700;margin:0 0 18px}
+html .lgv3 #pomuzeme .lg01-root .lg01-hero{
+      display:grid;
+      grid-template-columns:1.06fr .94fr;
+      gap:26px;
+      align-items:stretch;
+    }
+html .lgv3 #pomuzeme .lg01-root .lg01-hero h2{
+      font-size:56px;
+      line-height:.98;
+      letter-spacing:-.05em;
+      font-weight:800;
+      margin:0 0 18px;
+      max-width:860px;
+    }
+html .lgv3 #pomuzeme .lg01-root .lg01-lead{font-size:19px;line-height:1.58;color:var(--lg01-muted);margin:0 0 16px;max-width:920px}
+html .lgv3 #pomuzeme .lg01-root .lg01-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+html .lgv3 #pomuzeme .lg01-root .lg01-pill{padding:10px 14px;border-radius:999px;border:1px solid var(--lg01-line);background:#fff;color:#42526b;font-size:13px;font-weight:600}
+html .lgv3 #pomuzeme .lg01-root .lg01-viz-card{
+      background:linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
+      border:1px solid var(--lg01-line);
+      border-radius:32px;
+      padding:22px;
+      overflow:hidden;
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+html .lgv3 #pomuzeme .lg01-root .lg01-viz-card h3{margin:0 0 6px;font-size:18px;line-height:1.2;font-weight:700;color:#273348}
+html .lgv3 #pomuzeme .lg01-root .lg01-viz-caption{margin-top:16px;color:var(--lg01-muted);font-size:16px;line-height:1.5}
+html .lgv3 #pomuzeme .lg01-root .lg01-stage{
+      position:relative;
+      min-height:390px;
+      border:1px solid var(--lg01-line);
+      border-radius:28px;
+      background:linear-gradient(180deg,#fbfdff 0%, #eef5ff 100%);
+      overflow:hidden;
+      padding:8px;
+    }
+html .lgv3 #pomuzeme .lg01-root .lg01-stage svg{width:100%;height:100%;display:block;max-height:440px}
+html .lgv3 #pomuzeme .lg01-root .lg01-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+html .lgv3 #pomuzeme .lg01-root .lg01-card{background:#fff;border:1px solid var(--lg01-line);border-radius:28px;padding:24px 24px 22px}
+html .lgv3 #pomuzeme .lg01-root .lg01-num{display:inline-flex;width:44px;height:44px;border-radius:14px;align-items:center;justify-content:center;font-weight:800;margin-bottom:16px;font-size:16px}
+html .lgv3 #pomuzeme .lg01-root .lg01-n-blue{background:var(--lg01-blue-soft);color:var(--lg01-blue)}
+html .lgv3 #pomuzeme .lg01-root .lg01-n-violet{background:var(--lg01-violet-soft);color:var(--lg01-violet)}
+html .lgv3 #pomuzeme .lg01-root .lg01-n-teal{background:var(--lg01-teal-soft);color:var(--lg01-teal)}
+html .lgv3 #pomuzeme .lg01-root .lg01-n-orange{background:var(--lg01-orange-soft);color:var(--lg01-orange)}
+html .lgv3 #pomuzeme .lg01-root .lg01-card h3{margin:0 0 8px;font-size:23px;line-height:1.22;letter-spacing:-.02em;font-weight:800}
+html .lgv3 #pomuzeme .lg01-root .lg01-card p{margin:0;color:var(--lg01-muted);font-size:18px;line-height:1.5}
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box{
+      margin-top:24px;
+      padding:24px 26px;
+      border:1px solid var(--lg01-line);
+      border-radius:30px;
+      background:linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:22px;
+      align-items:center;
+    }
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box .lg01-label{
+      color:var(--lg01-blue);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box h3{margin:0 0 8px;font-size:34px;line-height:1.02;letter-spacing:-.04em;font-weight:800}
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box p{margin:0;color:var(--lg01-muted);font-size:18px;line-height:1.55}
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-points{display:grid;gap:12px}
+html .lgv3 #pomuzeme .lg01-root .lg01-dp{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid var(--lg01-line);border-radius:20px;background:#fff}
+html .lgv3 #pomuzeme .lg01-root .lg01-dp-dot{width:12px;height:12px;border-radius:50%;background:var(--lg01-blue);margin-top:6px;flex:0 0 auto}
+html .lgv3 #pomuzeme .lg01-root .lg01-dp b{display:block;font-size:17px;line-height:1.2;margin-bottom:3px}
+html .lgv3 #pomuzeme .lg01-root .lg01-dp span{display:block;color:var(--lg01-muted);font-size:15px;line-height:1.45}
+@media  (max-width: 1180px){html .lgv3 #pomuzeme .lg01-root .lg01-hero,html .lgv3 #pomuzeme .lg01-root .lg01-decision-box{grid-template-columns:1fr}
+html .lgv3 #pomuzeme .lg01-root .lg01-grid-4{grid-template-columns:repeat(2,1fr)}
+html .lgv3 #pomuzeme .lg01-root .lg01-hero h2{font-size:46px}}
+@media  (max-width: 760px){html .lgv3 #pomuzeme .lg01-root{padding:22px 18px 24px;border-radius:28px}
+html .lgv3 #pomuzeme .lg01-root .lg01-hero h2{font-size:38px}
+html .lgv3 #pomuzeme .lg01-root .lg01-lead{font-size:17px}
+html .lgv3 #pomuzeme .lg01-root .lg01-grid-4{grid-template-columns:1fr}
+html .lgv3 #pomuzeme .lg01-root .lg01-card h3{font-size:21px}
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box h3{font-size:30px}
+html .lgv3 #pomuzeme .lg01-root .lg01-stage{min-height:0}
+html .lgv3 #pomuzeme .lg01-root .lg01-stage svg{height:auto;max-height:none}}
+/* Match the approved site's main title hierarchy while preserving the selected A layout. */
+html .lgv3 #pomuzeme .lg01-root .lg01-hero h2{font-size:clamp(32px,3.55vw,48px);line-height:1.07;letter-spacing:-.045em}
+html .lgv3 #pomuzeme .lg01-root .lg01-kicker{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.20em}
+html .lgv3 #pomuzeme .lg01-root .lg01-lead{font-size:clamp(16px,1.3vw,19px);line-height:1.65}
+/* Dark mode: keep the artwork and colored accents but align surfaces with site theme. */
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root{
+  --lg01-surface:#132139;--lg01-text:#eef4ff;--lg01-muted:#a9bad3;--lg01-line:#2e4059;--lg01-shadow:0 20px 55px rgba(0,0,0,.15)}
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root .lg01-card,
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root .lg01-pill,
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root .lg01-dp{background:#182942;color:#edf4ff}
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root .lg01-viz-card,
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root .lg01-decision-box{background:linear-gradient(180deg,#182942,#132139)}
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root .lg01-viz-card h3{color:#eaf3ff}
+html[data-theme="dark"] .lgv3 #pomuzeme .lg01-root .lg01-stage{background:linear-gradient(180deg,#f8fbff,#eaf3ff)}
+/* Narrow screens: preserve readable chart and avoid a forced desktop-sized SVG viewport. */
+@media(max-width:760px){html .lgv3 #pomuzeme .lg01-root{padding:24px 18px}
+html .lgv3 #pomuzeme .lg01-root .lg01-viz-card{padding:12px}
+html .lgv3 #pomuzeme .lg01-root .lg01-stage{padding:2px}
+html .lgv3 #pomuzeme .lg01-root .lg01-card{padding:20px}
+html .lgv3 #pomuzeme .lg01-root .lg01-card p{font-size:16px}
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box p{font-size:16px}}
+
+
+
+/* V17 / SECTION 02 / approved screenshot-like graphic */
+#zamereni .lg2-shell{
+  --lg2-ink:#101828;
+  --lg2-navy:#1a3153;
+  --lg2-muted:#61718a;
+  --lg2-line:#d7e3f1;
+  --lg2-blue:#2f6df6;
+  --lg2-teal:#17a99a;
+  --lg2-mint:#dff3ec;
+  --lg2-lilac:#efe7ff;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--lg2-ink);
+}
+#zamereni .lg2-shell *,#zamereni .lg2-shell *::before,#zamereni .lg2-shell *::after{box-sizing:border-box}
+#zamereni .lg2-eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--lg2-blue);margin-bottom:12px}
+#zamereni .lg2-shell h2{margin:0 0 14px;font-weight:860;font-size:clamp(30px,3.55vw,44px);line-height:1.08;letter-spacing:-.048em;color:#111b2e;max-width:1180px}
+#zamereni .lg2-section-lead{margin:0 0 30px;max-width:1060px;color:#60708a;font-size:15px;line-height:1.62}
+#zamereni .lg2-pillars{display:grid;grid-template-columns:minmax(0,1.38fr) minmax(0,.98fr);gap:18px;align-items:stretch}
+#zamereni .lg2-pillar{position:relative;min-width:0;border-radius:28px;border:1px solid var(--lg2-line);padding:clamp(24px,2.6vw,36px);overflow:hidden;background:#fff}
+#zamereni .lg2-fund-dark{background:linear-gradient(180deg,#f1f7ff 0%,#f7fbff 100%)}
+#zamereni .lg2-fund-dark::before{content:"";position:absolute;width:390px;height:390px;border:28px solid rgba(61,114,228,.07);border-radius:50%;right:-120px;top:-132px;pointer-events:none}
+#zamereni .lg2-fund-dark::after{content:"";position:absolute;width:360px;height:360px;border:28px solid rgba(61,114,228,.04);border-radius:50%;right:-178px;top:20px;pointer-events:none}
+#zamereni .lg2-pillar-other{background:#fff}
+#zamereni .lg2-pill{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:#2d67c6;margin-bottom:16px;position:relative;z-index:1}
+#zamereni .lg2-pill-mark{width:10px;height:10px;border-radius:50%;background:currentColor}
+#zamereni .lg2-pillar h3{position:relative;z-index:1;margin:0 0 12px;font-size:clamp(24px,2.15vw,32px);line-height:1.12;letter-spacing:-.04em;font-weight:840;color:#182d4b}
+#zamereni .lg2-pillar-description{position:relative;z-index:1;margin:0;max-width:620px;color:#5f728d;font-size:14px;line-height:1.65}
+#zamereni .lg2-fund-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 18px}
+#zamereni .lg2-fund-item{padding:18px 20px;border-radius:18px;border:1px solid #d8e4f2;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.25) inset}
+#zamereni .lg2-fund-item strong{display:block;margin-bottom:6px;color:#1b2f4c;font-size:14px;line-height:1.35;font-weight:800}
+#zamereni .lg2-fund-item span{display:block;color:#667892;font-size:12px;line-height:1.5}
+#zamereni .lg2-industry-note{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 16px;background:rgba(255,255,255,.72);border:1px solid #d5e2f0;border-radius:14px;font-size:12px;line-height:1.45;color:#5b6f89}
+#zamereni .lg2-industry-note strong{color:#2d67e8;font-weight:800}
+#zamereni .lg2-pillar-footer{position:relative;z-index:1;margin:20px 0 0;color:#6b7b93;font-size:11.8px;line-height:1.6}
+#zamereni .lg2-industry-list{display:grid;gap:16px;margin-top:30px}
+#zamereni .lg2-industry-item{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;align-items:start;padding:19px 18px;border-radius:18px;border:1px solid #dfe8f2;min-width:0}
+#zamereni .lg2-industry-item:nth-child(1){background:#f5f8ff;border-color:#dce6f7}
+#zamereni .lg2-industry-item:nth-child(2){background:#eef8f4;border-color:#d8ede7}
+#zamereni .lg2-industry-item:nth-child(3){background:#f6f0ff;border-color:#e8dcfb}
+#zamereni .lg2-industry-index{display:grid;place-items:center;height:34px;width:34px;border-radius:12px;background:#eaf1ff;color:#2f6df6;font-size:11px;font-weight:850}
+#zamereni .lg2-industry-item:nth-child(2) .lg2-industry-index{background:#d9f1e8;color:#188c7d}
+#zamereni .lg2-industry-item:nth-child(3) .lg2-industry-index{background:#eadfff;color:#8450db}
+#zamereni .lg2-industry-item strong{display:block;margin:1px 0 6px;color:#1d3150;font-size:14px;line-height:1.28;font-weight:800}
+#zamereni .lg2-industry-item p{margin:0;color:#667892;font-size:12px;line-height:1.55}
+#zamereni .lg2-summary-band{margin-top:20px;border:1px solid #d8e4f1;border-radius:22px;background:linear-gradient(180deg,#f4f9ff 0%,#f8fbff 100%);padding:18px 20px;color:#5c6e87;font-size:13.5px;line-height:1.58;display:flex;align-items:flex-start;gap:15px}
+#zamereni .lg2-summary-band::before{content:"";width:12px;height:12px;border-radius:50%;flex:0 0 12px;background:#19b0a0;margin-top:4px}
+#zamereni .lg2-summary-band strong{color:#1d3252;font-weight:820}
+@media(max-width:1024px){
+  #zamereni .lg2-shell h2{font-size:clamp(28px,4.1vw,40px)}
+  #zamereni .lg2-pillars{grid-template-columns:1fr;gap:16px}
+}
+@media(max-width:760px){
+  #zamereni .lg2-section-lead{font-size:14.5px;margin-bottom:22px}
+  #zamereni .lg2-pillar{padding:22px 18px;border-radius:24px}
+  #zamereni .lg2-pillar h3{font-size:26px}
+  #zamereni .lg2-fund-grid{grid-template-columns:1fr;gap:12px}
+  #zamereni .lg2-industry-list{gap:12px;margin-top:22px}
+  #zamereni .lg2-industry-item{padding:16px 14px;gap:12px}
+  #zamereni .lg2-summary-band{padding:16px 16px;border-radius:18px;font-size:13px}
+}
+
+
+
+/* V19 – sekce 02: šířka sladěna s celou stránkou, kompaktnější proporce; grafika a barvy V18 zachovány.
+   Záměrně nejsou měněny ostatní sekce, interakce ani zajištění scrollování. */
+#zamereni{
+  padding:38px 0 46px;
+  background:#ffffff;
+}
+#zamereni .pg-wrap{
+  max-width:1400px;
+  padding:0 clamp(1.25rem,4vw,3rem);
+}
+#zamereni .lg2-shell{
+  background:#fff;
+  color:#101828;
+}
+#zamereni .lg2-eyebrow{
+  font-size:12px;
+  font-weight:800;
+  line-height:1.4;
+  letter-spacing:.18em;
+  color:#2f6df6;
+  margin:0 0 13px;
+}
+#zamereni .lg2-shell h2{
+  margin:0 0 14px;
+  max-width:1250px;
+  font-size:clamp(29px,2.55vw,40px);
+  font-weight:850;
+  letter-spacing:-.049em;
+  line-height:1.12;
+  color:#101828;
+}
+#zamereni .lg2-section-lead{
+  max-width:1060px;
+  margin:0 0 26px;
+  font-size:16px;
+  line-height:1.62;
+  color:#637590;
+}
+#zamereni .lg2-pillars{
+  grid-template-columns:minmax(0,1.39fr) minmax(0,1fr);
+  align-items:stretch;
+  gap:16px;
+}
+#zamereni .lg2-pillar{
+  padding:29px 28px 28px;
+  border-radius:24px;
+  border:1px solid #d7e4f3;
+}
+#zamereni .lg2-fund-dark{
+  background:linear-gradient(128deg,#e9f2ff 0%,#f0f6ff 63%,#f8fbff 100%);
+  border-color:#c5d9fa;
+}
+#zamereni .lg2-fund-dark::before{
+  width:385px;
+  height:385px;
+  border:29px solid rgba(72,129,226,.07);
+  top:-137px;
+  right:-104px;
+}
+#zamereni .lg2-fund-dark::after{
+  width:355px;
+  height:355px;
+  border:27px solid rgba(72,129,226,.035);
+  top:14px;
+  right:-167px;
+}
+#zamereni .lg2-pillar-other{
+  background:linear-gradient(145deg,#f8fbff 0%,#ffffff 85%);
+  border-color:#d8e3ef;
+}
+#zamereni .lg2-pill{
+  font-size:11px;
+  font-weight:850;
+  line-height:1.35;
+  letter-spacing:.14em;
+  color:#2f64c6;
+  margin-bottom:14px;
+}
+#zamereni .lg2-pillar-other .lg2-pill{color:#346dac;}
+#zamereni .lg2-pill-mark{width:9px;height:9px;}
+#zamereni .lg2-pillar h3{
+  margin:0 0 11px;
+  font-size:clamp(23px,1.85vw,28px);
+  line-height:1.19;
+  font-weight:830;
+  letter-spacing:-.042em;
+  color:#1c3151;
+}
+#zamereni .lg2-pillar-description{
+  max-width:760px;
+  margin:0;
+  font-size:15px;
+  line-height:1.58;
+  color:#5b7190;
+}
+#zamereni .lg2-fund-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+  margin:21px 0 16px;
+}
+#zamereni .lg2-fund-item{
+  min-width:0;
+  min-height:75px;
+  padding:15px 15px;
+  border-radius:15px;
+  border:1px solid #d7e4f3;
+  background:#fff;
+}
+#zamereni .lg2-fund-item:nth-child(1),
+#zamereni .lg2-fund-item:nth-child(2),
+#zamereni .lg2-fund-item:nth-child(3),
+#zamereni .lg2-fund-item:nth-child(4){background:#fff;border-color:#d7e4f3;}
+#zamereni .lg2-fund-item strong{
+  font-size:14px;
+  line-height:1.34;
+  margin-bottom:5px;
+  font-weight:800;
+  color:#192e4b;
+}
+#zamereni .lg2-fund-item span{
+  font-size:12px;
+  line-height:1.43;
+  color:#687c99;
+}
+#zamereni .lg2-industry-note{
+  margin-top:0;
+  padding:10px 13px;
+  border-radius:13px;
+  border-color:#cfdff2;
+  background:rgba(255,255,255,.74);
+  color:#577291;
+  font-size:12.5px;
+  line-height:1.4;
+}
+#zamereni .lg2-industry-note strong{
+  color:#2b69ed;
+  font-size:12.5px;
+  font-weight:800;
+}
+#zamereni .lg2-pillar-footer{
+  margin:15px 0 0;
+  padding-top:0;
+  font-size:11.5px;
+  line-height:1.55;
+  color:#667b98;
+}
+#zamereni .lg2-industry-list{
+  gap:10px;
+  margin-top:23px;
+}
+#zamereni .lg2-industry-item{
+  grid-template-columns:35px minmax(0,1fr);
+  align-items:start;
+  gap:13px;
+  min-height:80px;
+  padding:15px 14px;
+  border-radius:15px;
+}
+#zamereni .lg2-industry-item:nth-child(1){background:#f3f7ff;border-color:#d4e3fb;}
+#zamereni .lg2-industry-item:nth-child(2){background:#effaf6;border-color:#cfece2;}
+#zamereni .lg2-industry-item:nth-child(3){background:#f6f1ff;border-color:#e7d9fa;}
+#zamereni .lg2-industry-index{
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:850;
+  background:#e8f0ff;
+  color:#2e6bf3;
+}
+#zamereni .lg2-industry-item:nth-child(2) .lg2-industry-index{background:#d9f3e9;color:#079583;}
+#zamereni .lg2-industry-item:nth-child(3) .lg2-industry-index{background:#ece1ff;color:#7646cf;}
+#zamereni .lg2-industry-item strong{
+  margin:0 0 5px;
+  color:#1b2e4b;
+  font-size:15px;
+  line-height:1.3;
+  font-weight:800;
+}
+#zamereni .lg2-industry-item p{
+  font-size:12px;
+  line-height:1.4;
+  color:#6a7d99;
+}
+#zamereni .lg2-summary-band{
+  margin-top:16px;
+  padding:15px 17px;
+  border:1px solid #d4e3f7;
+  border-radius:18px;
+  background:#f5f9ff;
+  color:#516987;
+  font-size:13.5px;
+  line-height:1.5;
+}
+#zamereni .lg2-summary-band::before{
+  width:11px;height:11px;flex:0 0 11px;
+  background:#16a99a;
+  margin-top:5px;
+}
+#zamereni .lg2-summary-band strong{
+  color:#203755;
+  font-weight:800;
+}
+@media(max-width:1100px){
+  #zamereni{padding:36px 0;}
+  #zamereni .lg2-shell h2{font-size:clamp(29px,3.2vw,36px);}
+  #zamereni .lg2-section-lead{font-size:15px;}
+  #zamereni .lg2-pillars{grid-template-columns:1fr;}
+  #zamereni .lg2-pillar{padding:27px;}
+  #zamereni .lg2-pillar h3{font-size:26px;}
+  #zamereni .lg2-industry-list{margin-top:25px;}
+}
+@media(max-width:640px){
+  #zamereni{padding:36px 0 42px;}
+  #zamereni .pg-wrap{padding:0 1.25rem;}
+  #zamereni .lg2-shell{padding:0;border:0;border-radius:0;}
+  #zamereni .lg2-eyebrow{font-size:11px;line-height:1.5;letter-spacing:.15em;margin-bottom:12px;}
+  #zamereni .lg2-shell h2{font-size:clamp(26px,6.9vw,32px);line-height:1.13;margin-bottom:14px;}
+  #zamereni .lg2-section-lead{font-size:14px;line-height:1.58;margin-bottom:21px;}
+  #zamereni .lg2-pillars{gap:15px;}
+  #zamereni .lg2-pillar{padding:21px 17px 23px;border-radius:23px;}
+  #zamereni .lg2-pill{font-size:10px;letter-spacing:.08em;margin-bottom:13px;}
+  #zamereni .lg2-pillar h3{font-size:23px;line-height:1.16;margin-bottom:12px;}
+  #zamereni .lg2-pillar-description{font-size:14px;line-height:1.57;}
+  #zamereni .lg2-fund-grid{grid-template-columns:1fr;gap:10px;margin:20px 0 16px;}
+  #zamereni .lg2-fund-item{min-height:0;padding:15px 16px;border-radius:14px;}
+  #zamereni .lg2-fund-item strong{font-size:14px;margin-bottom:4px;}
+  #zamereni .lg2-fund-item span{font-size:12.5px;}
+  #zamereni .lg2-industry-note{padding:12px 13px;gap:7px;font-size:12px;}
+  #zamereni .lg2-industry-note strong{font-size:12px;}
+  #zamereni .lg2-pillar-footer{margin-top:16px;font-size:12px;}
+  #zamereni .lg2-industry-list{gap:10px;margin-top:20px;}
+  #zamereni .lg2-industry-item{min-height:0;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:15px 13px;border-radius:14px;}
+  #zamereni .lg2-industry-index{width:33px;height:33px;font-size:11px;}
+  #zamereni .lg2-industry-item strong{font-size:14px;margin-bottom:5px;}
+  #zamereni .lg2-industry-item p{font-size:12.5px;}
+  #zamereni .lg2-summary-band{margin-top:15px;border-radius:17px;padding:15px;font-size:13px;gap:10px;}
+}
+
+
+
+html { height: auto !important; min-height: 100%; overflow-x: clip; overflow-y: auto !important; }
+body { height: auto !important; min-height: 100%; overflow-y: visible !important; overscroll-behavior-y: auto; }
+#hero3d { position: fixed; pointer-events: none !important; }
+#lead-main { position: relative; }
+
+
+/* V20: cílené produkční úpravy; zachována šířka původního systému */
+#technologie .v20-suite,#technologie .v20-services,#technologie .v20-onboarding{margin:30px 0 28px;border:1px solid #dbe5f2;background:#f8fbff;border-radius:22px;padding:clamp(20px,2.5vw,35px);color:#142c4d}
+#technologie .v20-suite-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:22px}
+#technologie .v20-suite h3,#technologie .v20-services h3,#technologie .v20-onboarding h3{font-size:clamp(23px,2.2vw,30px);line-height:1.22;letter-spacing:-.035em;margin:11px 0}
+#technologie .v20-suite p,#technologie .v20-services p,#technologie .v20-onboarding p{font-size:15px;line-height:1.7;color:#526781;margin:0}
+#technologie .v20-software-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:17px}
+#technologie .v20-app-demo{background:#fff;border:1px solid #d9e5f2;border-radius:17px;overflow:hidden;box-shadow:0 15px 35px rgba(25,55,100,.055)}
+#technologie .v20-app-top{display:flex;align-items:center;gap:12px;padding:15px 17px;border-bottom:1px solid #e3eaf5;background:#f4f8fe}
+#technologie .v20-app-mark{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#2864e8;color:#fff;font-weight:900;font-size:22px}
+#technologie .v20-app-top>span:nth-child(2){display:grid;gap:2px;flex:1;min-width:0}
+#technologie .v20-app-top strong{font-size:13px}#technologie .v20-app-top small{font-size:11px;color:#526781}
+#technologie .v20-app-state{font-size:11px;font-weight:750;color:#087764;background:#e4f7f1;border:1px solid #bfe9de;padding:7px 8px;border-radius:9px;white-space:nowrap}
+#technologie .v20-app-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:17px}
+#technologie .v20-app-metrics>div{background:#f6f9ff;border:1px solid #e7edf6;padding:13px;border-radius:10px;display:grid;gap:5px}
+#technologie .v20-app-metrics span{font-size:11px;color:#566c86}#technologie .v20-app-metrics b{font-size:13px;color:#183359}
+#technologie .v20-app-timeline{padding:0 17px 16px;display:flex;flex-wrap:wrap;gap:7px}
+#technologie .v20-app-timeline span{font-size:11px;color:#526781;border:1px solid #dae3f0;border-radius:20px;background:#fff;padding:6px 9px}
+#technologie .v20-app-timeline .done{background:#e7f7f2;border-color:#bce7d8;color:#0b7665}
+#technologie .v20-app-feedback{background:#f3f6fc;padding:14px 17px;border-top:1px solid #e2eaf5;display:grid;gap:5px}
+#technologie .v20-app-feedback b{font-size:12px}#technologie .v20-app-feedback span{color:#526781;font-size:12px;line-height:1.5}
+#technologie .v20-software-benefits{display:grid;gap:11px}
+#technologie .v20-software-benefits article{background:#fff;border:1px solid #e0e9f5;border-radius:14px;padding:17px;display:flex;gap:12px;align-items:flex-start}
+#technologie .v20-step{font-size:11px;color:#205edf;font-weight:850;letter-spacing:.055em;flex-shrink:0}
+#technologie .v20-software-benefits h4,#technologie .v20-service-card h4{font-size:16px;font-weight:800;color:#1b3658;margin:0 0 5px;line-height:1.25}
+#technologie .v20-software-benefits p{font-size:13px;line-height:1.6}
+#technologie .v20-disclaimer{font-size:12px!important;color:#526781!important;margin-top:16px!important;line-height:1.55!important}
+#technologie .v20-services{background:#fff}
+#technologie .v20-services-title{max-width:780px;margin-bottom:21px}
+#technologie .v20-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+#technologie .v20-service-card{border:1px solid #dbe6f5;background:#f7faff;border-radius:15px;padding:21px;min-width:0}
+#technologie .v20-service-card:nth-child(2){background:#f5fbf9;border-color:#d6eee4}
+#technologie .v20-service-card:nth-child(3){background:#f8f6fe;border-color:#e8e0f7}
+#technologie .v20-service-card h4{margin:11px 0 9px;font-size:17px}
+#technologie .v20-service-card p{font-size:13px;min-height:93px}
+#technologie .v20-service-out{margin-top:14px;border-top:1px solid #e0e8f3;padding-top:13px;font-size:12px;color:#244467;line-height:1.5;font-weight:650}
+#technologie .v20-onboarding{background:linear-gradient(115deg,#f0f6ff,#f6fafc)}
+#technologie .v20-onboarding-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:21px 0}
+#technologie .v20-onboarding-steps>div{display:grid;gap:7px;padding:16px;background:#fff;border:1px solid #dce7f4;border-radius:13px}
+#technologie .v20-onboarding-steps b{color:#2764ee;font-size:12px}#technologie .v20-onboarding-steps span{color:#536980;font-size:13px;line-height:1.6}
+#technologie .v20-cta,.v20-midcta>a{display:inline-flex;align-items:center;gap:13px;text-decoration:none;border-radius:10px;padding:13px 18px;color:#fff!important;background:#2764ee;font-size:14px;font-weight:750}
+.v20-midcta{margin:26px 0 0;background:#eff6ff;border:1px solid #d7e5f7;border-radius:15px;padding:21px 23px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.v20-midcta>div{display:grid;gap:7px}.v20-midcta>div>span{font-size:11px;font-weight:850;letter-spacing:.10em;color:#2463de}
+.v20-midcta strong{font-size:17px;line-height:1.4;color:#193859}
+#kontakt .v20-mail-note{font-size:12px;line-height:1.65;color:#526781;margin:10px 0 0}
+#kontakt .v20-mail-note a{color:#235ed5;text-decoration:underline}
+#kontakt .form-alert{font-size:13px;line-height:1.6}
+/* Content contrast in analytical panels and small labels */
+.lgv3 .v4-foot,.lgv3 .v20-disclaimer,.lgv3 .lg01-viz-caption{color:#50637c!important}
+.lgv3 .pg-lead{color:#52647d}
+@media(max-width:950px){#technologie .v20-software-layout{grid-template-columns:1fr}#technologie .v20-service-grid{grid-template-columns:1fr 1fr}#technologie .v20-onboarding-steps{grid-template-columns:1fr}}
+@media(max-width:650px){#technologie .v20-suite,#technologie .v20-services,#technologie .v20-onboarding{padding:19px 16px;border-radius:17px}#technologie .v20-suite-head{display:block}#technologie .v20-suite-head>.v4-pill{display:inline-flex;margin-top:14px}
+#technologie .v20-service-grid{grid-template-columns:1fr}#technologie .v20-service-card p{min-height:0}#technologie .v20-app-top{display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center}#technologie .v20-app-state{grid-column:1/-1;justify-self:start;margin-left:0}
+#technologie .v20-app-metrics{padding:11px;gap:7px}#technologie .v20-app-metrics>div{padding:11px}
+#technologie .v20-software-benefits article{padding:14px}#technologie .v20-software-benefits p{font-size:13px}
+.v20-midcta{display:grid;padding:18px}#technologie .v20-onboarding h3{font-size:23px}#technologie .v20-suite h3,#technologie .v20-services h3{font-size:23px}
+#technologie .v20-app-metrics b{font-size:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{scroll-behavior:auto!important}}
+
+
+/* Zachováváme design, obsah, šířky panelů, navigaci a grafy; sjednocujeme hierarchii písma. */
+/* Hero: o něco méně dominantní slogan, zachovaná mobilní čitelnost. */
+html .lgv3 .pg-hero h1 {
+  font-size: clamp(38px, 3.15vw, 55px);
+  line-height: 1.075;
+  letter-spacing: -0.044em;
+}
+html .lgv3 .pg-hero .pg-lead {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.68;
+}
+/* Hlavní mezititulky: dříve až 48–52 px, nyní přibližně 40–44 px. */
+html .lgv3 .lead-sec .pg-h2 {
+  font-size: clamp(30px, 2.8vw, 44px);
+  line-height: 1.13;
+  letter-spacing: -0.041em;
+}
+html .lgv3 .lead-sec .pg-lead {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.7;
+}
+/* Sekce 01 – běžný text v benefitech byl disproporčně velký vůči okolním kartám. */
+html .lgv3 #pomuzeme .lg01-root h2 {
+  font-size: clamp(30px, 2.8vw, 44px);
+  line-height: 1.13;
+}
+html .lgv3 #pomuzeme .lg01-root .lg01-lead {
+  font-size: clamp(16px, 1.17vw, 17.5px);
+  line-height: 1.65;
+}
+html .lgv3 #pomuzeme .lg01-root .lg01-card h3 {
+  font-size: clamp(18px, 1.4vw, 21px);
+  line-height: 1.27;
+}
+html .lgv3 #pomuzeme .lg01-root .lg01-card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+html .lgv3 #pomuzeme .lg01-root .lg01-viz-card h3 { font-size: 17px; }
+/* Sekce 02 – zachování schváleného kompaktního layoutu, mírnější titulky. */
+html .lgv3 #zamereni .lg2-shell h2 {
+  font-size: clamp(29px, 2.35vw, 36px);
+  line-height: 1.15;
+}
+html .lgv3 #zamereni .lg2-pillar h3 {
+  font-size: clamp(21px, 1.65vw, 24px);
+  line-height: 1.2;
+}
+html .lgv3 #zamereni .lg2-section-lead {font-size: clamp(14px, 1.06vw, 16px);}
+/* Nižší nadpisy napříč pracovním postupem, kvalifikací, technologií i ekonomikou. */
+html .lgv3 .lead-sec h3 {
+  font-size: clamp(18px, 1.42vw, 21px);
+  line-height: 1.28;
+}
+html .lgv3 .v4-topline h3,
+html .lgv3 .v4-model-heading h3,
+html .lgv3 .process-analytical-text h3 {
+  font-size: clamp(20px, 1.65vw, 24px);
+  line-height: 1.28;
+}
+html .lgv3 .v4-card-note h4 {font-size:18px;}
+html .lgv3 .v4-econ-panel h3 {font-size: 20px;}
+html .lgv3 .lg13-package h3 {font-size: clamp(18px,1.36vw,20px);}
+/* Software, školení a začátek spolupráce – návaznost na úroveň ostatních sekcí. */
+html .lgv3 #technologie .v20-suite h3,
+html .lgv3 #technologie .v20-services h3,
+html .lgv3 #technologie .v20-onboarding h3 {
+  font-size: clamp(22px, 1.85vw, 27px);
+  line-height: 1.24;
+}
+html .lgv3 #technologie .v20-service-card h4 {font-size: 16px;}
+html .lgv3 #technologie .v20-software-benefits h4 {font-size:15px;}
+html .lgv3 .v20-midcta strong {font-size:16px;}
+/* Číselná hierarchie ekonomických boxů: čísla zůstávají nejvýraznější, jen méně mohutná. */
+html .lgv3 .v4-econ-highlight strong {font-size:clamp(22px,1.95vw,29px);}
+html .lgv3 .v4-econ-stage b {font-size:clamp(21px,1.8vw,27px);}
+html .lgv3 .v4-kpi strong {font-size:clamp(21px,1.6vw,24px);}
+/* Složené selektory z původního design systému měly přednost před obecnými pravidly. */
+html .lgv3 #uvod h1 {font-size:clamp(32px, 3.05vw, 45px);line-height:1.075;}
+html .lgv3 #pomuzeme .lg01-root .lg01-hero h2 {
+  font-size:clamp(30px, 2.85vw, 42px);line-height:1.13;
+}
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box h3 {
+  font-size:clamp(23px,1.85vw,28px);line-height:1.13;
+}
+html .lgv3 #pomuzeme .lg01-root .lg01-decision-box p {
+  font-size:16px;line-height:1.6;
+}
+html .lgv3 .lead-sec .v4-analytic-panel h3,
+html .lgv3 .lead-sec .v4-topline h3,
+html .lgv3 .lead-sec .v4-model-heading h3 {
+  font-size:clamp(20px,1.65vw,24px);line-height:1.27;
+}
+/* Mobil už byl u některých sekcí na správné hranici čitelnosti – pouze mírná úprava. */
+@media (max-width: 650px) {
+  html .lgv3 #uvod h1, html .lgv3 .pg-hero h1 {font-size:clamp(29px,7.4vw,36px);line-height:1.09;}
+  html .lgv3 .lead-sec .pg-h2,
+  html .lgv3 #pomuzeme .lg01-root .lg01-hero h2 {font-size:clamp(28px,7.6vw,34px);line-height:1.15;}
+  html .lgv3 #zamereni .lg2-shell h2 {font-size:clamp(27px,7.5vw,31px);}
+  html .lgv3 #zamereni .lg2-pillar h3 {font-size:21px;}
+  html .lgv3 #pomuzeme .lg01-root .lg01-card h3 {font-size:19px;}
+  html .lgv3 #pomuzeme .lg01-root .lg01-decision-box h3{font-size:23px;}
+  html .lgv3 #pomuzeme .lg01-root .lg01-card p {font-size:15px;line-height:1.58;}
+  html .lgv3 #technologie .v20-suite h3,
+  html .lgv3 #technologie .v20-services h3,
+  html .lgv3 #technologie .v20-onboarding h3 {font-size:22px;}
+  html .lgv3 .v4-econ-highlight strong {font-size:22px;}
+}
+
+</style>
 </head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
 <div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
 <nav aria-label="Hlavní navigace" class="nav-enter fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
@@ -951,298 +1890,207 @@ body.portfolio-mode #hero3d { opacity:.58; }
   </div>
 </nav>
 <main class="relative z-10 w-full pg">
-
-  <section class="pg-hero">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal is-visible">Lead generation · strategie, realizace, kvalifikace</div>
-      <h1 class="reveal is-visible">Najdeme vaše potenciální zákazníky.<br><span>Ověříme, se kterými má smysl jednat.</span></h1>
-      <p class="pg-lead reveal is-visible">Vyhodnotíme váš byznys, vybereme vhodné zákaznické segmenty a navrhneme způsob jejich oslovení. Připravíme a řídíme celý akviziční proces: od reklam a cílových stránek přes získání kontaktu až po jeho ověření a předání vašemu obchodu.</p>
-      <p class="pg-lead reveal is-visible">Výkon vyhodnocujeme podle kvality leadů a jejich dalšího obchodního vývoje. Získáváme nové zájemce i příležitosti z vaší stávající databáze. Podle potřeby zajistíme také navazující komunikaci a dlouhodobou péči.</p>
-      <div class="reveal is-visible" style="margin-top:2rem">
-        <a href="#zadani" class="lg-cta">Probrat získávání kvalifikovaných leadů ↗</a>
-      </div>
-      <p class="lg-dolu reveal is-visible">Co přesně pro vás zajistíme ↓</p>
-      <div class="lg-hero-kroky reveal is-visible">
-        <div class="lg-hero-krok"><b>01</b><span>Vyhodnocení byznysu</span></div><div class="lg-hero-krok"><b>02</b><span>Strategie a realizace</span></div><div class="lg-hero-krok"><b>03</b><span>Ověření kontaktu</span></div><div class="lg-hero-krok"><b>04</b><span>Kvalifikovaný lead</span></div><div class="lg-hero-krok"><b>05</b><span>Následná péče</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Naše zaměření</div>
-      <h2 class="pg-h2 reveal">Investoři pro váš projekt nebo zákazníci pro váš business.</h2>
-      <p class="pg-lead reveal">Naší hlavní specializací je marketingová podpora fundraisingu. Stejnou důslednost v akvizici, ověřování kontaktů a následné péči přinášíme také do dalších obchodních modelů.</p>
-
-      <div class="lg-hlavni reveal">
-        <div class="pg-kicker">Hlavní specializace / fundraising</div>
-        <h3>Propojujeme investiční projekty s relevantními zájemci.</h3>
-        <p>Pro emitenty dluhopisů, fondy kvalifikovaných investorů a developerské společnosti vytváříme systém získávání a zpracování kontaktů. Připravíme strategii, sdělení, kampaně i vstupní stránky. Ověříme kontakt a zájem v dohodnutém rozsahu a předáme vašemu týmu podklady pro další jednání.</p>
-        <p>Pracujeme s novým publikem i stávající databází. Navazující komunikaci a péči nastavíme podle fáze rozhodování, aby relevantní příležitosti nezůstávaly bez odezvy.</p>
-        <div class="pg-out" style="margin-top:1.4rem"><p>Od prvního kontaktu k dlouhodobému vztahu. Zajišťujeme marketing a práci s kontakty; regulované činnosti náleží oprávněnému subjektu.</p></div>
-      </div>
-
-      <div class="pg-grid pg-g3" style="margin-top:clamp(1rem,1.6vw,1.3rem)">
-        <article class="pg-card reveal"><div class="pg-kicker">E-commerce</div><h3>Noví zákazníci. Další nákupy.</h3><p>Propojujeme akviziční kampaně s nákupní cestou a péčí o zákazníky. Rozvíjíme databázi, automatizujeme navazující komunikaci a vracíme zákazníky k dalším objednávkám. Výkon hodnotíme podle nákladů na získání zákazníka a obchodního přínosu.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">Reality a development</div><h3>Zájemci pro konkrétní nemovitosti.</h3><p>Připravíme akvizici pro prodej nebo pronájem projektu. Zachytíme poptávku, ověříme požadavky zájemce a předáme kontakt prodejnímu týmu s jasným dalším krokem. Získávání investorů pro financování řešíme v rámci fundraisingu.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">B2B služby a technologie</div><h3>Kontakty, se kterými má smysl jednat.</h3><p>Vymezíme vhodné segmenty a firmy, připravíme akvizici a ověříme potřebu i roli kontaktní osoby. Obchodnímu týmu předáváme souvislosti pro další jednání. Kontakty s delším rozhodováním rozvíjíme následnou komunikací.</p></article>
-      </div>
-      <div class="pg-out reveal"><p>Ve všech oblastech můžeme začít novou akvizicí, využít potenciál vaší databáze nebo obojí propojit.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Dvě cesty k novému obchodu</div>
-      <h2 class="pg-h2 reveal">Noví zájemci. Nové příležitosti ve vaší databázi.</h2>
-      <div class="pg-grid pg-g2" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <article class="pg-card reveal"><div class="pg-kicker">Akvizice nových kontaktů</div><h3>Získáme nové zájemce</h3>
-          <p>Navrhneme a realizujeme akviziční kampaně pro vaši nabídku. Připravíme reklamní sdělení, kreativu, cílové stránky a formuláře. Nastavíme měření a následné zpracování kontaktů. U získaných zájemců ověříme relevanci a zájem o další jednání.</p>
-          <div class="pg-out" style="margin-top:1.2rem"><p>Výstup: kvalifikované leady s ověřenými informacemi, historií komunikace a domluveným dalším krokem.</p></div></article>
-        <article class="pg-card reveal"><div class="pg-kicker">Databáze a stávající zákazníci</div><h3>Rozvineme potenciál vašich kontaktů</h3>
-          <p>Vyhodnotíme dosavadní kontakty a zákazníky. Databázi rozdělíme podle historie, potřeb a obchodního potenciálu. Připravíme cílené oslovení a ověříme příležitosti pro obnovení jednání, opakovaný nákup nebo rozšíření spolupráce.</p>
-          <div class="pg-out" style="margin-top:1.2rem"><p>Výstup: prověřené obchodní příležitosti z kontaktů a zákazníků, které už máte.</p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">01 / Analýza a akviziční strategie</div>
-      <h2 class="pg-h2 reveal">Nejdřív určíme, kde má vaše nabídka obchodní potenciál.</h2>
-      <p class="pg-lead reveal">Stejný produkt může u různých zákazníků vyvolat úplně jinou reakci. Liší se jejich potřeby, důvody k nákupu, rozhodovací proces i hodnota, kterou pro vás představují. Proto nejprve vymezíme segmenty, u kterých se potkává relevance nabídky, dosažitelnost zákazníka a ekonomika akvizice.</p>
-      <p class="pg-lead reveal">Projdeme vaše úspěšné zakázky, ztracené příležitosti, dosavadní kampaně a způsob práce obchodu. Zjišťujeme, kdo skutečně nakupuje, co nákup spouští, kdo o něm rozhoduje a proč se některá jednání neuzavřou.</p>
-      <div class="pg-grid pg-g3" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <article class="pg-card reveal"><h3>Které zákazníky upřednostnit</h3><p>Segmenty posuzujeme podle potřeby, vhodnosti vaší nabídky, hodnoty zakázky, délky prodeje a náročnosti obsluhy. U B2B rozlišujeme vhodnou firmu a konkrétního člověka, který nákup ovlivňuje nebo schvaluje.</p></article>
-        <article class="pg-card reveal"><h3>Kde a jak je oslovit</h3><p>Rozlišujeme zákazníky, kteří řešení aktivně hledají, od těch, u kterých je potřeba otevřít relevantní téma. Podle toho volíme vyhledávání, sociální a profesní sítě, obsah, cílené oslovení firem nebo vlastní databázi.</p></article>
-        <article class="pg-card reveal"><h3>Jaká ekonomika dává smysl</h3><p>Propojíme hodnotu a marži zakázky s náklady na získání zákazníka. Zohledníme přechod kontaktů do jednání, úspěšnost prodeje a jeho délku. Chybějící data nahradíme pracovními předpoklady a plánem jejich ověření.</p></article>
-      </div>
-      <div class="pg-out reveal"><p>Výstupem je akviziční plán: prioritní segmenty, nabídka, kanály, rozpočet, kvalifikační kritéria a způsob vyhodnocení.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">02 / Příprava a realizace</div>
-      <h2 class="pg-h2 reveal">Od reklamního sdělení po předání obchodu. Vše musí navazovat.</h2>
-      <p class="pg-lead reveal">Reklama vytváří očekávání. Cílová stránka jej musí naplnit, vysvětlit nabídku a dát správnému zájemci důvod reagovat. Formulář má získat informace potřebné pro další krok. Následná komunikace musí přijít včas a navázat na skutečný zájem.</p>
-      <p class="pg-lead reveal">Tuto cestu navrhujeme a realizujeme jako jeden celek. Připravíme sdělení pro jednotlivé segmenty, reklamy, landing pages, formuláře i navazující komunikaci. Nastavíme měření, evidenci a pravidla předávání kontaktů.</p>
-      <div class="pg-grid pg-g2" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <article class="pg-card reveal"><div class="pg-kicker">A / Argumentace</div><h3>Nabídka, která odpovídá potřebě zákazníka</h3><p>Pojmenujeme konkrétní problém, přínos řešení a důvody, proč vám má zákazník věřit. Zvolíme odpovídající první krok: poptávku, konzultaci, ukázku řešení nebo jinou formu projevení zájmu.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">B / Kampaně</div><h3>Cílení a kreativa pro jednotlivé segmenty</h3><p>Připravíme strukturu kampaní podle zákazníků a fáze rozhodování. Testujeme sdělení, kreativu a publika tak, abychom zjistili, které kombinace přivádějí relevantní zájemce.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">C / Landing pages</div><h3>Stránky a formuláře pro získání kontaktu</h3><p>Vytvoříme stránky navazující na konkrétní reklamu a nabídku. Pracujeme s argumentací, důkazy, námitkami i rozsahem formuláře. Sledujeme počet reakcí a jejich kvalitu pro obchod.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">D / Měření a evidence</div><h3>Přehled od zdroje leadu po jeho výsledek</h3><p>Nastavíme evidenci zdroje, stavu a výsledku zpracování. Určíme odpovědnost za reakci, předání a zpětnou vazbu. Kampaně tak můžeme hodnotit i podle následných jednání a zakázek.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">03 / Verifikace a kvalifikace</div>
-      <h2 class="pg-h2 reveal">Ověříme kontakt, potřebu i připravenost k dalšímu jednání.</h2>
-      <div class="lg-vedle" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <div>
-          <p class="pg-lead reveal" style="margin-top:0">Vyplněný formulář dokládá reakci na nabídku. Ještě ale neříká, zda kontakt odpovídá vašemu zákazníkovi, co skutečně potřebuje a zda je připraven pokračovat. Právě to zjišťujeme při kvalifikaci.</p>
-          <p class="pg-lead reveal">Oddělujeme ověření kontaktních údajů od posouzení obchodní relevance. Kontrolujeme dosažitelnost a duplicity. Při navazující komunikaci ověřujeme potřebu, souvislost s vaší nabídkou a zájem o další krok. Podle typu obchodu doplňujeme roli v rozhodování, časový horizont, rozsah požadavku nebo rozpočtové možnosti.</p>
-          <p class="pg-lead reveal">Kritéria stanovujeme s vaším obchodem. Rozlišujeme informace nezbytné pro předání od těch, které lze zjistit až při hlubším obchodním jednání. U regulovaných produktů rozsah ověřování přizpůsobujeme předem posouzenému právnímu modelu spolupráce.</p>
-        </div>
-        <div class="lg-foto reveal">
-          <img src="images/sekce/schodiste.webp" alt="Schodiště v moderní budově" width="1024" height="1536" loading="lazy">
-        </div>
-      </div>
-      <div class="pg-grid pg-g3" style="margin-top:clamp(1.6rem,2.4vw,2.2rem)">
-        <article class="pg-card reveal"><div class="pg-kicker">Předat obchodu</div><h3>Připravený k předání</h3><p>Kontakt splňuje dohodnutá kritéria a má zájem o konkrétní další krok. Obchodník dostává podklady a navazuje na dosavadní komunikaci.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">Dále rozvíjet</div><h3>Relevantní, ale zatím nepřipravený</h3><p>Zájemce odpovídá cílové skupině, ale rozhodnutí odkládá nebo potřebuje další informace. Nastavíme následnou péči a podmínku dalšího oslovení.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">Vyřadit a vyhodnotit</div><h3>Nevhodný pro aktuální nabídku</h3><p>Kontakt nesplňuje dohodnutá kritéria. Zaznamenáme důvod, aby obchod neztrácel čas a získané informace pomohly zlepšit cílení dalších kampaní.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">04 / Předání kvalifikovaného leadu</div>
-      <h2 class="pg-h2 reveal">Váš obchodník ví, s kým jedná a na co navázat.</h2>
-      <p class="pg-lead reveal">Leady splňující dohodnutá kritéria předáme vašemu týmu do sjednaného systému. U každého zaznamenáme zdroj, zjištěnou potřebu, ověřené informace, průběh komunikace a další krok.</p>
-      <p class="pg-lead reveal">Zpětně sledujeme, zda obchod lead přijal a jak se jednání vyvíjí. Důvody odmítnutí nebo ztráty příležitosti využíváme při úpravě kampaní a kvalifikace.</p>
-      <div class="pg-out reveal"><p>Předáváme kontakt s kontextem. Obchodník může pokračovat v konkrétním rozhovoru.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Školení a rozvoj obchodního týmu</div>
-      <h2 class="pg-h2 reveal">Leady jsou začátek. Připravíme váš tým na další krok.</h2>
-      <p class="pg-lead reveal">Aby získané kontakty přinášely obchod, potřebují včasnou reakci, dobře vedený rozhovor a důslednou návaznost. Vaše obchodníky na tuto práci připravíme — od prvního telefonátu po další fáze obchodního jednání.</p>
-      
-      <div class="pg-grid pg-g3" style="margin-top:clamp(1.6rem,2.4vw,2.2rem)">
-        <article class="pg-card reveal"><h3>První kontakt, který otevře jednání</h3><p>Naučíme tým navázat na konkrétní kampaň, představit důvod hovoru, zjistit skutečnou potřebu a domluvit další krok. Připravíme scénáře pro různé typy kontaktů i situace, kdy zájemce nereaguje.</p></article>
-        <article class="pg-card reveal"><h3>Vedení rozhovoru a práce s námitkami</h3><p>Na modelových situacích procvičíme správné otázky, srozumitelné vysvětlení nabídky a reakce na nejčastější námitky. Obchodníci se naučí rozpoznat připravenost k rozhodnutí i situaci, která vyžaduje další péči.</p></article>
-        <article class="pg-card reveal"><h3>Postup, který tým používá každý den</h3><p>Nastavíme odpovědnosti za kontakty, pravidla opakovaného oslovení, evidenci v CRM a předávání informací. Vedoucí týmu získá přehled o tom, kde se jednání posouvají a kde příležitosti zůstávají bez odezvy.</p></article>
-      </div>
-      <div class="pg-out reveal"><p>Trénink na vaší nabídce a skutečných obchodních situacích. Školení přizpůsobíme vašemu produktu, zákazníkům i zkušenostem týmu. Výstupem budou použitelné scénáře rozhovorů, postupy následné komunikace a pravidla práce s kontakty. Podle rozsahu spolupráce navážeme rozborem hovorů a průběžným koučinkem.</p></div>
-      <p class="pg-lead reveal">Nemáte kapacitu kontakty zpracovávat? Domluvíme rozsah prvního oslovení, ověřování a následné péče, který převezme náš tým. Současně určíme, kdo naváže obchodním jednáním a kdo odpovídá za uzavření obchodu.</p>
-      <p class="pg-lead reveal">U fundraisingu přizpůsobíme obsah školení roli vašeho týmu a hranicím regulovaných činností. Školení nenahrazuje potřebné oprávnění ani zákonem vyžadovanou odbornou způsobilost.</p>
-      <div class="reveal" style="margin-top:2rem"><a href="#zadani" class="lg-cta">Probrat přípravu obchodního týmu ↗</a></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Vlastní software / jedno prostředí pro celý proces</div>
-      <h2 class="pg-h2 reveal">Software, který propojí akvizici, obchod a dlouhodobou péči.</h2>
-      <p class="pg-lead reveal">Software si vyvíjíme sami. Propojujeme v něm kampaně a jejich náklady, získané kontakty, kvalifikaci, předání obchodu i navazující komunikaci. Nové leady, práce s databází a péče o zákazníky se potkávají v jednom prostředí.</p>
-      <p class="pg-lead reveal">U kontaktu sledujete jeho zdroj, historii komunikace, výsledek ověření a další plánovaný krok. V přehledu výkonu vidíte, které kampaně přivádějí relevantní zájemce, kde se proces zpomaluje a na co má obchod navázat. S dostupnými obchodními daty vyhodnocujeme také uzavřené zakázky a ekonomiku akvizice.</p>
-      <p class="pg-lead reveal">Automatizace zajišťuje opakované úkoly, návaznost komunikace a připomenutí dalších kroků. Náš tým se soustředí na cílení, kvalifikaci a rozhodnutí, která ovlivňují obchodní výsledek.</p>
-      <div class="lg-foto lg-mensi reveal">
-        <img src="images/sekce/platforma.webp" alt="Vlastní software CLARIX se seznamem kontaktů" width="1536" height="1024" loading="lazy">
-      </div>
-      <div class="pg-grid pg-g3" style="margin-top:clamp(1.6rem,2.4vw,2.2rem)">
-        <article class="pg-card reveal"><h3>Kampaně a náklady</h3><p>Přehled zdrojů, kampaní a vynaložených prostředků. Výkon posuzujeme podle relevantních kontaktů a navazujících výsledků.</p></article>
-        <article class="pg-card reveal"><h3>Kvalifikace a předání</h3><p>Ověřené informace, stav leadu, důvod vyřazení i odpovědná osoba. Obchod přebírá kontakt s historií a dalším krokem.</p></article>
-        <article class="pg-card reveal"><h3>Databáze a následná péče</h3><p>Segmentace kontaktů, navazující komunikace a opětovné oslovení. Přehled o tom, kdo potřebuje péči a kdo je připravený k jednání.</p></article>
-      </div>
-      <div class="pg-out reveal"><p>Technologie a realizační tým jako jedna služba. Nastavíme proces, obsluhu i vyhodnocování. Rozsah propojení s vaším CRM a dostupnost jednotlivých dat ověříme při přípravě spolupráce.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Tak může vypadat váš přehled</div>
-      <h2 class="pg-h2 reveal">Od marketingových nákladů k obchodně využitelným leadům.</h2>
-
-      <div class="lg-model reveal">
-        <div class="lg-model-hlava"><b>CLARIX / Model akvizice</b><span>Měsíční mediální rozpočet 150 000 Kč</span></div>
-        <div class="lg-vystraha">Ilustrační model. Nejde o dosažené výsledky ani garanci.</div>
-        <div class="lg-cisla">
-          <div><span>Nové kontakty / měsíc</span><b>≈ 429</b></div>
-          <div><span>Média / nový kontakt</span><b>350 Kč</b></div>
-          <div><span>Podíl kvalifikovaných</span><b>16 %</b></div>
-          <div><span>Kvalifikované / měsíc</span><b>≈ 69</b></div>
-        </div>
-        <div class="lg-grafy">
-          <div>
-            <h4>Od kontaktu ke kvalifikaci</h4>
-            <div class="lg-pruh">
-              <div class="lg-pruh-popis"><span>Nové kontakty</span><b>≈ 429</b></div>
-              <div class="lg-pruh-draha"><div class="lg-pruh-vypln" style="width:100%"></div></div>
-            </div>
-            <div class="lg-pruh">
-              <div class="lg-pruh-popis"><span>Kvalifikované kontakty</span><b>≈ 69</b></div>
-              <div class="lg-pruh-draha"><div class="lg-pruh-vypln" style="width:16.1%"></div></div>
-            </div>
-            <p class="lg-foto-popis">Za 30 dní: průměrně 14,3 kontaktu denně. Z toho přibližně 2,3 kvalifikovaného denně.</p>
-          </div>
-          <div>
-            <h4>Co přináší míra kvalifikace</h4>
-            <div class="lg-sloupce">
-              <div class="lg-sloupec"><i>≈ 43</i><div class="lg-bar"><u style="height:50%"></u></div><em>10 %</em></div>
-              <div class="lg-sloupec je"><i>≈ 69</i><div class="lg-bar"><u style="height:80%"></u></div><em>16 %<span>základní scénář</span></em></div>
-              <div class="lg-sloupec"><i>≈ 86</i><div class="lg-bar"><u style="height:100%"></u></div><em>20 %</em></div>
-            </div>
-            <p class="lg-foto-popis">Kvalifikované kontakty měsíčně při stejném rozpočtu.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg-shrnuti reveal">
-        <h3>Rozpočet řídíme podle kvality příležitostí a kapacity vašeho týmu.</h3>
-        <p><b>Předvídatelný objem pro další jednání.</b> Při měsíčním reklamním rozpočtu 150 000 Kč a modelové ceně 350 Kč za získaný kontakt pracujeme přibližně se 429 novými zájemci. Pokud 16 % splní dohodnutá kvalifikační kritéria, výsledkem je přibližně 69 kontaktů připravených k předání — tedy zhruba 16 týdně v přepočtu na 30denní měsíc. Podle tohoto objemu plánujeme ověřování, předávání i kapacitu následné péče.</p>
-        <p><b>Vyšší využití stejného rozpočtu.</b> Posun míry kvalifikace z 10 na 16 % představuje přibližně 26 dalších relevantních kontaktů za měsíc: růst o 60 % bez navýšení reklamního rozpočtu, pokud zůstane cena za získání kontaktu stejná. Při 20% kvalifikaci model dosahuje přibližně 86 předaných kontaktů, tedy o 17 více než základní scénář. Vyšší kvality dosahujeme zpřesněním cílení, sdělení a zpracování kontaktů při zachování dohodnutých kritérií předání.</p>
-        <p><b>Rozhoduje návazný obchodní výsledek.</b> U předaných kontaktů sledujeme přijetí vaším týmem, uskutečněná jednání a důvody, proč se zájem posunul nebo zastavil. U fundraisingu s dostupnými daty navazujeme také na skutečně realizované investice. Objem získaného kapitálu neodvozujeme od samotného počtu leadů ani od nezávazně deklarovaných částek.</p>
-        <p class="lg-drobne">Ilustrační plánovací model, nikoli prognóza nebo garance. Scénáře vycházejí ze stejného objemu získaných kontaktů a jejich následného zpracování; hodnoty jsou zaokrouhlené. Rozpočet 150 000 Kč je určen na reklamní kampaně. Rozsah a cenu strategie, realizace, kvalifikace a nástrojů stanovíme samostatně. Kvalifikovaný lead označuje kontakt splňující dohodnutá obchodní kritéria, nikoli právní status kvalifikovaného investora.</p>
-        <p class="lg-drobne">Ukázka navrhovaného zobrazení. Konkrétní metriky a jejich dostupnost závisejí na nastavení systému a propojených datech.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Optimalizace a škálování</div>
-      <h2 class="pg-h2 reveal">Poznáme, co přináší kvalitní leady. A za jakých podmínek lze získávat další.</h2>
-      <p class="pg-lead reveal">Kampaně vyhodnocujeme po jednotlivých segmentech, nabídkách a zdrojích. Sledujeme cestu od získání kontaktu přes kvalifikaci a přijetí obchodem až po další výsledek. Zpětnou vazbu obchodníků promítáme do cílení, reklamních sdělení i kvalifikačních pravidel.</p>
-      <p class="pg-lead reveal">Hledáme konkrétní příčinu slabého výsledku: nevhodné publikum, nesrozumitelnou nabídku, nízkou důvěryhodnost stránky, příliš snadný formulář, pomalou reakci nebo nesoulad mezi očekáváním a skutečnou službou. Každá situace vyžaduje jiný zásah.</p>
-      <div class="pg-grid pg-g3" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <article class="pg-card reveal"><h3>Vyhodnocujeme kvalitu zdrojů</h3><p>Porovnáváme náklady na kvalifikovaný lead, přijetí obchodním týmem a vývoj příležitostí. Při dostupnosti dat také náklady na zákazníka. Respektujeme délku prodeje, aby čerstvé kontakty nebyly hodnoceny jako dokončené případy.</p></article>
-        <article class="pg-card reveal"><h3>Ověřujeme příčiny a změny</h3><p>Testujeme konkrétní předpoklady: zda jiný segment přináší relevantnější zájemce, přesnější sdělení zlepší kvalitu poptávek nebo změna následné komunikace zvýší počet uskutečněných jednání.</p></article>
-        <article class="pg-card reveal"><h3>Rozšiřujeme podle výsledků</h3><p>Rozpočet navyšujeme postupně. Sledujeme cenu i kvalitu dalších leadů, rozvíjíme ověřené segmenty a testujeme nové. Zohledňujeme dostupnost publika, kapacitu kvalifikace i vašeho obchodu.</p></article>
-      </div>
-      <div class="pg-out reveal"><p>Cíl škálování: vyšší objem obchodně využitelných leadů při přijatelné ekonomice a zachované kvalitě zpracování.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">05 / Následná péče a práce s databází</div>
-      <h2 class="pg-h2 reveal">Ve vaší databázi rozpoznáme příležitosti pro nový obchod.</h2>
-      <p class="pg-lead reveal">Kontakty z minulých kampaní, neuzavřená jednání a stávající zákazníci vyžadují odlišný přístup. Vyhodnotíme původ a použitelnost dat, historii komunikace, dosavadní nákupy i důvody, proč se obchod neposunul dál. Podle toho databázi rozdělíme a připravíme nabídku pro jednotlivé skupiny.</p>
-      <p class="pg-lead reveal">Zajistíme celý navazující proces: komunikační plán, texty a podklady, případné cílové stránky, oslovení, zpracování reakcí, ověření zájmu a předání kvalifikované příležitosti obchodníkovi. Stejnou péči můžeme poskytovat nově získaným kontaktům.</p>
-      <div class="pg-grid pg-g3" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <article class="pg-card reveal"><h3>Nedokončená jednání</h3><p>Zjistíme, zda stále trvá původní potřeba a co bránilo rozhodnutí. Ověříme změnu situace, načasování a prostor pro obnovení jednání.</p></article>
-        <article class="pg-card reveal"><h3>Stávající zákazníci</h3><p>Podle dosavadní spolupráce připravíme relevantní nabídku dalšího produktu, služby nebo rozšíření řešení. Ověříme skutečný zájem a připravíme podklady pro obchod.</p></article>
-        <article class="pg-card reveal"><h3>Kontakty s delším rozhodováním</h3><p>Nastavíme komunikaci podle tématu a fáze zájmu. Kombinujeme užitečné informace s vhodně načasovaným oslovením a aktualizujeme stav kontaktu.</p></article>
-      </div>
-      <div class="reveal" style="margin-top:2rem"><a href="#zadani" class="lg-cta">Probrat potenciál naší databáze ↗</a></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Právní rámec a spolehlivé partnerství</div>
-      <h2 class="pg-h2 reveal">Pravidla komunikace a práce s daty řešíme od začátku.</h2>
-      <p class="pg-lead reveal">Získávání kontaktů stavíme na jasném původu dat, podmínkách oslovení a vymezených odpovědnostech. Právní rámec zohledňujeme při návrhu kampaně, kvalifikaci i následné péči.</p>
-      <p class="pg-lead reveal">Naše role je marketingová a technologická. U projektů v regulovaných odvětvích před spuštěním vymezíme, co může zahrnovat naše komunikace a kdy zájemce přebírá oprávněný subjekt. Sledujeme relevantní změny pravidel pro marketing, práci s osobními údaji a používané reklamní platformy a promítáme je do nastavení spolupráce.</p>
-      <div class="pg-grid pg-g2" style="margin-top:clamp(2rem,3vw,2.6rem)">
-        <article class="pg-card reveal"><div class="pg-kicker">01 / Původ a použití kontaktů</div><h3>Víme, odkud data pocházejí a k čemu je lze použít.</h3><p>Před oslovením ověřujeme zdroj kontaktů, účel jejich získání a podmínky další komunikace. Rozlišujeme nové zájemce, zákazníky i kontakty z dřívějších kampaní. Samotná přítomnost v databázi není automatickým oprávněním k oslovení.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">02 / Komunikace a odhlášení</div><h3>Obsah i způsob oslovení mají jasná pravidla.</h3><p>Nastavujeme identifikaci odesílatele, potřebná sdělení a možnosti odmítnutí další komunikace. Evidujeme odhlášení a námitky a zohledňujeme je v dalších kampaních. Pravidla přizpůsobujeme konkrétnímu komunikačnímu kanálu.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">03 / Přístupy a odpovědnosti</div><h3>Určíme, kdo s daty pracuje a za jakým účelem.</h3><p>Vymezujeme role při zpracování údajů, přístupy, pravidla předání a dobu uchování. Podle konkrétního nastavení upravíme smluvní vztahy a postup pro vyřizování požadavků dotčených osob.</p></article>
-        <article class="pg-card reveal"><div class="pg-kicker">04 / Regulovaná odvětví</div><h3>Marketing oddělujeme od činností vyžadujících oprávnění.</h3><p>Neposkytujeme investiční poradenství ani jiné investiční služby vyžadující oprávnění. U investičních projektů předem řešíme přípustné publikum, obsah sdělení, rozsah ověření zájmu a okamžik předání. Regulované úkony zajišťuje subjekt s odpovídajícím oprávněním.</p></article>
-      </div>
-      <div class="pg-out reveal"><p>Konkrétní postup nastavíme podle produktu, publika a komunikačních kanálů. U regulovaných projektů jej před spuštěním sladíme s právním nebo compliance zástupcem klienta. Dohodnuté rozdělení rolí nenahrazuje vlastní zákonné povinnosti jednotlivých stran.</p></div>
-    </div>
-  </section>
-
-  <section class="pg-sec">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Časté otázky</div>
-      <h2 class="pg-h2 reveal">Co potřebujete vědět před začátkem.</h2>
-      <p class="pg-lead reveal">Rozsah práce, kvalita předání i vyhodnocení musí být jasné od první chvíle.</p>
-      <div class="lg-faq reveal"><details><summary>Co když nemáme vlastní tým na zpracování kontaktů?</summary><p>Spolupráci nastavíme podle vašich kapacit. Můžeme převzít dohodnutý rozsah prvního oslovení, ověřování kontaktů a následné péče. Pokud vlastní obchodníky máte, připravíme je na práci s leady praktickým školením a podle dohody navazujícím koučinkem. Před spuštěním jasně určíme, kdo přebírá další obchodní jednání a uzavření obchodu. U regulovaných služeb příslušné úkony zajišťuje oprávněný subjekt.</p></details><details><summary>Co si náš obchodní tým ze školení odnese?</summary><p>Scénáře prvního kontaktu a navazujících rozhovorů, postupy pro práci s námitkami, pravidla následného oslovení a evidenci v CRM. Dovednosti procvičíme na vaší nabídce a typických situacích vašich zákazníků. Rozsah tréninku, případného rozboru hovorů a koučinku domluvíme podle zkušeností a potřeb týmu.</p></details><details><summary>Co přesně od vás dostaneme?</summary><p>Podle sjednaného rozsahu analýzu a akviziční plán, připravené kampaně a cílové stránky, nastavené měření a zpracování kontaktů. Hlavním výstupem jsou kvalifikované leady s ověřenými informacemi a dalším krokem. Součástí může být také následná péče a práce s vaší databází.</p></details><details><summary>Jakou roli má váš vlastní software?</summary><p>Propojuje přehled kampaní a nákladů s evidencí kontaktů, kvalifikací, předáním a další péčí. Pomáhá řídit návaznost úkolů a vyhodnocovat výkon. Konkrétní rozsah přístupů, funkcí a propojení s vaším CRM stanovíme podle zadání.</p></details><details><summary>Jak řešíte data a komunikaci u regulovaných produktů?</summary><p>Před spuštěním vymezíme role, původ a podmínky použití kontaktů, obsah komunikace i rozsah ověřování zájmu. U regulovaných projektů postup sladíme s právním nebo compliance zástupcem klienta. Investiční poradenství a další činnosti vyžadující oprávnění zajišťuje odpovídající oprávněný subjekt.</p></details><details><summary>Jak poznáme, že je lead skutečně kvalifikovaný?</summary><p>Před spuštěním dohodneme profil zákazníka, povinné ověřované informace a podmínky předání. U každého leadu zaznamenáme, jak je splňuje. Váš obchod poskytuje zpětnou vazbu, podle které kvalifikaci i získávání kontaktů zpřesňujeme.</p></details><details><summary>Které kanály pro získávání leadů používáte?</summary><p>Výběr vychází z cílové skupiny a povahy nabídky. Může zahrnovat vyhledávací reklamu, sociální a profesní sítě, obsah, cílené oslovení firem nebo vlastní databázi. Konkrétní kombinaci doporučíme po posouzení vašeho byznysu a ověříme v praxi.</p></details><details><summary>Můžeme začít jen se stávající databází?</summary><p>Ano. Vyhodnotíme její strukturu, historii kontaktů a podmínky použití. Navrhneme segmenty a způsob oslovení. Zajistíme komunikaci, ověření aktuálního zájmu a předání nových příležitostí vašemu obchodu.</p></details><details><summary>Co když už máme agenturu, CRM nebo vlastní obchodní tým?</summary><p>Vyjasníme role a doplníme potřebnou část procesu. Před zahájením ověříme možnosti propojení nástrojů, formát předání a odpovědnost za reakci. Současný obchodní tým je důležitým partnerem pro kvalifikaci i vyhodnocování výsledků.</p></details><details><summary>Jak rychle můžeme očekávat výsledky?</summary><p>Termín závisí na připravenosti nabídky, rozsahu realizace a délce rozhodování zákazníků. Předem stanovíme harmonogram a první vyhodnocení. Odděleně sledujeme získání kontaktů, kvalifikaci, obchodní jednání a uzavřené zakázky.</p></details><details><summary>Garantujete počet leadů nebo uzavřených zakázek?</summary><p>Cílový objem a kritéria kvality stanovíme podle zadání, rozpočtu a ověřených výsledků. Případné závazky musí mít konkrétní podmínky. Kvalifikovaný lead je připravený vstup do obchodu; uzavření zakázky závisí také na nabídce, ceně a průběhu obchodního jednání.</p></details><details><summary>Jak se stanovuje cena spolupráce?</summary><p>Podle rozsahu strategie, přípravy, správy kampaní, kvalifikace a následné péče. V nabídce oddělíme cenu služby, reklamní rozpočet a náklady na případné nástroje. Předem bude zřejmé, které výstupy a činnosti cena zahrnuje.</p></details><details><summary>Co se stane s kontakty, které zatím nejsou připravené?</summary><p>Pokud odpovídají cílové skupině, můžeme je zařadit do navazující péče. Podle situace připravíme další obsah, termín opětovného oslovení nebo reakci na nový projev zájmu. Rozsah péče a pravidla předání dohodneme s vaším týmem.</p></details></div>
-    </div>
-  </section>
-
-  <section class="pg-sec" id="zadani">
-    <div class="pg-wrap">
-      <div class="pg-kicker reveal">Proberme vaše zadání</div>
-      <h2 class="pg-h2 reveal">Potřebujete nové leady, nebo více obchodu ze své databáze?</h2>
-      <div class="lg-kontakt">
-        <div>
-          <p class="pg-lead reveal" style="margin-top:0">Projdeme vaši nabídku, současnou akvizici a práci s kontakty. Navrhneme, kde začít a jaký rozsah spolupráce dává smysl.</p>
-          <p class="pg-lead reveal">Od konkrétní kampaně nebo reaktivace databáze až po kompletní lead generation s kvalifikací a následnou péčí.</p>
-          <div class="lg-spojeni reveal">
-            <a href="mailto:info@clarix.cz">info@clarix.cz</a>
-            <a href="tel:+420606589032">+420 606 589 032</a>
-          </div>
-        </div>
-        <form class="lg-formular reveal" id="lg-form" action="https://formsubmit.co/info@clarix.cz" method="POST">
-          <h3>Probrat možnosti spolupráce</h3>
-          <div class="lg-dvojice">
-            <div class="lg-pole"><label for="lg-jmeno">Jméno *</label><input id="lg-jmeno" name="jmeno" required placeholder="Vaše jméno"></div>
-            <div class="lg-pole"><label for="lg-mail">Pracovní e-mail *</label><input id="lg-mail" name="email" type="email" required placeholder="vas@firma.cz"></div>
-          </div>
-          <div class="lg-dvojice">
-            <div class="lg-pole"><label for="lg-firma">Firma nebo web *</label><input id="lg-firma" name="firma" required placeholder="Název firmy nebo web"></div>
-            <div class="lg-pole"><label for="lg-tel">Telefon · nepovinné</label><input id="lg-tel" name="telefon" placeholder="+420"></div>
-          </div>
-          <div class="lg-pole"><label for="lg-co">S čím chcete pomoci?</label><select id="lg-co" name="tema"><option>Kompletní lead generation</option><option>Získávání nových kontaktů</option><option>Databáze a stávající zákazníci</option><option>Kvalifikace a následná péče</option><option>Školení obchodního týmu</option><option>Zpracování kontaktů naším týmem</option><option>Potřebujeme doporučit postup</option></select></div>
-          <div class="lg-pole"><label for="lg-zprava">Koho chcete oslovit a co nabízíte?</label><textarea id="lg-zprava" name="zprava" placeholder="Stručně popište svou nabídku, cílové zákazníky a co chcete zlepšit."></textarea></div>
-          <button type="submit" class="lg-odeslat">Probrat možnosti spolupráce ↗</button>
-          <p class="lg-stav" id="lg-stav" hidden></p>
-          <p class="lg-mala">Odesláním poptávky neobjednáváte placenou službu.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
+<section class="pg-hero" id="uvod"><div class="pg-wrap">
+<div class="pg-kicker reveal is-visible">Lead generation · strategie, realizace, kvalifikace</div>
+<h1 class="reveal is-visible">Najdeme vaše potenciální zákazníky.<br/><span>Ověříme, se kterými má smysl jednat.</span></h1>
+<p class="pg-lead reveal is-visible">Vybereme vhodné zákaznické segmenty a navrhneme způsob jejich oslovení. Připravíme a řídíme celý akviziční proces: od reklam a cílových stránek přes získání kontaktu až po jeho ověření a předání vašemu obchodu.</p><p class="pg-lead reveal is-visible">Pomáháme získávat obchodně využitelné příležitosti a jejich další vývoj vyhodnocujeme podle skutečné zpětné vazby.</p>
+<div class="reveal is-visible" style="margin-top:2rem"><a class="lg-cta" href="#kontakt">Probrat získávání kvalifikovaných leadů ↗</a></div>
+<p class="lg-dolu reveal is-visible">Co přesně pro vás zajistíme ↓</p>
+<div aria-label="Pět kroků CLARIX" class="lg-hero-kroky reveal is-visible">
+<div class="lg-hero-krok"><b>01</b><span>Vyhodnocení byznysu</span></div>
+<div class="lg-hero-krok"><b>02</b><span>Strategie a realizace</span></div>
+<div class="lg-hero-krok"><b>03</b><span>Ověření kontaktu</span></div>
+<div class="lg-hero-krok"><b>04</b><span>Kvalifikovaný lead</span></div>
+<div class="lg-hero-krok"><b>05</b><span>Následná péče</span></div>
+</div>
+<p class="lg-hero-note">Následná péče nemusí začínat až po předání — relevantní zájemce rozvíjíme podle jeho připravenosti k jednání.</p>
+</div></section><section class="pg-sec lead-sec" id="pomuzeme"><div class="pg-wrap"><div class="lg01-root">
+<div class="lg01-hero">
+<div>
+<div class="lg01-kicker">01 / S ČÍM VÁM CLARIX POMŮŽE</div>
+<h2>Co vám CLARIX přinese do obchodu?</h2>
+<p class="lg01-lead">Získávání kontaktů má smysl tehdy, když z nich vznikají relevantní obchodní příležitosti. Pomůžeme vám získat správné zájemce, předat je obchodu s potřebnými informacemi, využít potenciál stávající databáze a rozhodovat o akvizici podle výsledků, ne podle počtu formulářů.</p>
+<div class="lg01-pills">
+<span class="lg01-pill">nová akvizice</span>
+<span class="lg01-pill">kvalifikace leadů</span>
+<span class="lg01-pill">práce s databází</span>
+<span class="lg01-pill">řízení podle výsledků</span>
+</div>
+</div>
+<div class="lg01-viz-card">
+<h3>Jak do sebe jednotlivé části zapadají</h3>
+<div class="lg01-stage">
+<svg aria-label="Centrální vizuál Lead Generation: nový zájem, kvalifikace a SQL, obchodní výsledek a stávající databáze" role="img" viewbox="0 0 620 405">
+<defs>
+<lineargradient id="core" x1="0" x2="1">
+<stop offset="0%" stop-color="#2f6df6"></stop>
+<stop offset="50%" stop-color="#8f56e8"></stop>
+<stop offset="100%" stop-color="#17a595"></stop>
+</lineargradient>
+</defs>
+<circle cx="310" cy="200" fill="none" r="160" stroke="#eef3fc" stroke-width="30"></circle>
+<circle cx="310" cy="200" fill="none" r="160" stroke="url(#core)" stroke-dasharray="244 762" stroke-linecap="round" stroke-width="30" transform="rotate(-90 310 200)"></circle>
+<circle cx="310" cy="200" fill="#ffffff" r="131" stroke="#dce5f0" stroke-width="12"></circle>
+<path d="M310 41 L310 67 M470 200 H496 M310 359 V336 M150 200 H124" stroke="#cad9eb" stroke-dasharray="5 7" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="310" cy="40" fill="#2f6df6" r="9"></circle>
+<circle cx="470" cy="200" fill="#8f56e8" r="9"></circle>
+<circle cx="310" cy="360" fill="#17a595" r="9"></circle>
+<circle cx="150" cy="200" fill="#f0a33b" r="9"></circle>
+<g fill="#10233b" font-family="Inter, Arial, sans-serif" text-anchor="middle">
+<text font-size="46" font-weight="800" x="310" y="188">Lead</text>
+<text font-size="44" font-weight="800" lengthadjust="spacingAndGlyphs" textlength="226" x="310" y="244">Generation</text>
+</g>
+<g fill="#62738d" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">
+<text text-anchor="middle" x="310" y="17">nový zájem</text>
+<text text-anchor="middle" x="544" y="196">kvalifikace</text>
+<text text-anchor="middle" x="544" y="214">a SQL</text>
+<text text-anchor="middle" x="310" y="393">obchodní výsledek</text>
+<text text-anchor="middle" x="76" y="196">stávající</text>
+<text text-anchor="middle" x="76" y="214">databáze</text>
+</g>
+</svg>
+</div>
+<div class="lg01-viz-caption">Lead Generation tady není zobrazen jako jednorázové získání kontaktu, ale jako řízený systém: akvizice, kvalifikace, využití databáze a návaznost na skutečný obchodní výsledek.</div>
+</div>
+</div>
+<div class="lg01-grid-4">
+<article class="lg01-card">
+<span class="lg01-num lg01-n-blue">01</span>
+<h3>Získáte více relevantních příležitostí</h3>
+<p>Oslovíme publikum, pro které má vaše nabídka skutečný důvod k reakci. Cílem nejsou jen formuláře, ale použitelné obchodní vstupy.</p>
+</article>
+<article class="lg01-card">
+<span class="lg01-num lg01-n-violet">02</span>
+<h3>Obchod dostane kontakty s kontextem</h3>
+<p>Předáme informace o zájmu, potřebě, časovém horizontu a dalším kroku. Navazuje se na konkrétní komunikaci, ne od nuly.</p>
+</article>
+<article class="lg01-card">
+<span class="lg01-num lg01-n-teal">03</span>
+<h3>Využijete vlastní databázi</h3>
+<p>U použitelných kontaktů oddělíme aktuální zájem od příležitostí pro následnou péči a vrátíme je zpět do obchodního procesu.</p>
+</article>
+<article class="lg01-card">
+<span class="lg01-num lg01-n-orange">04</span>
+<h3>Budete řídit akvizici podle výsledků</h3>
+<p>Uvidíte, které zdroje přinášejí obchodně relevantní leady, jak postupují do SQL a kde se akviziční rozpočet opravdu vyplácí.</p>
+</article>
+</div>
+<div class="lg01-decision-box">
+<div>
+<div class="lg01-label">PŘEHLED PRO ROZHODOVÁNÍ</div>
+<h3>Nejen leady, ale rozhodovací podklady.</h3>
+<p>Uvidíte, které segmenty fungují, kolik stojí relevantní příležitost, co přijímá obchod a kde dává smysl investici zvýšit, změnit nebo omezit.</p>
+</div>
+<div class="lg01-decision-points">
+<div class="lg01-dp">
+<span class="lg01-dp-dot"></span>
+<div><b>Které segmenty fungují</b><span>Rozlišujeme objem kontaktů od jejich obchodní relevance a prioritizujeme, kde má smysl škálovat.</span></div>
+</div>
+<div class="lg01-dp">
+<span class="lg01-dp-dot" style="background:#8f56e8"></span>
+<div><b>Kolik stojí relevantní příležitost</b><span>Sledujeme nejen cenu kontaktu, ale i cenu kvalifikace, SQL a návaznost na obchodní výsledek.</span></div>
+</div>
+<div class="lg01-dp">
+<span class="lg01-dp-dot" style="background:#17a595"></span>
+<div><b>Co přijímá obchod</b><span>Vidíme, co skutečně pokračuje do jednání, co potřebuje další péči a co je nutné upravit v kampani nebo kvalifikaci.</span></div>
+</div>
+</div>
+</div>
+</div></div></section>
+<section class="pg-sec lead-sec" id="zamereni">
+<div class="pg-wrap">
+<div class="lg2-shell">
+<div class="lg2-eyebrow">02 / PRO KOHO PRACUJEME</div>
+<h2 id="lg2-heading">Pro investiční projekty zájemce. Pro firmy nové zákazníky.</h2>
+<p class="lg2-section-lead">Akvizici stavíme podle konkrétní obchodní potřeby. Ve fundraisingu získáváme a kvalifikujeme zájemce o investici; v dalších oborech zákazníky a obchodní poptávky.</p>
+<div class="lg2-pillars">
+<article class="lg2-pillar lg2-fund-dark">
+<span class="lg2-pill"><span class="lg2-pill-mark"></span>01 / NAŠE HLAVNÍ SPECIALIZACE</span>
+<h3>Fundraising a investiční projekty</h3>
+<p class="lg2-pillar-description">Pro emitenty, fondy a developerské projekty připravujeme oslovení cílových skupin, ověření zájmu a podklady pro další jednání oprávněného týmu.</p>
+<div class="lg2-fund-grid">
+<div class="lg2-fund-item"><strong>Dluhopisové emise</strong><span>Relevantní zájemci a předání emitentovi</span></div>
+<div class="lg2-fund-item"><strong>Fondy kvalifikovaných investorů</strong><span>Segmentace a ověření v přípustném režimu</span></div>
+<div class="lg2-fund-item"><strong>Developerské projekty</strong><span>Investiční zájem a další komunikace</span></div>
+<div class="lg2-fund-item"><strong>Další investiční nabídky</strong><span>Postup podle produktu a cílové skupiny</span></div>
+</div>
+<div class="lg2-industry-note"><span>Ověření zájmu → obchodní kvalifikace → předání</span><strong>Fundraising jako priorita</strong></div>
+<p class="lg2-pillar-footer">Regulované investiční úkony a poradenství vykonává příslušně oprávněný subjekt.</p>
+</article>
+<article class="lg2-pillar lg2-pillar-other">
+<span class="lg2-pill"><span class="lg2-pill-mark"></span>02 / DALŠÍ OBCHODNÍ MODELY</span>
+<h3>Akvizice zákazníků a poptávek</h3>
+<p class="lg2-pillar-description">Stejnou disciplínu cílení a kvalifikace přizpůsobujeme typu zákazníka a jeho rozhodování.</p>
+<div class="lg2-industry-list">
+<div class="lg2-industry-item"><span class="lg2-industry-index">01</span><div><strong>E-commerce</strong><p>Noví zákazníci, objednávky a navazující péče.</p></div></div>
+<div class="lg2-industry-item"><span class="lg2-industry-index">02</span><div><strong>Reality</strong><p>Zájem o konkrétní nemovitost a ověření požadavků.</p></div></div>
+<div class="lg2-industry-item"><span class="lg2-industry-index">03</span><div><strong>B2B, služby a technologie</strong><p>Relevantní firma, kontaktní osoba a obchodní potřeba.</p></div></div>
+</div>
+</article>
+</div>
+<div class="lg2-summary-band"><div><strong>Společná metoda, různé cíle:</strong> zvolený segment, ověření obchodní relevance, předání s kontextem a zpětná vazba. Kritéria nastavujeme podle nabídky.</div></div>
+</div>
+</div>
+</section><section class="pg-sec lead-sec" id="proces"><div class="pg-wrap"><div class="pg-kicker">03 / ANALÝZA, STRATEGIE A REALIZACE</div><h2 class="pg-h2">Od vyhodnocení byznysu až po první obchodní rozhovor.</h2><p class="pg-lead">Nejdřív najdeme segmenty, pro které vaše nabídka dává smysl. Pak propojujeme sdělení, kampaně, cílové stránky, formuláře a zpracování kontaktů do jedné návazné cesty.</p>
+<div class="process-analytical-visual">
+<div class="hero-viz hero-viz-v2"><div class="hero-viz-head"><span class="hero-viz-title">Jak probíhá realizace kampaně</span><span class="eyebrow-outline">Proces CLARIX</span></div><div class="hero-viz-layout"><div class="hero-viz-canvas"><svg aria-label="Schéma návaznosti akvizice od kampaní a databáze přes ověření a kvalifikaci až k předání a zpětné vazbě" role="img" viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="flowA" x1="0" x2="1"><stop stop-color="#2764ee"></stop><stop offset="1" stop-color="#10a99c"></stop></lineargradient></defs><rect fill="#eaf2ff" height="86" rx="20" stroke="#bfd2fb" width="170" x="26" y="36"></rect><rect fill="#efeafb" height="86" rx="20" stroke="#d6c5f3" width="170" x="226" y="36"></rect><rect fill="#e8f7f2" height="86" rx="20" stroke="#bce7d6" width="170" x="426" y="36"></rect><rect fill="#edf7ff" height="86" rx="20" stroke="#cce1f2" width="170" x="126" y="208"></rect><rect fill="#f4f7fc" height="86" rx="20" stroke="#dce6f2" width="170" x="326" y="208"></rect><path d="M196 79 H226 M396 79 H426" fill="none" stroke="#d3deec" stroke-linecap="round" stroke-width="4"></path><path d="M111 122 C111 168 176 180 211 208" fill="none" stroke="#d3deec" stroke-dasharray="6 8" stroke-linecap="round" stroke-width="3"></path><path d="M511 122 C511 168 446 180 411 208" fill="none" stroke="#d3deec" stroke-dasharray="6 8" stroke-linecap="round" stroke-width="3"></path><path d="M296 251 H326" fill="none" stroke="#d3deec" stroke-linecap="round" stroke-width="4"></path><g fill="#11233b" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800"><text text-anchor="middle" x="111" y="71">Kampaně</text><text text-anchor="middle" x="311" y="71">Kontakt</text><text text-anchor="middle" x="511" y="71">Kvalifikace</text><text text-anchor="middle" x="211" y="243">Databáze</text><text text-anchor="middle" x="411" y="243">Předání + zpětná vazba</text></g><g fill="#687b94" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600"><text text-anchor="middle" x="111" y="94">nový zájem a první reakce</text><text text-anchor="middle" x="311" y="94">ověření, dosažitelnost a kontext</text><text text-anchor="middle" x="511" y="94">obchodní relevance a další krok</text><text text-anchor="middle" x="211" y="266">práce s použitelnými kontakty a stávajícími daty</text><text text-anchor="middle" x="411" y="266">obchod, výsledek a úprava procesu</text></g><path d="M112 324 H510" stroke="url(#flowA)" stroke-linecap="round" stroke-width="6"></path><circle cx="112" cy="324" fill="#2764ee" r="9"></circle><circle cx="311" cy="324" fill="#8a51db" r="9"></circle><circle cx="510" cy="324" fill="#10a99c" r="9"></circle><text fill="#667991" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" x="311" y="348">od prvního zájmu ke skutečnému obchodnímu výsledku</text></svg><div class="legend-dots"><span><i style="background:#2764ee"></i>získání zájmu</span><span><i style="background:#8a51db"></i>ověření a kvalifikace</span><span><i style="background:#10a99c"></i>další obchodní krok</span></div><div class="hero-viz-caption">Od analýzy k aktivaci: vybereme publikum, připravíme sdělení, spustíme testy a nastavíme měření i první zpracování reakcí.</div></div><div class="hero-viz-notes"><article class="hero-viz-note"><strong>01 / Před spuštěním schválíme plán</strong><p>Cílové segmenty, sdělení, kanály, rozpočet, kvalifikační kritéria a způsob vyhodnocení.</p></article><article class="hero-viz-note"><strong>02 / Nasadíme dohodnutou akvizici</strong><p>Kampaně a vstupní stránky propojíme s evidencí a pravidly prvního zpracování kontaktu.</p></article><article class="hero-viz-note"><strong>03 / Rozhodujeme podle zpětné vazby</strong><p>Zjišťujeme důvody přijetí či nepřijetí leadů a vyhodnocujeme návaznost na skutečná obchodní jednání.</p></article></div></div></div>
+</div>
+<div class="v4-analytic-panel"><div class="v4-topline"><div><span class="smallcap">ANALYTIKA / ROZHODOVÁNÍ O SEGMENTECH</span><h3>Ne každé publikum má stejnou obchodní hodnotu.</h3><p>Modelová matice porovnává potenciál segmentů s náročností jejich oslovení. Vyšší objem kontaktů nemusí být nejvýhodnější cestou k obchodnímu výsledku.</p></div><span class="v4-pill">Ilustrační model</span></div><div class="v4-two"><div class="v4-graphboard"><svg aria-label="Modelová matice segmentů podle obchodního potenciálu a náročnosti akvizice" role="img" viewbox="0 0 740 400"><rect fill="#edf8f6" height="147.0" width="298.0" x="82.0" y="46.0"></rect><rect fill="#eaf0fe" height="147.0" width="298.0" x="380.0" y="46.0"></rect><rect fill="#f7f9fc" height="147.0" width="298.0" x="82.0" y="193.0"></rect><rect fill="#f6f0fd" height="147.0" width="298.0" x="380.0" y="193.0"></rect><line stroke="#d3deee" stroke-dasharray="4 5" x1="82.0" x2="82.0" y1="46" y2="340"></line><line stroke="#d3deee" stroke-dasharray="4 5" x1="82" x2="678" y1="340.0" y2="340.0"></line><text fill="#70829a" font-size="12" text-anchor="middle" x="82.0" y="360">0</text><line stroke="#d3deee" stroke-dasharray="4 5" x1="231.0" x2="231.0" y1="46" y2="340"></line><line stroke="#d3deee" stroke-dasharray="4 5" x1="82" x2="678" y1="266.5" y2="266.5"></line><text fill="#70829a" font-size="12" text-anchor="middle" x="231.0" y="360">25</text><line stroke="#d3deee" stroke-dasharray="4 5" x1="380.0" x2="380.0" y1="46" y2="340"></line><line stroke="#d3deee" stroke-dasharray="4 5" x1="82" x2="678" y1="193.0" y2="193.0"></line><text fill="#70829a" font-size="12" text-anchor="middle" x="380.0" y="360">50</text><line stroke="#d3deee" stroke-dasharray="4 5" x1="529.0" x2="529.0" y1="46" y2="340"></line><line stroke="#d3deee" stroke-dasharray="4 5" x1="82" x2="678" y1="119.5" y2="119.5"></line><text fill="#70829a" font-size="12" text-anchor="middle" x="529.0" y="360">75</text><line stroke="#d3deee" stroke-dasharray="4 5" x1="678.0" x2="678.0" y1="46" y2="340"></line><line stroke="#d3deee" stroke-dasharray="4 5" x1="82" x2="678" y1="46.0" y2="46.0"></line><text fill="#70829a" font-size="12" text-anchor="middle" x="678.0" y="360">100</text><text fill="#425772" font-size="14" font-weight="700" x="82" y="26">OBCHODNÍ POTENCIÁL ↑</text><text fill="#425772" font-size="14" font-weight="700" text-anchor="middle" x="380.0" y="394">NÁROČNOST AKVIZICE →</text><circle cx="546.9" cy="110.7" fill="#2764ee" fill-opacity=".14" r="36"></circle><circle cx="546.9" cy="110.7" fill="#2764ee" opacity=".9" r="31"></circle><text fill="#fff" font-size="18" font-weight="800" text-anchor="middle" x="546.9" y="116.7">A</text><circle cx="308.5" cy="93.0" fill="#10a99c" fill-opacity=".14" r="32"></circle><circle cx="308.5" cy="93.0" fill="#10a99c" opacity=".9" r="27"></circle><text fill="#fff" font-size="18" font-weight="800" text-anchor="middle" x="308.5" y="99.0">B</text><circle cx="487.3" cy="204.8" fill="#8a51db" fill-opacity=".14" r="30"></circle><circle cx="487.3" cy="204.8" fill="#8a51db" opacity=".9" r="25"></circle><text fill="#fff" font-size="18" font-weight="800" text-anchor="middle" x="487.3" y="210.8">C</text><circle cx="237.0" cy="245.9" fill="#ed9c35" fill-opacity=".14" r="27"></circle><circle cx="237.0" cy="245.9" fill="#ed9c35" opacity=".9" r="22"></circle><text fill="#fff" font-size="18" font-weight="800" text-anchor="middle" x="237.0" y="251.9">D</text></svg><div class="v4-microlegend"><span><i style="background:#2764ee"></i>A / B2B technologie</span><span><i style="background:#10a99c"></i>B / Stávající klienti</span><span><i style="background:#8a51db"></i>C / Nová publika</span><span><i style="background:#ed9c35"></i>D / Plošné oslovení</span></div></div><div class="v4-card-note"><h4>Jak by se rozhodovalo v praxi</h4><div class="v4-point"><strong>01 / Identifikujeme obchodní potenciál</strong><span>Velikost trhu, relevance potřeby, očekávaná hodnota příležitosti a dosažitelnost.</span></div><div class="v4-point"><strong>02 / Prověříme náročnost oslovení</strong><span>Ceny médií, sílu konkurence, délku rozhodování i kapacitu na kvalifikaci.</span></div><div class="v4-point"><strong>03 / Testujeme před škálováním</strong><span>Rozpočet nejprve rozložíme do ověřitelných testů; větší investici podmiňujeme výsledky.</span></div></div></div><p class="v4-foot">Osy jsou hypotetické skóre 0–100 a nejsou měřením konkrétního trhu. Velikosti bublin jsou ilustrativní. Reálné pořadí segmentů určí až analýza a testy.</p></div></div></section><section class="pg-sec lead-sec" id="kvalifikace"><div class="pg-wrap"><div class="pg-kicker">04 / OVĚŘENÍ, KVALIFIKACE A PŘEDÁNÍ</div><h2 class="pg-h2">Vyplněný formulář ještě není kvalitní lead.</h2><div class="qualification-layout"><div class="qualification-main"><div><p class="pg-lead">Zjišťujeme, zda je kontakt dosažitelný, relevantní pro konkrétní nabídku a připravený na další krok. Hranici mezi kvalifikací a následným obchodním jednáním nastavíme společně s klientem.</p></div><div class="quality-panel"><h3>Co skutečně předáváme obchodu</h3><div class="quality-rows"><div class="quality-row"><div class="checkmark">✓</div><div><strong>Ověřený kontakt a relevantní profil</strong><span>Dosažitelnost, duplicity, vhodný segment či role v rozhodování.</span></div></div><div class="quality-row"><div class="checkmark">✓</div><div><strong>Potřeba a důvod zájmu</strong><span>Na jakou nabídku kontakt reagoval a co potřebuje řešit.</span></div></div><div class="quality-row"><div class="checkmark">✓</div><div><strong>Časový horizont a rozsah požadavku</strong><span>Jen informace přiměřené produktu a předem schváleným kritériím.</span></div></div><div class="quality-row"><div class="checkmark">✓</div><div><strong>Historie komunikace a další krok</strong><span>Obchodník pokračuje v konkrétním rozhovoru, nezačíná od nuly.</span></div></div></div><div class="insight"><b>Kvalifikace je obchodně definovaná.</b> Kontakt splňuje dohodnutá kritéria, nikoli automaticky právní status „kvalifikovaného investora“.</div></div><div class="qualification-status-grid"><div class="status full-span"><span class="st-dot"></span><div><b>Připravený k předání</b><p>Splňuje podmínky a projevil zájem o další konkrétní jednání. Předáme jej s úplným kontextem.</p></div></div><div class="status violet"><span class="st-dot"></span><div><b>Relevantní, ale zatím nepřipravený</b><p>Zařadíme do přiměřené následné péče, aby se neztratil kvůli načasování.</p></div></div><div class="status grey"><span class="st-dot"></span><div><b>Nevhodný pro aktuální nabídku</b><p>Zaznamenáme důvod a využijeme jej k úpravě cílení a kvalifikace.</p></div></div></div></div><div class="qualification-side"><figure class="origin-qualification-photo">
+<img alt="Původní fotografie CLARIX – schodiště v moderní budově" decoding="async" height="1536" loading="lazy" src="images/sekce/schodiste.webp" width="1024"/>
+</figure></div></div><div class="v4-analytic-panel"><div class="v4-topline"><div><span class="smallcap">KVALIFIKACE / HODNOTICÍ KRITÉRIA</span><h3>Kvalitu kontaktu neposuzujeme jedním číslem.</h3><p>Ukázková kvalifikační matice pracuje s dosažitelností, potřebou, horizontem a konkrétním dalším krokem. Rozhodující je splnění dohodnutých kritérií a ověřená informace — samotné skóre nestačí.</p></div><span class="v4-pill">Ilustrační skóre</span></div><div class="v4-qual-grid"><div class="v4-heat-wrap"><table aria-label="Modelové skóre tří obchodních kontaktů" class="v4-heat"><thead><tr><th>Hodnoticí kritérium</th><th>Kontakt A</th><th>Kontakt B</th><th>Kontakt C</th></tr></thead><tbody><tr><td>Dosažitelnost</td><td class="h5">5 / 5</td><td class="h5">5 / 5</td><td class="h4">4 / 5</td></tr><tr><td>Relevance nabídky</td><td class="h5">5 / 5</td><td class="h4">4 / 5</td><td class="h3">3 / 5</td></tr><tr><td>Potřeba / motivace</td><td class="h5">5 / 5</td><td class="h3">3 / 5</td><td class="h2">2 / 5</td></tr><tr><td>Časový horizont</td><td class="h4">4 / 5</td><td class="h3">3 / 5</td><td class="h1">1 / 5</td></tr><tr><td>Dohodnutý další krok</td><td class="h5">5 / 5</td><td class="h2">2 / 5</td><td class="h1">1 / 5</td></tr></tbody></table></div><div class="v4-qual-key"><div><b>A / Kvalifikovaný kontakt</b><p>Ověřená potřeba, zájem a dohodnutý další krok; lze předat podle společných pravidel.</p></div><div><b>B / Následná péče</b><p>Relevantní profil, ale načasování nebo další krok zatím neodpovídá podmínkám předání.</p></div><div><b>C / Zatím nevhodný</b><p>Kontakt může mít základní relevanci, ale pro danou nabídku dosud postrádá dostatečný obchodní signál.</p></div></div></div><p class="v4-foot">Skóre 1–5 a tři profily jsou smyšlené pouze pro znázornění postupu. SQL vzniká až přijetím obchodu podle předem stanovených pravidel; neznamená právní status kvalifikovaného investora.</p></div><div class="v20-midcta"><div><span>CO Z TOHO BUDE MÍT VÁŠ OBCHOD?</span><strong>Kontakty s ověřenými informacemi a jasně domluveným dalším krokem.</strong></div><a href="#kontakt">Domluvit konzultaci ↗</a></div></div></section><section class="pg-sec lead-sec" id="technologie"><div class="pg-wrap"><div class="pg-kicker">05 / TECHNOLOGIE, LIDÉ A NÁSLEDNÁ PÉČE</div><h2 class="pg-h2">Co si objednáváte. Kdo co zajišťuje. Jak měříme výsledek.</h2><p class="pg-lead">Můžete využít samotnou kvalifikaci, novou akvizici s ověřením nebo kompletní řízení procesu. Ukazujeme konkrétní zajištění: software, tým, následnou péči a jasná pravidla odpovědnosti.</p><div class="tech-grid"><div><div class="orig-software-visual"><figure class="origin-notebook-photo">
+<img alt="Původní fotografie CLARIX – notebook s náhledem akviziční platformy" decoding="async" height="1024" loading="lazy" src="images/sekce/platforma.webp" width="1536"/>
+</figure><div class="origin-notebook-caption"><b>Vlastní software CLARIX</b><p>Evidence zdroje leadu, historie ověření, stav předání a další krok v jednom pracovním procesu.</p></div></div></div><div class="tech-side"><div class="card lg13-package"><span class="smallcap">01 / MÁTE KONTAKTY</span><h3>Kvalifikace a práce s databází</h3><p>Ověříme použitelnost kontaktů, relevanci zájmu a další krok. Předáme vybrané příležitosti podle schválených kritérií.</p></div><div class="card lg13-package"><span class="smallcap">02 / CHCETE NOVÉ LEADY</span><h3>Akvizice s kvalifikací</h3><p>Navrhneme a spustíme kampaně a vstupní stránky, zajistíme evidenci a dohodnuté ověření zájemců před předáním.</p></div><div class="card lg13-package"><span class="smallcap">03 / CHCETE ŘÍZENÝ CELEK</span><h3>Kompletní Lead Generation</h3><p>Propojíme strategii, kampaně, kvalifikaci, technologii, následnou péči a reportování s obchodní zpětnou vazbou.</p></div></div></div><div aria-label="Obchodní model a role při spolupráci" class="lg13-model">
+<div class="lg13-model-head"><div><span class="smallcap">JAK SPOLUPRÁCE FUNGUJE</span><h3>Kdo odpovídá za kterou část spolupráce.</h3><p>Před startem schválíme, kde končí kvalifikace a kdo odpovídá za další obchodní jednání. Rozsah je smluvně a u regulovaných produktů také právně vymezen.</p></div></div>
+<div class="lg13-model-grid">
+<div class="lg13-model-col"><div class="lg13-model-index">01 / CLARIX</div><h4>Co vám dodáme</h4><p>Podle objednaného rozsahu akviziční plán, kampaně, evidenci a <strong>kvalifikované leady s historií komunikace, ověřenými kritérii a doporučeným dalším krokem.</strong></p></div>
+<div class="lg13-model-col"><div class="lg13-model-index">02 / VÁŠ OBCHODNÍ TÝM</div><h4>Co schvaluje a přebírá klient</h4><p>Nabídku, rozpočet a definici kvalifikovaného leadu. <strong>Přijetí jako SQL</strong> potvrzuje klientův obchod, navazuje jednáním a sděluje výsledek; regulované úkony náleží oprávněnému subjektu.</p></div>
+<div class="lg13-model-col"><div class="lg13-model-index">03 / SPOLEČNÉ ŘÍZENÍ</div><h4>Co průběžně vyhodnocujeme</h4><p>Cenu a kvalitu kontaktů, přijetí do SQL, důvody odmítnutí, uskutečněná jednání a — po dostatečné době — uzavřené obchody. Na základě dat upravujeme další postup.</p></div>
+</div>
+<div class="lg13-model-foot"><strong>Jak se sestavuje cena:</strong> reklamní rozpočet oddělujeme od strategie a realizace, práce s kontakty, technologie a následné péče. <strong>Cenu a rozsah každé složky stanovíme předem.</strong> Výpočty níže jsou pouze model mediálních nákladů, nikoli cena celé služby.</div>
+</div>
+<div aria-label="Vlastní technologie a využití databáze" class="v20-suite">
+<div class="v20-suite-head"><div><span class="smallcap">VLASTNÍ SOFTWARE / KONKRÉTNÍ PŘÍNOS</span>
+<h3>V jednom přehledu vidíte, co se s kontaktem skutečně stalo.</h3>
+<p>Propojíme zdroj leadu, ověřené informace, stav zpracování a další úkol. Díky tomu lze kontrolovat reakční dobu, důvody odmítnutí i předání vašemu obchodu. Dostupné funkce a propojení s CRM ověříme při návrhu spolupráce.</p></div>
+<span class="v4-pill">Schematická ukázka výstupu</span></div>
+<div class="v20-software-layout">
+<div aria-label="Schematické rozhraní s přehledem původu leadu, výsledku ověření, vlastníka a dalšího kroku; nejde o skutečný zákaznický záznam" class="v20-app-demo" role="img">
+<div class="v20-app-top"><span class="v20-app-mark">C</span><span><strong>CLARIX / přehled leadu</strong><small>Ukázkový záznam · anonymní model</small></span><span class="v20-app-state">Připraveno k předání</span></div>
+<div class="v20-app-metrics"><div><span>Zdroj</span><b>Kampaň / segment A</b></div><div><span>Ověření</span><b>Kontakt + potřeba</b></div><div><span>Odpovědnost</span><b>Určený tým</b></div><div><span>Další krok</span><b>Domluvený hovor</b></div></div>
+<div class="v20-app-timeline"><span class="done">Získán</span><span class="done">Ověřen</span><span class="done">Kvalifikován</span><span>Předán / čeká na převzetí</span></div>
+<div class="v20-app-feedback"><b>Zpětná vazba z obchodu</b><span>Převzato · Odloženo · Nesplňuje kritéria — důvod je součástí vyhodnocení</span></div>
+</div>
+<div class="v20-software-benefits">
+<article><span class="v20-step">01</span><div><h4>Jednoznačný původ</h4><p>Kampaň, segment, datum reakce a použitelné informace na jednom místě.</p></div></article>
+<article><span class="v20-step">02</span><div><h4>Ověřené předání</h4><p>Potřeba, výsledek kvalifikace, odpovědná osoba a dohodnutý další krok.</p></div></article>
+<article><span class="v20-step">03</span><div><h4>Řízení následné práce</h4><p>Stavy kontaktů, plán navázání, historie komunikace a obchodní zpětná vazba.</p></div></article>
+</div>
+</div>
+<p class="v20-disclaimer">Zobrazení je schematické a nepředstavuje snímek skutečné aplikace ani záznam klienta. Konkrétní rozsah evidovaných dat, oprávnění uživatelů a integrace se stanoví podle zadání.</p>
+</div>
+<div class="v20-services">
+<div class="v20-services-title"><span class="smallcap">NAVAZUJÍCÍ SLUŽBY</span><h3>Leady musí mít pokračování — v týmu i v databázi.</h3><p>Podle kapacit klienta školíme obchodníky, nebo zajišťujeme dohodnutou část navazující komunikace. Nenahrazujeme činnosti vyžadující regulované oprávnění.</p></div>
+<div class="v20-service-grid">
+<article class="v20-service-card"><span class="v20-step">01 / ŠKOLENÍ OBCHODNÍKŮ</span><h4>Připravíme tým na první rozhovor.</h4><p>Praktické scénáře prvního kontaktu, relevantní otázky, práce s námitkami, používání CRM a pravidla dalšího oslovení.</p><div class="v20-service-out">Výstup: postup hovoru, checklist předání a trénink na vaší nabídce.</div></article>
+<article class="v20-service-card"><span class="v20-step">02 / NEDOKONČENÁ JEDNÁNÍ</span><h4>Vrátíme se k příležitostem ve správnou chvíli.</h4><p>Prověříme důvod odkladu, aktuální potřebu a možnost navázat tam, kde původní komunikace skončila.</p><div class="v20-service-out">Výstup: aktualizovaný stav, termín dalšího kroku nebo vyřazení.</div></article>
+<article class="v20-service-card"><span class="v20-step">03 / STÁVAJÍCÍ ZÁKAZNÍCI</span><h4>Najdeme vhodné příležitosti pro další spolupráci.</h4><p>Se souhlasným a právně použitelným základem kontaktů prověříme zájem o další produkt, službu nebo rozšíření řešení.</p><div class="v20-service-out">Výstup: relevantní nabídka a kvalifikovaná návazná poptávka.</div></article>
+</div>
+<p class="v20-disclaimer">Školení u investičních produktů je omezeno na činnosti přípustné pro danou roli. Nenahrazuje odbornou způsobilost nebo příslušné oprávnění.</p>
+</div>
+<div aria-label="Začátek spolupráce" class="v20-onboarding"><div class="v20-onboarding-head"><span class="smallcap">JAK ZAČNEME</span><h3>První konzultace skončí konkrétním návrhem dalšího postupu.</h3><p>Bez předčasného slibu počtu leadů. Cíle, ekonomiku a postup ověříme proti vašim možnostem.</p></div>
+<div class="v20-onboarding-steps"><div><b>01 / ZADÁNÍ</b><span>Projdeme nabídku, cílové skupiny, dosavadní výsledky a obchodní kapacitu.</span></div><div><b>02 / HRANICE</b><span>Určíme kvalifikační kritéria, odpovědnosti, právní režim a potřebná data.</span></div><div><b>03 / NÁVRH</b><span>Navrhneme rozsah pilotu, milníky, rozpočet a způsob vyhodnocení.</span></div></div>
+<a class="v20-cta" href="#kontakt">Probrat úvodní zadání <span aria-hidden="true">↗</span></a>
+</div></div></section><section class="pg-sec lead-sec" id="ekonomika"><div class="pg-wrap"><div class="pg-kicker">06 / EKONOMIKA A ŘÍZENÍ VÝKONU</div><h2 class="pg-h2">Od ceny kontaktu až k uzavřenému obchodu.</h2><p class="pg-lead">Model níže sleduje placenou akvizici nových kontaktů: od mediálního CPL přes kvalifikaci a SQL až po uzavření obchodu. Práci se stávající databází posuzujeme zvlášť. Všechna čísla jsou hypotetické předpoklady, nikoli výsledky nebo garance.</p>
+<div class="v4-econ-highlights"><div class="v4-econ-highlight"><strong>230 000 Kč</strong><span>Měsíční mediální rozpočet</span></div><div class="v4-econ-highlight"><strong>295 Kč</strong><span>Modelový mediální náklad za kontakt</span></div><div class="v4-econ-highlight"><strong>234</strong><span>Kvalifikovaných kontaktů ze 780</span></div><div class="v4-econ-highlight important"><strong>983 Kč</strong><span>Mediální náklad na kvalifikovaný lead</span></div></div>
+<div class="v4-econ-split"><div class="v4-econ-panel"><h3>Který zdroj přináší hodnotnější leady?</h3><p class="sub">Stejný mediální rozpočet rozdělený mezi tři zdroje ukazuje, proč nízké CPL automaticky neznamená nejlevnější kvalifikovanou příležitost.</p><div class="v4-channel-header"><span>Kanál</span><span>Kontakty</span><span>Kvalifikované</span><span>Media / kval.</span></div><div class="v4-channel-row"><span class="source">A / Vyhledávání</span><span>317</span><span>70</span><b>1 095 Kč</b></div><div class="v4-channel-row"><span class="source">B / Sociální sítě</span><span>263</span><span>86</span><b>891 Kč</b></div><div class="v4-channel-row"><span class="source">C / Obsah a remarketing</span><span>200</span><span>78</span><b>983 Kč</b></div><div class="insight"><b>780 kontaktů / 234 kvalifikovaných</b><br/>Celkem 30 % kvalifikace; 230 000 / 234 ≈ 983 Kč mediálně za jeden kvalifikovaný lead.</div></div>
+<div class="v4-econ-panel"><h3>Citlivost na kvalitu kontaktů</h3><p class="sub">Při nezměněném objemu kontaktů a mediálním rozpočtu mění výsledek míra kvalifikace; jde o hypotetické scénáře.</p><div class="v4-scenarios"><div class="v4-scenario"><b>25 %</b><div class="v4-track"><i style="width:71.4%"></i></div><b>195 leadů</b></div><div class="v4-scenario focus"><b>30 %</b><div class="v4-track"><i style="width:85.7%"></i></div><b>234 leadů</b></div><div class="v4-scenario"><b>35 %</b><div class="v4-track"><i style="width:100.0%"></i></div><b>273 leadů</b></div></div><div class="v4-kpi-row"><div class="v4-kpi"><strong>1 179 Kč</strong><span>při 25 % kvalifikace</span></div><div class="v4-kpi"><strong>983 Kč</strong><span>při 30 % kvalifikace</span></div><div class="v4-kpi"><strong>842 Kč</strong><span>při 35 % kvalifikace</span></div></div></div></div>
+<div class="v4-model-board"><div class="v4-model-heading"><div><span class="smallcap">SQL / JEDNÁNÍ / UZAVŘENÍ BUSINESSU</span><h3>Funnel končí až tam, kde vzniká obchodní výsledek.</h3><p>Výsledky sledujeme až po přijetí obchodním týmem. SQL (Sales Qualified Lead) je příležitost, kterou obchod podle dohodnutých pravidel převzal — nikoli samotný telefonický kontakt.</p></div><span class="v4-pill">Scénář, ne prognóza</span></div><div class="v4-econ-stages">
+<div class="v4-econ-stage"><strong>Kontakty</strong><b>780</b><span>230 000 Kč médií / CPL přibližně 295 Kč</span></div>
+<div class="v4-econ-stage"><strong>Kvalifikované</strong><b>234</b><span>30 % z kontaktů; potřeba, zájem, další krok</span></div>
+<div class="v4-econ-stage"><strong>SQL</strong><b>140</b><span>60 % z kvalifikovaných; přijato obchodem</span></div>
+<div class="v4-econ-stage"><strong>Jednání</strong><b>≈ 98</b><span>70 % z SQL; uskutečněná, ne pouze sjednaná</span></div>
+<div class="v4-econ-stage"><strong>Uzavřeno</strong><b>17</b><span>≈ 17,35 % z uskutečněných jednání</span></div></div><div class="v4-kpi-row"><div class="v4-kpi"><strong>983 Kč</strong><span>Mediální náklad / kvalifikovaný lead</span></div><div class="v4-kpi"><strong>1 643 Kč</strong><span>Mediální náklad / SQL</span></div><div class="v4-kpi"><strong>≈ 13 529 Kč</strong><span>Mediální náklad / modelově uzavřený obchod</span></div></div><div class="v4-final-econ"><div class="v4-econ-closing"><h4>Objem uzavřeného obchodu ≠ zisk</h4><p>Při hypotetické průměrné hodnotě obchodní zakázky 250 000 Kč představuje 17 uzavřených zakázek objem 4 250 000 Kč. Tento příklad není prognózou fundraisingu: u investic se realizovaný kapitál a délka rozhodování posuzují samostatně. Objem zakázek není zisk a mediální náklady nejsou náklady celkové.</p></div><div class="v4-econ-closing"><h4>Mediální versus celkové náklady</h4><p>983 Kč za kvalifikovaný lead zahrnuje pouze reklamu. Celková cena = média + strategie + kreativa + práce kvalifikačního týmu + technologie + řízení procesu. Stejně počítáme celkový náklad na SQL a na uzavřený obchod; bez smluvních vstupů jej zde neodhadujeme.</p></div></div><p class="v4-foot">Kontrola výpočtu: 780 kontaktů × 30 % = 234 kvalifikovaných; 234 × 60 % ≈ 140 SQL; 140 × 70 % = 98 jednání; 98 × 17,35 % ≈ 17 obchodů. Mediální rozpočet činí 230 000 Kč, tedy přibližně 295 Kč na kontakt, 983 Kč na kvalifikovaný lead, 1 643 Kč na SQL a 13 529 Kč na uzavřený obchod. Vše je hypotetické, zaokrouhlené a bez garance.</p></div>
+<div class="v5-cohort v4-analytic-panel"><div class="v4-topline"><div><span class="smallcap">EKONOMIKA / ČASOVÁ ZRALOST OBCHODU</span><h3>Kdy už máme dost dat, abychom mohli rozhodnout o škálování?</h3><p>Kontakty získané tento měsíc nelze srovnávat s těmi, které obchodní tým zpracovává čtvrt roku. V modelu proto sledujeme nejen počet leadů a SQL, ale také stáří jednotlivých akvizičních kohort.</p></div><span class="v4-pill">Hypotetický vývoj</span></div><div class="v5-cohort-layout"><div class="v5-chart"><h4>Jak s časem dozrávají výsledky jedné kohorty</h4><p>Podíl událostí, které už byly zaznamenány, vůči hypotetickému konečnému počtu událostí daného typu.</p><svg aria-label="Ilustrační křivky dozrávání SQL, uskutečněných jednání a uzavřených obchodů od 2. do 12. týdne. Podíly jsou vůči hypotetickému konečnému počtu událostí každého typu, nikoli vztaženy k počtu všech leadů." role="img" viewbox="0 0 840 390" xmlns="http://www.w3.org/2000/svg"><rect fill="#fbfdff" height="390" rx="16" width="840"></rect><line stroke="#dce7f3" stroke-dasharray="4 5" x1="72" x2="812" y1="341.0" y2="341.0"></line><text fill="#6c819a" font-size="14" text-anchor="end" x="57" y="346.0">0%</text><line stroke="#dce7f3" stroke-dasharray="4 5" x1="72" x2="812" y1="267.8" y2="267.8"></line><text fill="#6c819a" font-size="14" text-anchor="end" x="57" y="272.8">25%</text><line stroke="#dce7f3" stroke-dasharray="4 5" x1="72" x2="812" y1="194.5" y2="194.5"></line><text fill="#6c819a" font-size="14" text-anchor="end" x="57" y="199.5">50%</text><line stroke="#dce7f3" stroke-dasharray="4 5" x1="72" x2="812" y1="121.2" y2="121.2"></line><text fill="#6c819a" font-size="14" text-anchor="end" x="57" y="126.2">75%</text><line stroke="#dce7f3" stroke-dasharray="4 5" x1="72" x2="812" y1="48.0" y2="48.0"></line><text fill="#6c819a" font-size="14" text-anchor="end" x="57" y="53.0">100%</text><text fill="#60758e" font-size="15" text-anchor="middle" x="72.0" y="372">2. týden</text><text fill="#60758e" font-size="15" text-anchor="middle" x="318.7" y="372">4. týden</text><text fill="#60758e" font-size="15" text-anchor="middle" x="565.3" y="372">8. týden</text><text fill="#60758e" font-size="15" text-anchor="middle" x="812.0" y="372">12. týden</text><polyline fill="none" points="72.0,135.9 318.7,74.4 565.3,48.0 812.0,48.0" stroke="#2764ee" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></polyline><circle cx="72.0" cy="135.9" fill="white" r="5.5" stroke="#2764ee" stroke-width="3"></circle><circle cx="318.7" cy="74.4" fill="white" r="5.5" stroke="#2764ee" stroke-width="3"></circle><circle cx="565.3" cy="48.0" fill="white" r="5.5" stroke="#2764ee" stroke-width="3"></circle><circle cx="812.0" cy="48.0" fill="white" r="5.5" stroke="#2764ee" stroke-width="3"></circle><polyline fill="none" points="72.0,267.8 318.7,171.1 565.3,83.2 812.0,48.0" stroke="#10a99c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></polyline><circle cx="72.0" cy="267.8" fill="white" r="5.5" stroke="#10a99c" stroke-width="3"></circle><circle cx="318.7" cy="171.1" fill="white" r="5.5" stroke="#10a99c" stroke-width="3"></circle><circle cx="565.3" cy="83.2" fill="white" r="5.5" stroke="#10a99c" stroke-width="3"></circle><circle cx="812.0" cy="48.0" fill="white" r="5.5" stroke="#10a99c" stroke-width="3"></circle><polyline fill="none" points="72.0,326.3 318.7,276.5 565.3,159.3 812.0,48.0" stroke="#8a51db" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></polyline><circle cx="72.0" cy="326.3" fill="white" r="5.5" stroke="#8a51db" stroke-width="3"></circle><circle cx="318.7" cy="276.5" fill="white" r="5.5" stroke="#8a51db" stroke-width="3"></circle><circle cx="565.3" cy="159.3" fill="white" r="5.5" stroke="#8a51db" stroke-width="3"></circle><circle cx="812.0" cy="48.0" fill="white" r="5.5" stroke="#8a51db" stroke-width="3"></circle><text fill="#70829a" font-size="13" font-weight="700" x="73" y="21">MODEL / PODÍL JIŽ ZAZNAMENANÝCH UDÁLOSTÍ</text></svg><div class="v5-chart-legend"><span><i style="background:#2764ee"></i>Převzaté SQL</span><span><i style="background:#10a99c"></i>Uskutečněná jednání</span><span><i style="background:#8a51db"></i>Uzavřené obchody</span></div></div><div class="v5-cohort-notes"><h4>Proč záleží na stáří kontaktů</h4><div class="v5-cohort-note"><span>01 / Čerstvá kohorta</span><strong>První měření kvality</strong><p>V prvních týdnech sledujeme dosažitelnost, ověření a přijetí SQL. Nedokončený obchodní cyklus není automaticky neúspěch.</p></div><div class="v5-cohort-note"><span>02 / Rozpracovaná kohorta</span><strong>Potvrzení obchodního posunu</strong><p>Vyhodnocujeme uskutečněná jednání, důvody odkladů a kvalitu navazující komunikace.</p></div><div class="v5-cohort-note"><span>03 / Zralá kohorta</span><strong>Rozhodnutí o ekonomice</strong><p>Teprve se znalostí uzavřených výsledků a úplných nákladů hodnotíme, zda zvýšit rozpočet, změnit segment nebo proces upravit.</p></div></div></div><div class="v5-decision-strip"><b>Manažerské rozhodnutí:</b> Škálování neopíráme pouze o nízký mediální CPL. Potřebujeme důkaz, že kvalifikace udrží kvalitu, obchod zvládne přijaté SQL a výsledky mají správné časové okno pro vyhodnocení.</div><p class="v4-foot">Veškeré procentní křivky (2.–12. týden) jsou výhradně hypotetické a nepopisují klientská data ani oborový benchmark. Nejsou to konverzní poměry z počtu kontaktů: 100 % zde označuje konečný modelový počet událostí příslušné fáze. U fundraisingu může rozhodování investora trvat déle; skutečná časová okna se stanoví podle produktu, projektu a výsledků pilotu.</p></div></div></section><section class="pg-sec lead-sec" id="pravidla"><div class="pg-wrap"><div class="pg-kicker">07 / PRAVIDLA KOMUNIKACE A PRÁCE S DATY</div><h2 class="pg-h2">Právní rámec řešíme před spuštěním.</h2><p class="pg-lead">Původ dat, pravidla oslovení, odpovědnosti a hranice regulovaných činností jsou součástí návrhu procesu, nikoli dodatek na konci spolupráce.</p><div class="compliance"><div class="compliance-item"><b>Původ kontaktů</b><p>Ověříme zdroj a podmínky jejich použití. Záznam v databázi sám o sobě neopravňuje k oslovení.</p></div><div class="compliance-item"><b>Oslovení a odhlášení</b><p>Nastavíme srozumitelná sdělení, identifikaci odesílatele a respektování námitek či odhlášení.</p></div><div class="compliance-item"><b>Přístup a odpovědnost</b><p>Vymezíme role, předávání, přístupy, uchování a napojení na systémy klienta.</p></div><div class="compliance-item"><b>Regulované produkty</b><p>Marketing oddělujeme od investičních služeb. Regulované úkony zajišťuje oprávněný subjekt.</p></div></div><div class="insight">U fundraisingu rozsah kampaní, cílové publikum a kvalifikaci před spuštěním sladíme s právním nebo compliance zástupcem klienta. Žádná stránka nemůže nahradit posouzení konkrétní nabídky.</div></div></section><section class="pg-sec lead-sec" id="faq"><div class="pg-wrap"><div class="pg-kicker">08 / ČASTÉ OTÁZKY</div><h2 class="pg-h2">Co potřebujete vědět před začátkem.</h2><p class="pg-lead">Rozsah služby, kvalita předání a vyhodnocování výsledků mají jasná pravidla.</p><div class="faq-grid"><details class="faq-item"><summary>Co získáme po úvodní konzultaci?</summary><div class="faq-answer"><p>Vyjasníme cílovou skupinu, vhodný rozsah služby, kvalifikační kritéria a odpovědnost za předání. Následně navrhneme konkrétní další postup včetně potřebných dat a rámce pilotního ověření.</p></div></details><details><summary>Můžeme začít pouze se stávající databází?</summary><p>Ano. Prověříme strukturu, původ a možnosti použití kontaktů. Připravíme cílené oslovení, ověříme zájem a předáme relevantní příležitosti.</p></details><details><summary>Co když nemáme tým, který leady zpracuje?</summary><p>Podle dohody převezmeme první oslovení, ověření nebo následnou péči. Další obchodní jednání a uzavření obchodu zajistí určený tým; u regulovaných služeb oprávněný subjekt.</p></details><details><summary>Garantujete počet leadů nebo uzavřených obchodů?</summary><p>Cíle a podmínky dohodneme na základě zadání, rozpočtu a testování. Nezaměňujeme modelový scénář za záruku počtu kontaktů, investic ani tržeb.</p></details><details><summary>Jak se stanoví cena spolupráce?</summary><p>Oddělíme reklamní rozpočet, strategii a realizaci, kvalifikaci, následnou péči a případné technologie. Rozsah i cenu každé části určíme před spuštěním.</p></details><details><summary>Máme již agenturu a vlastní CRM. Vadí to?</summary><p>Ne. Vymezíme, kterou část procesu doplníme, jaká data potřebujeme, kdo kontakty přebírá a jak bude fungovat zpětná vazba.</p></details><details><summary>Jak rychle uvidíme výsledek?</summary><p>Harmonogram závisí na připravenosti nabídky a délce rozhodování zákazníků. Získání kontaktu, kvalifikaci a uzavřený obchod vyhodnocujeme odděleně.</p></details><details><summary>Jak postupujete u dluhopisů a fondů?</summary><p>Předem vymezíme roli CLARIX a klienta, přípustné publikum a obsah sdělení. Činnosti vyžadující investiční oprávnění nevykonáváme; zajišťuje je oprávněný subjekt.</p></details></div></div></section><section class="pg-sec lead-sec lead-last" id="kontakt"><div class="pg-wrap"><div class="pg-kicker">09 / PROBERME VAŠE ZADÁNÍ</div><div class="contact-intro"><h2 class="pg-h2">Potřebujete nové leady, nebo více obchodu z vlastní databáze?</h2><p class="pg-lead">Popište cílovou skupinu a typ obchodních příležitostí, které chcete získávat. Při úvodní konzultaci projdeme vaše zadání, potřebná kvalifikační kritéria i vhodný rozsah pilotu.</p></div><form action="mailto:info@clarix.cz" class="contact-form" enctype="text/plain" id="lead-form" method="post"><div class="form-grid"><div class="fgroup"><label for="name">Jméno *</label><input autocomplete="name" id="name" name="name" placeholder="Vaše jméno" required=""/></div><div class="fgroup"><label for="email">Pracovní e-mail *</label><input autocomplete="email" id="email" name="email" placeholder="vas@firma.cz" required="" type="email"/></div><div class="fgroup"><label for="firm">Firma nebo web *</label><input id="firm" name="firm" placeholder="Firma nebo web" required=""/></div><div class="fgroup"><label for="tel">Telefon · nepovinné</label><input autocomplete="tel" id="tel" name="phone" placeholder="+420" type="tel"/></div></div><div class="form-selection"><div class="fgroup"><label for="area">S čím chcete pomoci?</label><select id="area" name="area"><option selected="" value="">Vyberte oblast</option><option>Nová akvizice kontaktů</option><option>Práce se stávající databází</option><option>Kompletní Lead Generation</option><option>Kvalifikace a následná péče</option><option>Nejsem si jistý – chci poradit</option><option>Školení a rozvoj obchodního týmu</option></select></div><div class="fgroup"><label for="sector">V jaké oblasti působíte?</label><select id="sector" name="sector"><option selected="" value="">Vyberte oblast</option><option>Fundraising / investiční projekty</option><option>E-commerce</option><option>Reality a development</option><option>B2B služby a technologie</option><option>Jiné</option></select></div></div><div class="form-bottom"><div class="fgroup"><label for="msg">Koho chcete oslovit a co nabízíte?</label><textarea id="msg" name="message" placeholder="Stručně popište svoji nabídku, zákazníky a co chcete zlepšit."></textarea></div><div class="form-action"><button class="btn" type="submit">Připravit e-mailovou poptávku ↗</button><small>Odesláním poptávky neobjednáváte placenou službu.</small></div></div><div aria-live="polite" class="form-alert" id="form-alert" role="status"></div><p class="v20-mail-note">Po ověření údajů se otevře e-mailový klient s připravenou zprávou na <a href="mailto:info@clarix.cz">info@clarix.cz</a>. Odeslání potvrdíte ve své poště. Automatické odesílání přímo z webu vyžaduje produkční serverové napojení.</p></form></div></section>
 </main><footer class="footer-basic relative z-10"><div class="mx-auto w-full max-w-[1440px] px-6 py-10 md:px-8">
   <div class="ft-grid">
     <div>
@@ -1313,6 +2161,60 @@ if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.luc
     .catch(function(){ btn.disabled=false; btn.textContent=puvodni; stav.hidden=false;
       stav.style.color='#c0392b'; stav.textContent='Odeslání se nepovedlo. Napište nám prosím na info@clarix.cz.'; });
   });
+})();
+</script>
+<script>
+(function(){ /*izolace*/
+
+
+const $=(q,root=document)=>root.querySelector(q); const $$=(q,root=document)=>[...root.querySelectorAll(q)];
+const safeStore={get(key){try{return window.localStorage?localStorage.getItem(key):null}catch{return null}},set(key,value){try{if(window.localStorage)localStorage.setItem(key,value)}catch{}}};
+const HEXAGONY=false; /* šestiúhelníkové pozadí: true = zapnuto */
+let theme=safeStore.get('clarix-theme')||'light'; document.documentElement.dataset.theme=theme;
+const themeToggle=$('#theme-toggle'); if(themeToggle) themeToggle.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';safeStore.set('clarix-theme',theme);document.documentElement.dataset.theme=theme;try{if(HEXAGONY) init3D()}catch(e){console.warn(e)}});
+try{if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.14});$$('.reveal').forEach(el=>io.observe(el));}else $$('.reveal').forEach(el=>el.classList.add('is-visible'));}catch{$$('.reveal').forEach(el=>el.classList.add('is-visible'));}
+try{$$('.magnetic').forEach(btn=>{let tx=0,ty=0,x=0,y=0,vx=0,vy=0,raf=0;const tick=()=>{const k=.24,d=.68;vx=(vx+(tx-x)*k)*d;vy=(vy+(ty-y)*k)*d;x+=vx;y+=vy;btn.style.setProperty('--mx',x+'px');btn.style.setProperty('--my',y+'px');if(Math.abs(tx-x)+Math.abs(ty-y)+Math.abs(vx)+Math.abs(vy)>.03)raf=requestAnimationFrame(tick);else raf=0};const wake=()=>{if(!raf)raf=requestAnimationFrame(tick)};btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();tx=((e.clientX-r.left-r.width/2)/(r.width/2))*10;ty=((e.clientY-r.top-r.height/2)/(r.height/2))*8;wake()});btn.addEventListener('mouseleave',()=>{tx=ty=0;wake()});});}catch(e){console.warn(e)}
+let gridInstance=null,gridCanvas=null,gridToken=0;
+async function init3D(){const token=++gridToken;const host=$('#hero3d');if(!host)return;if(gridInstance){try{gridInstance.dispose?.();gridInstance.three?.renderer?.dispose?.();gridInstance.three?.renderer?.forceContextLoss?.()}catch{}gridInstance=null}if(gridCanvas)gridCanvas.remove();const fallback=$('.fallback-3d',host);gridCanvas=document.createElement('canvas');gridCanvas.setAttribute('aria-hidden','true');Object.assign(gridCanvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',display:'block',pointerEvents:'none'});host.appendChild(gridCanvas);const light=theme==='light';try{const [gm,THREE]=await Promise.all([import('https://cdn.jsdelivr.net/npm/threejs-components@0.0.16/build/backgrounds/grid1.cdn.min.js'),import('https://cdn.jsdelivr.net/npm/three@0.170.0/+esm')]);if(token!==gridToken)return;const colors=light?[0xe6ebf2,0xf7f9fc]:[0x222222,0x222222];gridInstance=gm.default(gridCanvas,{type:'circle',colors,light1Color:0xffffff,light1Intensity:light?1312.5:1875,light1PositionZ:50,light2Color:0x0066ff,light2Intensity:light?1875:2812.5,light2PositionZ:-20,depthScale:3,materialParams:{metalness:light?.22:.5,roughness:light?.68:.5,clearcoat:1,clearcoatRoughness:light?.32:.2}});gridInstance.grid?.setColors?.(colors);if(gridInstance.three?.scene)gridInstance.three.scene.background=new THREE.Color(light?'#f7f9fc':'#0a0a0a');fallback.style.display='none';}catch(err){console.warn('3D fallback active',err);fallback.style.display='block';}}
+if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.lucide?.createIcons()); window.lucide?.createIcons();
+
+(function(){
+ const toggle=document.getElementById('navmenu'),nav=document.getElementById('mobile-nav');
+ if(toggle&&nav){toggle.addEventListener('click',()=>{const active=nav.style.display==='flex';nav.style.display=active?'none':'flex';toggle.setAttribute('aria-expanded',String(!active));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.style.display='none';toggle.setAttribute('aria-expanded','false');}));}
+ const form=document.getElementById('lead-form'),info=document.getElementById('form-alert');
+ if(!form)return;
+ form.addEventListener('submit',function(e){e.preventDefault();
+   if(!form.checkValidity()){form.reportValidity();return;}
+   const data=new FormData(form),f=(key)=>String(data.get(key)||'').trim();
+   const lines=['Nová poptávka / CLARIX Lead Generation','', 'Jméno: '+f('name'),'E-mail: '+f('email'),'Firma / web: '+f('firm'),'Telefon: '+f('phone'),'Potřeba: '+f('area'),'Obor: '+f('sector'),'','Zadání:',f('message')||'(neuvedeno)'];
+   const uri='mailto:info@clarix.cz?subject='+encodeURIComponent('Poptávka Lead Generation – '+f('firm'))+'&body='+encodeURIComponent(lines.join('\n'));
+   if(info){info.textContent='Otevírám e-mailovou zprávu. Poptávka odejde až po vašem potvrzení v poštovním klientovi. Pokud se neotevře, napište na info@clarix.cz.';info.style.display='block';}
+   window.location.href=uri;
+ });
+})();
+
+(function(){
+  var f=document.querySelector('main form'); if(!f) return;
+  f.setAttribute('action','https://formsubmit.co/info@clarix.cz'); f.setAttribute('method','POST');
+  var btn=f.querySelector('button[type=submit],button:not([type])'); if(!btn) return;
+  var stav=document.createElement('p'); stav.style.cssText='margin-top:.9rem;font-size:.9rem;font-weight:600'; stav.hidden=true;
+  btn.insertAdjacentElement('afterend', stav);
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); if(!f.reportValidity()) return;
+    var puv=btn.textContent; btn.disabled=true; btn.textContent='Odesílám…';
+    var data={}; new FormData(f).forEach(function(v,k){data[k]=v;});
+    data._subject='Poptávka z webu — lead generation';
+    fetch('https://formsubmit.co/ajax/info@clarix.cz',{method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+    .then(function(r){ btn.disabled=false; btn.textContent=puv; stav.hidden=false;
+      if(r.ok){ f.reset(); stav.style.color='#1e9b63'; stav.textContent='Odesláno. Ozveme se co nejdřív.'; }
+      else { stav.style.color='#c0392b'; stav.textContent='Odeslání se nepovedlo. Napište nám na info@clarix.cz.'; } })
+    .catch(function(){ btn.disabled=false; btn.textContent=puv; stav.hidden=false;
+      stav.style.color='#c0392b'; stav.textContent='Odeslání se nepovedlo. Napište nám na info@clarix.cz.'; });
+  });
+})();
+
+
 })();
 </script>
 </body></html>
