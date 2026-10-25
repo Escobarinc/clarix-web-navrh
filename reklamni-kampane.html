@@ -558,10 +558,10 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .case-study-copy p{font-size:.98rem;line-height:1.8;color:var(--text-soft)}
 .case-study-placeholder{min-height:430px;display:grid;place-items:center;text-align:center;border:1px dashed var(--border);background:linear-gradient(145deg,var(--surface),transparent)}
 .footer-basic{border-top:1px solid var(--border);background:var(--page-overlay);backdrop-filter:blur(2px)}
-.mobile-nav{display:none}
+/* menu ponechano na webu */
 @media(min-width:900px){.case-study-row{grid-template-columns:1fr 1fr;gap:5rem}.case-study-row.reverse .case-study-media{order:2}.case-study-row.reverse .case-study-copy{order:1}}
 @media(max-width:899px){.page-hero{min-height:56vh}.case-study-media,.case-study-placeholder{min-height:330px}.case-study-media img{width:min(78%,430px)}}
-@media(max-width:767px){.desktop-nav{display:none}.mobile-nav{display:flex;overflow:auto;gap:.9rem;padding:.55rem 1rem;border-top:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(20px);white-space:nowrap}.mobile-nav a{font-size:.75rem;color:var(--text-soft);text-decoration:none}.mobile-nav a:hover{color:var(--text)}}
+@media(max-width:767px){/* menu ponechano na webu */.mobile-nav{display:flex;overflow:auto;gap:.9rem;padding:.55rem 1rem;border-top:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(20px);white-space:nowrap}.mobile-nav a{font-size:.75rem;color:var(--text-soft);text-decoration:none}.mobile-nav a:hover{color:var(--text)}}
 .brand-logo{display:block;height:28px;width:auto}.brand-logo-dark{display:none}[data-theme='light'] .brand-logo-light{display:none}[data-theme='light'] .brand-logo-dark{display:block}
 
 @media(max-width:767px){
@@ -1867,7 +1867,7 @@ html .lgv3 .lead-sec .v4-model-heading h3 {
 
 
 /* V04 / odstraněné menu, silnější úvod a konverzní trychtýř */
-body .theme-shell nav, body .rc-toc{display:none!important}
+/* menu ponechano na webu */
 #uvod{padding-top:46px}
 .rc4-problem-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}.rc4-problem{background:#fff;border:1px solid var(--border);border-radius:22px;padding:28px 26px;box-shadow:0 10px 35px rgba(16,47,95,.05);display:flex;flex-direction:column;gap:12px}.rc4-problem-no{font-size:28px;font-weight:800;line-height:1;color:#9ab0cf;letter-spacing:.04em}.rc4-problem h3{font-size:31px;line-height:1.15;letter-spacing:-.03em;margin:2px 0 0;font-weight:820;color:#10233f}.rc4-problem p{font-size:18px;line-height:1.68;color:#667a95;margin:0}.rc4-problem ul{margin:0;padding:0 0 0 18px;display:grid;gap:7px;color:#465b77}.rc4-problem li{font-size:15px;line-height:1.55}.rc4-problem strong{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#246df2;margin-top:8px}.rc4-problem span{font-size:15px;line-height:1.55;color:#10233f;font-weight:620}.rc4-problem-note{margin-top:20px}
 .rc4-funnel-panel{margin:28px 0 30px;background:#f7f9fc;border:1px solid #dbe4f0;border-radius:30px;padding:32px 30px 26px;box-shadow:0 22px 60px rgba(16,47,95,.06)}.rc4-funnel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}.rc4-funnel-head h3{font-size:52px;line-height:1.06;letter-spacing:-.045em;font-weight:840;color:#10233f;margin:8px 0 0}.rc4-funnel-head h3 span{display:block}.rc4-funnel-tag{display:inline-flex;align-items:center;border:1px solid #ccd8e7;border-radius:999px;padding:10px 15px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#6e819a;background:#fbfcfe;white-space:nowrap}.rc4-funnel-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:20px 0 24px;border-top:1px solid #dbe4f0;border-bottom:1px solid #dbe4f0}.rc4-funnel-summary article span{display:block;color:#6f8198;font-size:14px;margin-bottom:10px}.rc4-funnel-summary article strong{font-size:34px;line-height:1.05;letter-spacing:-.04em;color:#10233f}.rc4-funnel-legend{display:flex;gap:28px;flex-wrap:wrap;padding:18px 0 10px;color:#6b7c94;font-size:15px}.rc4-funnel-legend span{display:flex;align-items:center;gap:9px}.rc4-funnel-legend i{display:inline-block;width:11px;height:11px;border-radius:4px}.rc4-funnel-legend i.mobile{background:#246df2}.rc4-funnel-legend i.desktop{background:#19a79b}.rc4-funnel-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.rc4-step{background:transparent;padding:8px 0 0}.rc4-step small{display:block;font-size:14px;font-weight:800;color:#7f90a9;letter-spacing:.08em;margin-bottom:8px}.rc4-step h4{font-size:17px;line-height:1.35;font-weight:770;color:#10233f;min-height:46px}.rc4-step>strong{display:block;font-size:27px;line-height:1.1;letter-spacing:-.03em;margin-top:18px;color:#10233f}.rc4-step-share{display:block;font-size:14px;color:#70839d;margin-top:8px}.rc4-bars{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:16px 0 12px;align-items:end;height:182px}.rc4-bar{background:#e8edf4;border-radius:7px 7px 0 0;position:relative;overflow:hidden;display:flex;align-items:flex-end}.rc4-bar i{display:block;width:100%;height:calc(var(--fill) * 1%);background:var(--c);border-radius:7px 7px 0 0}.rc4-bar.mobile{--fill:var(--mobile);--c:#246df2}.rc4-bar.desktop{--fill:var(--desktop);--c:#19a79b}.rc4-step-meta{display:grid;gap:6px;padding:10px 0;border-top:1px solid #dbe4f0;border-bottom:1px solid #dbe4f0}.rc4-step-meta div,.rc4-step-foot{display:flex;justify-content:space-between;gap:10px}.rc4-step-meta span,.rc4-step-foot span{font-size:14px;color:#70839d}.rc4-step-meta b,.rc4-step-foot b{font-size:14px;color:#10233f;font-weight:750}.rc4-step-foot{padding-top:10px}.rc4-funnel-callout{margin-top:18px;border-left:4px solid #246df2;background:#ebf2ff;border-radius:10px;padding:16px 18px;color:#38506c;font-size:14px;line-height:1.6}.rc4-funnel-callout b{color:#27466c}.rc4-funnel-note{margin-top:16px;font-size:14px;line-height:1.7;color:#6f8198}
@@ -2426,10 +2426,10 @@ body.portfolio-mode #hero3d { opacity:.58; }
 .case-study-copy p{font-size:.98rem;line-height:1.8;color:var(--text-soft)}
 .case-study-placeholder{min-height:430px;display:grid;place-items:center;text-align:center;border:1px dashed var(--border);background:linear-gradient(145deg,var(--surface),transparent)}
 .footer-basic{border-top:1px solid var(--border);background:var(--page-overlay);backdrop-filter:blur(2px)}
-.mobile-nav{display:none}
+/* menu ponechano na webu */
 @media(min-width:900px){.case-study-row{grid-template-columns:1fr 1fr;gap:5rem}.case-study-row.reverse .case-study-media{order:2}.case-study-row.reverse .case-study-copy{order:1}}
 @media(max-width:899px){.page-hero{min-height:56vh}.case-study-media,.case-study-placeholder{min-height:330px}.case-study-media img{width:min(78%,430px)}}
-@media(max-width:767px){.desktop-nav{display:none}.mobile-nav{display:flex;overflow:auto;gap:.9rem;padding:.55rem 1rem;border-top:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(20px);white-space:nowrap}.mobile-nav a{font-size:.75rem;color:var(--text-soft);text-decoration:none}.mobile-nav a:hover{color:var(--text)}}
+@media(max-width:767px){/* menu ponechano na webu */.mobile-nav{display:flex;overflow:auto;gap:.9rem;padding:.55rem 1rem;border-top:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(20px);white-space:nowrap}.mobile-nav a{font-size:.75rem;color:var(--text-soft);text-decoration:none}.mobile-nav a:hover{color:var(--text)}}
 .brand-logo{display:block;height:28px;width:auto}.brand-logo-dark{display:none}[data-theme='light'] .brand-logo-light{display:none}[data-theme='light'] .brand-logo-dark{display:block}
 
 @media(max-width:767px){
@@ -3500,6 +3500,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   #reporting.s6-integrated{padding-top:46px!important;padding-bottom:46px!important}
 }
 
+
+/* vychozi: mobilni menu jen na uzkych displejich */
+.mobile-nav{display:none}
+@media(max-width:767px){.mobile-nav{display:flex}.desktop-nav{display:none}}
 </style>
 </head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
 <div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
