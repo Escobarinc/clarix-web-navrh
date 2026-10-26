@@ -9116,15 +9116,23 @@ html .lgv3 .lead-sec .v4-model-heading h3 {
 
 </style>
 <style>
-/* ====== jednotné číslování sekcí: tmavý čtvereček ====== */
-.roadmap-num,.sector-index,.priority-factor-mark,.lg01-num,.lg2-industry-index,
-.v20-step,.rc4-problem-no,.rc-step-no,.rc3-flow-number,.s5-f-no,.s5-step-no,.s6-insight-num{
-  display:grid!important;place-items:center!important;
-  width:2.1rem!important;height:2.1rem!important;min-width:2.1rem!important;
-  border-radius:3px!important;border:0!important;
-  background:#0b1f45!important;color:#fff!important;
-  font:700 .76rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;
-  letter-spacing:.02em!important;padding:0!important;flex:none!important}
+/* ====== jednotné číslování sekcí: tlumené číslo bez rámečku ====== */
+/* a) čísla s vlastním řádkem nad nadpisem - velká */
+.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no{
+  display:block!important;width:auto!important;height:auto!important;min-width:0!important;
+  border:0!important;border-radius:0!important;background:none!important;
+  font:800 2.9rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;
+  letter-spacing:-.03em!important;padding:0!important;flex:none!important;
+  margin-bottom:.45rem!important}
+/* b) čísla v úzkém sloupci vedle textu - menší, aby se nestříhala */
+.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,
+.rc3-flow-number,.s5-step-no,.s6-insight-num{
+  display:block!important;width:auto!important;height:auto!important;min-width:0!important;
+  border:0!important;border-radius:0!important;background:none!important;
+  font:800 1.15rem/1.25 ui-monospace,SFMono-Regular,Menlo,monospace!important;
+  letter-spacing:0!important;padding:0!important;flex:none!important;margin:0!important}
+:is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no,.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,.rc3-flow-number,.s5-step-no,.s6-insight-num){color:#2f86ff!important}
+html[data-theme='dark'] :is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no,.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,.rc3-flow-number,.s5-step-no,.s6-insight-num){color:#4d97ff!important}
 </style>
 <style>
 /* ====== aktivní položka menu ====== */
@@ -9136,6 +9144,15 @@ html .lgv3 .lead-sec .v4-model-heading h3 {
 .mobile-nav a[href="lead-generation.html"]{color:#1668ff!important;font-weight:700!important}
 </style>
 <script src="js/rezim-dne.js?v=1"></script>
+<link rel="stylesheet" href="css/tmavy-lead-generation.css?v=1">
+<style>
+/* ====== proužek pěti kroků: velká modrá čísla ====== */
+.lgv3 .lg-hero-krok b,.lg-hero-krok b{font:800 2.5rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:-.03em;color:#2f86ff;margin-bottom:.1rem}
+.lgv3 .lg-hero-krok span,.lg-hero-krok span{margin-top:.15rem}
+html[data-theme='dark'] .lgv3 .lg-hero-krok b,html[data-theme='dark'] .lg-hero-krok b{color:#4d97ff}
+@media (max-width:640px){.lgv3 .lg-hero-krok b,.lg-hero-krok b{font-size:2rem}}
+</style>
 </head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
 <div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
 <nav aria-label="Hlavní navigace" class="nav-enter fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
@@ -9717,4 +9734,5 @@ if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.luc
 
 })();
 </script>
+<script src="js/grafy-animace.js?v=8"></script>
 </body></html>

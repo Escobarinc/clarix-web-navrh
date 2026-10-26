@@ -773,15 +773,23 @@ body.portfolio-mode #hero3d { opacity:.58; }
 <meta name="twitter:image" content="https://www.clarix.cz/images/nahled-sdileni.png" />
   <link rel="stylesheet" href="css/uprava.css?v=3">
 <style>
-/* ====== jednotné číslování sekcí: tmavý čtvereček ====== */
-.roadmap-num,.sector-index,.priority-factor-mark,.lg01-num,.lg2-industry-index,
-.v20-step,.rc4-problem-no,.rc-step-no,.rc3-flow-number,.s5-f-no,.s5-step-no,.s6-insight-num{
-  display:grid!important;place-items:center!important;
-  width:2.1rem!important;height:2.1rem!important;min-width:2.1rem!important;
-  border-radius:3px!important;border:0!important;
-  background:#0b1f45!important;color:#fff!important;
-  font:700 .76rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;
-  letter-spacing:.02em!important;padding:0!important;flex:none!important}
+/* ====== jednotné číslování sekcí: tlumené číslo bez rámečku ====== */
+/* a) čísla s vlastním řádkem nad nadpisem - velká */
+.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no{
+  display:block!important;width:auto!important;height:auto!important;min-width:0!important;
+  border:0!important;border-radius:0!important;background:none!important;
+  font:800 2.9rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;
+  letter-spacing:-.03em!important;padding:0!important;flex:none!important;
+  margin-bottom:.45rem!important}
+/* b) čísla v úzkém sloupci vedle textu - menší, aby se nestříhala */
+.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,
+.rc3-flow-number,.s5-step-no,.s6-insight-num{
+  display:block!important;width:auto!important;height:auto!important;min-width:0!important;
+  border:0!important;border-radius:0!important;background:none!important;
+  font:800 1.15rem/1.25 ui-monospace,SFMono-Regular,Menlo,monospace!important;
+  letter-spacing:0!important;padding:0!important;flex:none!important;margin:0!important}
+:is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no,.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,.rc3-flow-number,.s5-step-no,.s6-insight-num){color:#2f86ff!important}
+html[data-theme='dark'] :is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no,.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,.rc3-flow-number,.s5-step-no,.s6-insight-num){color:#4d97ff!important}
 </style>
 <style>
 /* ====== aktivní položka menu ====== */
@@ -853,12 +861,12 @@ body.portfolio-mode #hero3d { opacity:.58; }
       </div>
     </div>
   </div></section>
-    <section class="section-wrap border-t border-[var(--border)]"><div class="reveal max-w-3xl"><div class="page-kicker">NAŠE DNA</div><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Naše DNA: <span class="text-blue-500">Clarix - we know how.</span></h2></div><div class="mt-12 grid gap-4 lg:grid-cols-3">
+    <section class="section-wrap border-t border-[var(--border)]"><div class="reveal max-w-3xl"><h2 class="mt-4 text-balance text-4xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-6xl">Naše DNA: <span class="text-blue-500">Clarix - we know how.</span></h2></div><div class="mt-12 grid gap-4 lg:grid-cols-3">
       <article class="reveal glass-card dna-card p-7"><i data-lucide="chart-no-axes-combined" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold">Myslíme byznysově</h3><p class="mt-4 long-copy">Nedodáváme jen kód, dodáváme řešení. Než napíšeme první řádek, chceme znát vaše cíle, procesy a úzká hrdla. Tvoříme software, který se zaplatí.</p></article>
       <article class="reveal glass-card dna-card p-7"><i data-lucide="cpu" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold">Technologická excelence</h3><p class="mt-4 long-copy">Neděláme kompromisy v kvalitě. Architekturu stavíme tak, aby byla bezpečná, škálovatelná a udržitelná i za několik let.</p></article>
       <article class="reveal glass-card dna-card p-7"><i data-lucide="scan-eye" class="h-6 w-6 text-blue-500"></i><h3 class="mt-10 text-2xl font-semibold">Absolutní transparentnost</h3><p class="mt-4 long-copy">Hrajeme s otevřenými kartami. Zakládáme si na upřímné komunikaci, pevných termínech a jasně definovaných rozpočtech.</p></article>
     </div></section>
-    <section id="kontakt" class="section-wrap border-t border-[var(--border)] pb-10"><div class="reveal contact-panel overflow-hidden rounded-[2rem] border border-[var(--border)] p-7 sm:p-10 lg:p-14"><div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"><div><div class="page-kicker">START PROJECT</div><h2 class="mt-5 max-w-3xl text-balance text-4xl font-bold leading-[1] tracking-[-0.05em] sm:text-5xl lg:text-6xl">Pojďme se bavit o vašem projektu.</h2><p class="mt-5 max-w-2xl text-base leading-7 text-[var(--text-soft)] sm:text-lg">Máte vizi, ale chybí vám technologický partner, který ji zrealizuje? Rádi s vámi vše probereme.</p></div><div class="lg:text-right"><a href="tel:+420606589032" class="magnetic inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-7 text-sm font-medium text-white shadow-[0_0_48px_rgba(37,99,235,0.30)] hover:brightness-110">Nezávazná konzultace <i data-lucide="arrow-up-right" class="ml-2 h-4 w-4"></i></a></div></div></div></section>
+    <section id="kontakt" class="section-wrap border-t border-[var(--border)] pb-10"><div class="reveal contact-panel overflow-hidden rounded-[2rem] border border-[var(--border)] p-7 sm:p-10 lg:p-14"><div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"><div><h2 class="mt-5 max-w-3xl text-balance text-4xl font-bold leading-[1] tracking-[-0.05em] sm:text-5xl lg:text-6xl">Pojďme se bavit o vašem projektu.</h2><p class="mt-5 max-w-2xl text-base leading-7 text-[var(--text-soft)] sm:text-lg">Máte vizi, ale chybí vám technologický partner, který ji zrealizuje? Rádi s vámi vše probereme.</p></div><div class="lg:text-right"><a href="tel:+420606589032" class="magnetic inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-7 text-sm font-medium text-white shadow-[0_0_48px_rgba(37,99,235,0.30)] hover:brightness-110">Nezávazná konzultace <i data-lucide="arrow-up-right" class="ml-2 h-4 w-4"></i></a></div></div></div></section>
   </div>
 </main><footer class="footer-basic relative z-10"><div class="mx-auto w-full max-w-[1440px] px-6 py-10 md:px-8">
   <div class="ft-grid">

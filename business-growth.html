@@ -10231,22 +10231,23 @@ body.portfolio-mode #hero3d { opacity:.58; }
 </style>
   <link rel="stylesheet" href="css/uprava.css?v=3">
 <style>
-/* ====== jednotné číslování sekcí: tmavý čtvereček ====== */
-.roadmap-num,.sector-index,.priority-factor-mark,.lg01-num,.lg2-industry-index,
-.v20-step,.rc4-problem-no,.rc-step-no,.rc3-flow-number,.s5-f-no,.s5-step-no,.s6-insight-num{
-  display:grid!important;place-items:center!important;
-  width:2.1rem!important;height:2.1rem!important;min-width:2.1rem!important;
-  border-radius:3px!important;border:0!important;
-  background:#0b1f45!important;color:#fff!important;
-  font:700 .76rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;
-  letter-spacing:.02em!important;padding:0!important;flex:none!important}
-
-.roadmap-card .roadmap-num,.sector-row .sector-index,.sector-index,
-main .roadmap-num,main .sector-index{
-  display:grid!important;place-items:center!important;width:2.1rem!important;height:2.1rem!important;
-  min-width:2.1rem!important;border-radius:3px!important;border:0!important;
-  background:#0b1f45!important;color:#fff!important;
-  font:700 .76rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;padding:0!important;margin-bottom:1.1rem!important}
+/* ====== jednotné číslování sekcí: tlumené číslo bez rámečku ====== */
+/* a) čísla s vlastním řádkem nad nadpisem - velká */
+.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no{
+  display:block!important;width:auto!important;height:auto!important;min-width:0!important;
+  border:0!important;border-radius:0!important;background:none!important;
+  font:800 2.9rem/1 ui-monospace,SFMono-Regular,Menlo,monospace!important;
+  letter-spacing:-.03em!important;padding:0!important;flex:none!important;
+  margin-bottom:.45rem!important}
+/* b) čísla v úzkém sloupci vedle textu - menší, aby se nestříhala */
+.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,
+.rc3-flow-number,.s5-step-no,.s6-insight-num{
+  display:block!important;width:auto!important;height:auto!important;min-width:0!important;
+  border:0!important;border-radius:0!important;background:none!important;
+  font:800 1.15rem/1.25 ui-monospace,SFMono-Regular,Menlo,monospace!important;
+  letter-spacing:0!important;padding:0!important;flex:none!important;margin:0!important}
+:is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no,.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,.rc3-flow-number,.s5-step-no,.s6-insight-num){color:#2f86ff!important}
+html[data-theme='dark'] :is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.s5-f-no,.sector-index,.priority-factor-mark,.v20-step,.lg2-industry-index,.rc3-flow-number,.s5-step-no,.s6-insight-num){color:#4d97ff!important}
 </style>
 <style>
 /* ====== aktivní položka menu ====== */
@@ -10259,6 +10260,33 @@ main .roadmap-num,main .sector-index{
 </style>
 
 <script src="js/rezim-dne.js?v=1"></script>
+<link rel="stylesheet" href="css/tmavy-business-growth.css?v=1">
+<style>
+/* ====== rozhodovací mapa: barevně jen kvadrant, kam se má dívat ====== */
+.priority-map{background:#ffffff;border:1px solid #e4e9f2}
+.priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(1){fill:#eef6f4}
+.priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(2),
+.priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(3),
+.priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(4){fill:#fbfcfe}
+.priority-map svg[aria-label="Ilustrační analytický graf"] path[stroke]{stroke:#d7dfea}
+.priority-map svg[aria-label="Ilustrační analytický graf"] text[font-size="11"]{
+  fill:#8a98ab;font-weight:700;letter-spacing:.09em}
+.priority-map svg[aria-label="Ilustrační analytický graf"] text[fill="#087e73"]{fill:#0d7d71}
+/* v noci: zvýrazněný kvadrant zůstává zelenkavý, ostatní neutrální */
+html[data-theme='dark'] .priority-map{background:#0e0e0e;border-color:#262626}
+html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(1){fill:rgba(16,169,156,.14)}
+html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(2),
+html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(3),
+html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] rect:nth-of-type(4){fill:rgba(255,255,255,.035)}
+html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] path[stroke]{stroke:#2c2c2c}
+html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] text[font-size="11"]{fill:#9aa4b3}
+html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] text[fill="#087e73"]{fill:#2ac0ae}
+</style>
+<style>
+/* ====== čísla kroků v průběhu spolupráce: modrá ====== */
+.roadmap-num{color:#2f86ff!important}
+html[data-theme='dark'] .roadmap-num{color:#4d97ff!important}
+</style>
 </head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
 <div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
 <nav aria-label="Hlavní navigace" class="nav-enter fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
@@ -11034,4 +11062,5 @@ if(HEXAGONY) init3D(); window.addEventListener('DOMContentLoaded',()=>window.luc
 
 })();
 </script>
+<script src="js/grafy-animace.js?v=8"></script>
 </body></html>
