@@ -206,7 +206,7 @@
       if (!cil || cil === '0%' || e.dataset.pruh === '1') return;
       e.dataset.pruh = '1';
       e.style.width = '0%';
-      var obal = e.closest('.portfolio-bars') || e.parentElement.parentElement || e.parentElement;
+      var obal = e.closest('.portfolio-bars, .seg-zebricek') || e.parentElement.parentElement || e.parentElement;
       var sk = null;
       for (var i = 0; i < skupiny.length; i++) if (skupiny[i].obal === obal) sk = skupiny[i];
       if (!sk) { sk = { obal: obal, prvky: [] }; skupiny.push(sk); }
@@ -257,7 +257,104 @@
     h.observe(obal);
   }
 
-  function vse() { start(); startCary(); startPruhy(); startSloupce(); }
+  /* --- žebříček segmentů: řádky naskáčou shora dolů --- */
+  function startZebricek() {
+    Array.prototype.forEach.call(document.querySelectorAll('.seg-zebricek'), function (z) {
+      if (KLID || z.dataset.zebricek === '1') return;
+      z.dataset.zebricek = '1';
+      var radky = z.querySelectorAll('.seg-radek');
+      Array.prototype.forEach.call(radky, function (r) {
+        r.style.opacity = '0';
+        r.style.transform = 'translateY(10px)';
+      });
+      var hotovo = false;
+      var spust = function () {
+        if (hotovo) return; hotovo = true;
+        Array.prototype.forEach.call(radky, function (r, i) {
+          r.style.transition = 'opacity 420ms ease ' + (i * 110) + 'ms, transform 520ms cubic-bezier(.25,.8,.3,1) ' + (i * 110) + 'ms';
+          r.style.opacity = '1';
+          r.style.transform = 'none';
+        });
+      };
+      if (!window.IntersectionObserver) { spust(); return; }
+      var h = new IntersectionObserver(function (x) {
+        x.forEach(function (y) { if (y.isIntersecting) { h.disconnect(); spust(); } });
+      }, { threshold: 0.15 });
+      h.observe(z);
+      /* pojistka - řádky nesmí zůstat schované */
+      setTimeout(function () {
+        var b = z.getBoundingClientRect();
+        if (!hotovo && b.top < window.innerHeight && b.bottom > 0) { h.disconnect(); spust(); }
+      }, 2500);
+    });
+  }
+
+  /* --- čísla v kartách: naběhnou od nuly a zastaví se přesně na hodnotě --- */
+  function startCitace() {
+    if (KLID) return;
+    var prvky = document.querySelectorAll('.v4-econ-stage > b, .v4-kpi > strong');
+    if (!prvky.length) return;
+    var skupiny = [];
+    Array.prototype.forEach.call(prvky, function (e) {
+      if (e.dataset.citac === '1') return;
+      var puvodni = e.textContent;
+      /* předpona (≈), číslo s mezerami po tisících, případně desetinná čárka, přípona (Kč, %) */
+      var m = puvodni.match(/^(\D*?)(\d[\d \u00a0\u202f]*\d|\d)(?:,(\d+))?(.*)$/);
+      if (!m) return;
+      var cil = parseInt(m[2].replace(/\D/g, ''), 10);
+      if (!(cil > 0)) return;
+      var odd = (m[2].match(/[ \u00a0\u202f]/) || [' '])[0];
+      e.dataset.citac = '1';
+      var obal = e.closest('.v4-econ-stages, .v4-kpi-row') || e.parentElement;
+      var sk = null;
+      for (var i = 0; i < skupiny.length; i++) if (skupiny[i].obal === obal) sk = skupiny[i];
+      if (!sk) { sk = { obal: obal, prvky: [] }; skupiny.push(sk); }
+      sk.prvky.push({ e: e, puvodni: puvodni, pred: m[1], cil: cil, odd: odd, za: m[4] || '' });
+      e.textContent = m[1] + '0' + (m[4] || '');
+    });
+    var formatuj = function (n, odd) {
+      var t = String(n), v = '';
+      while (t.length > 3) { v = odd + t.slice(-3) + v; t = t.slice(0, -3); }
+      return t + v;
+    };
+    skupiny.forEach(function (sk) {
+      var hotovo = false;
+      var spust = function () {
+        if (hotovo) return; hotovo = true;
+        sk.prvky.forEach(function (p, i) {
+          p.e.style.fontVariantNumeric = 'tabular-nums';
+          var zacatek = null, delka = 1300, zpozdeni = i * 120;
+          var krok = function (t) {
+            if (zacatek === null) zacatek = t + zpozdeni;
+            var x = Math.max(0, Math.min(1, (t - zacatek) / delka));
+            var h = Math.round(p.cil * (1 - Math.pow(1 - x, 3)));
+            p.e.textContent = p.pred + formatuj(h, p.odd) + p.za;
+            if (x < 1) requestAnimationFrame(krok);
+            else { p.e.textContent = p.puvodni; p.e.style.fontVariantNumeric = ''; }
+          };
+          requestAnimationFrame(krok);
+        });
+      };
+      /* stejné pojistky jako u grafů - číslo nikdy nesmí zůstat na nule */
+      if (window.IntersectionObserver) {
+        var h = new IntersectionObserver(function (z) {
+          z.forEach(function (x) { if (x.isIntersecting) { h.disconnect(); spust(); } });
+        }, { threshold: 0.2 });
+        h.observe(sk.obal);
+      } else { spust(); }
+      setTimeout(function () {
+        var r = sk.obal.getBoundingClientRect();
+        if (!hotovo && r.top < window.innerHeight && r.bottom > 0) spust();
+      }, 2500);
+      window.addEventListener('scroll', function kontrola() {
+        if (hotovo) { window.removeEventListener('scroll', kontrola); return; }
+        var r = sk.obal.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.9 && r.bottom > 0) { window.removeEventListener('scroll', kontrola); spust(); }
+      }, { passive: true });
+    });
+  }
+
+  function vse() { start(); startCary(); startPruhy(); startSloupce(); startZebricek(); startCitace(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vse);
   else vse();
 })();

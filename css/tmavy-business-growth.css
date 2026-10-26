@@ -1245,6 +1245,17 @@ html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický g
 html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] path[stroke]{stroke:#2d2d2d}
 html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] text[font-size="11"]{fill:#b0b0b0}
 html[data-theme='dark'] .priority-map svg[aria-label="Ilustrační analytický graf"] text[fill="#087e73"]{fill:#10998a}
+html[data-theme='dark'] .seg-radek{border:1px solid #262626;background:#0e0e0e}
+html[data-theme='dark'] .seg-radek.seg-top{border-color:#262626;background:#0e0e0e}
+html[data-theme='dark'] .seg-jm b{color:#ffffff}
+html[data-theme='dark'] .seg-jm span{color:#b0b0b0}
+html[data-theme='dark'] .seg-pr{color:#b0b0b0}
+html[data-theme='dark'] .seg-dr{background:#050505}
+html[data-theme='dark'] .seg-pr strong{color:#ffffff}
+html[data-theme='dark'] .seg-sedy{background:#181818}
+html[data-theme='dark'] .seg-v-teal{color:#0c9386}
+html[data-theme='dark'] .seg-v-blue{color:#4378f0}
+html[data-theme='dark'] .seg-v-purple{color:#9b6ae0}
 html[data-theme='dark'] .eco-v9{--eco-ink:#ffffff}
 html[data-theme='dark'] .eco-v9 .eco-v9-graphic{border:1px solid #262626;background:linear-gradient(145deg,#0e0e0e,#0e0e0e)}
 html[data-theme='dark'] .eco-v9 .eco-v9-graphic-head strong{color:#497fbe}
@@ -1319,11 +1330,7 @@ html[data-theme='dark'] .portfolio-note{background:var(--surface,#0e0e0e);color:
 html[data-theme='dark'] #zadani .growth-submit a{color:var(--accent,#4378f0)}
 
 /* výplně grafů zapsané přímo ve značce */
-html[data-theme='dark'] svg :not(text):not(tspan)[fill="#eaf7f4"]{fill:#050505}
-html[data-theme='dark'] svg :not(text):not(tspan)[fill="#edf1fd"]{fill:#050505}
-html[data-theme='dark'] svg :not(text):not(tspan)[fill="#f3f5f9"]{fill:#050505}
 html[data-theme='dark'] svg :not(text):not(tspan)[fill="#fff"]{fill:#0e0e0e}
-html[data-theme='dark'] svg :not(text):not(tspan)[fill="#fff5e9"]{fill:#0e0e0e}
 html[data-theme='dark'] svg :not(text):not(tspan)[stroke="#cfd8e6"]{stroke:#2d2d2d}
 html[data-theme='dark'] svg :not(text):not(tspan)[stroke="#d5dfec"]{stroke:#2d2d2d}
 html[data-theme='dark'] svg :not(text):not(tspan)[stroke="#e3eaf4"]{stroke:#2d2d2d}
@@ -1340,19 +1347,15 @@ html[data-theme='dark'] svg [fill="#8a51db"] text{fill:#9b6ae0}
 html[data-theme='dark'] svg [fill="#8a51db"] tspan{fill:#9b6ae0}
 html[data-theme='dark'] svg [fill="#9361d4"] text{fill:#9b6dd7}
 html[data-theme='dark'] svg [fill="#9361d4"] tspan{fill:#9b6dd7}
-html[data-theme='dark'] svg text[fill="#087e73"]{fill:#098c80}
 html[data-theme='dark'] svg text[fill="#14243b"]{fill:#ffffff}
 html[data-theme='dark'] svg text[fill="#172b45"]{fill:#ffffff}
 html[data-theme='dark'] svg text[fill="#2764ee"]{fill:#4378f0}
-html[data-theme='dark'] svg text[fill="#4956a6"]{fill:#6d79bf}
 html[data-theme='dark'] svg text[fill="#5d32b1"]{fill:#8e6ad5}
-html[data-theme='dark'] svg text[fill="#65748a"]{fill:#b0b0b0}
 html[data-theme='dark'] svg text[fill="#657890"]{fill:#b0b0b0}
 html[data-theme='dark'] svg text[fill="#67758b"]{fill:#b0b0b0}
 html[data-theme='dark'] svg text[fill="#74869c"]{fill:#b0b0b0}
 html[data-theme='dark'] svg text[fill="#8a51db"]{fill:#9b6ae0}
 html[data-theme='dark'] svg text[fill="#9361d4"]{fill:#9b6dd7}
-html[data-theme='dark'] svg text[fill="#a76d1f"]{fill:#b47521}
 
 /* barvy zapsané přímo u prvku */
 html[data-theme='dark'] [style*="background:#cfd8e6"]{background:#181818 !important}

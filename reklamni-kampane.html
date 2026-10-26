@@ -8865,6 +8865,22 @@ html[data-theme='dark'] :is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.
 </style>
 <script src="js/rezim-dne.js?v=1"></script>
 <link rel="stylesheet" href="css/tmavy-reklamni-kampane.css?v=1">
+<style>
+/* ====== karty cílů: velké modré linkové ikony místo znaků v pastelových dlaždicích ====== */
+.rc-goal .rc-goal-icon,.rc-goal:nth-child(2) .rc-goal-icon,.rc-goal:nth-child(3) .rc-goal-icon,.rc-goal:nth-child(4) .rc-goal-icon{
+  background:none;width:auto;height:auto;justify-content:start;color:#2764ee;margin-bottom:22px}
+.rc-goal .rc-goal-icon svg{width:44px;height:44px;stroke-width:1.6}
+html[data-theme='dark'] .rc-goal .rc-goal-icon,html[data-theme='dark'] .rc-goal:nth-child(2) .rc-goal-icon,
+html[data-theme='dark'] .rc-goal:nth-child(3) .rc-goal-icon,html[data-theme='dark'] .rc-goal:nth-child(4) .rc-goal-icon{color:#4d97ff}
+</style>
+<link rel="stylesheet" href="css/ikony.css?v=2">
+<style>
+/* ====== loga platforem v kartách Google Ads / Meta Ads / Seznam Sklik ====== */
+.brand-card .brand-name{display:flex;align-items:center;gap:14px}
+.plat-logo{display:block;flex:none;height:34px;width:auto}
+.plat-logo-meta{height:26px}
+.plat-logo-sklik{height:46px;margin:-6px -4px}
+</style>
 </head><body><div class="theme-shell relative min-h-screen overflow-hidden bg-[var(--bg)] text-[var(--text)] transition-colors duration-500"><div id="hero3d" class="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden bg-[var(--bg)] transition-colors duration-500" aria-hidden="true"><div class="absolute inset-0 fallback-3d"></div>
 <div class="pozadi-clona" aria-hidden="true"></div></div><div class="pointer-events-none fixed inset-0 z-[1] hero-vignette" aria-hidden="true"></div>
 <nav aria-label="Hlavní navigace" class="nav-enter fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
@@ -8924,10 +8940,10 @@ html[data-theme='dark'] :is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.
 <section class="rc-sec rc-sec-soft" id="cile"><div class="rc-container">
 <div class="rc-head rc-head-split"><div><div class="rc-eyebrow">02 / CO MÁ REKLAMA PŘINÉST</div><h2>Různé cíle. <span>Jedno pravidlo: měřit to podstatné.</span></h2></div><p>Cíl vybíráme podle vaší nabídky, obchodního modelu a toho, co lze skutečně změřit.</p></div>
 <div class="rc-goals">
-<article class="rc-goal"><span class="rc-goal-icon">↗</span><small>01 / DOSAH A NÁVŠTĚVNOST</small><h3>Chci, aby o mně zákazníci věděli.</h3><p>Dostat nabídku před relevantní publikum a přivést ho na správnou stránku.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Dosah, relevantní návštěvy, cena a chování návštěvníků</b></div></article>
-<article class="rc-goal"><span class="rc-goal-icon">◎</span><small>02 / POPTÁVKY A REZERVACE</small><h3>Chci, aby se mi ozývali zájemci.</h3><p>Vytvořit smysluplný kontakt se službou, rezervací nebo konkrétní poptávkou.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Počet a cenu poptávek, dostupnou zpětnou vazbu o kvalitě</b></div></article>
-<article class="rc-goal"><span class="rc-goal-icon">▣</span><small>03 / PRODEJ PRODUKTŮ</small><h3>Chci více objednávek, ne jen kliknutí.</h3><p>Podpořit nákupy produktů, které mají pro váš e-shop obchodní význam.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Objednávky, náklady na získání, hodnotu nákupů a ekonomiku</b></div></article>
-<article class="rc-goal"><span class="rc-goal-icon">◈</span><small>04 / UVEDENÍ NABÍDKY NA TRH</small><h3>Chci ověřit zájem o nový produkt.</h3><p>Získat první reakce cílové skupiny a ověřit argumenty dříve, než rozšíříme investici.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Reakce, kvalitu zájmu, náklady na test a signály další poptávky</b></div></article>
+<article class="rc-goal"><span class="rc-goal-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="radar" aria-hidden="true" focusable="false"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"></path><path d="M4 6h.01"></path><path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"></path><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"></path><path d="M12 18h.01"></path><path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"></path><circle cx="12" cy="12" r="2"></circle><path d="m13.41 10.59 5.66-5.66"></path></svg></span><small>01 / DOSAH A NÁVŠTĚVNOST</small><h3>Chci, aby o mně zákazníci věděli.</h3><p>Dostat nabídku před relevantní publikum a přivést ho na správnou stránku.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Dosah, relevantní návštěvy, cena a chování návštěvníků</b></div></article>
+<article class="rc-goal"><span class="rc-goal-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone-call" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M14.05 2a9 9 0 0 1 8 7.94"></path><path d="M14.05 6A5 5 0 0 1 18 10"></path></svg></span><small>02 / POPTÁVKY A REZERVACE</small><h3>Chci, aby se mi ozývali zájemci.</h3><p>Vytvořit smysluplný kontakt se službou, rezervací nebo konkrétní poptávkou.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Počet a cenu poptávek, dostupnou zpětnou vazbu o kvalitě</b></div></article>
+<article class="rc-goal"><span class="rc-goal-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shopping-cart" aria-hidden="true" focusable="false"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg></span><small>03 / PRODEJ PRODUKTŮ</small><h3>Chci více objednávek, ne jen kliknutí.</h3><p>Podpořit nákupy produktů, které mají pro váš e-shop obchodní význam.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Objednávky, náklady na získání, hodnotu nákupů a ekonomiku</b></div></article>
+<article class="rc-goal"><span class="rc-goal-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sprout" aria-hidden="true" focusable="false"><path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path></svg></span><small>04 / UVEDENÍ NABÍDKY NA TRH</small><h3>Chci ověřit zájem o nový produkt.</h3><p>Získat první reakce cílové skupiny a ověřit argumenty dříve, než rozšíříme investici.</p><div class="rc-measure"><span>SLEDUJEME</span><b>Reakce, kvalitu zájmu, náklady na test a signály další poptávky</b></div></article>
 </div>
 <div class="rc-decision"><div><span class="rc-overline">CO TO ZNAMENÁ PRO VÁS</span><h3>Nemusíme slíbit více prokliků. Potřebujeme vědět, jakou mají mít hodnotu.</h3></div><p>U některých kampaní rozhodují objednávky; jinde poptávky, relevantní návštěvy nebo první ověření zájmu. Cíl a měření stanovíme dříve než rozpočet začne odcházet.</p></div>
 </div></section>
@@ -8957,7 +8973,7 @@ html[data-theme='dark'] :is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.
 <div class="rc3-flow-item"><div class="rc3-flow-number rc3-flow-number-2">02</div><div class="rc3-flow-text"><strong>Kreativa a komunikace</strong><p>Co zákazník uvidí, proč má reagovat a kam ho reklama přivede.</p></div><span class="rc3-flow-label">SDĚLENÍ</span></div>
 <div class="rc3-flow-item"><div class="rc3-flow-number rc3-flow-number-3">03</div><div class="rc3-flow-text"><strong>Technologie a data</strong><p>Co se stalo po prokliku a co nám to říká pro další rozhodnutí.</p></div><span class="rc3-flow-label">MĚŘENÍ</span></div>
 </div>
-<div class="rc3-output"><span aria-hidden="true" class="rc3-output-icon">↗</span><div><span>CO Z TOHO MÁTE VY</span><strong>Jeden týmový přístup. Srozumitelný výsledek a další krok.</strong></div></div>
+<div class="rc3-output"><span aria-hidden="true" class="rc3-output-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trending-up" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></span><div><span>CO Z TOHO MÁTE VY</span><strong>Jeden týmový přístup. Srozumitelný výsledek a další krok.</strong></div></div>
 </div>
 <aside aria-label="Ukázka propojení odborností na obchodní situaci" class="rc3-decision">
 <div class="rc3-decision-eyebrow"><span class="rc3-pulse"></span> JAK SE TO PROJEVÍ V PRAXI</div>
@@ -8983,21 +8999,21 @@ html[data-theme='dark'] :is(.roadmap-num,.lg01-num,.rc4-problem-no,.rc-step-no,.
 <div class="brand-grid">
 <article class="brand-card google"><div class="a-card-inner">
 <div class="brand-top"><span class="brand-num">01 / EXISTUJÍCÍ POPTÁVKA</span><span class="brand-chip"><i class="dot"></i> VYHLEDÁVÁ</span></div>
-<h3 class="brand-name">Google Ads</h3><h4 class="brand-title">Když zákazník už ví, co potřebuje.</h4>
+<h3 class="brand-name"><img alt="" class="plat-logo" decoding="async" src="images/znacky/google-ads.svg"/>Google Ads</h3><h4 class="brand-title">Když zákazník už ví, co potřebuje.</h4>
 <p class="brand-description">Vaše nabídka se může objevit ve chvíli, kdy aktivně hledá produkt, službu nebo řešení svého problému.</p>
 <div class="a-info"><article><span class="muted-label">Obchodní situace</span><p>Člověk porovnává dodavatele, cenu, dostupnost nebo konkrétní vlastnosti produktu.</p></article><article><span class="muted-label">Jak s tím pracujeme</span><p>Vybereme hodnotné dotazy, vyloučíme nerelevantní hledání a navážeme reklamu na správnou nabídku.</p></article></div>
 <div class="a-benefit"><b>Co sledujeme</b>Cenu smysluplné poptávky nebo objednávky, nikoli jen návštěvu webu.</div><div class="a-decision-stack"><div class="c-choice"><span class="muted-label"><i class="c-mark">✓</i> Dává smysl, když</span><p>Zákazníci aktivně hledají vaše produkty, službu nebo řešení, které nabízíte.</p></div><div class="c-choice warning"><span class="muted-label"><i class="c-mark">–</i> Nezačínali bychom zde, když</span><p>Nabídka je natolik nová, že ji skoro nikdo nehledá a bylo by nutné nejprve vytvořit zájem.</p></div></div>
 </div></article>
 <article class="brand-card meta"><div class="a-card-inner">
 <div class="brand-top"><span class="brand-num">02 / VYTVÁŘENÍ ZÁJMU</span><span class="brand-chip"><i class="dot"></i> OBJEVUJE</span></div>
-<h3 class="brand-name">Meta Ads</h3><h4 class="brand-title">Když zákazník vaši nabídku ještě nehledá.</h4>
+<h3 class="brand-name"><img alt="" class="plat-logo plat-logo-meta" decoding="async" src="images/znacky/meta.svg"/>Meta Ads</h3><h4 class="brand-title">Když zákazník vaši nabídku ještě nehledá.</h4>
 <p class="brand-description">Na Facebooku a Instagramu ukážeme, proč by se o produkt nebo službu měl začít zajímat.</p>
 <div class="a-info"><article><span class="muted-label">Obchodní situace</span><p>Máte zajímavou nabídku, ale lidé její výhodu sami od sebe nevyhledávají.</p></article><article><span class="muted-label">Jak s tím pracujeme</span><p>Ověřujeme publika a reklamní argumenty, střídáme kreativy a sledujeme, co vyvolává skutečný zájem.</p></article></div>
 <div class="a-benefit"><b>Co sledujeme</b>Kvalitu reakcí a následné poptávky či objednávky podle cíle kampaně.</div><div class="a-decision-stack"><div class="c-choice"><span class="muted-label"><i class="c-mark">✓</i> Dává smysl, když</span><p>Výhodu produktu lze přesvědčivě ukázat a existuje publikum, které může reagovat.</p></div><div class="c-choice warning"><span class="muted-label"><i class="c-mark">–</i> Opatrnost je namístě, když</span><p>Nemáte vhodné sdělení či vizuály a rozpočet nestačí na rozumné ověření variant.</p></div></div>
 </div></article>
 <article class="brand-card sklik"><div class="a-card-inner">
 <div class="brand-top"><span class="brand-num">03 / ČESKÉ REKLAMNÍ PROSTŘEDÍ</span><span class="brand-chip"><i class="dot"></i> DOPLŇUJE</span></div>
-<h3 class="brand-name">Seznam Sklik</h3><h4 class="brand-title">Když chcete využít i prostor českého internetu.</h4>
+<h3 class="brand-name"><img alt="" class="plat-logo plat-logo-sklik" decoding="async" src="images/znacky/sklik.svg"/>Seznam Sklik</h3><h4 class="brand-title">Když chcete využít i prostor českého internetu.</h4>
 <p class="brand-description">Vyhledávání na Seznamu, obsahová síť i opětovné oslovení mohou rozšířit možnosti získávání zákazníků v ČR.</p>
 <div class="a-info"><article><span class="muted-label">Obchodní situace</span><p>Prodáváte na českém trhu a další relevantní zásah může mít ekonomický smysl.</p></article><article><span class="muted-label">Jak s tím pracujeme</span><p>Prověříme potenciál hledání, umístění reklam i přínos kampaní vedle ostatních kanálů.</p></article></div>
 <div class="a-benefit"><b>Co sledujeme</b>Zda dodatečný český zásah přináší výsledky za obhajitelné náklady.</div><div class="a-decision-stack"><div class="c-choice"><span class="muted-label"><i class="c-mark">✓</i> Dává smysl, když</span><p>V českém vyhledávání či obsahové síti existuje publikum důležité pro váš obchod.</p></div><div class="c-choice warning"><span class="muted-label"><i class="c-mark">–</i> Nezapojíme automaticky, když</span><p>Odhadovaný přínos dalšího kanálu nevyvažuje jeho dodatečné náklady a složitost.</p></div></div>
@@ -9476,5 +9492,5 @@ buttons.forEach((b,i)=>b.addEventListener('click',()=>activate(i)));activate(1);
 
 })();
 </script>
-<script src="js/grafy-animace.js?v=8"></script>
+<script src="js/grafy-animace.js?v=10"></script>
 </body></html>

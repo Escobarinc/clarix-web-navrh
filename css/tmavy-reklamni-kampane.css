@@ -1374,6 +1374,7 @@ html[data-theme='dark'] .rc-head p, html[data-theme='dark'] #platformy .section-
 html[data-theme='dark'] a:focus-visible, html[data-theme='dark'] button:focus-visible, html[data-theme='dark'] input:focus-visible, html[data-theme='dark'] select:focus-visible, html[data-theme='dark'] textarea:focus-visible{outline:3px solid rgba(39,100,238,0.18) !important}
 html[data-theme='dark'] .desktop-nav a[href="reklamni-kampane.html"]{color:#357cff !important}
 html[data-theme='dark'] .mobile-nav a[href="reklamni-kampane.html"]{color:#357cff !important}
+html[data-theme='dark'] .rc-goal .rc-goal-icon, html[data-theme='dark'] .rc-goal:nth-child(2) .rc-goal-icon, html[data-theme='dark'] .rc-goal:nth-child(3) .rc-goal-icon, html[data-theme='dark'] .rc-goal:nth-child(4) .rc-goal-icon{color:#4378f0}
 
 /* výplně grafů zapsané přímo ve značce */
 html[data-theme='dark'] svg :not(text):not(tspan)[stroke="#e4eaf3"]{stroke:#2d2d2d}
